@@ -182,7 +182,7 @@ module fft_top #(
   //! @brief Block Floating Point Shifter.
   //! @details 1-clock-cycle latency. Scales the data dynamically based on the previous stage lock block_clz.
   bfp_shifter #(
-                .INPUT_WIDTH(DATA_WIDTH + 1), /
+                .INPUT_WIDTH(DATA_WIDTH + 1), 
                 .OUTPUT_WIDTH(DATA_WIDTH)
               ) u_shifter (
                 .clk(clk),
