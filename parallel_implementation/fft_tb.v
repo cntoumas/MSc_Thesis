@@ -3,12 +3,12 @@
 module fft_tb;
 
     // ========================================================
-    // Thesis Parameters: 4096-point FFT, 8-Parallel Lanes
+    // Thesis Parameters: 4096-point FFT, 4-Parallel Lanes
     // ========================================================
     parameter N = 4096;
     parameter P = 16;
     parameter DATA_WIDTH = 32; 
-    parameter TWIDDLE_WIDTH = 24;
+    parameter TWIDDLE_WIDTH = 16;
 
     // ========================================================
     // Signals
@@ -90,8 +90,8 @@ module fft_tb;
         rst = 0;
         #20;
 
-        // 4. Feed the data to the FFT in chunks of P=8
-        $display("[*] Feeding %0d samples to the Parallel FFT (16 lanes per cycle)...", N);
+        // 4. Feed the data to the FFT in chunks of P=4
+        $display("[*] Feeding %0d samples to the Parallel FFT (4 lanes per cycle)...", N);
         
         // Keep valid_in high for the entire simulation
         // Pre-load the first sample so it is available on the first valid clock edge

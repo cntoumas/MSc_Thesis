@@ -2,12 +2,12 @@
 //! @details Handles the spatial routing of P parallel lanes. 
 //! Instantiates P/2 commutators. The STRIDE parameter determines 
 //! the logical distance between the two lanes entering a commutator.
-//! For P=8 and STRIDE=4: Swaps (0,4), (1,5), (2,6), (3,7).
-//! For P=8 and STRIDE=1: Swaps (0,1), (2,3), (4,5), (6,7).
+//! For P=4 and STRIDE=2: Swaps (0,2), (1,3).
+//! For P=4 and STRIDE=1: Swaps (0,1), (2,3).
 module parallel_commutator_layer #(
-    parameter P = 8,              //! Number of parallel lanes (e.g., 8 or 16)
+    parameter P = 16,              //! Number of parallel lanes (e.g., 4 or 8)
     parameter DATA_WIDTH = 34,    //! Bit-width of a single lane (Real + Imag)
-    parameter STRIDE = 4          //! The index distance between swapped lanes
+    parameter STRIDE = 2          //! The index distance between swapped lanes
 )(
     input wire clk,
     input wire rst,

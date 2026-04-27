@@ -1,5 +1,5 @@
 //! @brief High-Level Parallel FFT Architecture.
-//! @details 4096-Point Radix-2^2 SDF FFT with 16-parallel processing lanes.
+//! @details 4096-Point Radix-2^2 SDF FFT with 4-parallel processing lanes.
 module parallel_fft_top #(
     parameter FFT_SIZE = 4096,
     parameter P = 16,
@@ -18,7 +18,7 @@ module parallel_fft_top #(
   );
 
   localparam NUM_STAGES = $clog2(FFT_SIZE);
-  localparam SPATIAL_START = $clog2(FFT_SIZE / P); // Stage 9 for 4096/8
+  localparam SPATIAL_START = $clog2(FFT_SIZE / P); // Stage 10 for 4096/4
 
   wire [(P * DATA_WIDTH)-1:0] stage_re [0:NUM_STAGES];
   wire [(P * DATA_WIDTH)-1:0] stage_im [0:NUM_STAGES];

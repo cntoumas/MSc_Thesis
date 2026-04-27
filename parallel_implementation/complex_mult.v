@@ -1,8 +1,8 @@
 //! @brief Parameterized Complex Multiplier (3-Multiplier Karatsuba).
 //! Combinational version for SDF pipeline alignment.
 module complex_mult #(
-    parameter DATA_WIDTH = 33,
-    parameter TWIDDLE_WIDTH = 32
+    parameter DATA_WIDTH = 34,
+    parameter TWIDDLE_WIDTH = 16
   )(
     input wire clk, // Kept for port compatibility but unused
     input wire rst,
