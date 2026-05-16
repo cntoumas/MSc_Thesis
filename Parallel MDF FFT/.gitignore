@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+*.egg-info/
+dist/
+build/
+
+# Simulation artifacts
+sim/*.vvp
+sim/*.vcd
+sim/tb_fft_top
+sim/tb_*.vvp
+
+# Logs and outputs
+*.log
+sim_log.txt
+sim_full_log.txt
+fft_output.csv
+
+# IDE and editor
+.vscode/
+.claude/
+.gateflow/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated metrics (regenerate from scripts)
+scripts/fft_metrics.csv
+scripts/fft_verification.png

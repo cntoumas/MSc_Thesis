@@ -1,0 +1,40 @@
+# ─── Vivado projects (not tracked) ───────────────────────────────────────────
+MDF FFT/
+Serial_FFT_Vivado/
+ip_repo/
+
+# ─── Python virtual environment ──────────────────────────────────────────────
+**/.venv/
+**/venv/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# ─── IDE / Tool configs ───────────────────────────────────────────────────────
+**/.claude/
+**/.gateflow/
+
+# ─── Synthesis artifacts ──────────────────────────────────────────────────────
+**/synthesis/
+
+# ─── Simulation outputs ───────────────────────────────────────────────────────
+**/*.csv
+**/*.vcd
+**/*.wdb
+**/*.saif
+**/fft_sim
+**/fft_axi_sim
+**/sim_axi
+**/fft_*_sim
+**/*.vvp
+**/hw_exponent.txt
+**/hw_output.csv
+
+# ─── Duplicate mem files (kept only under rom/) ───────────────────────────────
+Parallel MDF FFT/twiddle_cos_eighth.mem
+Parallel MDF FFT/twiddle_sin_eighth.mem
+
+# ─── Serial FFT root-level mem duplicates (canonical copies in rom/) ─────────
+Serial FFT processor/cos.mem
+Serial FFT processor/sin.mem
