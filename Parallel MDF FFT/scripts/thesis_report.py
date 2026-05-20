@@ -17,6 +17,11 @@ Usage (from project root):
 import os, sys, re, json, csv, shutil, subprocess, time
 from pathlib import Path
 
+# Force UTF-8 stdout/stderr so Unicode chars don't crash on Windows cp1253
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")

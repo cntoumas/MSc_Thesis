@@ -1,6 +1,8 @@
 # Serial 1024-Point FFT Processor
 
-**Target:** Lattice iCE40HX8K (synthesis analysis) · **N = 1024** · **16-bit Q1.15 fixed-point + Block Floating Point (BFP)**
+**Target:** Xilinx Artix-7 `xc7a100tcsg324-1` (Vivado P&R) · **N = 1024** · **16-bit Q1.15 fixed-point + Block Floating Point (BFP)**
+
+> Originally synthesised against the Lattice iCE40HX8K (open-source flow via Yosys + nextpnr-ice40). That target was abandoned because the iCE40 has no distributed RAM primitive — the 1024×17-bit ping-pong RAM bloated to >250k LUT4s and could not fit. The design migrated to Artix-7 (`xc7a100tcsg324-1`), where the ping-pong RAM maps cleanly into 11 BRAM tiles and the design uses **&lt;2 % of the device** with 3.18 ns positive timing slack at 100 MHz.
 
 > A fully pipelined, time-multiplexed radix-2 DIT FFT core. A single Butterfly Unit (BFU) processes one butterfly per clock cycle, reusing the same hardware for all 10 stages through a Ping-Pong RAM and a dedicated Address Generation Unit.
 
@@ -247,39 +249,69 @@ Total write delay: 1 (RAM) + 1 (BFP Shifter) + 1 (twiddle align) + 4 (mult) + 1 
 
 ## Synthesis Results
 
-Synthesized with **Yosys 0.56** targeting iCE40HX8K (7,680 Logic Cells).
+Implemented end-to-end with **Vivado** targeting `xc7a100tcsg324-1` (Artix-7, Arty A7-100T-class part). Yosys 0.56 (`synth_xilinx`) is also supported for open-source area estimation; numbers below come from the post-route Vivado utilization report.
 
-> **Note:** The iCE40HX8K has no distributed RAM primitives. Yosys synthesizes the Ping-Pong RAM as LUT/FF arrays, inflating LUT count massively. With proper BRAM inference (as Xilinx/Intel tools provide), the projected utilization is dramatically lower.
+### Vivado Post-Route Utilization (xc7a100tcsg324-1)
 
-### Raw Yosys Output (iCE40, LUT-mapped RAM)
+| Resource | Used | Available | Util % | Notes |
+|---|---:|---:|---:|---|
+| Slice LUTs       | **2,374** | 133,800 | 1.77 % | 2,146 as logic + 228 as memory |
+| LUT as Memory    |    228    |  46,200 | 0.49 % | 24 DistRAM + 204 SRL16 |
+| Slice Registers  | **3,087** | 269,200 | 1.15 % | All FDRE / FDSE |
+| Slices occupied  |    927    |  33,450 | 2.77 % | 510 SLICEL + 417 SLICEM |
+| F7 Muxes         |      8    |  66,900 | 0.01 % | |
+| Block RAM tiles  | **11**    |     365 | 3.01 % | 8 × RAMB36E1 + 6 × RAMB18E1 |
+| DSP48E1          | **4**     |     740 | 0.54 % | One pipelined complex multiplier |
+| Bonded IOBs      |     80    |     400 |20.00 % | AXI4-Stream interface |
 
-| Resource | Count | Notes |
-|----------|-------|-------|
-| SB_LUT4  | 254,908 | 98% is ping-pong RAM synthesized as LUT-FF arrays |
-| SB_CARRY | 435 | Adders in BFU and AGU |
-| SB_DFF / SB_DFFE / SB_DFFESR | 70,852 total | Mostly RAM data bits; ~2,500 true control FFs |
-| SB_RAM40_4K | 2 | Twiddle ROM (8 kbits used) |
-| **iCE40HX8K capacity** | **7,680 LCs** | Design requires ~33× more — does not fit |
+> The ping-pong RAM (Bank 0 + Bank 1, each 1024×17-bit) is inferred as Block RAM by Vivado, so the entire data store costs ~11 BRAM tiles instead of bloating LUT/FF fabric. This is the single biggest difference vs. the iCE40 attempt.
 
-### Projected Utilization (with BRAM-mapped memories)
+### Yosys `synth_xilinx` Numbers (open-source flow)
 
-| Memory block | Size | BRAM blocks needed |
-|---|---|---|
-| Ping-pong RAM Bank A | 1024 × 17-bit | ~5 blocks |
-| Ping-pong RAM Bank B | 1024 × 17-bit | ~5 blocks |
-| Twiddle ROM (cos + sin) | 128 × 16-bit × 2 | 2 blocks (already BRAM) |
-| **Total** | **~51 kbits** | **~13 blocks** |
+For a quick area estimate without launching Vivado, [synthesis/synth_xc7.ys](synthesis/synth_xc7.ys) targets `xc7` family:
 
-With BRAM inference, control logic (AGU, BFU, BFP chain) reduces to approximately **~1,500–2,000 LUTs** — easily fitting on an iCE40HX4K or small Xilinx Artix-7.
+| Resource | Count |
+|---|---:|
+| LUT1–LUT6 (sum) | 857 |
+| FDRE / FDSE     | 665 |
+| DSP48E1         | 3   |
+| RAMB18E1        | 4   |
+| CARRY4          | 91  |
+| Total cells     | 1,952 |
 
-### Resource Pie Chart (conceptual)
+(Yosys is more aggressive at packing logic into LUT6s; Vivado's optimiser produces a slightly different shape with more SRL16E shift registers, but the order-of-magnitude resource cost matches.)
 
-```
-RAM storage (ping-pong):     ████████████████████░░░  ~72%
-BFU arithmetic logic:        ████░░░░░░░░░░░░░░░░░░░  ~15%
-AGU control logic:           ███░░░░░░░░░░░░░░░░░░░░  ~10%
-BFP scanner + shifter:       █░░░░░░░░░░░░░░░░░░░░░░   ~3%
-```
+### Timing — 100 MHz target
+
+| Metric | Value |
+|---|---|
+| Target clock period   | 10.000 ns (100 MHz, defined in [constrs/fft_axi_top.xdc](constrs/fft_axi_top.xdc)) |
+| Worst Negative Slack  | **+3.175 ns** (timing met with 3.18 ns headroom) |
+| Worst Hold Slack      | +0.051 ns |
+| Worst Pulse-Width Slack | +3.870 ns |
+| Max achievable Fmax   | ~146 MHz (10 − 3.175 = 6.825 ns critical path) |
+
+### Power — post-route, default activity factors
+
+| Source | Power |
+|---|---:|
+| Static (Vccint + Vccaux + Vccbram + Vcco) | 0.131 W |
+| Dynamic | 0.048 W |
+| **Total on-chip** | **0.179 W** (~179 mW @ 100 MHz) |
+
+> Confidence Level: Low (no SAIF stimulus file applied — default activity factors). Switching activity captured from `fft_axi_tb_xc7.v` could refine this further.
+
+### Historical: iCE40HX8K Attempt
+
+For thesis context, the iCE40 numbers from the original open-source flow are kept in [synthesis/yosys.log](synthesis/yosys.log):
+
+| Resource | iCE40 (Yosys + nextpnr-ice40) | xc7a100t (Vivado) | Reduction |
+|---|---:|---:|---:|
+| LUTs        | 254,908 (3,319 % — overflow) | 2,374 (1.77 %) | **107×** fewer |
+| Flip-flops  |  70,852                       | 3,087 (1.15 %) | **23×** fewer |
+| BRAM tiles  | 2 × SB_RAM40_4K               | 11 × RAMB tiles | — (BRAM-inferred memories) |
+
+The collapse from ~255k LUTs on iCE40 to 2.4k LUTs on Artix-7 is entirely explained by Block RAM inference for the ping-pong data RAM. The arithmetic logic (AGU, BFU, BFP chain) is genuinely small in both flows.
 
 ---
 
@@ -287,8 +319,9 @@ BFP scanner + shifter:       █░░░░░░░░░░░░░░░░
 
 | Metric | Value | Derivation |
 |--------|-------|------------|
-| Clock frequency | 100 MHz (target) | Estimated >100 MHz on logic-only path |
+| Clock frequency | 100 MHz (target) | Defined in XDC; Vivado post-route WNS +3.175 ns |
 | Clock period | 10 ns | — |
+| Max Fmax (Vivado) | ~146 MHz | 10 − 3.175 ns critical path |
 | Butterflies per stage | 512 | N/2 = 1024/2 |
 | Total butterfly stages | 10 | log₂(1024) |
 | Drain cycles per stage | 11 | TOTAL_WRITE_DELAY + 2 = 9 + 2 |
@@ -325,15 +358,19 @@ The drain overhead (11 cycles per stage) costs only ~2.1% of total run time — 
 
 SQNR (Signal-to-Quantization-Noise Ratio) measures output precision vs. an ideal 64-bit floating-point FFT reference.
 
-### Results by Input Type
+### Results by Input Type (AXI-Stream Flow, amplitude = 10000)
+
+Measured via [tb/fft_axi_tb_xc7.v](tb/fft_axi_tb_xc7.v) driving [rtl/fft_axi_top.v](rtl/fft_axi_top.v) end-to-end. SQNR is computed against a NumPy float64 reference with optimal complex-scalar alignment (the hardware FFT uses the `+j` twiddle convention vs. NumPy's `−j`, so we fit the optimal `α` that minimises ‖hw − α·ref‖²).
 
 | Signal Type | SQNR (dB) | Notes |
-|-------------|-----------|-------|
-| Single-Tone Sine (bin 50) | ~76 dB | Near-theoretical 16-bit limit (~96 dB) |
-| Impulse | ~66 dB | BFP under-scales at start; full exponent tracking recovers most SNR |
-| DC (all-ones input) | ~50 dB | Worst-case for BFP — maximum gain concentrates in DC bin |
-| Multi-Tone (3 tones) | ~42 dB | Energy spread degrades per-tone SNR |
-| Linear Chirp | ~36 dB | Spectrally spread input hits quantization noise floor |
+|-------------|----------:|-------|
+| Impulse (x[0]=A) | **120.00 dB** | Constant-magnitude FFT — every bin matches exactly |
+| DC (all samples = A) | **75.59 dB** | BFP rounding limits accuracy at the bin-0 spike |
+| Single-Tone Sine (bin 50) | **72.41 dB** | Both ±50 peaks reproduced; floor ~−40 dB below peak |
+| Multi-Tone (bins 50/200/450) | **59.75 dB** | Three peaks at correct bins; per-tone SQNR degraded by mutual spectral leakage |
+| Linear Chirp (0 → 511) | **65.88 dB** | Broadband spectrum reconstructed across all bins |
+
+> **SQNR sweep vs. input amplitude:** SQNR climbs monotonically from ~27 dB at amp 1000 to **71 dB at amp 10000**, then rolls off above 12000 as the BFP scaler approaches saturation. See [thesis_report.png](thesis_report.png) panel "SQNR vs. Input Amplitude".
 
 ### Visualization
 
@@ -373,6 +410,67 @@ SQNR rises ~6 dB per doubling of amplitude (follows quantization theory), reachi
 
 ---
 
+## AXI4-Stream Interface
+
+The core is wrapped by [rtl/fft_axi_top.v](rtl/fft_axi_top.v), exposing a standard AXI4-Stream slave (input samples) and master (output bins). This is the path used for Vivado synthesis, board bring-up, and the primary verification flow.
+
+### Port Map
+
+| Signal | Width | Direction | Description |
+|---|---:|:---:|---|
+| `clk`            | 1   | in  | System clock (100 MHz target) |
+| `rst`            | 1   | in  | Synchronous active-high reset |
+| `s_axis_tdata`   | 32  | in  | Input sample, packed `{re[15:0], im[15:0]}` (Q1.15) |
+| `s_axis_tvalid`  | 1   | in  | Input valid |
+| `s_axis_tlast`   | 1   | in  | Must pulse with the N-th (last) sample |
+| `s_axis_tready`  | 1   | out | High in IDLE and LOAD; low during COMPUTE/UNLOAD |
+| `m_axis_tdata`   | 32  | out | Output bin, packed `{re[15:0], im[15:0]}` |
+| `m_axis_tvalid`  | 1   | out | Output valid |
+| `m_axis_tlast`   | 1   | out | Pulses on the final (1024-th) output beat |
+| `m_axis_tready`  | 1   | in  | Downstream-ready handshake |
+| `m_axis_tuser`   | 8   | out | Signed BFP exponent, stable across all output beats |
+
+### Internal FSM
+
+```
+  IDLE ──(s_axis_tvalid)──► LOAD ──(s_axis_tlast)──► COMPUTE ──(fft_done)──► UNLOAD ─┐
+   ▲                                                                                 │
+   └─────────────────────────(m_axis_tlast)──────────────────────────────────────────┘
+```
+
+- **IDLE / LOAD** — accept N=1024 samples through S_AXIS into Bank 0 of the ping-pong RAM (preload port).
+- **COMPUTE** — assert `start_fft`; wait for `fft_done` pulse from the FFT core. BFP exponent is latched here.
+- **UNLOAD** — read N bins from the result bank in natural order and stream them out on M_AXIS, holding `tvalid` stable across the 1-cycle BRAM read latency.
+
+### Address Mapping — DIT Convention
+
+The FFT core is **DIT (Decimation-In-Time)**: it expects its time samples in **bit-reversed** addresses and writes the spectrum back in **natural** order. The AXI wrapper hides that detail from the user by performing the bit-reversal in the preload address generator:
+
+```verilog
+// rtl/fft_axi_top.v — preload address transform
+wire [LOG2_N-1:0] preload_addr = (state == ST_IDLE)
+                                  ? {LOG2_N{1'b0}}
+                                  : bit_reverse(load_cnt);
+```
+
+So the user simply streams `x[0], x[1], …, x[N−1]` through S_AXIS in natural time order. Sample `n` ends up in `BRAM[bit_reverse(n)]`, the DIT pipeline runs over it, and the spectrum lands in `BRAM[k] = FFT[k]`. The UNLOAD state then walks `readout_addr = 0, 1, …, N−1` to stream the spectrum out in natural bin order. No software-side permutation is required.
+
+### Twiddle Sign Convention
+
+The internal twiddle ROM uses the `+j` convention (`W_N^k = cos − j·sin` written into hardware with reversed imaginary sign). NumPy's `fft.fft` uses the `−j` convention, so for real-valued inputs **`hw[k] = conj(numpy[k])`**. This is harmless for any magnitude-based downstream consumer (peak detection, magnitude FFT) but matters if you compare complex bin values directly. The verification scripts handle this transparently by fitting `α` to both `ref` and `conj(ref)` and reporting whichever scores higher.
+
+### Verification Testbench
+
+[tb/fft_axi_tb_xc7.v](tb/fft_axi_tb_xc7.v) is the AXI-driven testbench used by every Python script and the [thesis report PNG](thesis_report.png):
+
+- Reads `stimulus_re.mem` / `stimulus_im.mem` (17-bit signed hex, **natural order**, no software-side bit-reversal needed).
+- Streams all N samples through S_AXIS with `tready` always asserted on the master side.
+- Captures every output beat from M_AXIS, **deduplicating** the 2-cycle hold the wrapper applies across the BRAM read bubble (a `sample_phase` toggle keeps the first of each pair).
+- Writes `hw_output.csv` (real, imag, one row per natural-order bin 0 → N−1) and `hw_exponent.txt` (signed BFP exponent from `m_axis_tuser`).
+- Times out at 5 ms simulated to guard against control hangs.
+
+---
+
 ## File Structure
 
 ```
@@ -388,24 +486,33 @@ Serial FFT processor/
 │   ├── BFP_shifter.v      — MUX barrel shifter, 1-cycle latency
 │   └── fft_axi_top.v      — AXI4-Stream wrapper for SoC integration
 ├── tb/
-│   ├── fft_tb.v           — Functional testbench: loads stimulus_re/im.mem
-│   └── fft_axi_tb.v       — AXI4-Stream interface testbench
+│   ├── fft_tb.v             — Bare-core functional testbench (loads stimulus_re/im.mem)
+│   ├── fft_axi_tb.v         — Self-checking AXI4-Stream testbench (hard-coded sine, K_BIN=7)
+│   └── fft_axi_tb_xc7.v     — File-driven AXI4-Stream testbench (used by all Python scripts)
 ├── rom/
 │   ├── cos.mem            — 128 cosine twiddle values (Q1.15 hex, canonical)
 │   └── sin.mem            — 128 sine twiddle values (Q1.15 hex, canonical)
 ├── constrs/
 │   └── fft_axi_top.xdc    — Xilinx constraint file (clock, I/O)
+├── synthesis/
+│   ├── synth_xc7.ys           — Yosys synth_xilinx script targeting xc7 family
+│   ├── synth.ys               — (legacy) Yosys synth_ice40 script
+│   ├── yosys_xc7.log          — Latest xc7 area report (parsed by thesis_report_xc7.py)
+│   ├── fft_top_xc7.json/.edif — Yosys netlist outputs (Vivado-importable EDIF)
+│   └── yosys.log              — Historical iCE40 synthesis log
 ├── scripts/
 │   ├── twiddle_generator.py    — Generates rom/cos.mem and rom/sin.mem
-│   ├── fft_verify_serial.py    — Compiles + simulates + computes SQNR, generates PNG
-│   ├── fft_all_cases.py        — Multi-stimulus batch verification
-│   ├── fft_debug.py            — Interactive waveform debugging helper
-│   ├── fft_input_test.py       — Stimulus generator for edge-case inputs
-│   └── thesis_report.py        — Full synthesis + P&R + SQNR + power report
-├── stimulus_re.mem        — Default testbench input (real part, Q1.15 hex)
-├── stimulus_im.mem        — Default testbench input (imaginary part, Q1.15 hex)
+│   ├── fft_verify_serial.py    — AXI-driven SQNR run + PNG report
+│   ├── fft_all_cases.py        — Multi-stimulus batch verification via AXI flow
+│   ├── fft_debug.py            — Output-CSV diagnostic helper
+│   ├── fft_input_test.py       — A/B test for input-order hypotheses
+│   ├── thesis_report.py        — iCE40-targeted comprehensive report (legacy)
+│   └── thesis_report_xc7.py    — Artix-7 comprehensive report (current)
+├── stimulus_re.mem        — Default testbench input (real part, 17-bit hex)
+├── stimulus_im.mem        — Default testbench input (imaginary part, 17-bit hex)
 ├── fft_all_cases.png      — Multi-test verification plot
-└── thesis_report.png      — Comprehensive synthesis + SQNR report figure
+├── thesis_report.png      — iCE40-target comprehensive report (legacy)
+└── thesis_report_xc7.png  — Artix-7 comprehensive synthesis + SQNR figure (current)
 ```
 
 ---
@@ -416,24 +523,8 @@ Serial FFT processor/
 
 - **Icarus Verilog** (`iverilog`, `vvp`) — simulation
 - **Python 3.8+** with `numpy`, `matplotlib` — scripts
-- **Yosys** (optional) — synthesis analysis
-- **nextpnr-ice40** (optional) — place & route
-
-### Simulate (Icarus Verilog)
-
-```bash
-# From the project root directory (Serial FFT processor/)
-# The testbench reads stimulus_re.mem / stimulus_im.mem from the working directory
-
-# Compile
-iverilog -gsystem-verilog -o fft_sim \
-    rtl/AGU.v rtl/BFP_scanner.v rtl/BFP_shifter.v rtl/RAM.v \
-    rtl/butterfly_unit.v rtl/complex_mult.v rtl/fft_top.v rtl/twiddle_rom.v \
-    tb/fft_tb.v -s fft_tb
-
-# Run (from project root so ROM files are found)
-vvp fft_sim
-```
+- **Yosys 0.56+** (optional) — open-source area analysis (`synth_xilinx`)
+- **Xilinx Vivado 2020.1+** (optional) — full P&R, Fmax, power, bitstream
 
 ### Generate Twiddle ROM
 
@@ -442,19 +533,40 @@ python scripts/twiddle_generator.py
 # Writes rom/cos.mem and rom/sin.mem
 ```
 
-### Full Verification & Report
+### Simulate via AXI-Stream Testbench (recommended)
+
+```bash
+# From the project root directory (Serial FFT processor/)
+iverilog -o fft_axi_sim tb/fft_axi_tb_xc7.v \
+    rtl/AGU.v rtl/BFP_scanner.v rtl/BFP_shifter.v rtl/RAM.v \
+    rtl/butterfly_unit.v rtl/complex_mult.v rtl/fft_top.v \
+    rtl/twiddle_rom.v rtl/fft_axi_top.v
+
+vvp fft_axi_sim
+# Reads stimulus_re/im.mem, writes hw_output.csv + hw_exponent.txt
+```
+
+### Full Verification & Reports
 
 ```bash
 python scripts/fft_verify_serial.py
-# Compiles, simulates, computes SQNR vs. NumPy reference, saves PNG
+# AXI sim + SQNR vs NumPy reference + verification PNG
 
-python scripts/thesis_report.py
-# Full synthesis + verification report → thesis_report.png
+python scripts/fft_all_cases.py
+# Five test cases (Impulse, DC, Sine, Multi-Tone, Chirp) → fft_all_cases.png
+
+python scripts/thesis_report_xc7.py
+# 12-panel Artix-7 thesis figure → thesis_report_xc7.png
 ```
 
-### Run All Test Cases
+### Open-Source Synthesis (Yosys)
 
 ```bash
-python scripts/fft_all_cases.py
-# Tests: Impulse, DC, Single-Tone, Multi-Tone, Chirp → fft_all_cases.png
+# From the project root directory, run the xc7 synthesis script:
+yosys -q -l synthesis/yosys_xc7.log synthesis/synth_xc7.ys
+# Produces synthesis/fft_top_xc7.json and .edif (Vivado-importable)
 ```
+
+### Full Vivado Flow
+
+The Vivado project lives at `../Serial_FFT_Vivado/Serial_FFT_Vivado.xpr`. Open in Vivado, run `Implementation` → `Generate Bitstream`. Top module is `fft_axi_top`, target part `xc7a100tcsg324-1`, clock constraint in [constrs/fft_axi_top.xdc](constrs/fft_axi_top.xdc).

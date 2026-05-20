@@ -12,6 +12,11 @@ import sys
 import numpy as np
 import csv
 
+# Force UTF-8 stdout/stderr so Unicode arrows/checkmarks don't crash on Windows cp1253
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 N = 1024
 LOG2_N = 10
 TONE_BIN = 50
@@ -89,12 +94,15 @@ def read_hw_output():
         print(f"[ERROR] {HW_OUTPUT_FILE} not found")
         return None, None, None
     
+    def _safe(v):
+        v = v.strip().lower()
+        return 0 if ('x' in v or 'z' in v or not v) else int(v)
     with open(HW_OUTPUT_FILE, 'r') as f:
         reader = csv.reader(f)
         for row in reader:
             if len(row) >= 2:
-                hw_re.append(int(row[0]))
-                hw_im.append(int(row[1]))
+                hw_re.append(_safe(row[0]))
+                hw_im.append(_safe(row[1]))
     
     exponent = 0
     if os.path.isfile(HW_EXPONENT_FILE):

@@ -1,0 +1,5 @@
+# Serial FFT - iCE40HX8K synthesis
+read_verilog "C:/Users/ntoum/Desktop/Claude project/Serial FFT processor/rtl/AGU.v" "C:/Users/ntoum/Desktop/Claude project/Serial FFT processor/rtl/BFP_scanner.v" "C:/Users/ntoum/Desktop/Claude project/Serial FFT processor/rtl/BFP_shifter.v" "C:/Users/ntoum/Desktop/Claude project/Serial FFT processor/rtl/RAM.v" "C:/Users/ntoum/Desktop/Claude project/Serial FFT processor/rtl/butterfly_unit.v" "C:/Users/ntoum/Desktop/Claude project/Serial FFT processor/rtl/complex_mult.v" "C:/Users/ntoum/Desktop/Claude project/Serial FFT processor/rtl/fft_top.v" "C:/Users/ntoum/Desktop/Claude project/Serial FFT processor/rtl/twiddle_rom.v"
+hierarchy -check -top fft_top
+synth_ice40 -top fft_top -json "C:/Users/ntoum/Desktop/Claude project/Serial FFT processor/synthesis/fft_top.json" -noflatten
+stat

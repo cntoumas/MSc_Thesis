@@ -1,6 +1,8 @@
 # Parallel MDF Radix-2 DIF FFT Processor
 
-**Target:** Lattice iCE40HX8K (synthesis analysis) · **N = 1024** · **P = 4 parallel paths** · **16-bit Q1.15 + Block Floating Point**
+**Target:** Xilinx Artix-7 `xc7a100tcsg324-1` (Vivado P&R) · **N = 1024** · **P = 4 parallel paths** · **16-bit Q1.15 + Block Floating Point**
+
+> Originally synthesised against the Lattice iCE40HX8K via the open-source flow (Yosys + nextpnr-ice40). The 32 complex multipliers and ~230 kbit of delay-line / twiddle / bit-reversal memory blew past the iCE40's 7,680 LCs and 128 kbits of BRAM. The design migrated to Artix-7 (`xc7a100tcsg324-1`), where the 32 complex multipliers map to **160 DSP48E1 slices** (4 per multiplier) and the delay lines map cleanly to distributed RAM. Vivado closes timing at 100 MHz with **+1.03 ns slack**.
 
 > A fully streaming Multi-path Delay Feedback (MDF) FFT core. Four complex samples enter and four complex samples exit every clock cycle. Hardware is structured as a cascade of 10 pipelined stages — 8 feedback stages followed by 2 no-feedback stages — with a ping-pong bit-reversal reorder buffer at the output.
 
@@ -414,56 +416,86 @@ W_k[n] = exp(-j × 2π × n / (2 × DEPTH × P)) × (2^15 - 1)
 
 ## Synthesis Results
 
-Synthesized with **Yosys 0.56** targeting iCE40HX8K (7,680 Logic Cells).
+Implemented end-to-end with **Vivado** targeting `xc7a100tcsg324-1` (Artix-7, Arty A7-100T-class part). Yosys 0.56 (`synth_xilinx`) is also supported for open-source area estimation.
 
-> **Note:** iCE40 has no distributed RAM. Delay lines synthesized as LUT/FF arrays inflate LUT count. With BRAM inference (standard for Xilinx/Intel), resource usage is dramatically lower.
+### Vivado Post-Route Utilization (xc7a100tcsg324-1)
 
-### Raw Yosys Output (iCE40, LUT-mapped delay lines)
+| Resource | Used | Available | Util % | Notes |
+|---|---:|---:|---:|---|
+| Slice LUTs       | **10,101** | 133,800 | 7.55 % | 7,686 as logic + 2,415 as memory |
+| LUT as Memory    |  2,415     |  46,200 | 5.23 % | 2,400 DistRAM (delay lines) + 15 SRL16 |
+| Slice Registers  | **5,722**  | 269,200 | 2.13 % | Pipeline + commuted-mult registers |
+| Slices occupied  |  4,555     |  33,450 |13.62 % | 2,589 SLICEL + 1,966 SLICEM |
+| F7 Muxes         |    130     |  66,900 | 0.19 % | |
+| Block RAM tiles  |  **0**     |     365 | 0.00 % | Delay lines use distributed RAM exclusively |
+| DSP48E1          | **160**    |     740 |21.62 % | 32 complex multipliers × 5 DSPs/Karatsuba-style block |
+| Bonded IOBs      |    267     |     400 |66.75 % | Wide AXI4-Stream (P=4 packed I/O) |
 
-| Resource | Count | Notes |
-|----------|-------|-------|
-| SB_LUT4 | 143,067 (1,863% of 7,680) | Dominated by 8 × 4 = 32 complex multipliers as LUT arithmetic + delay-line FFs |
-| SB_CARRY | 8,435 | Heavy carry-chain usage from pipelined multipliers and adder trees |
-| SB_DFF / SB_DFFE / SB_DFFESR | 33,401 total | Pipelined multiplier registers + delay-line storage |
-| SB_RAM40_4K | 16 (64 kbits) | All 32 twiddle hex ROMs stored in BRAM |
-| Total cells | 184,919 | |
-| **iCE40HX8K capacity** | **7,680 LCs** | Design requires ~19× more — does not fit |
+> The Parallel MDF uses **0 Block RAM** in this implementation — all 32 delay lines and the bit-reversal buffer are inferred as distributed RAM (LUT-as-Memory), which keeps the data path latency to 1 cycle. The 32 complex multipliers map to 160 DSP48E1 tiles (≈22 % of the device DSP budget).
 
-### Projected Utilization (with BRAM-mapped memories)
+### Yosys `synth_xilinx` Numbers (open-source flow)
 
-Yosys reports the full memory as 229,248 bits across delay lines, twiddle ROMs, and the bit-reversal buffer. Properly BRAM-mapped:
+For a quick area estimate without launching Vivado, [synthesis/synth_xc7.ys](synthesis/synth_xc7.ys) targets `xc7` family:
 
-| Resource | Value |
+| Resource | Count |
+|---|---:|
+| LUT1–LUT6 (sum) | 7,886 |
+| FDRE / FDSE     | 5,781 |
+| DSP48E1         | 96    |
+| RAMB36E1        | 4     |
+| CARRY4          | 2,490 |
+| Total cells     | 18,352 |
+
+(Yosys infers fewer DSPs than Vivado because its DSP packing is less aggressive for 16×16 complex multiplies.)
+
+### Timing — 100 MHz target
+
+| Metric | Value |
 |---|---|
-| Total memory bits | 229,248 bits |
-| Projected BRAM blocks | 56 (224 kbits) |
-| Projected control + arithmetic LUTs | ~34,000 |
+| Target clock period   | 10.000 ns (100 MHz, defined in [constraints/fft_axi_top.xdc](constraints/fft_axi_top.xdc)) |
+| Worst Negative Slack  | **+1.033 ns** (timing met) |
+| Worst Hold Slack      | +0.065 ns |
+| Worst Pulse-Width Slack | +3.870 ns |
+| Max achievable Fmax   | ~112 MHz (10 − 1.033 = 8.967 ns critical path) |
 
-Complex multiplier logic (32 total) would additionally map to **DSP48** slices on Xilinx/Intel FPGAs, freeing a significant portion of the ~34,000 projected LUTs.
+The commuted-architecture (see [The Commuted Architecture](#the-commuted-architecture-critical-timing-innovation)) is what enables 100 MHz closure. Without it, the feedback critical path through the complex multiplier would be ~22 ns and would not close at any reasonable frequency.
 
-### Power Estimate (projected, 100 MHz)
+### Power — post-route, default activity factors
 
-| Component | Power |
-|---|---|
-| Static | 1.4 mW |
-| LC dynamic (~34,000 projected LUTs) | 88.4 mW |
-| BRAM dynamic (56 blocks) | 16.8 mW |
-| IO dynamic | 5.3 mW |
-| **Total** | **111.9 mW** |
+| Source | Power |
+|---:|---:|
+| Static  | 0.133 W |
+| Dynamic | 0.685 W |
+| **Total on-chip** | **0.818 W** (~818 mW @ 100 MHz) |
 
-### Comparison: Serial vs. Parallel
+> Dynamic dominates because of the 160 DSP48E1 multipliers running every cycle in steady-state streaming mode. A SAIF-driven re-estimate (using `tb_fft_axi_power.v`) would refine the activity factors and likely reduce the figure.
+
+### Comparison: Serial vs. Parallel (Vivado, xc7a100t)
 
 | Resource | Serial FFT | Parallel MDF FFT | Ratio |
-|----------|-----------|------------------|-------|
-| LUT4 (raw) | 254,908 | 143,067 | 1.78× more in Serial |
-| Carry | 435 | 8,435 | 19× more in Parallel |
-| Flip-flops | 70,852 | 33,401 | 2.1× more in Serial |
-| BRAM blocks (raw) | 2 | 16 | 8× more in Parallel |
+|---|---:|---:|---:|
+| LUTs (total) | 2,374 | 10,101 | **4.3× more in Parallel** |
+| Flip-flops | 3,087 | 5,722 | 1.9× more in Parallel |
+| DSP48E1 | 4 | 160 | **40× more in Parallel** |
+| Block RAM tiles | 11 | 0 | — (different memory strategy) |
+| Slice count | 927 | 4,555 | 4.9× more in Parallel |
+| Total power | 0.179 W | 0.818 W | **4.6× more in Parallel** |
 | **Throughput** | **19.1 kFFT/s** | **390.6 kFFT/s** | **20× more in Parallel** |
 
-The **Serial FFT has more FFs and LUTs** because the ping-pong RAM (1024 × 17-bit × 2 banks = 34,816 bits) maps entirely to LUT/FF fabric on iCE40. The **Parallel MDF has more BRAM** because its twiddle ROMs are hex-initialized (synthesis always maps to BRAM) and the delay-line structure is regular enough for BRAM inference.
+The Parallel MDF trades ~5× more area and ~5× more power for **20× more throughput** — a favourable scaling, since per-FFT energy is actually lower in the Parallel design (~2.1 µJ vs. ~9.4 µJ per FFT).
 
-The Parallel MDF's higher carry count (8,435 vs 435) reflects the **32 pipelined complex multipliers** using carry-chain arithmetic, whereas the Serial FFT has only 1 complex multiplier.
+### Historical: iCE40HX8K Attempt
+
+For thesis context, the iCE40 numbers from the original open-source flow are kept in [synthesis/yosys.log](synthesis/yosys.log):
+
+| Resource | iCE40 (Yosys + nextpnr-ice40) | xc7a100t (Vivado) |
+|---|---:|---:|
+| LUTs        | 143,067 (1,863 % — overflow) | 10,101 (7.55 %) |
+| Flip-flops  |  33,401                      | 5,722 (2.13 %) |
+| BRAM        | 16 × SB_RAM40_4K (twiddles)   | 0 (distributed RAM) |
+| DSP         | n/a (no hard multipliers)     | 160 × DSP48E1   |
+
+The iCE40HX8K simply does not have enough resources to host a 1024-pt parallel MDF FFT at any meaningful precision — no DSP blocks, only 128 kbits BRAM total, and the design's 32 complex multipliers would consume the entire LC budget twice over.
 
 ---
 
@@ -637,8 +669,8 @@ Parallel MDF FFT/
 
 - **Icarus Verilog** (`iverilog`, `vvp`) — simulation
 - **Python 3.8+** with `numpy`, `matplotlib` — scripts
-- **Yosys** (optional) — synthesis analysis
-- **nextpnr-ice40** (optional) — place & route
+- **Yosys 0.56+** (optional) — open-source area analysis (`synth_xilinx`)
+- **Xilinx Vivado 2020.1+** (optional) — full P&R, Fmax, power, bitstream
 
 ### Generate Twiddle ROM Files
 
@@ -669,6 +701,31 @@ vvp fft_sim
 # Compile, simulate, parse output, compute SQNR vs. NumPy, generate PNG
 python scripts/fft_verify.py
 
-# Full synthesis + P&R + SQNR + power report → thesis_report.png
+# Comprehensive Artix-7 thesis report → thesis_report.png
 python scripts/thesis_report.py
 ```
+
+### AXI4-Stream Verification
+
+The Parallel MDF also exposes an AXI4-Stream interface via [rtl/fft_axi_top.v](rtl/fft_axi_top.v). The self-checking [tb/tb_fft_axi.v](tb/tb_fft_axi.v) drives two back-to-back impulse blocks and validates every output bin within ±4 LSB of the expected impulse magnitude:
+
+```bash
+iverilog -gsystem-verilog -o fft_axi_sim tb/tb_fft_axi.v \
+    rtl/bit_reverse.v rtl/block_scaler.v rtl/butterfly_r2.v \
+    rtl/complex_mult.v rtl/delay_line.v rtl/fft_axi_top.v \
+    rtl/fft_stage_fb.v rtl/fft_stage_nf.v rtl/fft_top.v \
+    rtl/overflow_detect.v rtl/twiddle_rom.v
+vvp fft_axi_sim
+# Expected: "PASS: all 1024 bins within +/-4 LSB of expected impulse magnitude"
+```
+
+### Open-Source Synthesis (Yosys)
+
+```bash
+yosys -q -l synthesis/yosys_xc7.log synthesis/synth_xc7.ys
+# Produces synthesis/fft_top_xc7.json and .edif (Vivado-importable)
+```
+
+### Full Vivado Flow
+
+The Vivado project lives at `../MDF FFT/MDF FFT.xpr`. Open in Vivado, run `Implementation` → `Generate Bitstream`. Top module is `fft_axi_top`, target part `xc7a100tcsg324-1`, clock constraint in [constraints/fft_axi_top.xdc](constraints/fft_axi_top.xdc).

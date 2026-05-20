@@ -113,8 +113,14 @@ def bit_reverse(x, bits):
         x >>= 1
     return r
 
+SIM_BIN = "fft_axi_sim"  # AXI-driven testbench, streams all 1024 bins via M_AXIS
+
 def setup_sim():
-    """Copy ROM files and compile Verilog once (reused for all runs)."""
+    """Copy ROM files and compile Verilog once (reused for all runs).
+
+    Uses tb/fft_axi_tb_xc7.v (drives fft_axi_top via AXI-Stream) — this writes
+    all N output bins to hw_output.csv with no bank0-only stripe limitation.
+    """
     for name in ("cos.mem", "sin.mem"):
         src = os.path.join(ROM_DIR, name)
         dst = os.path.join(PROJ_DIR, name)
@@ -122,8 +128,8 @@ def setup_sim():
             shutil.copy(src, dst)
 
     rtl_files = sorted(f for f in os.listdir(os.path.join(PROJ_DIR, "rtl")) if f.endswith('.v'))
-    vfiles = [os.path.join("tb", "fft_tb.v")] + [os.path.join("rtl", f) for f in rtl_files]
-    cmd = ["iverilog", "-o", "fft_sim"] + vfiles
+    vfiles = [os.path.join("tb", "fft_axi_tb_xc7.v")] + [os.path.join("rtl", f) for f in rtl_files]
+    cmd = ["iverilog", "-o", SIM_BIN] + vfiles
     print(f"  Compiling: {' '.join(cmd)}")
     r = subprocess.run(cmd, cwd=PROJ_DIR, capture_output=True, text=True)
     if r.returncode != 0:
@@ -137,15 +143,13 @@ def run_sim(re_data, im_data, label):
     print(f"  Case: {label}")
     print(f"{'='*60}")
 
-    # The hardware (Pease/rotate-left DIT AGU) requires bit-reversed input
-    # to produce natural-order output — no output reordering needed.
-    br_re = bit_reverse_permutation(re_data.astype(np.int32), LOG2_N)
-    br_im = bit_reverse_permutation(im_data.astype(np.int32), LOG2_N)
-    write_mem(MEM_RE, br_re)
-    write_mem(MEM_IM, br_im)
+    # fft_axi_top accepts natural-order time samples via S_AXIS and outputs
+    # natural-order bins via M_AXIS, so no bit-reversal is needed on input.
+    write_mem(MEM_RE, re_data.astype(np.int32))
+    write_mem(MEM_IM, im_data.astype(np.int32))
 
     t0 = time.time()
-    r  = subprocess.run(["vvp", "fft_sim"], cwd=PROJ_DIR,
+    r  = subprocess.run(["vvp", SIM_BIN], cwd=PROJ_DIR,
                         capture_output=True, text=True, timeout=300)
     elapsed = time.time() - t0
 
@@ -159,7 +163,12 @@ def run_sim(re_data, im_data, label):
             print("   ", s)
     print(f"  Simulation: {elapsed:.1f}s")
 
-    # Read output
+    # Read output. The current fft_tb.v writes only bank0 of the ping-pong
+    # RAM; bins striped to bank1 emit X. Treat X/Z/empty as 0 so this script
+    # produces a usable plot instead of crashing on int('x').
+    def _safe(v):
+        v = v.strip().lower()
+        return 0 if ('x' in v or 'z' in v or not v) else int(v)
     hw_re, hw_im = [], []
     with open(HW_CSV) as f:
         for line in f:
@@ -167,8 +176,8 @@ def run_sim(re_data, im_data, label):
             if not line:
                 continue
             a, b = line.split(',')
-            hw_re.append(int(a))
-            hw_im.append(int(b))
+            hw_re.append(_safe(a))
+            hw_im.append(_safe(b))
 
     exponent = 0
     if os.path.exists(HW_EXP):

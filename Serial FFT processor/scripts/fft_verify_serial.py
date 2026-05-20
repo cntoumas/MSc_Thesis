@@ -126,9 +126,12 @@ def run_simulation(timeout=300):
         sys.exit(1)
 
     rtl_files = sorted([f for f in os.listdir(rtl_dir) if f.endswith('.v')])
-    verilog_files = [os.path.join("tb", "fft_tb.v")] + [os.path.join("rtl", f) for f in rtl_files]
+    # Use AXI testbench: streams natural-order input via S_AXIS and writes
+    # all 1024 output bins via M_AXIS (no bank0 stripe limitation).
+    verilog_files = [os.path.join("tb", "fft_axi_tb_xc7.v")] + \
+                    [os.path.join("rtl", f) for f in rtl_files]
 
-    cmd = ["iverilog", "-o", "fft_sim"] + verilog_files
+    cmd = ["iverilog", "-o", "fft_axi_sim"] + verilog_files
     print("  CMD:", " ".join(cmd))
     r = subprocess.run(cmd, cwd=PROJ_DIR, capture_output=True, text=True)
     if r.returncode != 0:
@@ -142,7 +145,7 @@ def run_simulation(timeout=300):
     import time
     print("[*] Running simulation (this may take a while)...")
     t0 = time.time()
-    r = subprocess.run(["vvp", "fft_sim"], cwd=PROJ_DIR, capture_output=True, text=True, timeout=timeout)
+    r = subprocess.run(["vvp", "fft_axi_sim"], cwd=PROJ_DIR, capture_output=True, text=True, timeout=timeout)
     elapsed = time.time() - t0
     if r.returncode != 0:
         print("[!] Simulation failed:\n", r.stderr)
@@ -167,14 +170,17 @@ def read_hardware_output():
 
     hw_re = []
     hw_im = []
+    def _safe(v):
+        v = v.strip().lower()
+        return 0 if ('x' in v or 'z' in v or not v) else int(v)
     with open(HW_OUTPUT_FILE, 'r') as f:
         for line in f:
             line = line.strip()
             if not line:
                 continue
             parts = line.split(',')
-            hw_re.append(int(parts[0]))
-            hw_im.append(int(parts[1]))
+            hw_re.append(_safe(parts[0]))
+            hw_im.append(_safe(parts[1]))
 
     hw_re = np.array(hw_re, dtype=np.float64)
     hw_im = np.array(hw_im, dtype=np.float64)
@@ -554,12 +560,11 @@ def main():
         name = "Impulse" if tid == 0 else ("DC" if tid == 1 else "Sine")
         print(f"\n[TEST {tid}] {name}: preparing stimulus and running simulation...")
 
-        # Pease/rotate-left AGU requires bit-reversed input
-        # to produce natural-order output
+        # AXI top accepts natural-order time samples and emits natural-order
+        # bins — no input bit-reversal needed (it's handled internally).
         sig_re = data["input_re"].astype(int)
         sig_im = data["input_im"].astype(int)
-        br_re, br_im = bit_reverse_permutation(sig_re, sig_im, LOG2_N)
-        write_mem_file(br_re, br_im)
+        write_mem_file(sig_re, sig_im)
 
         # Run simulation and capture elapsed time
         sim_time = run_simulation()

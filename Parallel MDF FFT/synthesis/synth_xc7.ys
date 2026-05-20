@@ -1,0 +1,16 @@
+# Parallel MDF FFT - Artix-7 (xc7) synthesis via Yosys
+read_verilog "C:/Users/ntoum/Desktop/Thesis repo/Parallel MDF FFT/synthesis/synth_rtl/bit_reverse.v" \
+             "C:/Users/ntoum/Desktop/Thesis repo/Parallel MDF FFT/synthesis/synth_rtl/block_scaler.v" \
+             "C:/Users/ntoum/Desktop/Thesis repo/Parallel MDF FFT/synthesis/synth_rtl/butterfly_r2.v" \
+             "C:/Users/ntoum/Desktop/Thesis repo/Parallel MDF FFT/synthesis/synth_rtl/complex_mult.v" \
+             "C:/Users/ntoum/Desktop/Thesis repo/Parallel MDF FFT/synthesis/synth_rtl/delay_line.v" \
+             "C:/Users/ntoum/Desktop/Thesis repo/Parallel MDF FFT/synthesis/synth_rtl/fft_stage_fb.v" \
+             "C:/Users/ntoum/Desktop/Thesis repo/Parallel MDF FFT/synthesis/synth_rtl/fft_stage_nf.v" \
+             "C:/Users/ntoum/Desktop/Thesis repo/Parallel MDF FFT/synthesis/synth_rtl/fft_top.v" \
+             "C:/Users/ntoum/Desktop/Thesis repo/Parallel MDF FFT/synthesis/synth_rtl/overflow_detect.v" \
+             "C:/Users/ntoum/Desktop/Thesis repo/Parallel MDF FFT/synthesis/synth_rtl/twiddle_rom.v"
+hierarchy -check -top fft_top
+synth_xilinx -family xc7 -top fft_top -flatten
+write_json "C:/Users/ntoum/Desktop/Thesis repo/Parallel MDF FFT/synthesis/fft_top_xc7.json"
+write_edif "C:/Users/ntoum/Desktop/Thesis repo/Parallel MDF FFT/synthesis/fft_top_xc7.edif"
+stat -tech xilinx

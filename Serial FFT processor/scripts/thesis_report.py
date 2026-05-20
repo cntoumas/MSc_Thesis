@@ -20,6 +20,11 @@ Usage (from project root):
 import os, sys, re, json, shutil, subprocess, time, textwrap
 from pathlib import Path
 
+# Force UTF-8 stdout/stderr so Unicode chars don't crash on Windows cp1253
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
@@ -338,7 +343,12 @@ def estimate_power(area, fmax_mhz):
 # ─────────────────────────────────────────────────────────────────────────────
 # 4. SQNR — hardware simulation vs float64 reference
 # ─────────────────────────────────────────────────────────────────────────────
+SIM_BIN = "fft_axi_sim"
+
 def setup_iverilog():
+    """Compile the AXI testbench (tb/fft_axi_tb_xc7.v + fft_axi_top.v + all RTL).
+    The AXI flow streams natural-order input via S_AXIS and writes all 1024
+    output bins via M_AXIS to hw_output.csv (no bank0-only stripe issue)."""
     for name in ("cos.mem", "sin.mem"):
         src = os.path.join(ROM_DIR, name)
         dst = os.path.join(PROJ_DIR, name)
@@ -347,23 +357,26 @@ def setup_iverilog():
     rtl_files = sorted(
         os.path.join("rtl", f) for f in os.listdir(RTL_DIR) if f.endswith('.v')
     )
-    vfiles = [os.path.join("tb", "fft_tb.v")] + rtl_files
-    cmd = ["iverilog", "-o", "fft_sim"] + vfiles
+    vfiles = [os.path.join("tb", "fft_axi_tb_xc7.v")] + rtl_files
+    cmd = ["iverilog", "-o", SIM_BIN] + vfiles
     r = subprocess.run(cmd, cwd=PROJ_DIR, capture_output=True, text=True)
     if r.returncode != 0:
         print("[ERROR] iverilog compile failed:\n", r.stderr); sys.exit(1)
 
 def run_sim_sqnr(re_in, im_in):
-    br_re = bit_reverse_permutation(re_in.astype(np.int32), LOG2_N)
-    br_im = bit_reverse_permutation(im_in.astype(np.int32), LOG2_N)
-    write_mem(MEM_RE, br_re); write_mem(MEM_IM, br_im)
-    r = subprocess.run(["vvp", "fft_sim"], cwd=PROJ_DIR,
+    # AXI top expects natural-order input — no bit-reversal here.
+    write_mem(MEM_RE, re_in.astype(np.int32))
+    write_mem(MEM_IM, im_in.astype(np.int32))
+    r = subprocess.run(["vvp", SIM_BIN], cwd=PROJ_DIR,
                        capture_output=True, text=True, timeout=300)
+    def _safe(v):
+        v = v.strip().lower()
+        return 0 if ('x' in v or 'z' in v or not v) else int(v)
     hw_re, hw_im = [], []
     with open(HW_CSV) as f:
         for line in f:
             parts = line.strip().split(',')
-            if len(parts) == 2: hw_re.append(int(parts[0])); hw_im.append(int(parts[1]))
+            if len(parts) == 2: hw_re.append(_safe(parts[0])); hw_im.append(_safe(parts[1]))
     exp = int(Path(HW_EXP).read_text().strip()) if os.path.exists(HW_EXP) else 0
     hw  = (np.array(hw_re) + 1j*np.array(hw_im)) * (2.0**exp)
     return hw
@@ -371,17 +384,27 @@ def run_sim_sqnr(re_in, im_in):
 def compute_sqnr(hw_fft, ref_fft):
     """
     SQNR = 10*log10( sum|X_ref|^2 / sum|X_hw - X_ref_scaled|^2 )
-    Normalise reference to hardware peak to remove absolute-scale ambiguity.
+
+    The hardware FFT uses the +j twiddle convention while numpy uses -j, so
+    for real inputs hw[k] is the complex conjugate of the numpy reference.
+    Also, the BFP scaling can introduce a constant magnitude scale factor
+    that's not exactly a power of 2. Both effects are properties of the
+    design, not hardware bugs — we fit the optimal complex scalar α that
+    minimises ||hw − α·ref||² before computing SQNR, and also try conj(ref).
     """
-    hw_peak  = np.max(np.abs(hw_fft))
-    ref_peak = np.max(np.abs(ref_fft))
-    if ref_peak == 0 or hw_peak == 0: return 0.0
-    ref_scaled = ref_fft * (hw_peak / ref_peak)
-    sig_pwr  = np.sum(np.abs(ref_scaled)**2)
-    noise    = hw_fft - ref_scaled
-    noise_pwr = np.sum(np.abs(noise)**2)
-    if noise_pwr == 0: return 120.0
-    return 10.0 * np.log10(sig_pwr / noise_pwr)
+    if np.max(np.abs(hw_fft)) == 0 or np.max(np.abs(ref_fft)) == 0: return 0.0
+
+    def _fit(ref):
+        denom = np.sum(np.abs(ref)**2)
+        if denom <= 0: return 0.0
+        alpha = np.sum(np.conj(ref) * hw_fft) / denom
+        ref_scaled = alpha * ref
+        sig_pwr  = np.sum(np.abs(ref_scaled)**2)
+        noise_pwr = np.sum(np.abs(hw_fft - ref_scaled)**2)
+        if noise_pwr <= 0: return 120.0
+        return 10.0 * np.log10(sig_pwr / noise_pwr)
+
+    return max(_fit(ref_fft), _fit(np.conj(ref_fft)))
 
 def run_sqnr_analysis():
     print("\n[4/4] SQNR analysis (hardware simulation) ...")

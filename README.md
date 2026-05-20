@@ -1,7 +1,9 @@
 # MSc Thesis — FPGA FFT Processor Architectures
 
 **Author:** Christos Ntoumas · MSc in Electronic & Computer Engineering  
-**Target Device:** Lattice iCE40HX8K · **Algorithm:** 1024-point Radix-2 FFT · **Fixed-Point:** 16-bit Q1.15
+**Target Device:** Xilinx Artix-7 `xc7a100tcsg324-1` (Vivado P&R, 100 MHz timing met) · **Algorithm:** 1024-point Radix-2 FFT · **Fixed-Point:** 16-bit Q1.15
+
+> The project was originally synthesised against the **Lattice iCE40HX8K** through the open-source Yosys + nextpnr-ice40 flow. Both designs proved infeasible on that part — the iCE40HX8K's 7,680 LCs, lack of DSP blocks, and absence of distributed RAM cannot host a 1024-pt FFT with reasonable precision. Both designs now target the **Xilinx Artix-7 `xc7a100tcsg324-1`** (Arty A7-100T-class), where ping-pong RAMs map to BRAM, complex multipliers map to DSP48E1 slices, and Vivado closes 100 MHz timing with positive slack on both designs. Yosys `synth_xilinx` is still used for open-source area sanity checks (see [synthesis/](Serial%20FFT%20processor/synthesis/) in each design folder).
 
 ---
 
@@ -19,13 +21,17 @@ Two architectures are compared head-to-head:
 |---|---|---|
 | **Architecture** | Time-multiplexed, single BFU | Multi-path Delay Feedback (MDF), P=4 |
 | **Parallelism** | 1 butterfly/cycle | 4 complex samples/cycle |
-| **Throughput** | ~19.1 kFFT/s | ~390.6 kFFT/s |
-| **Latency** | ~52.3 μs | ~5.12 μs |
-| **LUT4 (raw)** | 254,908 | 143,067 |
-| **BRAM blocks** | 2 | 16 |
+| **Throughput** | 19.1 kFFT/s | 390.6 kFFT/s |
+| **Latency** | 52.3 μs | 5.12 μs |
+| **LUTs (Vivado, post-route)** | 2,374 (1.77 %) | 10,101 (7.55 %) |
+| **DSP48E1** | 4 (0.54 %) | 160 (21.62 %) |
+| **Block RAM tiles** | 11 (3.01 %) | 0 (distributed RAM) |
+| **Timing slack @ 100 MHz** | +3.18 ns (Fmax ~146 MHz) | +1.03 ns (Fmax ~112 MHz) |
+| **Total power (post-route)** | 0.179 W | 0.818 W |
 | **Scaling** | Adaptive BFP (per-stage CLZ) | Fixed block exponent (÷2¹⁰) |
-| **SQNR — Sine** | ~76 dB | 73.48 dB |
-| **SQNR — Chirp** | ~36 dB | 34.95 dB |
+| **SQNR — Sine** | 72.4 dB | 73.5 dB |
+| **SQNR — Chirp** | 65.9 dB | 35.0 dB |
+| **AXI4-Stream** | `fft_axi_top.v` + `fft_axi_tb_xc7.v` | `fft_axi_top.v` + `tb_fft_axi.v` |
 
 ---
 
@@ -87,46 +93,78 @@ Each architecture folder contains a detailed README with architecture block diag
 
 ## Simulation & Verification
 
-Both designs are verified against a 64-bit floating-point NumPy FFT reference using Icarus Verilog. Five standard test signals are used: impulse, DC, single-tone sine, multi-tone, and linear chirp.
+Both designs are verified against a 64-bit floating-point NumPy FFT reference using Icarus Verilog. Five standard test signals are used: impulse, DC, single-tone sine, multi-tone, and linear chirp. Both architectures run their verification through their AXI4-Stream wrappers so the same flow that's used for the Vivado bitstream is exercised end-to-end.
 
 ```bash
-# Parallel MDF FFT — generate ROMs, compile, simulate, report
+# Parallel MDF FFT — generate ROMs, simulate, generate report
 cd "Parallel MDF FFT"
 python scripts/gen_twiddle.py        # generate rom/tw_*.hex
-python scripts/fft_verify.py         # simulate + SQNR report
+python scripts/fft_verify.py         # simulate + SQNR + PNG report
+python scripts/thesis_report.py      # comprehensive Artix-7 thesis figure
 
-# Serial FFT Processor — generate ROMs, compile, simulate, report
+# Serial FFT Processor — generate ROMs, simulate, generate report
 cd "Serial FFT processor"
 python scripts/twiddle_generator.py  # generate rom/cos.mem + sin.mem
-python scripts/fft_verify_serial.py  # simulate + SQNR report
+python scripts/fft_verify_serial.py  # AXI sim + SQNR + PNG report
+python scripts/thesis_report_xc7.py  # comprehensive Artix-7 thesis figure
 ```
 
-**Requirements:** Icarus Verilog, Python 3.8+, numpy, matplotlib
+**Requirements:** Icarus Verilog, Python 3.8+, numpy, matplotlib. For full synthesis: Xilinx Vivado (post-route utilization, Fmax, power); Yosys 0.56+ (`synth_xilinx`) for open-source area sanity checks.
 
 ---
 
 ## Key Results
 
-### Synthesis (Yosys, iCE40HX8K target)
+### Vivado Post-Route Utilization (xc7a100tcsg324-1)
 
-Both designs exceed the iCE40HX8K's 7,680 logic cells when memories are synthesised as LUT-FF arrays (iCE40 has no distributed RAM primitive). The numbers below reflect the raw Yosys output; with proper BRAM inference on a Xilinx Artix-7 or similar device, the projected LUT count drops to ~1,500–2,000 (Serial) and ~34,000 (Parallel).
+| Resource | Serial FFT | Parallel MDF FFT |
+|---|---:|---:|
+| Slice LUTs           | 2,374 (1.77 %) | 10,101 (7.55 %) |
+| Slice Registers      | 3,087 (1.15 %) |  5,722 (2.13 %) |
+| DSP48E1              |   4 (0.54 %)   |    160 (21.62 %) |
+| Block RAM tiles      |  11 (3.01 %)   |      0 (distributed RAM) |
+| Bonded IOBs          |  80 (20.00 %)  |    267 (66.75 %) |
+| **Total on-chip power** | **0.179 W** | **0.818 W** |
+| **Worst slack @ 100 MHz** | **+3.18 ns** | **+1.03 ns** |
+
+Both designs comfortably fit a single Arty A7-100T board with room to spare — the Serial FFT uses under 2 % of the device, and even the more demanding Parallel MDF uses under a quarter of the DSP budget.
+
+### Yosys `synth_xilinx` Area (open-source flow)
+
+For a quick area estimate without Vivado, `yosys synthesis/synth_xc7.ys` produces:
 
 | Metric | Serial FFT | Parallel MDF FFT |
-|--------|-----------|-----------------|
-| LUT4 (raw) | 254,908 | 143,067 |
-| Flip-flops | 70,852 | 33,401 |
-| Carry chains | 435 | 8,435 |
-| BRAM blocks | 2 | 16 |
-| Proj. BRAM (with inference) | ~13 blocks | ~56 blocks |
+|---|---:|---:|
+| LUT1–6 (sum) | 857 | 7,886 |
+| FDRE / FDSE | 665 | 5,781 |
+| DSP48E1 | 3 | 96 |
+| RAMB18E1 / RAMB36E1 | 4 / 0 | 0 / 4 |
+| Total cells | 1,952 | 18,352 |
 
-### Signal Quality (hardware simulation)
+(Yosys's DSP and RAM packing differs from Vivado's, so the numbers are not directly comparable to the post-route utilization — but they give a fast first-pass estimate when Vivado isn't available.)
+
+### Signal Quality (hardware simulation, AXI flow)
 
 | Signal Type | Serial FFT SQNR | Parallel MDF SQNR |
-|---|---|---|
-| Impulse | ~66 dB | 120.00 dB |
-| DC | ~50 dB | 120.00 dB |
-| Single-Tone Sine | ~76 dB | 73.48 dB |
-| Multi-Tone | ~42 dB | 68.22 dB |
-| Chirp | ~36 dB | 34.95 dB |
+|---|---:|---:|
+| Impulse | 120.00 dB | 120.00 dB |
+| DC | 75.59 dB | 120.00 dB |
+| Single-Tone Sine | 72.41 dB | 73.48 dB |
+| Multi-Tone | 59.75 dB | 68.22 dB |
+| Chirp | 65.88 dB | 34.95 dB |
 
-The Parallel MDF's fixed block exponent delivers near-perfect SQNR for concentrated-energy signals (impulse, DC) while the Serial FFT's adaptive BFP provides more consistent quality across diverse input types.
+The Parallel MDF's fixed block exponent (÷2¹⁰) delivers near-perfect SQNR for concentrated-energy signals (impulse, DC) but degrades on the broadband chirp. The Serial FFT's adaptive BFP scaling gives more consistent SQNR across signal types — note in particular the Chirp result, where adaptive scaling holds the noise floor 30 dB lower than the fixed-exponent design.
+
+### Throughput / Energy
+
+| Metric | Serial FFT | Parallel MDF FFT |
+|---|---:|---:|
+| Throughput | 19.1 kFFT/s | 390.6 kFFT/s |
+| Energy per FFT | ~9.4 µJ | ~2.1 µJ |
+| Area-throughput product | high | low (5× area / 20× throughput → favours Parallel) |
+
+The Parallel MDF is more energy-efficient *per FFT*, despite using ~4.6× more total power, because it computes 20× as many FFTs in the same time.
+
+### AXI4-Stream Wrappers
+
+Both designs ship with an AXI4-Stream wrapper ([Serial](Serial%20FFT%20processor/rtl/fft_axi_top.v), [Parallel](Parallel%20MDF%20FFT/rtl/fft_axi_top.v)) that exposes the FFT core as a drop-in SoC IP block. The Serial wrapper additionally handles DIT input bit-reversal in hardware so the user never sees the order transform. See each architecture's README for the full port map and FSM.

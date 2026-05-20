@@ -24,6 +24,10 @@ sim_log.txt
 sim_full_log.txt
 fft_output.csv
 
+# But keep synthesis logs — referenced by thesis_report_xc7.py and useful for review
+!synthesis/yosys.log
+!synthesis/yosys_xc7.log
+
 # IDE and editor
 .vscode/
 .claude/

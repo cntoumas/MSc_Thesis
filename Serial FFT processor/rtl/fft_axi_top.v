@@ -109,8 +109,17 @@ module fft_axi_top #(
   // preload_en and preload_addr are now COMBINATIONAL (driven by the AXI handshake).
   // This guarantees they fire on the SAME cycle as s_axis_tdata is valid, fixing
   // the off-by-one that would otherwise write each sample to the previous address.
+  //
+  // The Serial FFT core is DIT (Decimation-In-Time): it expects its samples in
+  // BIT-REVERSED order at the BRAM and emits the spectrum in NATURAL order.
+  // So sample n (n = 0, 1, ..., N-1, in the order they arrive on S_AXIS) must
+  // be written to BRAM address bit_reverse(n). The bare-core flow does this in
+  // software (Python's bit_reverse_permutation before $readmemh); the AXI flow
+  // does it here in hardware via the address transform below.
   wire                       preload_en   = s_axis_tvalid & s_axis_tready;
-  wire [LOG2_N-1:0]          preload_addr = (state == ST_IDLE) ? {LOG2_N{1'b0}} : load_cnt;
+  wire [LOG2_N-1:0]          preload_addr = (state == ST_IDLE)
+                                              ? {LOG2_N{1'b0}}
+                                              : bit_reverse(load_cnt);
 
   //! Sign-extend the 16-bit S_AXIS real field to 17 bits for the RAM preload port.
   wire signed [DATA_WIDTH:0] preload_re =
@@ -270,8 +279,10 @@ module fft_axi_top #(
 
             // Issue the first BRAM read address now so that data is
             // available 1 cycle later (BRAM read latency = 1 cycle).
+            // DIT outputs the FFT spectrum in natural order in BRAM, so we
+            // simply walk addresses 0..N-1 sequentially — no bit_reverse here.
             readout_en       <= 1'b1;
-            readout_addr     <= bit_reverse(0);
+            readout_addr     <= {LOG2_N{1'b0}};
 
             state <= ST_UNLOAD;
           end
@@ -314,9 +325,11 @@ module fft_axi_top #(
             end
             else begin
               // Advance counter and pre-fetch the next bin's BRAM address.
+              // FFT result is already in natural order in BRAM (DIT core),
+              // so the readout walks 0, 1, 2, ..., N-1 without bit_reverse.
               unload_cnt   <= unload_cnt + 1'b1;
               readout_en   <= 1'b1;
-              readout_addr <= bit_reverse(unload_cnt + 1'b1);
+              readout_addr <= unload_cnt + 1'b1;
             end
           end
           else if (m_axis_tvalid && !m_axis_tready) begin

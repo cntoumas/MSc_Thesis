@@ -11,6 +11,11 @@ import subprocess
 import shutil
 from pathlib import Path
 
+# Force UTF-8 stdout/stderr so Unicode arrows/checkmarks don't crash on Windows cp1253
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 N = 1024
 LOG2_N = 10
 TONE_BIN = 50
@@ -75,21 +80,24 @@ def copy_rom_files():
     print(f"  [+] Copied ROM files to project root")
 
 
+SIM_BIN = "fft_axi_sim"
+
 def run_simulation():
-    """Compile and run the testbench."""
-    cmd = ["iverilog", "-o", "fft_sim",
-           "tb/fft_tb.v", "rtl/AGU.v", "rtl/BFP_scanner.v",
+    """Compile and run the AXI-driven testbench (streams all 1024 bins)."""
+    cmd = ["iverilog", "-o", SIM_BIN,
+           "tb/fft_axi_tb_xc7.v", "rtl/AGU.v", "rtl/BFP_scanner.v",
            "rtl/BFP_shifter.v", "rtl/RAM.v", "rtl/butterfly_unit.v",
-           "rtl/complex_mult.v", "rtl/fft_top.v", "rtl/twiddle_rom.v"]
-    
-    print(f"  [+] Compiling...")
+           "rtl/complex_mult.v", "rtl/fft_top.v", "rtl/twiddle_rom.v",
+           "rtl/fft_axi_top.v"]
+
+    print(f"  [+] Compiling (AXI testbench)...")
     r = subprocess.run(cmd, cwd=PROJ_DIR, capture_output=True, text=True)
     if r.returncode != 0:
         print(f"  [ERROR] Compilation failed:\n{r.stderr}")
         return False
-    
+
     print(f"  [+] Running simulation...")
-    r = subprocess.run(["vvp", "fft_sim"], cwd=PROJ_DIR, capture_output=True, text=True, timeout=60)
+    r = subprocess.run(["vvp", SIM_BIN], cwd=PROJ_DIR, capture_output=True, text=True, timeout=120)
     if r.returncode != 0:
         print(f"  [ERROR] Simulation failed:\n{r.stderr}")
         return False
@@ -111,12 +119,15 @@ def read_hw_output():
         print(f"[ERROR] {HW_OUTPUT_FILE} not found")
         return None, None, None
     
+    def _safe(v):
+        v = v.strip().lower()
+        return 0 if ('x' in v or 'z' in v or not v) else int(v)
     with open(HW_OUTPUT_FILE, 'r') as f:
         reader = csv.reader(f)
         for row in reader:
             if len(row) >= 2:
-                hw_re.append(int(row[0]))
-                hw_im.append(int(row[1]))
+                hw_re.append(_safe(row[0]))
+                hw_im.append(_safe(row[1]))
     
     exponent = 0
     if os.path.isfile(HW_EXPONENT_FILE):

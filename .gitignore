@@ -16,7 +16,11 @@ ip_repo/
 **/.gateflow/
 
 # ─── Synthesis artifacts ──────────────────────────────────────────────────────
-**/synthesis/
+# Track .ys scripts and .log reports (small text), skip large netlists
+**/synthesis/*.json
+**/synthesis/*.edif
+**/synthesis/synth_rtl/
+**/synthesis/pnr.log
 
 # ─── Simulation outputs ───────────────────────────────────────────────────────
 **/*.csv
@@ -27,6 +31,9 @@ ip_repo/
 **/fft_axi_sim
 **/sim_axi
 **/fft_*_sim
+**/fft_*_sim_*
+**/fft_sim_*
+**/fft_axi_sim_*
 **/*.vvp
 **/hw_exponent.txt
 **/hw_output.csv

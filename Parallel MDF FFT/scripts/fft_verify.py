@@ -7,6 +7,11 @@ computes metrics (SQNR, throughput, errors), generates CSV + PNG report.
 import subprocess, sys, os, csv, math, time
 import numpy as np
 
+# Force UTF-8 stdout/stderr so Unicode chars don't crash on Windows cp1253
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 # ============================================================
 # CONFIGURATION
 # ============================================================
