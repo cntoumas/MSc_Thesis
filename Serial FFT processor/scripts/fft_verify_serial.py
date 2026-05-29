@@ -36,7 +36,18 @@ CLK_PERIOD = 10         # ns
 
 SRC_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJ_DIR = os.path.dirname(SRC_DIR)  # project root containing rtl/, tb/, rom/
+REPO_ROOT = os.path.dirname(PROJ_DIR)
 ROM_DIR = os.path.join(PROJ_DIR, "rom")
+
+# Shared DSP metrics module (single source of truth for SFDR/ENOB/THD/phase)
+sys.path.insert(0, os.path.join(REPO_ROOT, "common"))
+import dsp_metrics as dsp  # noqa: E402
+
+# All generated artifacts go under results/serial/
+RESULTS_DIR = os.path.join(REPO_ROOT, "results", "serial")
+
+# Single-tone DSP metrics (SFDR/THD/ENOB) only apply to the coherent Sine case.
+SINE_TID = 2
 
 MEM_FILE_RE = os.path.join(PROJ_DIR, "stimulus_re.mem")
 MEM_FILE_IM = os.path.join(PROJ_DIR, "stimulus_im.mem")
@@ -198,24 +209,77 @@ def read_hardware_output():
 
 
 def generate_reference():
-    """Create reference inputs and FFTs for Impulse, DC and Sine tests."""
+    """Create reference inputs and FFTs for the five test cases.
+
+    Uses the module-level AMPLITUDE (10000) — the same level the proven
+    Artix-7 report (thesis_report_xc7.py) drives the core with. An amplitude
+    of 2048 quantizes the single tone away under the serial core's BFP scaling
+    (the tone collapsed to ~1 LSB), so the smaller level is *not* usable here.
+    MultiTone / Chirp match thesis_report_xc7.py's stimulus so the serial
+    spectra are directly comparable to that report.
+    """
     refs = {}
-    # Test 0: Impulse (match parallel script amplitude)
+    nn = np.arange(N)
+    # Test 0: Impulse
     x0 = np.zeros(N, dtype=complex)
-    x0[0] = 2048
+    x0[0] = AMPLITUDE
     refs[0] = {"input_re": x0.real.astype(int), "input_im": x0.imag.astype(int), "fft": np.fft.fft(x0)}
 
     # Test 1: DC
-    x1 = np.full(N, 2048, dtype=complex)
+    x1 = np.full(N, AMPLITUDE, dtype=complex)
     refs[1] = {"input_re": x1.real.astype(int), "input_im": x1.imag.astype(int), "fft": np.fft.fft(x1)}
 
     # Test 2: Single-tone sine (bin TONE_BIN)
-    sine_amp = 2048
+    sine_amp = AMPLITUDE
     tone_bin = TONE_BIN
     x2 = np.array([int(round(sine_amp * np.sin(2 * np.pi * tone_bin * n / N))) for n in range(N)], dtype=complex)
     refs[2] = {"input_re": x2.real.astype(int), "input_im": x2.imag.astype(int), "fft": np.fft.fft(x2)}
 
+    # Test 3: Multi-tone — 3 sines at bins 50, 200, 450 (amplitude 3000 each)
+    x3r = np.round(sum(3000 * np.sin(2 * np.pi * b * nn / N) for b in (50, 200, 450))).astype(int)
+    x3 = x3r.astype(complex)
+    refs[3] = {"input_re": x3.real.astype(int), "input_im": x3.imag.astype(int), "fft": np.fft.fft(x3)}
+
+    # Test 4: Linear chirp — frequency sweep 0 → 511, amplitude AMPLITUDE
+    phi = 2 * np.pi * (511 * nn / (2.0 * N)) * nn / N
+    x4r = np.round(AMPLITUDE * np.sin(phi)).astype(int)
+    x4 = x4r.astype(complex)
+    refs[4] = {"input_re": x4.real.astype(int), "input_im": x4.imag.astype(int), "fft": np.fft.fft(x4)}
+
     return refs
+
+
+def _align_convention(hw, ref):
+    """Align the serial-core spectrum to the NumPy reference convention.
+
+    The serial FFT core differs from NumPy by (a) twiddle sign (+j vs -j → a
+    possible complex conjugation) and (b) a single global complex scale α
+    (overall normalization / fixed pipeline phase — the core does not divide
+    by N the way NumPy does). Both are *convention*, not precision loss:
+    a single α scales every bin equally, so it leaves SFDR / THD / SINAD /
+    ENOB (ratios within one spectrum) and the *detrended* phase error
+    untouched, while making SQNR meaningful. This mirrors the least-squares
+    α + conjugation fit already used by thesis_report_xc7.py.
+    """
+    n = min(len(hw), len(ref))
+    h, r = hw[:n], ref[:n]
+
+    def _fit(cand):
+        denom = np.sum(np.abs(cand) ** 2)
+        beta = np.sum(np.conj(cand) * r) / denom if denom > 0 else 0.0
+        aligned = beta * cand
+        return aligned, np.sum(np.abs(aligned - r) ** 2)
+
+    a_direct, res_direct = _fit(h)
+    a_conj, res_conj = _fit(np.conj(h))
+    # Apply the same β to the *full-length* spectrum (h/r were length-clipped).
+    if res_conj < res_direct:
+        denom = np.sum(np.abs(np.conj(h)) ** 2)
+        beta = np.sum(np.conj(np.conj(h)) * r) / denom if denom > 0 else 0.0
+        return beta * np.conj(hw)
+    denom = np.sum(np.abs(h) ** 2)
+    beta = np.sum(np.conj(h) * r) / denom if denom > 0 else 0.0
+    return beta * hw
 
 
 def compute_sqnr(ref, hw):
@@ -264,6 +328,13 @@ def compute_metrics_all(results):
         # Basic pass criteria
         passed = (n >= N // 2) and (sqnr > 10)
 
+        # DSP figures of merit via the shared module. SFDR/THD/ENOB are
+        # single-tone-only (Sine case); Impulse & DC report SQNR + phase only.
+        is_single_tone = (tid == SINE_TID)
+        tm = dsp.tone_metrics(ref_t, hw_t,
+                              TONE_BIN if is_single_tone else None,
+                              single_tone=is_single_tone)
+
         out[tid] = {
             "name": r["name"],
             "pass": passed,
@@ -282,19 +353,67 @@ def compute_metrics_all(results):
             "ref_fft": ref_t,
             "hw_mag": hw_mag,
             "ref_mag": ref_mag,
+            "single_tone": is_single_tone,
+            "sfdr_dbc": tm["sfdr_dbc"], "thd_db": tm["thd_db"],
+            "thd_pct": tm["thd_pct"], "sinad_db": tm["sinad_db"],
+            "enob_bits": tm["enob_bits"],
+            "phase_max_deg": tm["phase_max_deg"],
+            "phase_rms_deg": tm["phase_rms_deg"],
+            "phase_rms_deg_detrended": tm["phase_rms_deg_detrended"],
+            "phase": tm["phase"],
         }
     return out
 
 
+def _na(v, nd=2):
+    import math as _m
+    if v is None or (isinstance(v, float) and (_m.isnan(v) or _m.isinf(v))):
+        return "N/A"
+    return f"{v:.{nd}f}"
+
+
 def save_metrics_csv(results, sim_time):
-    csv_path = os.path.join(SRC_DIR, "fft_metrics.csv")
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    csv_path = os.path.join(RESULTS_DIR, "metrics.csv")
     import csv
     with open(csv_path, "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["Test", "Pass", "SQNR_dB", "Max_Error", "RMS_Error", "Num_Outputs", "BFP_Final"])
+        w.writerow(["Test", "Pass", "SQNR_dB", "SFDR_dBc", "THD_dB", "THD_percent",
+                    "SINAD_dB", "ENOB_bits", "Phase_Max_deg", "Phase_RMS_deg",
+                    "Phase_RMS_deg_detrended", "Max_Error", "RMS_Error",
+                    "Num_Outputs", "BFP_Final"])
         for tid, r in results.items():
-            w.writerow([r["name"], r["pass"], f"{r['sqnr_db']:.2f}", f"{r['max_err']:.2f}", f"{r['rms_err']:.2f}", r["num_outputs"], r["bfp_final"]])
+            w.writerow([
+                r["name"], r["pass"], f"{r['sqnr_db']:.2f}",
+                _na(r.get("sfdr_dbc")), _na(r.get("thd_db")), _na(r.get("thd_pct"), 3),
+                _na(r.get("sinad_db")), _na(r.get("enob_bits")),
+                _na(r.get("phase_max_deg"), 3), _na(r.get("phase_rms_deg"), 3),
+                _na(r.get("phase_rms_deg_detrended"), 3),
+                f"{r['max_err']:.2f}", f"{r['rms_err']:.2f}",
+                r["num_outputs"], r["bfp_final"],
+            ])
     print(f"[+] Saved metrics CSV to {csv_path}")
+
+
+def save_spectrum_npz(results):
+    """Persist hw + ref complex spectra so the co-sim can recompute the
+    identical DSP metrics from cached artifacts."""
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    npz_path = os.path.join(RESULTS_DIR, "spectrum.npz")
+    arrays = {}
+    tids = []
+    for tid, r in results.items():
+        if r.get("num_outputs", 0) == 0:
+            continue
+        arrays[f"hw_{tid}"] = np.asarray(r["hw_fft"], dtype=complex)
+        arrays[f"ref_{tid}"] = np.asarray(r["ref_fft"], dtype=complex)
+        tids.append(tid)
+    arrays["test_ids"] = np.array(tids, dtype=int)
+    arrays["names"] = np.array([results[t]["name"] for t in tids])
+    arrays["sine_tid"] = np.array(SINE_TID)
+    arrays["tone_bin"] = np.array(TONE_BIN)
+    np.savez(npz_path, **arrays)
+    print(f"[+] Saved spectrum NPZ to {npz_path}")
 
 
 def generate_report_png_all(results):
@@ -447,10 +566,22 @@ def generate_report_png_all(results):
             spine.set_color(grid_color)
         ax_db.grid(True, color=grid_color, alpha=0.3)
 
-    out_path = os.path.join(SRC_DIR, "fft_verification.png")
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    out_path = os.path.join(RESULTS_DIR, "signals.png")
     fig.savefig(out_path, dpi=150, facecolor=fig.get_facecolor())
     plt.close(fig)
     print(f"[+] Saved: {out_path}")
+
+
+def generate_dsp_metrics_png(results):
+    """Render the shared DSP figures-of-merit PNG to results/serial/."""
+    import dsp_plots
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    records = [results[tid] for tid in sorted(results.keys())
+               if results[tid].get("num_outputs", 0) > 0]
+    title = "1024-pt Serial Radix-2 DIF FFT — DSP Figures of Merit"
+    out_path = os.path.join(RESULTS_DIR, "dsp_metrics.png")
+    dsp_plots.render_dsp_metrics_png(records, title, out_path, sine_name="Sine")
 
 
 def generate_report_png(signal_re, hw_re, hw_im, exponent, ref_re, ref_im):
@@ -556,8 +687,9 @@ def main():
     sim_times = {}
 
     # Run each test: write mem, simulate, read output
+    test_names = {0: "Impulse", 1: "DC", 2: "Sine", 3: "MultiTone", 4: "Chirp"}
     for tid, data in refs.items():
-        name = "Impulse" if tid == 0 else ("DC" if tid == 1 else "Sine")
+        name = test_names.get(tid, f"Test{tid}")
         print(f"\n[TEST {tid}] {name}: preparing stimulus and running simulation...")
 
         # AXI top accepts natural-order time samples and emits natural-order
@@ -573,9 +705,14 @@ def main():
         # Read hardware output and assemble complex bins
         hw_re, hw_im, exponent = read_hardware_output()
         hw_complex = (hw_re + 1j * hw_im) * (2.0 ** exponent)
-        
-        # With bit-reversed input, Pease AGU produces natural-order output
-        # No un-bit-reversal needed
+
+        # With bit-reversed input, the Pease AGU produces natural-order output
+        # (no un-bit-reversal needed). The serial core uses the opposite
+        # twiddle sign (+j) from NumPy's (-j) convention, so its spectrum is
+        # the complex conjugate of the reference. Pick the conjugation that
+        # matches the reference (NO magnitude scaling — BFP already restores
+        # the scale, so precision loss stays visible) before the shared metrics.
+        hw_complex = _align_convention(hw_complex, data["fft"])
 
         raw_results[tid] = {
             "name": name,
@@ -588,9 +725,15 @@ def main():
     results = compute_metrics_all(raw_results)
     total_sim_time = sum(sim_times.values())
     save_metrics_csv(results, total_sim_time)
+    save_spectrum_npz(results)
     generate_report_png_all(results)
+    generate_dsp_metrics_png(results)
 
     print("\nVerification complete")
+    print(f"  Reports: {os.path.join(RESULTS_DIR, 'metrics.csv')}")
+    print(f"           {os.path.join(RESULTS_DIR, 'dsp_metrics.png')}")
+    print(f"           {os.path.join(RESULTS_DIR, 'signals.png')}")
+    print(f"           {os.path.join(RESULTS_DIR, 'spectrum.npz')}")
 
 
 if __name__ == "__main__":

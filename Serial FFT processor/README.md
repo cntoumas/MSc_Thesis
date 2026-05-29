@@ -410,6 +410,57 @@ SQNR rises ~6 dB per doubling of amplitude (follows quantization theory), reachi
 
 ---
 
+## DSP Figures of Merit
+
+SQNR alone does not fully characterise a fixed-point spectral processor. To substantiate the **numerical-precision** claim head-to-head with the Parallel MDF design, the verification flow also reports the standard ADC/DSP figures of merit — **SFDR, THD, SINAD, ENOB, and per-bin phase error** — all computed by a single shared module, [`common/dsp_metrics.py`](../common/dsp_metrics.py), so the Serial and Parallel numbers come from *identical* math.
+
+### What each metric means
+
+All band metrics are **single-sided** over bins `1 … N/2−1` (DC and Nyquist excluded), evaluated on the natural-order, BFP-scaled hardware spectrum `X[k]`. Powers are `P[k] = |X[k]|²`.
+
+| Metric | Definition | What it tells you |
+|---|---|---|
+| **SQNR** (dB) | `10·log10( Σ|ref|² / Σ|ref − hw|² )` | Overall reconstruction error vs. the float64 reference. |
+| **SFDR** (dBc) | `10·log10( P[k₀] / max P[k≠k₀] )` | Fundamental vs. the largest spur — usable dynamic range. |
+| **THD** (dB / %) | `10·log10( ΣP[h·k₀] / P[k₀] )`, h = 2…5 | Harmonic distortion; harmonic bins folded back via `min(m, N−m)`. |
+| **SINAD** (dB) | `10·log10( P[k₀] / Σ P[k≠k₀] )` | Fundamental vs. all other in-band content (noise + distortion). |
+| **ENOB** (bits) | `(SINAD − 1.76) / 6.02` | Effective resolution actually delivered by the datapath. |
+| **Phase error** (°) | `wrap( ∠hw[k] − ∠ref[k] )`, where `|ref[k]|` is significant | Per-bin phase fidelity; **scale-invariant**, so it is immune to the BFP exponent. |
+
+**Single-tone scope.** SFDR / THD / SINAD / ENOB are only defined for a single coherent tone, so they are reported **only for the Sine case** (`k₀ = 50`, which sits exactly on a bin → coherent, no window needed). Impulse, DC, Multi-Tone and Chirp report SQNR + phase error only; the single-tone columns are marked **N/A** by definition (not a failure).
+
+**Convention alignment.** The Serial core uses the `+j` twiddle convention (NumPy uses `−j`) and produces an output that differs from the reference by a single global complex scale α (overall normalisation / fixed pipeline phase). Both are *convention*, not precision loss: a single α scales every bin equally, so it leaves SFDR / THD / SINAD / ENOB (intra-spectrum ratios) and the **detrended** phase error untouched while making SQNR meaningful. The verify script removes only the conjugation + least-squares α before calling the shared metrics, so genuine quantisation error is preserved.
+
+### Results (Serial FFT, AXI-Stream flow, amplitude = 10000)
+
+| Test | SQNR (dB) | SFDR (dBc) | SINAD (dB) | ENOB (bits) | THD (dB) | Phase RMS (°) |
+|---|---:|---:|---:|---:|---:|---:|
+| Impulse   | 120.00 | N/A | N/A | N/A | N/A | 0.000 |
+| DC        | 75.59  | N/A | N/A | N/A | N/A | 0.000 |
+| **Sine**  | 72.41  | **76.10** | **73.67** | **11.95** | −120.00 | 0.006 |
+| MultiTone | 59.75  | N/A | N/A | N/A | N/A | 0.006 |
+| Chirp     | 65.88  | N/A | N/A | N/A | N/A | 0.026 |
+
+**Reading the Sine row.** The adaptive-BFP datapath delivers **~12 effective bits** out of the 16-bit word and **76 dBc spur-free dynamic range** on a full-scale coherent tone. THD pins at the −120 dB floor because the harmonics of a clean single tone round below 1 LSB — i.e. **no measurable harmonic distortion**. Per-bin phase error is essentially zero (0.006° RMS, 0.000° after removing the fixed group-delay ramp), confirming the bit-reversal reorder and pipeline alignment are phase-exact.
+
+### Regenerating
+
+```bash
+# From the project root directory (Serial FFT processor/)
+python scripts/fft_verify_serial.py
+```
+
+This writes the per-architecture artifacts to `results/serial/` (not version-controlled — regenerable):
+
+- `dsp_metrics.png` — table + SQNR / single-tone bars + per-bin phase-error stem
+- `metrics.csv` — every figure of merit, per test case
+- `signals.png` — magnitude / error / dB spectra
+- `spectrum.npz` — reconstructed `hw`/`ref` complex spectra (consumed by the cross-architecture co-simulation)
+
+For the **Serial-vs-Parallel** comparison driven by the identical math path, run [`cosim/cosim_compare.py`](../cosim/cosim_compare.py) from the repo root (see the root [README](../README.md#cross-architecture-co-simulation)).
+
+---
+
 ## AXI4-Stream Interface
 
 The core is wrapped by [rtl/fft_axi_top.v](rtl/fft_axi_top.v), exposing a standard AXI4-Stream slave (input samples) and master (output bins). This is the path used for Vivado synthesis, board bring-up, and the primary verification flow.

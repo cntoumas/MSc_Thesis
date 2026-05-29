@@ -74,7 +74,7 @@ MSc_Thesis/
 │   ├── constrs/      — Xilinx XDC constraint file
 │   ├── scripts/      — Twiddle generator, verification, thesis report
 │   ├── stimulus_*.mem — Default testbench input data
-│   └── README.md     — Full architecture documentation & results
+│   └── README.md     — Full architecture documentation & results (incl. DSP figures of merit)
 │
 ├── Parallel MDF FFT/
 │   ├── rtl/          — fft_stage_fb, fft_stage_nf, bit_reverse, BFP modules, AXI wrapper
@@ -82,12 +82,27 @@ MSc_Thesis/
 │   ├── rom/          — 32 twiddle hex files (tw_sk_pp.hex, one per stage per path)
 │   ├── constraints/  — Xilinx XDC constraint files
 │   ├── scripts/      — Twiddle generator, verification, thesis report
-│   └── README.md     — Full architecture documentation & results
+│   └── README.md     — Full architecture documentation & results (incl. DSP figures of merit)
+│
+├── UVM/              — UVM 1.2 verification env driving BOTH DUTs (one agent/scoreboard/
+│   │                   coverage stack; 5 stimuli × 2 DUTs = 10/10 PASS; Vivado xsim)
+│   ├── env/ seq/ tests/ tb/ scripts/ docs/
+│   └── README.md     — Thorough standalone UVM verification guide
+│
+├── common/           — Shared DSP metrics (single source of truth for the figures of merit)
+│   ├── dsp_metrics.py  — SQNR / SFDR / THD / SINAD / ENOB / per-bin phase error
+│   ├── dsp_plots.py    — shared per-architecture metric figure renderer
+│   └── util_plots.py   — shared FPGA utilization CSV/PNG renderer
+│
+├── cosim/
+│   └── cosim_compare.py — invokes both sims, recomputes identical metrics, emits comparison
 │
 └── README.md         — This file
 ```
 
-Each architecture folder contains a detailed README with architecture block diagrams, design rationale, synthesis results, and hardware-verified SQNR measurements.
+Each architecture folder contains a detailed README with architecture block diagrams, design rationale, synthesis results, hardware-verified SQNR, and a dedicated **DSP Figures of Merit** section (SFDR / THD / SINAD / ENOB / phase error). The `UVM/` folder carries its own thorough README for the regression / coverage / equivalence environment.
+
+> **Generated artifacts are not version-controlled.** Simulation outputs (`*.csv`, `*.vcd`, `*.wdb`, coverage DBs, the `results/` figures, UVM reference vectors) are reproducible from the scripts and are excluded via `.gitignore`. The repository tracks only source, ROMs, constraints, synthesis logs, and documentation.
 
 ---
 
@@ -110,6 +125,53 @@ python scripts/thesis_report_xc7.py  # comprehensive Artix-7 thesis figure
 ```
 
 **Requirements:** Icarus Verilog, Python 3.8+, numpy, matplotlib. For full synthesis: Xilinx Vivado (post-route utilization, Fmax, power); Yosys 0.56+ (`synth_xilinx`) for open-source area sanity checks.
+
+---
+
+## UVM Verification
+
+In addition to the script-based golden-reference checks, a full **UVM 1.2** environment ([`UVM/`](UVM/)) drives **both** DUTs through a single shared agent / scoreboard / coverage stack — one env, two `tb_top`s, five deterministic stimulus sequences, an SQNR-threshold scoreboard, four functional covergroups, and AXI4-Stream protocol assertions.
+
+- **Result:** ✅ **10/10 PASS** (5 tests × 2 DUTs), run under Vivado `xsim` 2023.2 (ships UVM 1.2).
+- **Equivalence:** a direct Serial↔Parallel cross-check (`make equiv`) reports **5/5 EQUIV** — the two very different micro-architectures compute the same FFT to within the worst-case rounding budget of either implementation.
+- **Protocol:** `bind`-ed AXI4-Stream SVA (tvalid-hold, tdata/tlast stability under backpressure, no-X) — and a backpressure stress test that surfaced a documented `m_axis_tready` limitation in both wrappers.
+
+```bash
+cd UVM
+make refs                 # generate NumPy reference vectors (refs/*.mem)
+make regression           # 5 tests × 2 DUTs → "GRAND TOTAL: 10/10 PASS"
+make coverage             # merge coverage DBs → cov_html/
+make equiv                # Serial↔Parallel equivalence check
+```
+
+See the **[UVM/README.md](UVM/README.md)** for the full standalone guide (layout, make targets, coverage model, assertions, and findings).
+
+---
+
+## DSP Figures of Merit
+
+To substantiate the **numerical-precision** comparison beyond SQNR, both architectures are characterised with the standard DSP figures of merit — **SFDR, THD, SINAD, ENOB, and per-bin phase error** — computed by a single shared module, [`common/dsp_metrics.py`](common/dsp_metrics.py), so the Serial and Parallel numbers come from *identical* math. Single-tone metrics use the coherent, no-window convention (the Sine test sits exactly on bin 50).
+
+| Metric | Meaning | Scope |
+|---|---|---|
+| **SQNR** | reconstruction error vs. float64 reference | all 5 tests |
+| **SFDR** (dBc) | fundamental vs. largest spur | single tone (Sine) |
+| **THD** (dB/%) | harmonic distortion (h = 2…5, folded) | single tone (Sine) |
+| **SINAD / ENOB** | fundamental vs. noise+distortion → effective bits | single tone (Sine) |
+| **Phase error** (°) | per-bin `∠hw − ∠ref`, raw + detrended; **scale-invariant** | all 5 tests |
+
+**Sine-tone head-to-head:** Serial ENOB ≈ **11.95 bits** / SFDR **76.1 dBc**; the Parallel single-tone metrics saturate the 120 dB log-floor (its coherent, fixed-BFP read-back has no representable spurs — read as noise-floor-limited, *not* a bug). The robust comparison numbers are SQNR (73.5 vs 72.4 dB) and detrended phase (≈0°). On the broadband **Chirp** the ranking flips: Serial holds **65.9 dB / 0.03°** vs Parallel **35.0 dB / 0.71°** — the clearest evidence that adaptive BFP beats a fixed block exponent on spread-spectrum inputs. Full per-metric tables and the saturation caveat are documented in each architecture's README.
+
+## Cross-Architecture Co-Simulation
+
+[`cosim/cosim_compare.py`](cosim/cosim_compare.py) runs at the repo root and **invokes both simulators itself**, then recomputes the identical `common/dsp_metrics.py` functions on each architecture's reconstructed spectrum — guaranteeing the comparison uses one math path. It emits a side-by-side DSP + utilization comparison.
+
+```bash
+python cosim/cosim_compare.py             # re-run both sims + both reports, then compare
+python cosim/cosim_compare.py --skip-run  # rebuild the comparison from cached artifacts
+```
+
+Outputs land under `results/comparison/` (regenerable, not version-controlled). The utilization comparison labels each design's target device and uses **absolute counts** as the primary axis, because the open-source area numbers come from different parts (Serial → Artix-7, Parallel → iCE40 sanity flow); for the authoritative cross-device figures use the Vivado post-route numbers in [Key Results](#key-results).
 
 ---
 

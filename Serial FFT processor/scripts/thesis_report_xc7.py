@@ -27,8 +27,14 @@ if hasattr(sys.stdout, "reconfigure"):
 
 SRC_DIR  = os.path.dirname(os.path.abspath(__file__))
 PROJ_DIR = os.path.dirname(SRC_DIR)
+REPO_ROOT = os.path.dirname(PROJ_DIR)
 RTL_DIR  = os.path.join(PROJ_DIR, "rtl")
 SYN_DIR  = os.path.join(PROJ_DIR, "synthesis")
+RESULTS_DIR = os.path.join(REPO_ROOT, "results", "serial")
+
+# Shared utilization renderer
+sys.path.insert(0, os.path.join(REPO_ROOT, "common"))
+import util_plots  # noqa: E402
 YOSYS_LOG = os.path.join(SYN_DIR, "yosys_xc7.log")
 MEM_RE   = os.path.join(PROJ_DIR, "stimulus_re.mem")
 MEM_IM   = os.path.join(PROJ_DIR, "stimulus_im.mem")
@@ -194,6 +200,48 @@ def run_all_sims():
         flag = "OK " if peak_match[name] else "PK!"
         print(f"  {name:10s} : SQNR={sqnr[name]:7.2f} dB  {flag}")
     return spectra, sqnr, peak_match
+
+
+def assemble_utilization(area, latency):
+    """Consolidate the Yosys synth_xilinx parse into the normalized util dict
+    shared with the parallel report and the co-simulation. Fmax requires
+    Vivado P&R (Yosys synth only), so it is reported as N/A. Serial design has
+    no power model."""
+    return {
+        "arch": "serial",
+        "device": "xc7a100tcsg324-1",
+        "LUT": area["luts"],
+        "LUT_total": DEV_LUT6,
+        "FF": area["ffs"],
+        "FF_total": DEV_FF,
+        "DSP": area["dsp"],
+        "DSP_total": DEV_DSP,
+        "BRAM": area["bram36"],
+        "BRAM_total": DEV_BRAM36,
+        "Fmax_MHz": None,
+        "power_mW": None,
+        "throughput_msps": None,
+        "notes": "Yosys synth_xilinx only — Vivado required for Fmax. "
+                 "Artix-7 xc7a100t; compare absolute counts across devices.",
+    }
+
+
+def parse_utilization():
+    """Standalone entry: parse the Yosys xc7 log and return the normalized
+    utilization dict (used by the co-simulation when importing this module)."""
+    if not os.path.exists(YOSYS_LOG):
+        raise SystemExit(f"[ERROR] {YOSYS_LOG} not found. Run: yosys synthesis/synth_xc7.ys")
+    area = parse_xc7_log(YOSYS_LOG)
+    return assemble_utilization(area, compute_latency())
+
+
+def emit_utilization_artifacts(util):
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    util_plots.write_utilization_csv(util, os.path.join(RESULTS_DIR, "utilization.csv"))
+    util_plots.render_utilization_png(
+        util,
+        "Serial Radix-2 DIF FFT — FPGA Utilization (Artix-7 xc7a100t)",
+        os.path.join(RESULTS_DIR, "utilization.png"))
 
 
 def compute_latency():
@@ -425,6 +473,10 @@ def main():
     spectra, sqnr, peak_match = run_all_sims()
     latency = compute_latency()
     make_report(area, spectra, sqnr, peak_match, latency)
+
+    # Standalone utilization artifacts (results/serial/)
+    print("[+] Writing standalone utilization artifacts ...")
+    emit_utilization_artifacts(assemble_utilization(area, latency))
     print("[OK] Artix-7 thesis report complete.")
 
 

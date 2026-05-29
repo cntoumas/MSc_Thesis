@@ -45,3 +45,37 @@ Parallel MDF FFT/twiddle_sin_eighth.mem
 # ─── Serial FFT root-level mem duplicates (canonical copies in rom/) ─────────
 Serial FFT processor/cos.mem
 Serial FFT processor/sin.mem
+
+# ─── Generated DSP-metric / co-simulation outputs (regenerable) ───────────────
+results/
+
+# ─── UVM generated / simulation artifacts (Vivado xsim) ───────────────────────
+# Track only env/seq/tests/tb/scripts/docs + Makefile + README.
+# (No inline comments below — .gitignore treats them as part of the pattern.)
+UVM/xsim.dir/
+UVM/work/
+UVM/cov_db/
+UVM/cov_html/
+UVM/xsim.covdb
+# NumPy reference vectors — regenerate with `make refs`
+UVM/refs/
+# captured scoreboard outputs — regenerate with `make equiv`
+UVM/actuals/
+UVM/*.wdb
+UVM/*.jou
+UVM/*.log
+UVM/*.pb
+UVM/*.backup.*
+# regression / coverage / equivalence summary PNGs (regenerable)
+UVM/*.png
+# root-level ROM copies the Makefile stages at runtime
+UVM/*.mem
+# twiddle ROMs the Makefile copies from Parallel MDF FFT/rom
+UVM/parallel_rom/
+UVM/modelsim.ini
+
+# ─── LaTeX thesis + tooling (out of scope for the code repo) ──────────────────
+thesis/
+thesis_overleaf.zip
+graphify/
+graphify-out/

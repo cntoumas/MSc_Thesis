@@ -33,13 +33,20 @@ from matplotlib.gridspec import GridSpec
 # ─────────────────────────────────────────────────────────────────────────────
 SRC_DIR  = os.path.dirname(os.path.abspath(__file__))
 PROJ_DIR = os.path.dirname(SRC_DIR)
+REPO_ROOT = os.path.dirname(PROJ_DIR)
 RTL_DIR  = os.path.join(PROJ_DIR, "rtl")
 TB_DIR   = os.path.join(PROJ_DIR, "tb")
 ROM_DIR  = os.path.join(PROJ_DIR, "rom")
 SYN_DIR  = os.path.join(PROJ_DIR, "synthesis")
 OUT_PNG  = os.path.join(PROJ_DIR, "thesis_report.png")
-METRICS  = os.path.join(SRC_DIR,  "fft_metrics.csv")
+# fft_verify.py now writes its metrics CSV under results/parallel/
+RESULTS_DIR = os.path.join(REPO_ROOT, "results", "parallel")
+METRICS  = os.path.join(RESULTS_DIR, "metrics.csv")
 OUTPUT_CSV = os.path.join(PROJ_DIR, "fft_output.csv")
+
+# Shared utilization renderer
+sys.path.insert(0, os.path.join(REPO_ROOT, "common"))
+import util_plots  # noqa: E402
 
 os.makedirs(SYN_DIR, exist_ok=True)
 
@@ -465,6 +472,52 @@ def compute_latency():
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# 5b. Utilization helper + standalone PNG/CSV (results/parallel/)
+# ─────────────────────────────────────────────────────────────────────────────
+def assemble_utilization(area, timing, power, latency):
+    """Consolidate Yosys/nextpnr/power results into the normalized util dict
+    shared with the serial report and the co-simulation. iCE40 has no DSP
+    primitive, so DSP is 0. Projected BRAM mapping is used (the raw synth
+    leaves memories as LUT logic on iCE40)."""
+    return {
+        "arch": "parallel",
+        "device": "Lattice iCE40HX8K",
+        "LUT": area.get("proj_lc_est", area.get("lc", 0)),
+        "LUT_total": DEVICE_LC,
+        "FF": area.get("proj_dff_est", area.get("dff", 0)),
+        "FF_total": DEVICE_LC * 2,
+        "DSP": 0,
+        "DSP_total": 0,
+        "BRAM": area.get("proj_bram", area.get("bram", 0)),
+        "BRAM_total": 32,
+        "Fmax_MHz": timing.get("fmax_mhz"),
+        "power_mW": power.get("total_mw"),
+        "throughput_msps": latency.get("sample_rate_msps"),
+        "notes": "iCE40HX8K (projected BRAM mapping). README targets Artix-7; "
+                 "compare absolute counts across devices.",
+    }
+
+
+def parse_utilization():
+    """Standalone entry: run synthesis/P&R/power and return the normalized
+    utilization dict (used by the co-simulation when importing this module)."""
+    area, _raw, json_out = run_yosys()
+    timing = run_nextpnr(json_out, area)
+    power = estimate_power(area, timing["fmax_mhz"])
+    latency = compute_latency()
+    return assemble_utilization(area, timing, power, latency)
+
+
+def emit_utilization_artifacts(util):
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    util_plots.write_utilization_csv(util, os.path.join(RESULTS_DIR, "utilization.csv"))
+    util_plots.render_utilization_png(
+        util,
+        "Parallel MDF Radix-2 DIF FFT — FPGA Utilization (iCE40HX8K)",
+        os.path.join(RESULTS_DIR, "utilization.png"))
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # 6. Thesis figure
 # ─────────────────────────────────────────────────────────────────────────────
 def make_report(area, timing, power, sqnr_cases, spectra, extras, latency):
@@ -707,6 +760,10 @@ def main():
         print(f"  Best SQNR  : {best:.1f} dB")
 
     make_report(area, timing, power, sqnr_cases, spectra, extras, latency)
+
+    # Standalone utilization artifacts (results/parallel/)
+    print("\n[+] Writing standalone utilization artifacts ...")
+    emit_utilization_artifacts(assemble_utilization(area, timing, power, latency))
     print("\n[OK] Thesis report complete.")
 
 

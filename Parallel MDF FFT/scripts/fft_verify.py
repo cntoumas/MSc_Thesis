@@ -16,6 +16,15 @@ if hasattr(sys.stdout, "reconfigure"):
 # CONFIGURATION
 # ============================================================
 SRC_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJ_DIR = os.path.dirname(SRC_DIR)
+REPO_ROOT = os.path.dirname(PROJ_DIR)
+
+# Shared DSP metrics module (single source of truth for SFDR/ENOB/THD/phase)
+sys.path.insert(0, os.path.join(REPO_ROOT, "common"))
+import dsp_metrics as dsp  # noqa: E402
+
+# All generated artifacts go under results/parallel/
+RESULTS_DIR = os.path.join(REPO_ROOT, "results", "parallel")
 VERILOG_FILES = [
     "../rtl/bit_reverse.v",
     "../rtl/block_scaler.v", 
@@ -44,6 +53,10 @@ FRAC_BITS = DATA_WIDTH - 1
 SCALE = 1 << FRAC_BITS
 
 TEST_NAMES = {0: "Impulse", 1: "DC", 2: "Sine", 3: "MultiTone", 4: "Chirp"}
+
+# Single-tone DSP metrics (SFDR/THD/ENOB) only apply to the coherent Sine case.
+SINE_TID = 2
+TONE_BIN = 50  # Sine sits exactly on bin 50 of 1024 → coherent, no window.
 
 # ============================================================
 # STEP 1: Compile Verilog
@@ -338,18 +351,32 @@ def compute_metrics(hw_data, refs):
         
         # Pass/fail criteria
         passed = (n >= FFT_POINTS // 2) and (sqnr > 10 or n < 4)
-        
+
+        # DSP figures of merit via the shared module. SFDR/THD/ENOB are
+        # single-tone-only (Sine case); others get SQNR + phase error only.
+        is_single_tone = (tid == SINE_TID)
+        tm = dsp.tone_metrics(ref_t, hw_t,
+                              TONE_BIN if is_single_tone else None,
+                              single_tone=is_single_tone)
+
         print(f"    Outputs:     {n} / {FFT_POINTS}")
         print(f"    BFP exp:     {bfp_final}")
         print(f"    SQNR:        {sqnr:.2f} dB")
         print(f"    Max Err (R): {max_err_r:.2f}")
         print(f"    Max Err (I): {max_err_i:.2f}")
         print(f"    RMS Error:   {rms_err:.2f}")
+        if is_single_tone:
+            print(f"    SFDR:        {tm['sfdr_dbc']:.2f} dBc")
+            print(f"    THD:         {tm['thd_db']:.2f} dB ({tm['thd_pct']:.3f}%)")
+            print(f"    SINAD:       {tm['sinad_db']:.2f} dB")
+            print(f"    ENOB:        {tm['enob_bits']:.2f} bits")
+        print(f"    Phase RMS:   {tm['phase_rms_deg']:.3f}° "
+              f"(detrended {tm['phase_rms_deg_detrended']:.3f}°)")
         print(f"    Peak bin HW: {peak_hw}  Ref: {peak_ref}  Match: {peak_match}")
         print(f"    Cycles:      {total_cycles}")
         print(f"    Throughput:  {throughput:.2f} MSPS")
         print(f"    Result:      {'PASS' if passed else 'FAIL'}")
-        
+
         results[tid] = {
             "name": name, "pass": passed, "sqnr_db": sqnr,
             "max_err_r": max_err_r, "max_err_i": max_err_i,
@@ -358,6 +385,14 @@ def compute_metrics(hw_data, refs):
             "bfp_final": bfp_final, "peak_bin_hw": peak_hw,
             "peak_bin_ref": peak_ref, "peak_match": peak_match,
             "hw_fft": hw_t, "ref_fft": ref_t, "hw_mag": hw_mag, "ref_mag": ref_mag,
+            "single_tone": is_single_tone,
+            "sfdr_dbc": tm["sfdr_dbc"], "thd_db": tm["thd_db"],
+            "thd_pct": tm["thd_pct"], "sinad_db": tm["sinad_db"],
+            "enob_bits": tm["enob_bits"],
+            "phase_max_deg": tm["phase_max_deg"],
+            "phase_rms_deg": tm["phase_rms_deg"],
+            "phase_rms_deg_detrended": tm["phase_rms_deg_detrended"],
+            "phase": tm["phase"],
         }
     
     return results
@@ -369,8 +404,9 @@ def save_metrics_csv(results, params, sim_time):
     print("\n" + "=" * 60)
     print("STEP 6: Saving Metrics CSV")
     print("=" * 60)
-    
-    csv_path = os.path.join(SRC_DIR, "fft_metrics.csv")
+
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    csv_path = os.path.join(RESULTS_DIR, "metrics.csv")
     with open(csv_path, "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(["Section", "Parameter", "Value"])
@@ -387,6 +423,9 @@ def save_metrics_csv(results, params, sim_time):
         w.writerow(["Simulation", "Sim_Wall_Time_s", f"{sim_time:.2f}"])
         
         # Per-test metrics
+        def _na(v):
+            return "N/A" if (v is None or (isinstance(v, float) and math.isnan(v))) else f"{v:.2f}"
+
         for tid, r in results.items():
             pfx = f"Test{tid}_{r['name'].replace(' ', '_')}"
             w.writerow([pfx, "Pass", r["pass"]])
@@ -394,6 +433,14 @@ def save_metrics_csv(results, params, sim_time):
             w.writerow([pfx, "Max_Error_Real", f"{r['max_err_r']:.2f}"])
             w.writerow([pfx, "Max_Error_Imag", f"{r['max_err_i']:.2f}"])
             w.writerow([pfx, "RMS_Error", f"{r.get('rms_err', -1):.2f}"])
+            w.writerow([pfx, "SFDR_dBc", _na(r.get("sfdr_dbc"))])
+            w.writerow([pfx, "THD_dB", _na(r.get("thd_db"))])
+            w.writerow([pfx, "THD_percent", _na(r.get("thd_pct"))])
+            w.writerow([pfx, "SINAD_dB", _na(r.get("sinad_db"))])
+            w.writerow([pfx, "ENOB_bits", _na(r.get("enob_bits"))])
+            w.writerow([pfx, "Phase_Max_deg", _na(r.get("phase_max_deg"))])
+            w.writerow([pfx, "Phase_RMS_deg", _na(r.get("phase_rms_deg"))])
+            w.writerow([pfx, "Phase_RMS_deg_detrended", _na(r.get("phase_rms_deg_detrended"))])
             w.writerow([pfx, "Num_Outputs", r["num_outputs"]])
             w.writerow([pfx, "Total_Cycles", r["total_cycles"]])
             w.writerow([pfx, "Throughput_MSPS", f"{r['throughput_msps']:.2f}"])
@@ -401,17 +448,38 @@ def save_metrics_csv(results, params, sim_time):
             w.writerow([pfx, "Peak_Bin_HW", r["peak_bin_hw"]])
             w.writerow([pfx, "Peak_Bin_Ref", r["peak_bin_ref"]])
             w.writerow([pfx, "Peak_Match", r["peak_match"]])
-    
+
     print(f"  Saved: {csv_path}")
 
+
+def save_spectrum_npz(results):
+    """Persist reconstructed hw + ref complex spectra so the co-sim can
+    recompute the *identical* DSP metrics from cached artifacts."""
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    npz_path = os.path.join(RESULTS_DIR, "spectrum.npz")
+    arrays = {}
+    tids = []
+    for tid, r in results.items():
+        if r.get("num_outputs", 0) == 0:
+            continue
+        arrays[f"hw_{tid}"] = np.asarray(r["hw_fft"], dtype=complex)
+        arrays[f"ref_{tid}"] = np.asarray(r["ref_fft"], dtype=complex)
+        tids.append(tid)
+    arrays["test_ids"] = np.array(tids, dtype=int)
+    arrays["names"] = np.array([TEST_NAMES[t] for t in tids])
+    arrays["sine_tid"] = np.array(SINE_TID)
+    arrays["tone_bin"] = np.array(TONE_BIN)
+    np.savez(npz_path, **arrays)
+    print(f"  Saved: {npz_path}")
+
 # ============================================================
-# STEP 7: Generate Verification PNG
+# STEP 7a: Generate Signals PNG (magnitude / error / dB spectra)
 # ============================================================
-def generate_report_png(results, params):
+def generate_signals_png(results, params):
     print("\n" + "=" * 60)
-    print("STEP 7: Generating Verification Report PNG")
+    print("STEP 7a: Generating Signals PNG")
     print("=" * 60)
-    
+
     try:
         import matplotlib
         matplotlib.use("Agg")
@@ -573,10 +641,29 @@ def generate_report_png(results, params):
             spine.set_color(grid_color)
         ax_db.grid(True, color=grid_color, alpha=0.3)
     
-    out_path = os.path.join(SRC_DIR, "fft_verification.png")
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    out_path = os.path.join(RESULTS_DIR, "signals.png")
     fig.savefig(out_path, dpi=150, facecolor=fig.get_facecolor())
     plt.close(fig)
     print(f"  Saved: {out_path}")
+
+
+# ============================================================
+# STEP 7b: Generate DSP Metrics PNG (SQNR/SFDR/ENOB/THD + phase)
+# ============================================================
+def generate_dsp_metrics_png(results, params):
+    print("\n" + "=" * 60)
+    print("STEP 7b: Generating DSP Metrics PNG")
+    print("=" * 60)
+    import dsp_plots
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    records = [results[tid] for tid in sorted(results.keys())
+               if results[tid].get("num_outputs", 0) > 0]
+    title = "1024-pt P=4 MDF Radix-2 DIF FFT — DSP Figures of Merit"
+    out_path = os.path.join(RESULTS_DIR, "dsp_metrics.png")
+    dsp_plots.render_dsp_metrics_png(records, title, out_path,
+                                     sine_name=TEST_NAMES[SINE_TID])
+
 
 # ============================================================
 # MAIN
@@ -610,10 +697,12 @@ def main():
     
     # Step 6
     save_metrics_csv(results, params, sim_time)
-    
+    save_spectrum_npz(results)
+
     # Step 7
-    generate_report_png(results, params)
-    
+    generate_signals_png(results, params)
+    generate_dsp_metrics_png(results, params)
+
     # Final Summary
     print("\n" + "=" * 60)
     print("  FINAL VERIFICATION SUMMARY")
@@ -629,7 +718,10 @@ def main():
               f"BFP_exp={r['bfp_final']}")
     
     print(f"\n  Overall: {'ALL TESTS PASSED' if all_pass else 'SOME TESTS FAILED'}")
-    print(f"  Reports: fft_metrics.csv, fft_verification.png")
+    print(f"  Reports: {os.path.join(RESULTS_DIR, 'metrics.csv')}")
+    print(f"           {os.path.join(RESULTS_DIR, 'dsp_metrics.png')}")
+    print(f"           {os.path.join(RESULTS_DIR, 'signals.png')}")
+    print(f"           {os.path.join(RESULTS_DIR, 'spectrum.npz')}")
     print("=" * 60)
     
     return 0 if all_pass else 1

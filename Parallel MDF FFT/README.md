@@ -617,6 +617,53 @@ The Parallel MDF's fixed block exponent means its SQNR for concentrated-energy s
 
 ---
 
+## DSP Figures of Merit
+
+Beyond SQNR, the verification flow reports the standard ADC/DSP figures of merit — **SFDR, THD, SINAD, ENOB, and per-bin phase error** — to substantiate the numerical-precision claim head-to-head with the Serial design. All are computed by the shared module [`common/dsp_metrics.py`](../common/dsp_metrics.py) so the Serial and Parallel numbers come from *identical* math.
+
+### What each metric means
+
+All band metrics are **single-sided** over bins `1 … N/2−1` (DC and Nyquist excluded), on the natural-order, BFP-scaled spectrum `X[k]`; `P[k] = |X[k]|²`.
+
+| Metric | Definition | What it tells you |
+|---|---|---|
+| **SQNR** (dB) | `10·log10( Σ|ref|² / Σ|ref − hw|² )` | Overall reconstruction error vs. the float64 reference. |
+| **SFDR** (dBc) | `10·log10( P[k₀] / max P[k≠k₀] )` | Fundamental vs. the largest spur. |
+| **THD** (dB / %) | `10·log10( ΣP[h·k₀] / P[k₀] )`, h = 2…5 | Harmonic distortion (harmonics folded via `min(m, N−m)`). |
+| **SINAD** (dB) | `10·log10( P[k₀] / Σ P[k≠k₀] )` | Fundamental vs. all other in-band content. |
+| **ENOB** (bits) | `(SINAD − 1.76) / 6.02` | Effective resolution delivered. |
+| **Phase error** (°) | `wrap( ∠hw[k] − ∠ref[k] )` on significant bins | Per-bin phase fidelity; **scale-invariant** (immune to the fixed BFP exponent). |
+
+Single-tone metrics (SFDR / THD / SINAD / ENOB) are defined only for a coherent tone, so they are reported **only for the Sine case** (`k₀ = 50`, coherent — no window). Impulse, DC, Multi-Tone and Chirp report SQNR + phase only; single-tone columns are **N/A** by definition.
+
+### Results (Parallel MDF, hardware simulation)
+
+| Test | SQNR (dB) | SFDR (dBc) | SINAD (dB) | ENOB (bits) | THD (dB) | Phase RMS (°) | Phase RMS detrended (°) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Impulse   | 120.00 | N/A | N/A | N/A | N/A | 0.00 | 0.00 |
+| DC        | 120.00 | N/A | N/A | N/A | N/A | 0.00 | 0.00 |
+| **Sine**  | 73.48  | ≥120.00\* | ≥120.00\* | ≥19.6\* | −120.00 | 0.00 | 0.00 |
+| MultiTone | 68.22  | N/A | N/A | N/A | N/A | 0.00 | 0.00 |
+| Chirp     | 34.95  | N/A | N/A | N/A | N/A | 0.73 | 0.71 |
+
+> **\* Why the Sine single-tone metrics saturate the cap — and why it is *not* a bug.** The peak sits correctly on bin 50 (verified), but the testbench drives a coherent tone at amplitude **2048** (hardcoded in [`tb/tb_fft_top.v`](tb/tb_fft_top.v), required to be a multiple of 2¹⁰ to survive the fixed ÷2¹⁰ block scaling). A coherent tone has **no spectral leakage**, and the BFP integer read-back (LSB = 2¹⁰) rounds every sub-LSB bin to *exactly zero* — so there are no representable spurs and SFDR / SINAD / ENOB hit the 120 dB log-floor cap. These should be read as **"≥ cap, noise-floor-limited"**, not as literal 19.6-bit resolution. For this design the robust, directly comparable precision indicators are **SQNR (73.5 dB)** and the **detrended phase error (≈0°)**.
+
+### Cross-architecture reading
+
+- On the **Sine** tone the two designs are close in SQNR (Parallel 73.5 dB vs. Serial 72.4 dB) and both phase-exact. The Serial design exposes a measurable noise floor (ENOB ≈ 12 bits, SFDR 76 dBc) because its adaptive BFP keeps more sub-LSB content; the Parallel read-back grid hides it.
+- On the broadband **Chirp** the ranking flips: the Parallel fixed-exponent design drops to **34.95 dB** SQNR with **0.71°** detrended phase RMS, versus the Serial design's 65.88 dB / 0.03°. This is the clearest precision finding — the fixed ÷2¹⁰ scaling starves per-bin amplitude when energy is spread across 512 bins, whereas adaptive BFP holds the floor ~30 dB lower.
+
+### Regenerating
+
+```bash
+# From the project root (Parallel MDF FFT/)
+python scripts/fft_verify.py
+```
+
+Writes to `results/parallel/` (not version-controlled — regenerable): `dsp_metrics.png`, `metrics.csv`, `signals.png`, `spectrum.npz`. For the Serial-vs-Parallel comparison driven by the identical math path, run [`cosim/cosim_compare.py`](../cosim/cosim_compare.py) from the repo root (see the root [README](../README.md#cross-architecture-co-simulation)).
+
+---
+
 ## File Structure
 
 ```
