@@ -1,0 +1,184 @@
+<pragmas>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>::operator~() const" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="20" pragmaType="inline" parentfunction="bfp_shift_16" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="44" pragmaType="inline" parentfunction="bfp_exp_delta" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="121" pragmaType="inline" parentfunction="fft_stage_bfp" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="189" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="133" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="134" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="re"/>
+<pragma file="serial_fft/fft_serial.cpp" line="135" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="im"/>
+<pragma file="serial_fft/fft_serial.cpp" line="163" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="164" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="165" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="166" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="./serial_fft/../twiddle_rom.h" line="20" pragmaType="inline" parentfunction="twiddle_get" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<33>::ap_int<49>(ap_int<49> const&)" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="121" pragmaType="inline" parentfunction="fft_stage_bfp" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="189" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="133" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="134" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="re"/>
+<pragma file="serial_fft/fft_serial.cpp" line="135" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="im"/>
+<pragma file="serial_fft/fft_serial.cpp" line="163" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="164" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="165" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="166" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<8, false>::ap_bit_ref(ap_int_base<8, false>*, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<17>::ap_int<33>(ap_int<33> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="range" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="93" pragmaType="inline" parentfunction="bit_rev10" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="96" pragmaType="unroll" parentfunction="bit_rev10" factor="-1" skip_exit_check="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="121" pragmaType="inline" parentfunction="fft_stage_bfp" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="189" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="133" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="134" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="re"/>
+<pragma file="serial_fft/fft_serial.cpp" line="135" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="im"/>
+<pragma file="serial_fft/fft_serial.cpp" line="163" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="164" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="165" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="166" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::operator long long() const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<33>::ap_int<16>(ap_int<16> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<17>::ap_int(short)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<17, true>::operator bool() const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::RType<($_0)16, true>::mult operator*<33, true>(ap_int_base<33, true> const&, short)" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="121" pragmaType="inline" parentfunction="fft_stage_bfp" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="189" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="133" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="134" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="re"/>
+<pragma file="serial_fft/fft_serial.cpp" line="135" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="im"/>
+<pragma file="serial_fft/fft_serial.cpp" line="163" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="164" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="165" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="166" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<8>::ap_uint(int)" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="121" pragmaType="inline" parentfunction="fft_stage_bfp" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="189" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="133" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="134" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="re"/>
+<pragma file="serial_fft/fft_serial.cpp" line="135" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="im"/>
+<pragma file="serial_fft/fft_serial.cpp" line="163" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="164" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="165" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="166" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::RType<33, true>::minus operator-<33, true, 33, true>(ap_int_base<33, true> const&, ap_int_base<33, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::RType<33, true>::arg1 operator>><33, true>(ap_int_base<33, true> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<17>::ap_int<16>(ap_int<16> const&)" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="121" pragmaType="inline" parentfunction="fft_stage_bfp" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="189" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="133" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="134" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="re"/>
+<pragma file="serial_fft/fft_serial.cpp" line="135" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="im"/>
+<pragma file="serial_fft/fft_serial.cpp" line="163" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="164" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="165" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="166" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<33>::ap_int<34>(ap_int<34> const&)" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="121" pragmaType="inline" parentfunction="fft_stage_bfp" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="189" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="133" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="134" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="re"/>
+<pragma file="serial_fft/fft_serial.cpp" line="135" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="im"/>
+<pragma file="serial_fft/fft_serial.cpp" line="163" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="164" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="165" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="166" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="121" pragmaType="inline" parentfunction="fft_stage_bfp" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="189" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="133" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="134" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="re"/>
+<pragma file="serial_fft/fft_serial.cpp" line="135" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="im"/>
+<pragma file="serial_fft/fft_serial.cpp" line="163" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="164" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="165" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="166" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::RType<17, true>::plus operator+<17, true, 17, true>(ap_int_base<17, true> const&, ap_int_base<17, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<17>::ap_int<18>(ap_int<18> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::RType<17, true>::minus operator-<17, true, 17, true>(ap_int_base<17, true> const&, ap_int_base<17, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="121" pragmaType="inline" parentfunction="fft_stage_bfp" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="189" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="133" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="134" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="re"/>
+<pragma file="serial_fft/fft_serial.cpp" line="135" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="im"/>
+<pragma file="serial_fft/fft_serial.cpp" line="163" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="164" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="165" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="166" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="65" pragmaType="inline" parentfunction="bfp_magnitude" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>::RType<8, false>::logic operator|<8, false, 8, false>(ap_int_base<8, false> const&, ap_int_base<8, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="76" pragmaType="inline" parentfunction="bfp_clz8" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>::operator[](int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<8, false>::operator bool() const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::RType<33, true>::plus operator+<33, true, 33, true>(ap_int_base<33, true> const&, ap_int_base<33, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="121" pragmaType="inline" parentfunction="fft_stage_bfp" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="189" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="133" pragmaType="pipeline" parentfunction="fft_stage_bfp" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="134" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="re"/>
+<pragma file="serial_fft/fft_serial.cpp" line="135" pragmaType="dependence" parentfunction="fft_stage_bfp" class="" direction="NODIR" type="inter" distance="0" variable="im"/>
+<pragma file="serial_fft/fft_serial.cpp" line="163" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="164" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="165" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="serial_fft/fft_serial.cpp" line="166" pragmaType="bind_op" parentfunction="fft_stage_bfp" op="12" impl="3" latency="3"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<8>::ap_uint<8, false>(ap_int_base<8, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="523" pragmaType="inline" parentfunction="ssdm_int<8, false>::ssdm_int(unsigned char)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<8>::ap_uint<17, true>(ap_range_ref<17, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::operator[](int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::ap_int_base<34, true>(ap_int_base<34, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::ap_int_base(short)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<49, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi17ELb1EEC2EDq17_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::ap_int_base<49, true>(ap_int_base<49, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<16, true>::ap_int_base(short)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::RType<17, true>::arg1 operator>><17, true>(ap_int_base<17, true> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<18, true>::ap_int_base<17, true>(ap_int_base<17, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::ap_int_base<18, true>(ap_int_base<18, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<49>::ap_int<49, true>(ap_int_base<49, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<17>::ap_int(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_range_ref<17, true>::ap_range_ref(ap_int_base<17, true>*, int, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<18>::ap_int<18, true>(ap_int_base<18, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<34, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<49, true>::ap_int_base<33, true>(ap_int_base<33, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>::ap_int_base<17, true>(ap_range_ref<17, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi33ELb1EEC2EDq33_i" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi34ELb1EEC2EDq34_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::RType<16, true>::mult operator*<33, true, 16, true>(ap_int_base<33, true> const&, ap_int_base<16, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<18, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<49, true>::ap_int_base<16, true>(ap_int_base<16, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="515" pragmaType="inline" parentfunction="ssdm_int<16, true>::ssdm_int(short)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<16>::ap_int<17>(ap_int<17> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::RType<17, true>::arg1 operator<<<17, true>(ap_int_base<17, true> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi18ELb1EEC2EDq18_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<17, true>::ap_bit_ref(ap_int_base<17, true>*, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<34, true>::ap_int_base<33, true>(ap_int_base<33, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::ap_int_base<16, true>(ap_int_base<16, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<17>::ap_int<17, true>(ap_int_base<17, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<33>::ap_int<33, true>(ap_int_base<33, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<16, true>::ap_int_base<17, true>(ap_int_base<17, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::ap_int_base<33, true>(ap_int_base<33, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<34>::ap_int<34, true>(ap_int_base<34, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi49ELb1EEC2EDq49_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::ap_int_base<16, true>(ap_int_base<16, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="274" pragmaType="pipeline" parentfunction="fft_serial" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="220" pragmaType="pipeline" parentfunction="fft_serial" off="0" ii="1" rewind="0" style=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="206" pragmaType="interface" parentfunction="fft_serial" mode="m_axi" port="in_re" bundle="AXI_IN" offset="" name="" depth="-1" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="207" pragmaType="interface" parentfunction="fft_serial" mode="m_axi" port="in_im" bundle="AXI_IN" offset="" name="" depth="-1" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="208" pragmaType="interface" parentfunction="fft_serial" mode="m_axi" port="out_re" bundle="AXI_OUT" offset="" name="" depth="-1" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="209" pragmaType="interface" parentfunction="fft_serial" mode="m_axi" port="out_im" bundle="AXI_OUT" offset="" name="" depth="-1" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="serial_fft/fft_serial.cpp" line="210" pragmaType="interface" parentfunction="fft_serial" mode="s_axilite" port="blk_exp" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="211" pragmaType="interface" parentfunction="fft_serial" mode="s_axilite" port="" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="serial_fft/fft_serial.cpp" line="215" pragmaType="array_partition" parentfunction="fft_serial" dim="1" factor="2" mode="cyclic" dynamic="0" variable="re"/>
+<pragma file="serial_fft/fft_serial.cpp" line="216" pragmaType="array_partition" parentfunction="fft_serial" dim="1" factor="2" mode="cyclic" dynamic="0" variable="im"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>& ap_int_base<8, false>::operator|=<8, false>(ap_int_base<8, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+</pragmas>

@@ -1,0 +1,579 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:135:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="get_data" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:140:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="set_data" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:205:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="keep_all" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:317:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="empty" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:325:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="full" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:334:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:345:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:357:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="write" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:368:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_nb" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:385:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="write_nb" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="./mdf_fft/../twiddle_rom.h:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="twiddle_get" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="./mdf_fft/../twiddle_rom.h:46:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mdf_twiddle_get" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:29:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="unpack" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:31:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="unpack" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:39:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="pack" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:41:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="pack" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:52:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="rte_shr1" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:62:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cmult" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:88:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="stage_fb" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:92:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="stage_fb" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=delay_re dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:93:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="stage_fb" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=delay_im dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:96:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="stage_fb" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:97:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="stage_fb" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=delay_re inter false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:98:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="stage_fb" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=delay_im inter false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:110:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="stage_fb" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:120:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="stage_fb" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:133:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="stage_fb" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:166:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="stage_nf" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:169:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="stage_nf" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:224:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="stage_nf" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:246:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bit_reverse_buf" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:252:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bit_reverse_buf" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=bank dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:259:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bit_reverse_buf" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:272:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bit_reverse_buf" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:278:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bit_reverse_buf" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:302:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="axis_to_word" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:314:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="word_to_axis" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Users/ntoum/Desktop/thesis_repo/hls/export_impl.tcl:24:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=fft_mdf" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:332:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=s_in register" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:333:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=s_out register" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:334:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_ctrl_none port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:336:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:342:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=w_in depth=260" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:343:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=w_out depth=260" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:344:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=s0 depth=260" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:345:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=s1 depth=260" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:346:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=s2 depth=260" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:347:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=s3 depth=260" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:348:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=s4 depth=260" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:349:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=s5 depth=260" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:350:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=s6 depth=260" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:351:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=s7 depth=260" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:352:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=s8 depth=260" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:353:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fft_mdf" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=s9 depth=260" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-273" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:87:0" msg_body="In function 'void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)', Pragma conflict happens on 'INLINE' and DATAFLOW pragmas: Inline into dataflow region may break the canonical form">
+        <args Function="void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Function-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-273" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:87:0" msg_body="In function 'void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)', Pragma conflict happens on 'INLINE' and DATAFLOW pragmas: Inline into dataflow region may break the canonical form">
+        <args Function="void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Function-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-273" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:87:0" msg_body="In function 'void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)', Pragma conflict happens on 'INLINE' and DATAFLOW pragmas: Inline into dataflow region may break the canonical form">
+        <args Function="void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Function-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-273" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:87:0" msg_body="In function 'void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)', Pragma conflict happens on 'INLINE' and DATAFLOW pragmas: Inline into dataflow region may break the canonical form">
+        <args Function="void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Function-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-273" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:87:0" msg_body="In function 'void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)', Pragma conflict happens on 'INLINE' and DATAFLOW pragmas: Inline into dataflow region may break the canonical form">
+        <args Function="void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Function-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-273" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:87:0" msg_body="In function 'void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)', Pragma conflict happens on 'INLINE' and DATAFLOW pragmas: Inline into dataflow region may break the canonical form">
+        <args Function="void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Function-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-273" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:87:0" msg_body="In function 'void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)', Pragma conflict happens on 'INLINE' and DATAFLOW pragmas: Inline into dataflow region may break the canonical form">
+        <args Function="void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Function-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-273" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:87:0" msg_body="In function 'void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)', Pragma conflict happens on 'INLINE' and DATAFLOW pragmas: Inline into dataflow region may break the canonical form">
+        <args Function="void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Function-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-273" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:165:0" msg_body="In function 'void stage_nf&lt;0&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)', Pragma conflict happens on 'INLINE' and DATAFLOW pragmas: Inline into dataflow region may break the canonical form">
+        <args Function="void stage_nf&lt;0&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Function-DebugLoc="File mdf_fft/fft_mdf.cpp Line 165 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-273" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:165:0" msg_body="In function 'void stage_nf&lt;1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)', Pragma conflict happens on 'INLINE' and DATAFLOW pragmas: Inline into dataflow region may break the canonical form">
+        <args Function="void stage_nf&lt;1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Function-DebugLoc="File mdf_fft/fft_mdf.cpp Line 165 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-273" msg_severity="WARNING" msg_loc="mdf_fft/fft_mdf.cpp:245:0" msg_body="In function 'bit_reverse_buf(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)', Pragma conflict happens on 'INLINE' and DATAFLOW pragmas: Inline into dataflow region may break the canonical form">
+        <args Function="bit_reverse_buf(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Function-DebugLoc="File mdf_fft/fft_mdf.cpp Line 245 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="./mdf_fft/../twiddle_rom.h:48:5" msg_body="Inlining function 'twiddle_get(int, short*, short*)' into 'mdf_twiddle_get(int, int, int, short*, short*)'">
+        <args Callee="twiddle_get(int, short*, short*)" Callee-DebugLoc="File ./mdf_fft/../twiddle_rom.h Line 19 Column 0" Caller="mdf_twiddle_get(int, int, int, short*, short*)" Caller-DebugLoc="File ./mdf_fft/../twiddle_rom.h Line 45 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:147:9" msg_body="Inlining function 'pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)' into 'void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 38 Column 0" Caller="void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:142:29" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:141:29" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:140:36" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:139:36" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:126:17" msg_body="Inlining function 'cmult(ap_int&lt;16&gt;, ap_int&lt;16&gt;, short, short, ap_int&lt;16&gt;&amp;, ap_int&lt;16&gt;&amp;)' into 'void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="cmult(ap_int&lt;16&gt;, ap_int&lt;16&gt;, short, short, ap_int&lt;16&gt;&amp;, ap_int&lt;16&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 61 Column 0" Caller="void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:125:17" msg_body="Inlining function 'mdf_twiddle_get(int, int, int, short*, short*)' into 'void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="mdf_twiddle_get(int, int, int, short*, short*)" Callee-DebugLoc="File ./mdf_fft/../twiddle_rom.h Line 45 Column 0" Caller="void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:102:9" msg_body="Inlining function 'unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)' into 'void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 28 Column 0" Caller="void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:147:9" msg_body="Inlining function 'pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)' into 'void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 38 Column 0" Caller="void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:142:29" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:141:29" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:140:36" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:139:36" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:126:17" msg_body="Inlining function 'cmult(ap_int&lt;16&gt;, ap_int&lt;16&gt;, short, short, ap_int&lt;16&gt;&amp;, ap_int&lt;16&gt;&amp;)' into 'void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="cmult(ap_int&lt;16&gt;, ap_int&lt;16&gt;, short, short, ap_int&lt;16&gt;&amp;, ap_int&lt;16&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 61 Column 0" Caller="void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:125:17" msg_body="Inlining function 'mdf_twiddle_get(int, int, int, short*, short*)' into 'void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="mdf_twiddle_get(int, int, int, short*, short*)" Callee-DebugLoc="File ./mdf_fft/../twiddle_rom.h Line 45 Column 0" Caller="void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:102:9" msg_body="Inlining function 'unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)' into 'void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 28 Column 0" Caller="void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:147:9" msg_body="Inlining function 'pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)' into 'void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 38 Column 0" Caller="void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:142:29" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:141:29" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:140:36" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:139:36" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:126:17" msg_body="Inlining function 'cmult(ap_int&lt;16&gt;, ap_int&lt;16&gt;, short, short, ap_int&lt;16&gt;&amp;, ap_int&lt;16&gt;&amp;)' into 'void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="cmult(ap_int&lt;16&gt;, ap_int&lt;16&gt;, short, short, ap_int&lt;16&gt;&amp;, ap_int&lt;16&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 61 Column 0" Caller="void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:125:17" msg_body="Inlining function 'mdf_twiddle_get(int, int, int, short*, short*)' into 'void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="mdf_twiddle_get(int, int, int, short*, short*)" Callee-DebugLoc="File ./mdf_fft/../twiddle_rom.h Line 45 Column 0" Caller="void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:102:9" msg_body="Inlining function 'unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)' into 'void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 28 Column 0" Caller="void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:147:9" msg_body="Inlining function 'pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)' into 'void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 38 Column 0" Caller="void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:142:29" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:141:29" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:140:36" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:139:36" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:126:17" msg_body="Inlining function 'cmult(ap_int&lt;16&gt;, ap_int&lt;16&gt;, short, short, ap_int&lt;16&gt;&amp;, ap_int&lt;16&gt;&amp;)' into 'void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="cmult(ap_int&lt;16&gt;, ap_int&lt;16&gt;, short, short, ap_int&lt;16&gt;&amp;, ap_int&lt;16&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 61 Column 0" Caller="void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:125:17" msg_body="Inlining function 'mdf_twiddle_get(int, int, int, short*, short*)' into 'void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="mdf_twiddle_get(int, int, int, short*, short*)" Callee-DebugLoc="File ./mdf_fft/../twiddle_rom.h Line 45 Column 0" Caller="void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:102:9" msg_body="Inlining function 'unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)' into 'void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 28 Column 0" Caller="void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:147:9" msg_body="Inlining function 'pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)' into 'void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 38 Column 0" Caller="void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:142:29" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:141:29" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:140:36" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:139:36" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:126:17" msg_body="Inlining function 'cmult(ap_int&lt;16&gt;, ap_int&lt;16&gt;, short, short, ap_int&lt;16&gt;&amp;, ap_int&lt;16&gt;&amp;)' into 'void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="cmult(ap_int&lt;16&gt;, ap_int&lt;16&gt;, short, short, ap_int&lt;16&gt;&amp;, ap_int&lt;16&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 61 Column 0" Caller="void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:125:17" msg_body="Inlining function 'mdf_twiddle_get(int, int, int, short*, short*)' into 'void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="mdf_twiddle_get(int, int, int, short*, short*)" Callee-DebugLoc="File ./mdf_fft/../twiddle_rom.h Line 45 Column 0" Caller="void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:102:9" msg_body="Inlining function 'unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)' into 'void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 28 Column 0" Caller="void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:147:9" msg_body="Inlining function 'pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)' into 'void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 38 Column 0" Caller="void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:142:29" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:141:29" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:140:36" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:139:36" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:126:17" msg_body="Inlining function 'cmult(ap_int&lt;16&gt;, ap_int&lt;16&gt;, short, short, ap_int&lt;16&gt;&amp;, ap_int&lt;16&gt;&amp;)' into 'void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="cmult(ap_int&lt;16&gt;, ap_int&lt;16&gt;, short, short, ap_int&lt;16&gt;&amp;, ap_int&lt;16&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 61 Column 0" Caller="void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:125:17" msg_body="Inlining function 'mdf_twiddle_get(int, int, int, short*, short*)' into 'void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="mdf_twiddle_get(int, int, int, short*, short*)" Callee-DebugLoc="File ./mdf_fft/../twiddle_rom.h Line 45 Column 0" Caller="void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:102:9" msg_body="Inlining function 'unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)' into 'void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 28 Column 0" Caller="void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:147:9" msg_body="Inlining function 'pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)' into 'void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 38 Column 0" Caller="void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:142:29" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:141:29" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:140:36" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:139:36" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:126:17" msg_body="Inlining function 'cmult(ap_int&lt;16&gt;, ap_int&lt;16&gt;, short, short, ap_int&lt;16&gt;&amp;, ap_int&lt;16&gt;&amp;)' into 'void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="cmult(ap_int&lt;16&gt;, ap_int&lt;16&gt;, short, short, ap_int&lt;16&gt;&amp;, ap_int&lt;16&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 61 Column 0" Caller="void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:125:17" msg_body="Inlining function 'mdf_twiddle_get(int, int, int, short*, short*)' into 'void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="mdf_twiddle_get(int, int, int, short*, short*)" Callee-DebugLoc="File ./mdf_fft/../twiddle_rom.h Line 45 Column 0" Caller="void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:102:9" msg_body="Inlining function 'unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)' into 'void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 28 Column 0" Caller="void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:147:9" msg_body="Inlining function 'pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)' into 'void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 38 Column 0" Caller="void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:142:29" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:141:29" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:140:36" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:139:36" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:126:17" msg_body="Inlining function 'cmult(ap_int&lt;16&gt;, ap_int&lt;16&gt;, short, short, ap_int&lt;16&gt;&amp;, ap_int&lt;16&gt;&amp;)' into 'void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="cmult(ap_int&lt;16&gt;, ap_int&lt;16&gt;, short, short, ap_int&lt;16&gt;&amp;, ap_int&lt;16&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 61 Column 0" Caller="void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:125:17" msg_body="Inlining function 'mdf_twiddle_get(int, int, int, short*, short*)' into 'void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="mdf_twiddle_get(int, int, int, short*, short*)" Callee-DebugLoc="File ./mdf_fft/../twiddle_rom.h Line 45 Column 0" Caller="void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:102:9" msg_body="Inlining function 'unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)' into 'void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 28 Column 0" Caller="void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:230:9" msg_body="Inlining function 'pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)' into 'void stage_nf&lt;0&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 38 Column 0" Caller="void stage_nf&lt;0&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 165 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:226:28" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_nf&lt;0&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_nf&lt;0&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 165 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:225:17" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_nf&lt;0&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_nf&lt;0&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 165 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:173:9" msg_body="Inlining function 'unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)' into 'void stage_nf&lt;0&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 28 Column 0" Caller="void stage_nf&lt;0&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 165 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:230:9" msg_body="Inlining function 'pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)' into 'void stage_nf&lt;1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="pack(mdf_word_t&amp;, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, bool)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 38 Column 0" Caller="void stage_nf&lt;1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 165 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:226:28" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_nf&lt;1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_nf&lt;1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 165 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:225:17" msg_body="Inlining function 'rte_shr1(ap_int&lt;17&gt;)' into 'void stage_nf&lt;1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="rte_shr1(ap_int&lt;17&gt;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 51 Column 0" Caller="void stage_nf&lt;1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 165 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:173:9" msg_body="Inlining function 'unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)' into 'void stage_nf&lt;1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)'">
+        <args Callee="unpack(mdf_word_t const&amp;, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 28 Column 0" Caller="void stage_nf&lt;1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 165 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:359:5" msg_body="Inlining function 'void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)' into 'fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)'">
+        <args Callee="void stage_fb&lt;0, 128&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0" Caller="fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 331 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:360:5" msg_body="Inlining function 'void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)' into 'fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)'">
+        <args Callee="void stage_fb&lt;1, 64&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0" Caller="fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 331 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:373:5" msg_body="Inlining function 'bit_reverse_buf(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)' into 'fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)'">
+        <args Callee="bit_reverse_buf(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 245 Column 0" Caller="fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 331 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:370:5" msg_body="Inlining function 'void stage_nf&lt;1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)' into 'fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)'">
+        <args Callee="void stage_nf&lt;1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 165 Column 0" Caller="fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 331 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:369:5" msg_body="Inlining function 'void stage_nf&lt;0&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)' into 'fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)'">
+        <args Callee="void stage_nf&lt;0&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 165 Column 0" Caller="fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 331 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:366:5" msg_body="Inlining function 'void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)' into 'fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)'">
+        <args Callee="void stage_fb&lt;7, 1&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0" Caller="fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 331 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:365:5" msg_body="Inlining function 'void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)' into 'fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)'">
+        <args Callee="void stage_fb&lt;6, 2&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0" Caller="fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 331 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:364:5" msg_body="Inlining function 'void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)' into 'fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)'">
+        <args Callee="void stage_fb&lt;5, 4&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0" Caller="fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 331 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:363:5" msg_body="Inlining function 'void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)' into 'fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)'">
+        <args Callee="void stage_fb&lt;4, 8&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0" Caller="fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 331 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:362:5" msg_body="Inlining function 'void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)' into 'fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)'">
+        <args Callee="void stage_fb&lt;3, 16&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0" Caller="fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 331 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:361:5" msg_body="Inlining function 'void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)' into 'fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)'">
+        <args Callee="void stage_fb&lt;2, 32&gt;(hls::stream&lt;mdf_word_t, 0&gt;&amp;, hls::stream&lt;mdf_word_t, 0&gt;&amp;)" Callee-DebugLoc="File mdf_fft/fft_mdf.cpp Line 87 Column 0" Caller="fft_mdf(hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_int&lt;128&gt;, 1ul, 1ul, 1ul, (unsigned char)56, false&gt;, 0&gt;&amp;)" Caller-DebugLoc="File mdf_fft/fft_mdf.cpp Line 331 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:277:27" msg_body="Loop 'VITIS_LOOP_277_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_277_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:30:19" msg_body="Loop 'VITIS_LOOP_30_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_30_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:223:27" msg_body="Loop 'VITIS_LOOP_223_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_223_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:40:19" msg_body="Loop 'VITIS_LOOP_40_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_40_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:109:27" msg_body="Loop 'VITIS_LOOP_109_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_109_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:119:31" msg_body="Loop 'VITIS_LOOP_119_3' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_119_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:132:31" msg_body="Loop 'VITIS_LOOP_132_4' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_132_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:331:0" msg_body="Unrolling loop 'VITIS_LOOP_277_1' (mdf_fft/fft_mdf.cpp:277:27) in function 'fft_mdf' completely with a factor of 8">
+        <args Factor="8" LoopLoc="mdf_fft/fft_mdf.cpp:277:27" LoopName="VITIS_LOOP_277_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:331:0" msg_body="Unrolling loop 'VITIS_LOOP_30_1' (mdf_fft/fft_mdf.cpp:30:19) in function 'fft_mdf' completely with a factor of 4">
+        <args Factor="4" LoopLoc="mdf_fft/fft_mdf.cpp:30:19" LoopName="VITIS_LOOP_30_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:331:0" msg_body="Unrolling loop 'VITIS_LOOP_223_2' (mdf_fft/fft_mdf.cpp:223:27) in function 'fft_mdf' completely with a factor of 4">
+        <args Factor="4" LoopLoc="mdf_fft/fft_mdf.cpp:223:27" LoopName="VITIS_LOOP_223_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:331:0" msg_body="Unrolling loop 'VITIS_LOOP_40_1' (mdf_fft/fft_mdf.cpp:40:19) in function 'fft_mdf' completely with a factor of 4">
+        <args Factor="4" LoopLoc="mdf_fft/fft_mdf.cpp:40:19" LoopName="VITIS_LOOP_40_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:331:0" msg_body="Unrolling loop 'VITIS_LOOP_109_2' (mdf_fft/fft_mdf.cpp:109:27) in function 'fft_mdf' completely with a factor of 4">
+        <args Factor="4" LoopLoc="mdf_fft/fft_mdf.cpp:109:27" LoopName="VITIS_LOOP_109_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:331:0" msg_body="Unrolling loop 'VITIS_LOOP_119_3' (mdf_fft/fft_mdf.cpp:119:31) in function 'fft_mdf' completely with a factor of 4">
+        <args Factor="4" LoopLoc="mdf_fft/fft_mdf.cpp:119:31" LoopName="VITIS_LOOP_119_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:331:0" msg_body="Unrolling loop 'VITIS_LOOP_132_4' (mdf_fft/fft_mdf.cpp:132:31) in function 'fft_mdf' completely with a factor of 4">
+        <args Factor="4" LoopLoc="mdf_fft/fft_mdf.cpp:132:31" LoopName="VITIS_LOOP_132_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:251:0" msg_body="Applying array_partition to '_ZZL15bit_reverse_bufRN3hls6streamI10mdf_word_tLi0EEES3_E4bank': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="_ZZL15bit_reverse_bufRN3hls6streamI10mdf_word_tLi0EEES3_E4bank"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:90:0" msg_body="Applying array_partition to '_ZZL8stage_fbILi7ELi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="_ZZL8stage_fbILi7ELi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:91:0" msg_body="Applying array_partition to '_ZZL8stage_fbILi7ELi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="_ZZL8stage_fbILi7ELi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:90:0" msg_body="Applying array_partition to '_ZZL8stage_fbILi6ELi2EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="_ZZL8stage_fbILi6ELi2EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:91:0" msg_body="Applying array_partition to '_ZZL8stage_fbILi6ELi2EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="_ZZL8stage_fbILi6ELi2EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:90:0" msg_body="Applying array_partition to '_ZZL8stage_fbILi5ELi4EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="_ZZL8stage_fbILi5ELi4EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:91:0" msg_body="Applying array_partition to '_ZZL8stage_fbILi5ELi4EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="_ZZL8stage_fbILi5ELi4EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:90:0" msg_body="Applying array_partition to '_ZZL8stage_fbILi4ELi8EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="_ZZL8stage_fbILi4ELi8EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:91:0" msg_body="Applying array_partition to '_ZZL8stage_fbILi4ELi8EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="_ZZL8stage_fbILi4ELi8EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:90:0" msg_body="Applying array_partition to '_ZZL8stage_fbILi3ELi16EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="_ZZL8stage_fbILi3ELi16EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:91:0" msg_body="Applying array_partition to '_ZZL8stage_fbILi3ELi16EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="_ZZL8stage_fbILi3ELi16EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:90:0" msg_body="Applying array_partition to '_ZZL8stage_fbILi2ELi32EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="_ZZL8stage_fbILi2ELi32EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:91:0" msg_body="Applying array_partition to '_ZZL8stage_fbILi2ELi32EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="_ZZL8stage_fbILi2ELi32EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:90:0" msg_body="Applying array_partition to '_ZZL8stage_fbILi1ELi64EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="_ZZL8stage_fbILi1ELi64EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:91:0" msg_body="Applying array_partition to '_ZZL8stage_fbILi1ELi64EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="_ZZL8stage_fbILi1ELi64EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:90:0" msg_body="Applying array_partition to '_ZZL8stage_fbILi0ELi128EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="_ZZL8stage_fbILi0ELi128EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:91:0" msg_body="Applying array_partition to '_ZZL8stage_fbILi0ELi128EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="_ZZL8stage_fbILi0ELi128EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:341:37" msg_body="Aggregating fifo (hls::stream) variable 's2' with compact=bit mode in 129-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="129" HwTyName="fifo (hls::stream)" Name="s2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:341:41" msg_body="Aggregating fifo (hls::stream) variable 's3' with compact=bit mode in 129-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="129" HwTyName="fifo (hls::stream)" Name="s3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:341:45" msg_body="Aggregating fifo (hls::stream) variable 's4' with compact=bit mode in 129-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="129" HwTyName="fifo (hls::stream)" Name="s4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:341:49" msg_body="Aggregating fifo (hls::stream) variable 's5' with compact=bit mode in 129-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="129" HwTyName="fifo (hls::stream)" Name="s5"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:341:53" msg_body="Aggregating fifo (hls::stream) variable 's6' with compact=bit mode in 129-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="129" HwTyName="fifo (hls::stream)" Name="s6"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:341:57" msg_body="Aggregating fifo (hls::stream) variable 's7' with compact=bit mode in 129-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="129" HwTyName="fifo (hls::stream)" Name="s7"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:341:61" msg_body="Aggregating fifo (hls::stream) variable 's8' with compact=bit mode in 129-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="129" HwTyName="fifo (hls::stream)" Name="s8"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:341:65" msg_body="Aggregating fifo (hls::stream) variable 's9' with compact=bit mode in 129-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="129" HwTyName="fifo (hls::stream)" Name="s9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:340:32" msg_body="Aggregating fifo (hls::stream) variable 'w_out' with compact=bit mode in 129-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="129" HwTyName="fifo (hls::stream)" Name="w_out"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:341:33" msg_body="Aggregating fifo (hls::stream) variable 's1' with compact=bit mode in 129-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="129" HwTyName="fifo (hls::stream)" Name="s1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:341:29" msg_body="Aggregating fifo (hls::stream) variable 's0' with compact=bit mode in 129-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="129" HwTyName="fifo (hls::stream)" Name="s0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="mdf_fft/fft_mdf.cpp:340:26" msg_body="Aggregating fifo (hls::stream) variable 'w_in' with compact=bit mode in 129-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="129" HwTyName="fifo (hls::stream)" Name="w_in"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

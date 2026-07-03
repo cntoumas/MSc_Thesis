@@ -1,0 +1,16 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../serial_fft/fft_serial.cpp in debug mode
+   Generating csim.exe
+blk_exp = 8  (dynamic BFP; fixed BFP would give 10)
+bin   64: ref_norm=1.0000  hls_norm=1.0000  err=0.0000  PASS
+bin  200: ref_norm=1.0000  hls_norm=0.9997  err=0.0003  PASS
+bin    1: ref_norm=0.0000  hls_norm=0.0000  err=0.0000  PASS
+bin  100: ref_norm=0.0000  hls_norm=0.0000  err=0.0000  PASS
+bin  512: ref_norm=0.0000  hls_norm=0.0001  err=0.0001  PASS
+
+SQNR estimate: 102.0 dB  (dynamic BFP)
+
+Testbench PASSED
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

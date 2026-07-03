@@ -1,0 +1,924 @@
+<profile>
+  <RunData>
+    <RUN_TYPE>impl</RUN_TYPE>
+    <VIVADO_VERSION>v.2023.2</VIVADO_VERSION>
+    <ROOT_MODULE_CELL>bd_0_i/hls_inst</ROOT_MODULE_CELL>
+  </RunData>
+  <TimingReport>
+    <TargetClockPeriod>10.000</TargetClockPeriod>
+    <AchievedClockPeriod>6.847</AchievedClockPeriod>
+    <CLOCK_NAME>ap_clk</CLOCK_NAME>
+    <CP_FINAL>6.847</CP_FINAL>
+    <CP_ROUTE>6.847</CP_ROUTE>
+    <CP_SYNTH>5.666</CP_SYNTH>
+    <CP_TARGET>10.000</CP_TARGET>
+    <SLACK_FINAL>3.153</SLACK_FINAL>
+    <SLACK_ROUTE>3.153</SLACK_ROUTE>
+    <SLACK_SYNTH>4.334</SLACK_SYNTH>
+    <TIMING_MET>TRUE</TIMING_MET>
+    <TNS_FINAL>0.000</TNS_FINAL>
+    <TNS_ROUTE>0.000</TNS_ROUTE>
+    <TNS_SYNTH>0.000</TNS_SYNTH>
+    <WNS_FINAL>3.153</WNS_FINAL>
+    <WNS_ROUTE>3.153</WNS_ROUTE>
+    <WNS_SYNTH>4.334</WNS_SYNTH>
+  </TimingReport>
+  <AreaReport>
+    <Resources>
+      <BRAM>144</BRAM>
+      <CLB>0</CLB>
+      <DSP>114</DSP>
+      <FF>7348</FF>
+      <LATCH>0</LATCH>
+      <LUT>5477</LUT>
+      <SLICE>3203</SLICE>
+      <SRL>0</SRL>
+      <URAM>0</URAM>
+    </Resources>
+    <AvailableResources>
+      <BRAM>730</BRAM>
+      <CLB>0</CLB>
+      <DSP>740</DSP>
+      <FF>269200</FF>
+      <LUT>134600</LUT>
+      <SLICE>33650</SLICE>
+      <URAM>0</URAM>
+    </AvailableResources>
+  </AreaReport>
+  <RtlModules>
+    <RtlModule CELL="inst" DEPTH="0" IS_TOP="1" TYPE="function" MODULENAME="fft_mdf" DISPNAME="inst" RTLNAME="fft_mdf">
+      <SubModules count="41">Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_U0 Loop_VITIS_LOOP_168_1_proc18_U0 Loop_VITIS_LOOP_168_1_proc819_U0 Loop_VITIS_LOOP_95_1_proc10_U0 Loop_VITIS_LOOP_95_1_proc111_U0 Loop_VITIS_LOOP_95_1_proc212_U0 Loop_VITIS_LOOP_95_1_proc313_U0 Loop_VITIS_LOOP_95_1_proc414_U0 Loop_VITIS_LOOP_95_1_proc515_U0 Loop_VITIS_LOOP_95_1_proc616_U0 Loop_VITIS_LOOP_95_1_proc717_U0 Loop_read_loop_proc_U0 axis_to_word_U0 bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_1_U bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_U rd_bank_cast_loc_channel_U s0_U s1_U s2_U s3_U s4_U s5_U s6_U s7_U s8_U s9_U start_for_Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_pro5jm_U start_for_Loop_VITIS_LOOP_168_1_proc18_U0_U start_for_Loop_VITIS_LOOP_168_1_proc819_U0_U start_for_Loop_VITIS_LOOP_95_1_proc10_U0_U start_for_Loop_VITIS_LOOP_95_1_proc111_U0_U start_for_Loop_VITIS_LOOP_95_1_proc212_U0_U start_for_Loop_VITIS_LOOP_95_1_proc313_U0_U start_for_Loop_VITIS_LOOP_95_1_proc414_U0_U start_for_Loop_VITIS_LOOP_95_1_proc515_U0_U start_for_Loop_VITIS_LOOP_95_1_proc616_U0_U start_for_Loop_VITIS_LOOP_95_1_proc717_U0_U start_for_word_to_axis_U0_U w_in_U w_out_U word_to_axis_U0</SubModules>
+      <Resources BRAM="144" DSP="114" FF="7348" LUT="5477"/>
+      <LocalResources BRAM="2" FF="3"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_U0" DEPTH="1" TYPE="function" MODULENAME="Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20" DISPNAME="Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_U0" RTLNAME="fft_mdf_Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20">
+      <SubModules count="1">grp_Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_Pipelin_fu_26</SubModules>
+      <Resources FF="50" LUT="35"/>
+      <LocalResources FF="6" LUT="1"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_U0/grp_Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_Pipelin_fu_26" DEPTH="2" TYPE="function" MODULENAME="Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_Pipelin" DISPNAME="grp_Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_Pipelin_fu_26" RTLNAME="fft_mdf_Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_Pipelin">
+      <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+      <Resources FF="44" LUT="34"/>
+      <LocalResources FF="42" LUT="15"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_U0/grp_Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_Pipelin_fu_26/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_mdf_flow_control_loop_pipe" DEPTH="3" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="fft_mdf_flow_control_loop_pipe_sequential_init">
+      <Resources FF="2" LUT="19"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_168_1_proc18_U0" DEPTH="1" TYPE="function" MODULENAME="Loop_VITIS_LOOP_168_1_proc18" DISPNAME="Loop_VITIS_LOOP_168_1_proc18_U0" RTLNAME="fft_mdf_Loop_VITIS_LOOP_168_1_proc18">
+      <SubModules count="1">flow_control_loop_pipe_U</SubModules>
+      <Resources FF="160" LUT="39"/>
+      <LocalResources FF="159" LUT="25"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_168_1_proc18_U0/flow_control_loop_pipe_U" BINDMODULE="fft_mdf_flow_control_loop_pipe" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe" DISPNAME="flow_control_loop_pipe_U" RTLNAME="fft_mdf_flow_control_loop_pipe">
+      <Resources FF="1" LUT="15"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_168_1_proc819_U0" DEPTH="1" TYPE="function" MODULENAME="Loop_VITIS_LOOP_168_1_proc819" DISPNAME="Loop_VITIS_LOOP_168_1_proc819_U0" RTLNAME="fft_mdf_Loop_VITIS_LOOP_168_1_proc819">
+      <SubModules count="1">flow_control_loop_pipe_U</SubModules>
+      <Resources FF="160" LUT="39"/>
+      <LocalResources FF="159" LUT="25"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_168_1_proc819_U0/flow_control_loop_pipe_U" BINDMODULE="fft_mdf_flow_control_loop_pipe" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe" DISPNAME="flow_control_loop_pipe_U" RTLNAME="fft_mdf_flow_control_loop_pipe">
+      <Resources FF="1" LUT="15"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0" DEPTH="1" TYPE="function" MODULENAME="Loop_VITIS_LOOP_95_1_proc10" DISPNAME="Loop_VITIS_LOOP_95_1_proc10_U0" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10">
+      <SubModules count="19">TW_COS_LUT25_U TW_SIN_LUT30_U flow_control_loop_pipe_U mac_muladd_16s_16s_31s_31_4_1_U24 mac_muladd_16s_16s_31s_31_4_1_U26 mac_muladd_16s_16s_31s_31_4_1_U28 mac_muladd_16s_16s_31s_31_4_1_U30 mac_mulsub_16s_16s_31s_31_4_1_U25 mac_mulsub_16s_16s_31s_31_4_1_U27 mac_mulsub_16s_16s_31s_31_4_1_U29 mac_mulsub_16s_16s_31s_31_4_1_U31 void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_47_U void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_48_U void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_49_U void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_44_U void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_45_U void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_46_U void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U</SubModules>
+      <Resources BRAM="12" DSP="16" FF="738" LUT="529"/>
+      <LocalResources DSP="4" FF="735" LUT="26"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/TW_COS_LUT25_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_COS_LUT25_ROM_AUTO_1R" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_TW_COS_LUT25_ROM_AUTO_1R" DISPNAME="TW_COS_LUT25_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_COS_LUT25_ROM_AUTO_1R">
+      <Resources BRAM="2" FF="2" LUT="64"/>
+      <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="TW_COS_LUT25_U" SOURCE="" STORAGESIZE="15 129 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np" URAM="0" VARIABLE="TW_COS_LUT25"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/TW_SIN_LUT30_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_SIN_LUT30_ROM_AUTO_1R" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_TW_SIN_LUT30_ROM_AUTO_1R" DISPNAME="TW_SIN_LUT30_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_SIN_LUT30_ROM_AUTO_1R">
+      <Resources BRAM="2" LUT="72"/>
+      <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="TW_SIN_LUT30_U" SOURCE="" STORAGESIZE="15 129 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np" URAM="0" VARIABLE="TW_SIN_LUT30"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/flow_control_loop_pipe_U" BINDMODULE="fft_mdf_flow_control_loop_pipe" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe" DISPNAME="flow_control_loop_pipe_U" RTLNAME="fft_mdf_flow_control_loop_pipe">
+      <Resources FF="1" LUT="20"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/mac_muladd_16s_16s_31s_31_4_1_U24" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U24" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U24" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_43"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U24" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/mac_muladd_16s_16s_31s_31_4_1_U26" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U26" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U26" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_45"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U26" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_21"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/mac_muladd_16s_16s_31s_31_4_1_U28" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U28" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U28" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_47"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U28" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_22"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/mac_muladd_16s_16s_31s_31_4_1_U30" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U30" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="18"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U30" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_49"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U30" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_23"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/mac_mulsub_16s_16s_31s_31_4_1_U25" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U25" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U25" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_43"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U25" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/mac_mulsub_16s_16s_31s_31_4_1_U27" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U27" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U27" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_45"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U27" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_21"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/mac_mulsub_16s_16s_31s_31_4_1_U29" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U29" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U29" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_47"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U29" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_22"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/mac_mulsub_16s_16s_31s_31_4_1_U31" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U31" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U31" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_49"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U31" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_23"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_47_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb" DISPNAME="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_47_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb">
+      <Resources BRAM="1" LUT="35"/>
+      <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_47_U" SOURCE="" STORAGESIZE="16 128 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_47"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_48_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb" DISPNAME="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_48_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb">
+      <Resources BRAM="1" LUT="35"/>
+      <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_48_U" SOURCE="" STORAGESIZE="16 128 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_48"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_49_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb" DISPNAME="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_49_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb">
+      <Resources BRAM="1" LUT="39"/>
+      <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_49_U" SOURCE="" STORAGESIZE="16 128 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_49"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb" DISPNAME="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb">
+      <Resources BRAM="1" LUT="35"/>
+      <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" SOURCE="" STORAGESIZE="16 128 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_44_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb" DISPNAME="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_44_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb">
+      <Resources BRAM="1" LUT="35"/>
+      <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_44_U" SOURCE="" STORAGESIZE="16 128 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_44"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_45_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb" DISPNAME="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_45_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb">
+      <Resources BRAM="1" LUT="35"/>
+      <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_45_U" SOURCE="" STORAGESIZE="16 128 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_45"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_46_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb" DISPNAME="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_46_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb">
+      <Resources BRAM="1" LUT="35"/>
+      <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_46_U" SOURCE="" STORAGESIZE="16 128 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_46"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc10_U0/void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb" DISPNAME="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdbkb">
+      <Resources BRAM="1" LUT="35"/>
+      <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" SOURCE="" STORAGESIZE="16 128 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0" DEPTH="1" TYPE="function" MODULENAME="Loop_VITIS_LOOP_95_1_proc111" DISPNAME="Loop_VITIS_LOOP_95_1_proc111_U0" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc111">
+      <SubModules count="19">TW_COS_LUT24_U TW_SIN_LUT29_U flow_control_loop_pipe_U mac_muladd_16s_16s_31s_31_4_1_U48 mac_muladd_16s_16s_31s_31_4_1_U50 mac_muladd_16s_16s_31s_31_4_1_U52 mac_muladd_16s_16s_31s_31_4_1_U54 mac_mulsub_16s_16s_31s_31_4_1_U49 mac_mulsub_16s_16s_31s_31_4_1_U51 mac_mulsub_16s_16s_31s_31_4_1_U53 mac_mulsub_16s_16s_31s_31_4_1_U55 void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_41_U void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_42_U void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_43_U void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_38_U void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_39_U void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_40_U void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U</SubModules>
+      <Resources BRAM="12" DSP="16" FF="735" LUT="527"/>
+      <LocalResources DSP="4" FF="732" LUT="26"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/TW_COS_LUT24_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_COS_LUT25_ROM_AUTO_1R" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_TW_COS_LUT25_ROM_AUTO_1R" DISPNAME="TW_COS_LUT24_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_COS_LUT25_ROM_AUTO_1R">
+      <Resources BRAM="2" FF="2" LUT="64"/>
+      <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="TW_COS_LUT24_U" SOURCE="" STORAGESIZE="15 129 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np" URAM="0" VARIABLE="TW_COS_LUT24"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/TW_SIN_LUT29_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_SIN_LUT30_ROM_AUTO_1R" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_TW_SIN_LUT30_ROM_AUTO_1R" DISPNAME="TW_SIN_LUT29_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_SIN_LUT30_ROM_AUTO_1R">
+      <Resources BRAM="2" LUT="70"/>
+      <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="TW_SIN_LUT29_U" SOURCE="" STORAGESIZE="15 129 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np" URAM="0" VARIABLE="TW_SIN_LUT29"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/flow_control_loop_pipe_U" BINDMODULE="fft_mdf_flow_control_loop_pipe" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe" DISPNAME="flow_control_loop_pipe_U" RTLNAME="fft_mdf_flow_control_loop_pipe">
+      <Resources FF="1" LUT="19"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/mac_muladd_16s_16s_31s_31_4_1_U48" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U48" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U48" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_36"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U48" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/mac_muladd_16s_16s_31s_31_4_1_U50" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U50" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U50" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_38"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U50" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_18"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/mac_muladd_16s_16s_31s_31_4_1_U52" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U52" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U52" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_40"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U52" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_19"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/mac_muladd_16s_16s_31s_31_4_1_U54" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U54" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="18"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U54" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_42"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U54" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_20"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/mac_mulsub_16s_16s_31s_31_4_1_U49" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U49" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U49" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_36"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U49" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/mac_mulsub_16s_16s_31s_31_4_1_U51" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U51" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U51" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_38"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U51" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_18"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/mac_mulsub_16s_16s_31s_31_4_1_U53" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U53" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U53" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_40"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U53" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_19"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/mac_mulsub_16s_16s_31s_31_4_1_U55" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U55" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U55" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_42"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U55" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_20"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_41_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC" DISPNAME="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_41_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC">
+      <Resources BRAM="1" LUT="35"/>
+      <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_41_U" SOURCE="" STORAGESIZE="16 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_41"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_42_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC" DISPNAME="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_42_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC">
+      <Resources BRAM="1" LUT="35"/>
+      <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_42_U" SOURCE="" STORAGESIZE="16 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_42"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_43_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC" DISPNAME="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_43_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC">
+      <Resources BRAM="1" LUT="39"/>
+      <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_43_U" SOURCE="" STORAGESIZE="16 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_43"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC" DISPNAME="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC">
+      <Resources BRAM="1" LUT="35"/>
+      <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" SOURCE="" STORAGESIZE="16 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_38_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC" DISPNAME="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_38_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC">
+      <Resources BRAM="1" LUT="35"/>
+      <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_38_U" SOURCE="" STORAGESIZE="16 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_38"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_39_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC" DISPNAME="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_39_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC">
+      <Resources BRAM="1" LUT="35"/>
+      <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_39_U" SOURCE="" STORAGESIZE="16 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_39"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_40_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC" DISPNAME="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_40_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC">
+      <Resources BRAM="1" LUT="35"/>
+      <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_40_U" SOURCE="" STORAGESIZE="16 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_40"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc111_U0/void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC" DISPNAME="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc111_void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdjbC">
+      <Resources BRAM="1" LUT="35"/>
+      <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" SOURCE="" STORAGESIZE="16 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0" DEPTH="1" TYPE="function" MODULENAME="Loop_VITIS_LOOP_95_1_proc212" DISPNAME="Loop_VITIS_LOOP_95_1_proc212_U0" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc212">
+      <SubModules count="19">TW_COS_LUT23_U TW_SIN_LUT28_U flow_control_loop_pipe_U mac_muladd_16s_16s_31s_31_4_1_U67 mac_muladd_16s_16s_31s_31_4_1_U69 mac_muladd_16s_16s_31s_31_4_1_U71 mac_muladd_16s_16s_31s_31_4_1_U73 mac_mulsub_16s_16s_31s_31_4_1_U68 mac_mulsub_16s_16s_31s_31_4_1_U70 mac_mulsub_16s_16s_31s_31_4_1_U72 mac_mulsub_16s_16s_31s_31_4_1_U74 void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_35_U void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_36_U void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_37_U void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_32_U void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_33_U void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_34_U void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U</SubModules>
+      <Resources BRAM="12" DSP="16" FF="700" LUT="510"/>
+      <LocalResources DSP="4" FF="697" LUT="145"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/TW_COS_LUT23_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_COS_LUT25_ROM_AUTO_1R" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_TW_COS_LUT25_ROM_AUTO_1R" DISPNAME="TW_COS_LUT23_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_COS_LUT25_ROM_AUTO_1R">
+      <Resources BRAM="2" FF="2" LUT="64"/>
+      <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="TW_COS_LUT23_U" SOURCE="" STORAGESIZE="15 129 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np" URAM="0" VARIABLE="TW_COS_LUT23"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/TW_SIN_LUT28_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_SIN_LUT30_ROM_AUTO_1R" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_TW_SIN_LUT30_ROM_AUTO_1R" DISPNAME="TW_SIN_LUT28_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_SIN_LUT30_ROM_AUTO_1R">
+      <Resources BRAM="2" LUT="69"/>
+      <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="TW_SIN_LUT28_U" SOURCE="" STORAGESIZE="15 129 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np" URAM="0" VARIABLE="TW_SIN_LUT28"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/flow_control_loop_pipe_U" BINDMODULE="fft_mdf_flow_control_loop_pipe" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe" DISPNAME="flow_control_loop_pipe_U" RTLNAME="fft_mdf_flow_control_loop_pipe">
+      <Resources FF="1" LUT="19"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/mac_muladd_16s_16s_31s_31_4_1_U67" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U67" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U67" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U67" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/mac_muladd_16s_16s_31s_31_4_1_U69" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U69" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U69" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_30"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U69" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_15"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/mac_muladd_16s_16s_31s_31_4_1_U71" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U71" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U71" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_32"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U71" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_16"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/mac_muladd_16s_16s_31s_31_4_1_U73" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U73" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="18"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U73" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_34"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U73" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_17"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/mac_mulsub_16s_16s_31s_31_4_1_U68" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U68" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U68" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_29"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U68" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/mac_mulsub_16s_16s_31s_31_4_1_U70" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U70" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U70" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_31"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U70" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_15"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/mac_mulsub_16s_16s_31s_31_4_1_U72" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U72" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U72" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_33"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U72" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_16"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/mac_mulsub_16s_16s_31s_31_4_1_U74" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U74" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U74" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_35"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U74" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_17"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_35_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU" DISPNAME="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_35_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_35_U" SOURCE="" STORAGESIZE="16 32 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_35"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_36_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU" DISPNAME="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_36_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_36_U" SOURCE="" STORAGESIZE="16 32 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_36"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_37_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU" DISPNAME="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_37_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU">
+      <Resources BRAM="1" LUT="22"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_37_U" SOURCE="" STORAGESIZE="16 32 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_37"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU" DISPNAME="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" SOURCE="" STORAGESIZE="16 32 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_32_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU" DISPNAME="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_32_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_32_U" SOURCE="" STORAGESIZE="16 32 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_32"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_33_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU" DISPNAME="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_33_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_33_U" SOURCE="" STORAGESIZE="16 32 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_33"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_34_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU" DISPNAME="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_34_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_34_U" SOURCE="" STORAGESIZE="16 32 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_34"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc212_U0/void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU" DISPNAME="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc212_void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdrcU">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" SOURCE="" STORAGESIZE="16 32 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0" DEPTH="1" TYPE="function" MODULENAME="Loop_VITIS_LOOP_95_1_proc313" DISPNAME="Loop_VITIS_LOOP_95_1_proc313_U0" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc313">
+      <SubModules count="19">TW_COS_LUT22_U TW_SIN_LUT27_U flow_control_loop_pipe_U mac_muladd_16s_16s_31s_31_4_1_U86 mac_muladd_16s_16s_31s_31_4_1_U88 mac_muladd_16s_16s_31s_31_4_1_U90 mac_muladd_16s_16s_31s_31_4_1_U92 mac_mulsub_16s_16s_31s_31_4_1_U87 mac_mulsub_16s_16s_31s_31_4_1_U89 mac_mulsub_16s_16s_31s_31_4_1_U91 mac_mulsub_16s_16s_31s_31_4_1_U93 void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_29_U void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_30_U void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_31_U void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_26_U void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_27_U void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_28_U void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U</SubModules>
+      <Resources BRAM="12" DSP="16" FF="697" LUT="509"/>
+      <LocalResources DSP="4" FF="694" LUT="145"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/TW_COS_LUT22_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_COS_LUT25_ROM_AUTO_1R" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_TW_COS_LUT25_ROM_AUTO_1R" DISPNAME="TW_COS_LUT22_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_COS_LUT25_ROM_AUTO_1R">
+      <Resources BRAM="2" FF="2" LUT="64"/>
+      <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="TW_COS_LUT22_U" SOURCE="" STORAGESIZE="15 129 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np" URAM="0" VARIABLE="TW_COS_LUT22"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/TW_SIN_LUT27_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_SIN_LUT30_ROM_AUTO_1R" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_TW_SIN_LUT30_ROM_AUTO_1R" DISPNAME="TW_SIN_LUT27_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_SIN_LUT30_ROM_AUTO_1R">
+      <Resources BRAM="2" LUT="68"/>
+      <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="TW_SIN_LUT27_U" SOURCE="" STORAGESIZE="15 129 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np" URAM="0" VARIABLE="TW_SIN_LUT27"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/flow_control_loop_pipe_U" BINDMODULE="fft_mdf_flow_control_loop_pipe" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe" DISPNAME="flow_control_loop_pipe_U" RTLNAME="fft_mdf_flow_control_loop_pipe">
+      <Resources FF="1" LUT="19"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/mac_muladd_16s_16s_31s_31_4_1_U86" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U86" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U86" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U86" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/mac_muladd_16s_16s_31s_31_4_1_U88" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U88" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U88" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_23"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U88" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_12"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/mac_muladd_16s_16s_31s_31_4_1_U90" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U90" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U90" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_25"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U90" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_13"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/mac_muladd_16s_16s_31s_31_4_1_U92" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U92" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="18"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U92" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_27"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U92" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_14"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/mac_mulsub_16s_16s_31s_31_4_1_U87" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U87" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U87" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_22"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U87" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/mac_mulsub_16s_16s_31s_31_4_1_U89" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U89" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U89" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_24"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U89" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_12"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/mac_mulsub_16s_16s_31s_31_4_1_U91" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U91" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U91" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_26"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U91" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_13"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/mac_mulsub_16s_16s_31s_31_4_1_U93" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U93" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U93" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_28"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U93" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_14"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_29_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec" DISPNAME="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_29_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_29_U" SOURCE="" STORAGESIZE="16 16 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_29"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_30_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec" DISPNAME="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_30_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_30_U" SOURCE="" STORAGESIZE="16 16 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_30"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_31_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec" DISPNAME="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_31_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec">
+      <Resources BRAM="1" LUT="22"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_31_U" SOURCE="" STORAGESIZE="16 16 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_31"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec" DISPNAME="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" SOURCE="" STORAGESIZE="16 16 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_26_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec" DISPNAME="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_26_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_26_U" SOURCE="" STORAGESIZE="16 16 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_26"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_27_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec" DISPNAME="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_27_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_27_U" SOURCE="" STORAGESIZE="16 16 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_27"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_28_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec" DISPNAME="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_28_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_28_U" SOURCE="" STORAGESIZE="16 16 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_28"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc313_U0/void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec" DISPNAME="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc313_void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdzec">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" SOURCE="" STORAGESIZE="16 16 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0" DEPTH="1" TYPE="function" MODULENAME="Loop_VITIS_LOOP_95_1_proc414" DISPNAME="Loop_VITIS_LOOP_95_1_proc414_U0" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc414">
+      <SubModules count="19">TW_COS_LUT21_U TW_SIN_LUT26_U flow_control_loop_pipe_U mac_muladd_16s_16s_31s_31_4_1_U105 mac_muladd_16s_16s_31s_31_4_1_U107 mac_muladd_16s_16s_31s_31_4_1_U109 mac_muladd_16s_16s_31s_31_4_1_U111 mac_mulsub_16s_16s_31s_31_4_1_U106 mac_mulsub_16s_16s_31s_31_4_1_U108 mac_mulsub_16s_16s_31s_31_4_1_U110 mac_mulsub_16s_16s_31s_31_4_1_U112 void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_23_U void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_24_U void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_25_U void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_20_U void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_21_U void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_22_U void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U</SubModules>
+      <Resources BRAM="12" DSP="16" FF="694" LUT="506"/>
+      <LocalResources DSP="4" FF="691" LUT="145"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/TW_COS_LUT21_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_COS_LUT25_ROM_AUTO_1R" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_TW_COS_LUT25_ROM_AUTO_1R" DISPNAME="TW_COS_LUT21_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_COS_LUT25_ROM_AUTO_1R">
+      <Resources BRAM="2" FF="2" LUT="65"/>
+      <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="TW_COS_LUT21_U" SOURCE="" STORAGESIZE="15 129 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np" URAM="0" VARIABLE="TW_COS_LUT21"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/TW_SIN_LUT26_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_SIN_LUT30_ROM_AUTO_1R" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc10_TW_SIN_LUT30_ROM_AUTO_1R" DISPNAME="TW_SIN_LUT26_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc10_TW_SIN_LUT30_ROM_AUTO_1R">
+      <Resources BRAM="2" LUT="67"/>
+      <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="TW_SIN_LUT26_U" SOURCE="" STORAGESIZE="15 129 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np" URAM="0" VARIABLE="TW_SIN_LUT26"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/flow_control_loop_pipe_U" BINDMODULE="fft_mdf_flow_control_loop_pipe" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe" DISPNAME="flow_control_loop_pipe_U" RTLNAME="fft_mdf_flow_control_loop_pipe">
+      <Resources FF="1" LUT="18"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/mac_muladd_16s_16s_31s_31_4_1_U105" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U105" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U105" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_15"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U105" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/mac_muladd_16s_16s_31s_31_4_1_U107" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U107" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U107" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_17"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U107" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_9"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/mac_muladd_16s_16s_31s_31_4_1_U109" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U109" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U109" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_19"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U109" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_10"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/mac_muladd_16s_16s_31s_31_4_1_U111" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U111" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="18"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U111" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_21"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U111" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_11"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/mac_mulsub_16s_16s_31s_31_4_1_U106" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U106" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U106" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_15"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U106" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/mac_mulsub_16s_16s_31s_31_4_1_U108" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U108" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U108" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_17"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U108" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_9"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/mac_mulsub_16s_16s_31s_31_4_1_U110" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U110" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U110" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_19"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U110" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_10"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/mac_mulsub_16s_16s_31s_31_4_1_U112" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U112" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U112" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_21"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U112" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_11"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_23_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu" DISPNAME="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_23_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_23_U" SOURCE="" STORAGESIZE="16 8 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_23"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_24_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu" DISPNAME="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_24_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_24_U" SOURCE="" STORAGESIZE="16 8 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_24"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_25_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu" DISPNAME="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_25_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu">
+      <Resources BRAM="1" LUT="22"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_25_U" SOURCE="" STORAGESIZE="16 8 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_25"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu" DISPNAME="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" SOURCE="" STORAGESIZE="16 8 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_20_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu" DISPNAME="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_20_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_20_U" SOURCE="" STORAGESIZE="16 8 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_20"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_21_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu" DISPNAME="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_21_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_21_U" SOURCE="" STORAGESIZE="16 8 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_21"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_22_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu" DISPNAME="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_22_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_22_U" SOURCE="" STORAGESIZE="16 8 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_22"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc414_U0/void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu" DISPNAME="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc414_void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdfHfu">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" SOURCE="" STORAGESIZE="16 8 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0" DEPTH="1" TYPE="function" MODULENAME="Loop_VITIS_LOOP_95_1_proc515" DISPNAME="Loop_VITIS_LOOP_95_1_proc515_U0" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc515">
+      <SubModules count="19">TW_COS_LUT_U TW_SIN_LUT_U flow_control_loop_pipe_U mac_muladd_16s_16s_31s_31_4_1_U126 mac_muladd_16s_16s_31s_31_4_1_U128 mac_muladd_16s_16s_31s_31_4_1_U130 mac_muladd_16s_16s_31s_31_4_1_U132 mac_mulsub_16s_16s_31s_31_4_1_U127 mac_mulsub_16s_16s_31s_31_4_1_U129 mac_mulsub_16s_16s_31s_31_4_1_U131 mac_mulsub_16s_16s_31s_31_4_1_U133 void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_17_U void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_18_U void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_19_U void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_14_U void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_15_U void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_16_U void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U</SubModules>
+      <Resources BRAM="10" DSP="16" FF="697" LUT="495"/>
+      <LocalResources DSP="4" FF="694" LUT="151"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/TW_COS_LUT_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_TW_COS_LUT_ROM_AUTO_1R" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc515_TW_COS_LUT_ROM_AUTO_1R" DISPNAME="TW_COS_LUT_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_TW_COS_LUT_ROM_AUTO_1R">
+      <Resources BRAM="1" FF="2" LUT="32"/>
+      <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="TW_COS_LUT_U" SOURCE="" STORAGESIZE="15 129 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np" URAM="0" VARIABLE="TW_COS_LUT"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/TW_SIN_LUT_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_TW_SIN_LUT_ROM_AUTO_1R" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc515_TW_SIN_LUT_ROM_AUTO_1R" DISPNAME="TW_SIN_LUT_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_TW_SIN_LUT_ROM_AUTO_1R">
+      <Resources BRAM="1" LUT="34"/>
+      <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="TW_SIN_LUT_U" SOURCE="" STORAGESIZE="15 129 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np" URAM="0" VARIABLE="TW_SIN_LUT"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/flow_control_loop_pipe_U" BINDMODULE="fft_mdf_flow_control_loop_pipe" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe" DISPNAME="flow_control_loop_pipe_U" RTLNAME="fft_mdf_flow_control_loop_pipe">
+      <Resources FF="1" LUT="18"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/mac_muladd_16s_16s_31s_31_4_1_U126" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U126" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="31"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U126" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_8"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U126" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/mac_muladd_16s_16s_31s_31_4_1_U128" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U128" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U128" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_10"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U128" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_6"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/mac_muladd_16s_16s_31s_31_4_1_U130" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U130" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="18"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U130" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_12"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U130" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_7"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/mac_muladd_16s_16s_31s_31_4_1_U132" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U132" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="18"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U132" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_14"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U132" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_8"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/mac_mulsub_16s_16s_31s_31_4_1_U127" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U127" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="31"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U127" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_8"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U127" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/mac_mulsub_16s_16s_31s_31_4_1_U129" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U129" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U129" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_10"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U129" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_6"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/mac_mulsub_16s_16s_31s_31_4_1_U131" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U131" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U131" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_12"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U131" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_7"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/mac_mulsub_16s_16s_31s_31_4_1_U133" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U133" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U133" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_14"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U133" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_8"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_17_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM" DISPNAME="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_17_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_17_U" SOURCE="" STORAGESIZE="16 4 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_17"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_18_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM" DISPNAME="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_18_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_18_U" SOURCE="" STORAGESIZE="16 4 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_18"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_19_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM" DISPNAME="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_19_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM">
+      <Resources BRAM="1" LUT="22"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_19_U" SOURCE="" STORAGESIZE="16 4 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_19"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM" DISPNAME="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" SOURCE="" STORAGESIZE="16 4 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_14_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM" DISPNAME="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_14_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_14_U" SOURCE="" STORAGESIZE="16 4 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_14"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_15_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM" DISPNAME="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_15_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_15_U" SOURCE="" STORAGESIZE="16 4 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_15"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_16_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM" DISPNAME="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_16_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_16_U" SOURCE="" STORAGESIZE="16 4 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_16"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc515_U0/void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM" DISPNAME="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc515_void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdfPgM">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" SOURCE="" STORAGESIZE="16 4 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc616_U0" DEPTH="1" TYPE="function" MODULENAME="Loop_VITIS_LOOP_95_1_proc616" DISPNAME="Loop_VITIS_LOOP_95_1_proc616_U0" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc616">
+      <SubModules count="15">flow_control_loop_pipe_U mac_muladd_16s_16s_31s_31_4_1_U147 mac_muladd_16s_16s_31s_31_4_1_U149 mac_muladd_16s_16s_31s_31_4_1_U150 mac_muladd_16s_16s_31s_31_4_1_U151 mac_mulsub_16s_16s_31s_31_4_1_U148 mac_mulsub_16s_16s_31s_31_4_1_U152 void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_11_U void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_12_U void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_13_U void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_10_U void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_8_U void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_9_U void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U</SubModules>
+      <Resources BRAM="8" DSP="12" FF="719" LUT="525"/>
+      <LocalResources DSP="4" FF="718" LUT="141"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc616_U0/flow_control_loop_pipe_U" BINDMODULE="fft_mdf_flow_control_loop_pipe" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe" DISPNAME="flow_control_loop_pipe_U" RTLNAME="fft_mdf_flow_control_loop_pipe">
+      <Resources FF="1" LUT="17"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc616_U0/mac_muladd_16s_16s_31s_31_4_1_U147" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U147" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U147" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U147" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_3"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc616_U0/mac_muladd_16s_16s_31s_31_4_1_U149" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U149" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="17"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U149" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_4"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U149" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_4"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc616_U0/mac_muladd_16s_16s_31s_31_4_1_U150" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U150" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="18"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U150" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_5"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U150" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_4"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc616_U0/mac_muladd_16s_16s_31s_31_4_1_U151" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U151" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U151" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_6"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U151" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_5"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc616_U0/mac_mulsub_16s_16s_31s_31_4_1_U148" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U148" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U148" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_3"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U148" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_3"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc616_U0/mac_mulsub_16s_16s_31s_31_4_1_U152" BINDMODULE="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_mulsub_16s_16s_31s_31_4_1" DISPNAME="mac_mulsub_16s_16s_31s_31_4_1_U152" RTLNAME="fft_mdf_mac_mulsub_16s_16s_31s_31_4_1">
+      <Resources DSP="1" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U152" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_7"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="mac_mulsub_16s_16s_31s_31_4_1_U152" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_5"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc616_U0/void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_11_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4" DISPNAME="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_11_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_11_U" SOURCE="" STORAGESIZE="16 2 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_11"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc616_U0/void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_12_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4" DISPNAME="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_12_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_12_U" SOURCE="" STORAGESIZE="16 2 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_12"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc616_U0/void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_13_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4" DISPNAME="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_13_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4">
+      <Resources BRAM="1" LUT="22"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_13_U" SOURCE="" STORAGESIZE="16 2 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_13"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc616_U0/void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4" DISPNAME="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4">
+      <Resources BRAM="1" LUT="95"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U" SOURCE="" STORAGESIZE="16 2 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc616_U0/void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_10_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4" DISPNAME="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_10_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_10_U" SOURCE="" STORAGESIZE="16 2 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_10"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc616_U0/void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_8_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4" DISPNAME="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_8_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_8_U" SOURCE="" STORAGESIZE="16 2 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_8"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc616_U0/void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_9_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4" DISPNAME="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_9_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4">
+      <Resources BRAM="1" LUT="18"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_9_U" SOURCE="" STORAGESIZE="16 2 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_9"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc616_U0/void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" BINDMODULE="fft_mdf_Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4" DEPTH="2" TYPE="resource" MODULENAME="Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4" DISPNAME="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc616_void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdfXh4">
+      <Resources BRAM="1" LUT="93"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U" SOURCE="" STORAGESIZE="16 2 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p" URAM="0" VARIABLE="void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc717_U0" DEPTH="1" TYPE="function" MODULENAME="Loop_VITIS_LOOP_95_1_proc717" DISPNAME="Loop_VITIS_LOOP_95_1_proc717_U0" RTLNAME="fft_mdf_Loop_VITIS_LOOP_95_1_proc717">
+      <SubModules count="5">am_addmul_16s_16s_16s_31_4_1_U161 am_submul_16s_16s_16s_31_4_1_U162 flow_control_loop_pipe_U mac_muladd_16s_15ns_31s_31_4_1_U159 mac_muladd_16s_16s_31s_31_4_1_U160</SubModules>
+      <Resources DSP="6" FF="602" LUT="571"/>
+      <LocalResources FF="601" LUT="386"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161" BINDMODULE="fft_mdf_am_addmul_16s_16s_16s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="am_addmul_16s_16s_16s_31_4_1" DISPNAME="am_addmul_16s_16s_16s_31_4_1_U161" RTLNAME="fft_mdf_am_addmul_16s_16s_16s_31_4_1">
+      <Resources DSP="1" LUT="67"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="am_addmul_16s_16s_16s_31_4_1_U161" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln64"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="am_addmul_16s_16s_16s_31_4_1_U161" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64_2"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc717_U0/am_submul_16s_16s_16s_31_4_1_U162" BINDMODULE="fft_mdf_am_submul_16s_16s_16s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="am_submul_16s_16s_16s_31_4_1" DISPNAME="am_submul_16s_16s_16s_31_4_1_U162" RTLNAME="fft_mdf_am_submul_16s_16s_16s_31_4_1">
+      <Resources DSP="1" LUT="17"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="sub" PRAGMA="" RTLNAME="am_submul_16s_16s_16s_31_4_1_U162" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln63"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="am_submul_16s_16s_16s_31_4_1_U162" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63_2"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc717_U0/flow_control_loop_pipe_U" BINDMODULE="fft_mdf_flow_control_loop_pipe" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe" DISPNAME="flow_control_loop_pipe_U" RTLNAME="fft_mdf_flow_control_loop_pipe">
+      <Resources FF="1" LUT="19"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc717_U0/mac_muladd_16s_15ns_31s_31_4_1_U159" BINDMODULE="fft_mdf_mac_muladd_16s_15ns_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_15ns_31s_31_4_1" DISPNAME="mac_muladd_16s_15ns_31s_31_4_1_U159" RTLNAME="fft_mdf_mac_muladd_16s_15ns_31s_31_4_1">
+      <Resources DSP="2" LUT="16"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_15ns_31s_31_4_1_U159" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln63"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_15ns_31s_31_4_1_U159" SOURCE="mdf_fft/fft_mdf.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="pr_1"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_VITIS_LOOP_95_1_proc717_U0/mac_muladd_16s_16s_31s_31_4_1_U160" BINDMODULE="fft_mdf_mac_muladd_16s_16s_31s_31_4_1" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_16s_16s_31s_31_4_1" DISPNAME="mac_muladd_16s_16s_31s_31_4_1_U160" RTLNAME="fft_mdf_mac_muladd_16s_16s_31s_31_4_1">
+      <Resources DSP="2" LUT="68"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U160" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln64"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_95_1" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_31s_31_4_1_U160" SOURCE="mdf_fft/fft_mdf.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="pi_1"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_read_loop_proc_U0" DEPTH="1" TYPE="function" MODULENAME="Loop_read_loop_proc" DISPNAME="Loop_read_loop_proc_U0" RTLNAME="fft_mdf_Loop_read_loop_proc">
+      <SubModules count="1">flow_control_loop_pipe_U</SubModules>
+      <Resources FF="146" LUT="93"/>
+      <LocalResources FF="145" LUT="72"/>
+    </RtlModule>
+    <RtlModule CELL="inst/Loop_read_loop_proc_U0/flow_control_loop_pipe_U" BINDMODULE="fft_mdf_flow_control_loop_pipe" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe" DISPNAME="flow_control_loop_pipe_U" RTLNAME="fft_mdf_flow_control_loop_pipe">
+      <Resources FF="1" LUT="21"/>
+    </RtlModule>
+    <RtlModule CELL="inst/axis_to_word_U0" DEPTH="1" TYPE="function" MODULENAME="axis_to_word" DISPNAME="axis_to_word_U0" RTLNAME="fft_mdf_axis_to_word">
+      <SubModules count="3">flow_control_loop_pipe_U regslice_both_s_in_V_data_V_U regslice_both_s_in_V_last_V_U</SubModules>
+      <Resources FF="408" LUT="94"/>
+      <LocalResources FF="141" LUT="2"/>
+    </RtlModule>
+    <RtlModule CELL="inst/axis_to_word_U0/flow_control_loop_pipe_U" BINDMODULE="fft_mdf_flow_control_loop_pipe" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe" DISPNAME="flow_control_loop_pipe_U" RTLNAME="fft_mdf_flow_control_loop_pipe">
+      <Resources FF="1" LUT="15"/>
+    </RtlModule>
+    <RtlModule CELL="inst/axis_to_word_U0/regslice_both_s_in_V_data_V_U" BINDMODULE="fft_mdf_regslice_both" DEPTH="2" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_s_in_V_data_V_U" RTLNAME="fft_mdf_regslice_both">
+      <Resources FF="260" LUT="70"/>
+    </RtlModule>
+    <RtlModule CELL="inst/axis_to_word_U0/regslice_both_s_in_V_last_V_U" BINDMODULE="fft_mdf_regslice_both" DEPTH="2" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_s_in_V_last_V_U" RTLNAME="fft_mdf_regslice_both">
+      <Resources FF="6" LUT="7"/>
+    </RtlModule>
+    <RtlModule CELL="inst/bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_1_U" BINDMODULE="fft_mdf_bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_RAM_AUTO_1R1W" DEPTH="1" TYPE="resource" MODULENAME="bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_RAM_AUTO_1R1W" DISPNAME="bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_1_U" RTLNAME="fft_mdf_bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_RAM_AUTO_1R1W">
+      <Resources BRAM="8" FF="6" LUT="5"/>
+      <LocalResources FF="6" LUT="5"/>
+      <BindNode BINDTYPE="storage" BRAM="4" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_1_U" SOURCE="" STORAGESIZE="128 256 2" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_1"/>
+    </RtlModule>
+    <RtlModule CELL="inst/bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_U" BINDMODULE="fft_mdf_bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_RAM_AUTO_1R1W" DEPTH="1" TYPE="resource" MODULENAME="bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_RAM_AUTO_1R1W" DISPNAME="bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_U" RTLNAME="fft_mdf_bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_RAM_AUTO_1R1W">
+      <Resources BRAM="8" FF="6" LUT="9"/>
+      <LocalResources FF="6" LUT="9"/>
+      <BindNode BINDTYPE="storage" BRAM="4" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_U" SOURCE="" STORAGESIZE="128 256 2" STORAGESUBTYPE="pipo" STORAGEUSAGE="ram_1p channel" URAM="0" VARIABLE="bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank"/>
+    </RtlModule>
+    <RtlModule CELL="inst/rd_bank_cast_loc_channel_U" BINDMODULE="fft_mdf_fifo_w1_d2_S" DEPTH="1" TYPE="resource" MODULENAME="fifo_w1_d2_S" DISPNAME="rd_bank_cast_loc_channel_U" RTLNAME="fft_mdf_fifo_w1_d2_S">
+      <Resources FF="7" LUT="10"/>
+      <LocalResources FF="5" LUT="7"/>
+      <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="rd_bank_cast_loc_channel_U" SOURCE=":0" STORAGESIZE="1 2 1" STORAGESUBTYPE="task level" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="rd_bank_cast_loc_channel"/>
+    </RtlModule>
+    <RtlModule CELL="inst/s0_U" BINDMODULE="fft_mdf_fifo_w129_d260_A" DEPTH="1" TYPE="resource" MODULENAME="fifo_w129_d260_A" DISPNAME="s0_U" RTLNAME="fft_mdf_fifo_w129_d260_A">
+      <Resources BRAM="4" FF="41" LUT="45"/>
+      <LocalResources FF="41" LUT="45"/>
+      <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="memory" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="s0_U" SOURCE=":0" STORAGESIZE="129 260 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="s0"/>
+    </RtlModule>
+    <RtlModule CELL="inst/s1_U" BINDMODULE="fft_mdf_fifo_w129_d260_A" DEPTH="1" TYPE="resource" MODULENAME="fifo_w129_d260_A" DISPNAME="s1_U" RTLNAME="fft_mdf_fifo_w129_d260_A">
+      <Resources BRAM="4" FF="41" LUT="45"/>
+      <LocalResources FF="41" LUT="45"/>
+      <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="memory" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="s1_U" SOURCE=":0" STORAGESIZE="129 260 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="s1"/>
+    </RtlModule>
+    <RtlModule CELL="inst/s2_U" BINDMODULE="fft_mdf_fifo_w129_d260_A" DEPTH="1" TYPE="resource" MODULENAME="fifo_w129_d260_A" DISPNAME="s2_U" RTLNAME="fft_mdf_fifo_w129_d260_A">
+      <Resources BRAM="4" FF="41" LUT="45"/>
+      <LocalResources FF="41" LUT="45"/>
+      <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="memory" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="s2_U" SOURCE=":0" STORAGESIZE="129 260 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="s2"/>
+    </RtlModule>
+    <RtlModule CELL="inst/s3_U" BINDMODULE="fft_mdf_fifo_w129_d260_A" DEPTH="1" TYPE="resource" MODULENAME="fifo_w129_d260_A" DISPNAME="s3_U" RTLNAME="fft_mdf_fifo_w129_d260_A">
+      <Resources BRAM="4" FF="41" LUT="45"/>
+      <LocalResources FF="41" LUT="45"/>
+      <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="memory" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="s3_U" SOURCE=":0" STORAGESIZE="129 260 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="s3"/>
+    </RtlModule>
+    <RtlModule CELL="inst/s4_U" BINDMODULE="fft_mdf_fifo_w129_d260_A" DEPTH="1" TYPE="resource" MODULENAME="fifo_w129_d260_A" DISPNAME="s4_U" RTLNAME="fft_mdf_fifo_w129_d260_A">
+      <Resources BRAM="4" FF="41" LUT="45"/>
+      <LocalResources FF="41" LUT="45"/>
+      <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="memory" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="s4_U" SOURCE=":0" STORAGESIZE="129 260 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="s4"/>
+    </RtlModule>
+    <RtlModule CELL="inst/s5_U" BINDMODULE="fft_mdf_fifo_w129_d260_A" DEPTH="1" TYPE="resource" MODULENAME="fifo_w129_d260_A" DISPNAME="s5_U" RTLNAME="fft_mdf_fifo_w129_d260_A">
+      <Resources BRAM="4" FF="41" LUT="46"/>
+      <LocalResources FF="41" LUT="45"/>
+      <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="memory" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="s5_U" SOURCE=":0" STORAGESIZE="129 260 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="s5"/>
+    </RtlModule>
+    <RtlModule CELL="inst/s6_U" BINDMODULE="fft_mdf_fifo_w129_d260_A" DEPTH="1" TYPE="resource" MODULENAME="fifo_w129_d260_A" DISPNAME="s6_U" RTLNAME="fft_mdf_fifo_w129_d260_A">
+      <Resources BRAM="4" FF="41" LUT="93"/>
+      <LocalResources FF="41" LUT="45"/>
+      <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="memory" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="s6_U" SOURCE=":0" STORAGESIZE="129 260 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="s6"/>
+    </RtlModule>
+    <RtlModule CELL="inst/s7_U" BINDMODULE="fft_mdf_fifo_w129_d260_A" DEPTH="1" TYPE="resource" MODULENAME="fifo_w129_d260_A" DISPNAME="s7_U" RTLNAME="fft_mdf_fifo_w129_d260_A">
+      <Resources BRAM="4" FF="41" LUT="172"/>
+      <LocalResources FF="41" LUT="40"/>
+      <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="memory" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="s7_U" SOURCE=":0" STORAGESIZE="129 260 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="s7"/>
+    </RtlModule>
+    <RtlModule CELL="inst/s8_U" BINDMODULE="fft_mdf_fifo_w129_d260_A" DEPTH="1" TYPE="resource" MODULENAME="fifo_w129_d260_A" DISPNAME="s8_U" RTLNAME="fft_mdf_fifo_w129_d260_A">
+      <Resources BRAM="4" FF="41" LUT="172"/>
+      <LocalResources FF="41" LUT="40"/>
+      <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="memory" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="s8_U" SOURCE=":0" STORAGESIZE="129 260 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="s8"/>
+    </RtlModule>
+    <RtlModule CELL="inst/s9_U" BINDMODULE="fft_mdf_fifo_w129_d260_A" DEPTH="1" TYPE="resource" MODULENAME="fifo_w129_d260_A" DISPNAME="s9_U" RTLNAME="fft_mdf_fifo_w129_d260_A">
+      <Resources BRAM="4" FF="41" LUT="46"/>
+      <LocalResources FF="41" LUT="46"/>
+      <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="memory" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="s9_U" SOURCE=":0" STORAGESIZE="129 260 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="s9"/>
+    </RtlModule>
+    <RtlModule CELL="inst/start_for_Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_pro5jm_U" BINDMODULE="fft_mdf_start_for_Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_pro5jm" DEPTH="1" TYPE="rtl" MODULENAME="start_for_Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_pro5jm" DISPNAME="start_for_Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_pro5jm_U" RTLNAME="fft_mdf_start_for_Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_pro5jm">
+      <Resources FF="4" LUT="4"/>
+    </RtlModule>
+    <RtlModule CELL="inst/start_for_Loop_VITIS_LOOP_168_1_proc18_U0_U" BINDMODULE="fft_mdf_start_for_Loop_VITIS_LOOP_168_1_proc18_U0" DEPTH="1" TYPE="rtl" MODULENAME="start_for_Loop_VITIS_LOOP_168_1_proc18_U0" DISPNAME="start_for_Loop_VITIS_LOOP_168_1_proc18_U0_U" RTLNAME="fft_mdf_start_for_Loop_VITIS_LOOP_168_1_proc18_U0">
+      <Resources FF="4" LUT="5"/>
+    </RtlModule>
+    <RtlModule CELL="inst/start_for_Loop_VITIS_LOOP_168_1_proc819_U0_U" BINDMODULE="fft_mdf_start_for_Loop_VITIS_LOOP_168_1_proc819_U0" DEPTH="1" TYPE="rtl" MODULENAME="start_for_Loop_VITIS_LOOP_168_1_proc819_U0" DISPNAME="start_for_Loop_VITIS_LOOP_168_1_proc819_U0_U" RTLNAME="fft_mdf_start_for_Loop_VITIS_LOOP_168_1_proc819_U0">
+      <Resources FF="4" LUT="5"/>
+    </RtlModule>
+    <RtlModule CELL="inst/start_for_Loop_VITIS_LOOP_95_1_proc10_U0_U" BINDMODULE="fft_mdf_start_for_Loop_VITIS_LOOP_95_1_proc10_U0" DEPTH="1" TYPE="rtl" MODULENAME="start_for_Loop_VITIS_LOOP_95_1_proc10_U0" DISPNAME="start_for_Loop_VITIS_LOOP_95_1_proc10_U0_U" RTLNAME="fft_mdf_start_for_Loop_VITIS_LOOP_95_1_proc10_U0">
+      <Resources FF="4" LUT="7"/>
+    </RtlModule>
+    <RtlModule CELL="inst/start_for_Loop_VITIS_LOOP_95_1_proc111_U0_U" BINDMODULE="fft_mdf_start_for_Loop_VITIS_LOOP_95_1_proc111_U0" DEPTH="1" TYPE="rtl" MODULENAME="start_for_Loop_VITIS_LOOP_95_1_proc111_U0" DISPNAME="start_for_Loop_VITIS_LOOP_95_1_proc111_U0_U" RTLNAME="fft_mdf_start_for_Loop_VITIS_LOOP_95_1_proc111_U0">
+      <Resources FF="4" LUT="5"/>
+    </RtlModule>
+    <RtlModule CELL="inst/start_for_Loop_VITIS_LOOP_95_1_proc212_U0_U" BINDMODULE="fft_mdf_start_for_Loop_VITIS_LOOP_95_1_proc212_U0" DEPTH="1" TYPE="rtl" MODULENAME="start_for_Loop_VITIS_LOOP_95_1_proc212_U0" DISPNAME="start_for_Loop_VITIS_LOOP_95_1_proc212_U0_U" RTLNAME="fft_mdf_start_for_Loop_VITIS_LOOP_95_1_proc212_U0">
+      <Resources FF="4" LUT="5"/>
+    </RtlModule>
+    <RtlModule CELL="inst/start_for_Loop_VITIS_LOOP_95_1_proc313_U0_U" BINDMODULE="fft_mdf_start_for_Loop_VITIS_LOOP_95_1_proc313_U0" DEPTH="1" TYPE="rtl" MODULENAME="start_for_Loop_VITIS_LOOP_95_1_proc313_U0" DISPNAME="start_for_Loop_VITIS_LOOP_95_1_proc313_U0_U" RTLNAME="fft_mdf_start_for_Loop_VITIS_LOOP_95_1_proc313_U0">
+      <Resources FF="4" LUT="5"/>
+    </RtlModule>
+    <RtlModule CELL="inst/start_for_Loop_VITIS_LOOP_95_1_proc414_U0_U" BINDMODULE="fft_mdf_start_for_Loop_VITIS_LOOP_95_1_proc414_U0" DEPTH="1" TYPE="rtl" MODULENAME="start_for_Loop_VITIS_LOOP_95_1_proc414_U0" DISPNAME="start_for_Loop_VITIS_LOOP_95_1_proc414_U0_U" RTLNAME="fft_mdf_start_for_Loop_VITIS_LOOP_95_1_proc414_U0">
+      <Resources FF="4" LUT="5"/>
+    </RtlModule>
+    <RtlModule CELL="inst/start_for_Loop_VITIS_LOOP_95_1_proc515_U0_U" BINDMODULE="fft_mdf_start_for_Loop_VITIS_LOOP_95_1_proc515_U0" DEPTH="1" TYPE="rtl" MODULENAME="start_for_Loop_VITIS_LOOP_95_1_proc515_U0" DISPNAME="start_for_Loop_VITIS_LOOP_95_1_proc515_U0_U" RTLNAME="fft_mdf_start_for_Loop_VITIS_LOOP_95_1_proc515_U0">
+      <Resources FF="4" LUT="5"/>
+    </RtlModule>
+    <RtlModule CELL="inst/start_for_Loop_VITIS_LOOP_95_1_proc616_U0_U" BINDMODULE="fft_mdf_start_for_Loop_VITIS_LOOP_95_1_proc616_U0" DEPTH="1" TYPE="rtl" MODULENAME="start_for_Loop_VITIS_LOOP_95_1_proc616_U0" DISPNAME="start_for_Loop_VITIS_LOOP_95_1_proc616_U0_U" RTLNAME="fft_mdf_start_for_Loop_VITIS_LOOP_95_1_proc616_U0">
+      <Resources FF="4" LUT="5"/>
+    </RtlModule>
+    <RtlModule CELL="inst/start_for_Loop_VITIS_LOOP_95_1_proc717_U0_U" BINDMODULE="fft_mdf_start_for_Loop_VITIS_LOOP_95_1_proc717_U0" DEPTH="1" TYPE="rtl" MODULENAME="start_for_Loop_VITIS_LOOP_95_1_proc717_U0" DISPNAME="start_for_Loop_VITIS_LOOP_95_1_proc717_U0_U" RTLNAME="fft_mdf_start_for_Loop_VITIS_LOOP_95_1_proc717_U0">
+      <Resources FF="4" LUT="4"/>
+    </RtlModule>
+    <RtlModule CELL="inst/start_for_word_to_axis_U0_U" BINDMODULE="fft_mdf_start_for_word_to_axis_U0" DEPTH="1" TYPE="rtl" MODULENAME="start_for_word_to_axis_U0" DISPNAME="start_for_word_to_axis_U0_U" RTLNAME="fft_mdf_start_for_word_to_axis_U0">
+      <Resources FF="4" LUT="4"/>
+    </RtlModule>
+    <RtlModule CELL="inst/w_in_U" BINDMODULE="fft_mdf_fifo_w129_d260_A" DEPTH="1" TYPE="resource" MODULENAME="fifo_w129_d260_A" DISPNAME="w_in_U" RTLNAME="fft_mdf_fifo_w129_d260_A">
+      <Resources BRAM="4" FF="41" LUT="45"/>
+      <LocalResources FF="41" LUT="45"/>
+      <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="memory" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="w_in_U" SOURCE=":0" STORAGESIZE="129 260 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="w_in"/>
+    </RtlModule>
+    <RtlModule CELL="inst/w_out_U" BINDMODULE="fft_mdf_fifo_w129_d260_A" DEPTH="1" TYPE="resource" MODULENAME="fifo_w129_d260_A" DISPNAME="w_out_U" RTLNAME="fft_mdf_fifo_w129_d260_A">
+      <Resources BRAM="4" FF="41" LUT="46"/>
+      <LocalResources FF="41" LUT="45"/>
+      <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="memory" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="w_out_U" SOURCE=":0" STORAGESIZE="129 260 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="w_out"/>
+    </RtlModule>
+    <RtlModule CELL="inst/word_to_axis_U0" DEPTH="1" TYPE="function" MODULENAME="word_to_axis" DISPNAME="word_to_axis_U0" RTLNAME="fft_mdf_word_to_axis">
+      <SubModules count="3">flow_control_loop_pipe_U regslice_both_s_out_V_data_V_U regslice_both_s_out_V_last_V_U</SubModules>
+      <Resources FF="280" LUT="91"/>
+      <LocalResources FF="13"/>
+    </RtlModule>
+    <RtlModule CELL="inst/word_to_axis_U0/flow_control_loop_pipe_U" BINDMODULE="fft_mdf_flow_control_loop_pipe" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe" DISPNAME="flow_control_loop_pipe_U" RTLNAME="fft_mdf_flow_control_loop_pipe">
+      <Resources FF="1" LUT="14"/>
+    </RtlModule>
+    <RtlModule CELL="inst/word_to_axis_U0/regslice_both_s_out_V_data_V_U" BINDMODULE="fft_mdf_regslice_both" DEPTH="2" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_s_out_V_data_V_U" RTLNAME="fft_mdf_regslice_both">
+      <Resources FF="260" LUT="73"/>
+    </RtlModule>
+    <RtlModule CELL="inst/word_to_axis_U0/regslice_both_s_out_V_last_V_U" BINDMODULE="fft_mdf_regslice_both" DEPTH="2" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_s_out_V_last_V_U" RTLNAME="fft_mdf_regslice_both">
+      <Resources FF="6" LUT="4"/>
+    </RtlModule>
+  </RtlModules>
+  <TimingPaths>
+    <TPATH DATAPATH_DELAY="6.567" DATAPATH_LOGIC_DELAY="0.538" DATAPATH_NET_DELAY="6.029" ENDPOINT_PIN="Loop_VITIS_LOOP_95_1_proc515_U0/mac_muladd_16s_16s_31s_31_4_1_U126/fft_mdf_mac_muladd_16s_16s_31s_31_4_1_DSP48_0_U/p_reg_reg/CEM" LOGIC_LEVELS="1" MAX_FANOUT="160" SLACK="3.153" STARTPOINT_PIN="Loop_VITIS_LOOP_95_1_proc515_U0/ap_CS_iter5_fsm_reg[1]/C">
+      <CELL NAME="Loop_VITIS_LOOP_95_1_proc515_U0/ap_CS_iter5_fsm_reg[1]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1144"/>
+      <CELL NAME="Loop_VITIS_LOOP_95_1_proc515_U0/void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_19_U/ram_reg_i_9__25" PRIMITIVE_TYPE="LUT.others.LUT4" LINE_NUMBER="69"/>
+      <CELL NAME="Loop_VITIS_LOOP_95_1_proc515_U0/mac_muladd_16s_16s_31s_31_4_1_U126/fft_mdf_mac_muladd_16s_16s_31s_31_4_1_DSP48_0_U/p_reg_reg" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="962"/>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="6.560" DATAPATH_LOGIC_DELAY="0.538" DATAPATH_NET_DELAY="6.022" ENDPOINT_PIN="Loop_VITIS_LOOP_95_1_proc515_U0/ap_phi_reg_pp0_iter4_out_re_33_reg_395_reg[11]/CE" LOGIC_LEVELS="1" MAX_FANOUT="160" SLACK="3.197" STARTPOINT_PIN="Loop_VITIS_LOOP_95_1_proc515_U0/ap_CS_iter5_fsm_reg[1]/C">
+      <CELL NAME="Loop_VITIS_LOOP_95_1_proc515_U0/ap_CS_iter5_fsm_reg[1]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1144"/>
+      <CELL NAME="Loop_VITIS_LOOP_95_1_proc515_U0/void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_19_U/ram_reg_i_9__25" PRIMITIVE_TYPE="LUT.others.LUT4" LINE_NUMBER="69"/>
+      <CELL NAME="Loop_VITIS_LOOP_95_1_proc515_U0/ap_phi_reg_pp0_iter4_out_re_33_reg_395_reg[11]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1255"/>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="6.560" DATAPATH_LOGIC_DELAY="0.538" DATAPATH_NET_DELAY="6.022" ENDPOINT_PIN="Loop_VITIS_LOOP_95_1_proc515_U0/ap_phi_reg_pp0_iter4_out_re_33_reg_395_reg[12]/CE" LOGIC_LEVELS="1" MAX_FANOUT="160" SLACK="3.197" STARTPOINT_PIN="Loop_VITIS_LOOP_95_1_proc515_U0/ap_CS_iter5_fsm_reg[1]/C">
+      <CELL NAME="Loop_VITIS_LOOP_95_1_proc515_U0/ap_CS_iter5_fsm_reg[1]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1144"/>
+      <CELL NAME="Loop_VITIS_LOOP_95_1_proc515_U0/void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_19_U/ram_reg_i_9__25" PRIMITIVE_TYPE="LUT.others.LUT4" LINE_NUMBER="69"/>
+      <CELL NAME="Loop_VITIS_LOOP_95_1_proc515_U0/ap_phi_reg_pp0_iter4_out_re_33_reg_395_reg[12]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1255"/>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="6.560" DATAPATH_LOGIC_DELAY="0.538" DATAPATH_NET_DELAY="6.022" ENDPOINT_PIN="Loop_VITIS_LOOP_95_1_proc515_U0/ap_phi_reg_pp0_iter4_out_re_33_reg_395_reg[13]/CE" LOGIC_LEVELS="1" MAX_FANOUT="160" SLACK="3.197" STARTPOINT_PIN="Loop_VITIS_LOOP_95_1_proc515_U0/ap_CS_iter5_fsm_reg[1]/C">
+      <CELL NAME="Loop_VITIS_LOOP_95_1_proc515_U0/ap_CS_iter5_fsm_reg[1]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1144"/>
+      <CELL NAME="Loop_VITIS_LOOP_95_1_proc515_U0/void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_19_U/ram_reg_i_9__25" PRIMITIVE_TYPE="LUT.others.LUT4" LINE_NUMBER="69"/>
+      <CELL NAME="Loop_VITIS_LOOP_95_1_proc515_U0/ap_phi_reg_pp0_iter4_out_re_33_reg_395_reg[13]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1255"/>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="6.560" DATAPATH_LOGIC_DELAY="0.538" DATAPATH_NET_DELAY="6.022" ENDPOINT_PIN="Loop_VITIS_LOOP_95_1_proc515_U0/ap_phi_reg_pp0_iter4_out_re_33_reg_395_reg[14]/CE" LOGIC_LEVELS="1" MAX_FANOUT="160" SLACK="3.197" STARTPOINT_PIN="Loop_VITIS_LOOP_95_1_proc515_U0/ap_CS_iter5_fsm_reg[1]/C">
+      <CELL NAME="Loop_VITIS_LOOP_95_1_proc515_U0/ap_CS_iter5_fsm_reg[1]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1144"/>
+      <CELL NAME="Loop_VITIS_LOOP_95_1_proc515_U0/void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_19_U/ram_reg_i_9__25" PRIMITIVE_TYPE="LUT.others.LUT4" LINE_NUMBER="69"/>
+      <CELL NAME="Loop_VITIS_LOOP_95_1_proc515_U0/ap_phi_reg_pp0_iter4_out_re_33_reg_395_reg[14]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" LINE_NUMBER="1255"/>
+    </TPATH>
+  </TimingPaths>
+  <VivadoReportFiles>
+    <ReportFile TYPE="design_analysis" PATH="verilog/report/fft_mdf_design_analysis_routed.rpt"/>
+    <ReportFile TYPE="failfast" PATH="verilog/report/fft_mdf_failfast_routed.rpt"/>
+    <ReportFile TYPE="status" PATH="verilog/report/fft_mdf_status_routed.rpt"/>
+    <ReportFile TYPE="timing" PATH="verilog/report/fft_mdf_timing_routed.rpt"/>
+    <ReportFile TYPE="timing_paths" PATH="verilog/report/fft_mdf_timing_paths_routed.rpt"/>
+    <ReportFile TYPE="utilization" PATH="verilog/report/fft_mdf_utilization_routed.rpt"/>
+    <ReportFile TYPE="utilization_hierarchical" PATH="verilog/report/fft_mdf_utilization_hierarchical_routed.rpt"/>
+  </VivadoReportFiles>
+  <GeneralInfo NAME="General Information">
+    <item NAME="Date" VALUE="Tue Jun 30 21:06:05 +0300 2026"/>
+    <item NAME="Version" VALUE="2023.2 (Build 4023990 on Oct 11 2023)"/>
+    <item NAME="Project" VALUE="mdf_fft_hls"/>
+    <item NAME="Solution" VALUE="solution1 (Vivado IP Flow Target)"/>
+    <item NAME="Product family" VALUE="artix7"/>
+    <item NAME="Target device" VALUE="xc7a200t-fbg676-2"/>
+  </GeneralInfo>
+  <RunOptions NAME="Run Constraints &amp; Options">
+    <General NAME="Design Constraints &amp; Options">
+      <item NAME="Place &amp; Route target clock" VALUE="10 ns"/>
+      <item NAME="C-Synthesis target clock" VALUE="10 ns"/>
+      <item NAME="C-Synthesis uncertainty" VALUE="27%"/>
+      <item NAME="config_export -ip_xdc_file" VALUE=""/>
+      <item NAME="config_export -ip_xdc_ooc_file" VALUE=""/>
+    </General>
+    <Syn NAME="RTL Synthesis Options">
+      <item NAME="config_export -vivado_synth_strategy" VALUE="default"/>
+      <item NAME="config_export -vivado_synth_design_args" VALUE="-directive sdx_optimization_effort_high"/>
+    </Syn>
+    <Impl NAME="Place &amp; Route Options">
+      <item NAME="config_export -vivado_impl_strategy" VALUE="default"/>
+      <item NAME="config_export -vivado_phys_opt" VALUE="none"/>
+      <item NAME="config_export -vivado_pblock" VALUE=""/>
+    </Impl>
+    <Reporting NAME="Reporting Options">
+      <item NAME="config_export -vivado_report_level" VALUE="2"/>
+      <item NAME="config_export -vivado_max_timing_paths" VALUE="10"/>
+    </Reporting>
+  </RunOptions>
+</profile>
+

@@ -1,0 +1,438 @@
+<profile>
+<RunData>
+  <RUN_TYPE>synth</RUN_TYPE>
+  <VIVADO_VERSION>v.2023.2</VIVADO_VERSION>
+  <ROOT_MODULE_CELL>bd_0_i/hls_inst</ROOT_MODULE_CELL>
+</RunData>
+<TimingReport>
+  <TargetClockPeriod>10.000</TargetClockPeriod>
+  <AchievedClockPeriod>7.669</AchievedClockPeriod>
+  <CLOCK_NAME>ap_clk</CLOCK_NAME>
+  <CP_FINAL>7.669</CP_FINAL>
+  <CP_ROUTE>NA</CP_ROUTE>
+  <CP_SYNTH>7.669</CP_SYNTH>
+  <CP_TARGET>10.000</CP_TARGET>
+  <SLACK_FINAL>2.331</SLACK_FINAL>
+  <SLACK_ROUTE></SLACK_ROUTE>
+  <SLACK_SYNTH>2.331</SLACK_SYNTH>
+  <TIMING_MET>TRUE</TIMING_MET>
+  <TNS_FINAL>0.000</TNS_FINAL>
+  <TNS_ROUTE>NA</TNS_ROUTE>
+  <TNS_SYNTH>0.000</TNS_SYNTH>
+  <WNS_FINAL>2.331</WNS_FINAL>
+  <WNS_ROUTE>NA</WNS_ROUTE>
+  <WNS_SYNTH>2.331</WNS_SYNTH>
+</TimingReport>
+<AreaReport>
+  <Resources>
+    <BRAM>8</BRAM>
+    <CLB>0</CLB>
+    <DSP>38</DSP>
+    <FF>4958</FF>
+    <LATCH>0</LATCH>
+    <LUT>7058</LUT>
+    <SRL>301</SRL>
+    <URAM>0</URAM>
+  </Resources>
+  <AvailableResources>
+    <BRAM>730</BRAM>
+    <CLB>0</CLB>
+    <DSP>740</DSP>
+    <FF>269200</FF>
+    <LUT>134600</LUT>
+    <URAM>0</URAM>
+  </AvailableResources>
+</AreaReport>
+<RtlModules>
+  <RtlModule CELL="inst" DEPTH="0" FILE_NAME="bd_0_hls_inst_0.v" ORIG_REF_NAME="fft_serial" TOP_CELL="bd_0_i/hls_inst/inst">
+    <SubModules count="31">AXI_IN_m_axi_U AXI_OUT_m_axi_U TW_COS_LUT_U TW_SIN_LUT_U control_s_axi_U grp_fft_serial_Pipeline_bfly_loop11_fu_402 grp_fft_serial_Pipeline_bfly_loop13_fu_424 grp_fft_serial_Pipeline_bfly_loop15_fu_446 grp_fft_serial_Pipeline_bfly_loop17_fu_468 grp_fft_serial_Pipeline_bfly_loop1_fu_296 grp_fft_serial_Pipeline_bfly_loop3_fu_314 grp_fft_serial_Pipeline_bfly_loop5_fu_336 grp_fft_serial_Pipeline_bfly_loop7_fu_358 grp_fft_serial_Pipeline_bfly_loop9_fu_380 grp_fft_serial_Pipeline_bfly_loop_fu_279 grp_fft_serial_Pipeline_load_loop_fu_263 grp_fft_serial_Pipeline_scan_loop10_fu_393 grp_fft_serial_Pipeline_scan_loop12_fu_415 grp_fft_serial_Pipeline_scan_loop14_fu_437 grp_fft_serial_Pipeline_scan_loop16_fu_459 grp_fft_serial_Pipeline_scan_loop18_fu_481 grp_fft_serial_Pipeline_scan_loop2_fu_305 grp_fft_serial_Pipeline_scan_loop4_fu_327 grp_fft_serial_Pipeline_scan_loop6_fu_349 grp_fft_serial_Pipeline_scan_loop8_fu_371 grp_fft_serial_Pipeline_scan_loop_fu_287 grp_fft_serial_Pipeline_store_loop_fu_490 im_1_U im_U re_1_U re_U</SubModules>
+    <Resources BRAM="8" DSP="38" FF="4958" LUT="7058" LogicLUT="6757" RAMB18="8" SRL="301"/>
+    <LocalResources FF="389" LUT="33" LogicLUT="32" SRL="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/AXI_IN_m_axi_U" BINDMODULE="fft_serial_AXI_IN_m_axi" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_AXI_IN_m_axi">
+    <Resources BRAM="1" FF="791" LUT="525" LogicLUT="459" RAMB18="1" SRL="66"/>
+  </RtlModule>
+  <RtlModule CELL="inst/AXI_OUT_m_axi_U" BINDMODULE="fft_serial_AXI_OUT_m_axi" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_AXI_OUT_m_axi">
+    <Resources BRAM="1" FF="1133" LUT="803" LogicLUT="598" RAMB18="1" SRL="205"/>
+  </RtlModule>
+  <RtlModule CELL="inst/TW_COS_LUT_U" BINDMODULE="fft_serial_TW_COS_LUT_ROM_AUTO_1R" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_TW_COS_LUT_ROM_AUTO_1R">
+    <Resources BRAM="1" RAMB18="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/TW_SIN_LUT_U" BINDMODULE="fft_serial_TW_SIN_LUT_ROM_AUTO_1R" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_TW_SIN_LUT_ROM_AUTO_1R">
+    <Resources BRAM="1" LUT="3" LogicLUT="3" RAMB18="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/control_s_axi_U" BINDMODULE="fft_serial_control_s_axi" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_control_s_axi">
+    <Resources FF="321" LUT="301" LogicLUT="301"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop11_fu_402" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_bfly_loop11">
+    <SubModules count="5">flow_control_loop_pipe_sequential_init_U mac_muladd_16s_16s_32s_32_1_1_U106 mac_mulsub_16s_16s_32s_32_1_1_U105 mul_16s_16s_32_4_1_U103 mul_16s_16s_32_4_1_U104</SubModules>
+    <Resources DSP="4" FF="171" LUT="403" LogicLUT="403"/>
+    <LocalResources FF="169" LUT="189" LogicLUT="189"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop11_fu_402/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop11.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="44" LogicLUT="44"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop11_fu_402/mac_muladd_16s_16s_32s_32_1_1_U106" BINDMODULE="fft_serial_mac_muladd_16s_16s_32s_32_1_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop11.v" ORIG_REF_NAME="fft_serial_mac_muladd_16s_16s_32s_32_1_1">
+    <Resources DSP="1" LUT="86" LogicLUT="86"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop11_fu_402/mac_mulsub_16s_16s_32s_32_1_1_U105" BINDMODULE="fft_serial_mac_mulsub_16s_16s_32s_32_1_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop11.v" ORIG_REF_NAME="fft_serial_mac_mulsub_16s_16s_32s_32_1_1">
+    <Resources DSP="1" LUT="69" LogicLUT="69"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop11_fu_402/mul_16s_16s_32_4_1_U103" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop11.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop11_fu_402/mul_16s_16s_32_4_1_U104" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop11.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1" LUT="15" LogicLUT="15"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop13_fu_424" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_bfly_loop13">
+    <SubModules count="5">flow_control_loop_pipe_sequential_init_U mac_muladd_16s_16s_32s_32_1_1_U122 mac_mulsub_16s_16s_32s_32_1_1_U121 mul_16s_16s_32_4_1_U119 mul_16s_16s_32_4_1_U120</SubModules>
+    <Resources DSP="4" FF="171" LUT="416" LogicLUT="416"/>
+    <LocalResources FF="169" LUT="178" LogicLUT="178"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop13_fu_424/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop13.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="43" LogicLUT="43"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop13_fu_424/mac_muladd_16s_16s_32s_32_1_1_U122" BINDMODULE="fft_serial_mac_muladd_16s_16s_32s_32_1_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop13.v" ORIG_REF_NAME="fft_serial_mac_muladd_16s_16s_32s_32_1_1">
+    <Resources DSP="1" LUT="98" LogicLUT="98"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop13_fu_424/mac_mulsub_16s_16s_32s_32_1_1_U121" BINDMODULE="fft_serial_mac_mulsub_16s_16s_32s_32_1_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop13.v" ORIG_REF_NAME="fft_serial_mac_mulsub_16s_16s_32s_32_1_1">
+    <Resources DSP="1" LUT="82" LogicLUT="82"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop13_fu_424/mul_16s_16s_32_4_1_U119" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop13.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop13_fu_424/mul_16s_16s_32_4_1_U120" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop13.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1" LUT="15" LogicLUT="15"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop15_fu_446" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_bfly_loop15">
+    <SubModules count="5">flow_control_loop_pipe_sequential_init_U mac_muladd_16s_16s_32s_32_1_1_U138 mac_mulsub_16s_16s_32s_32_1_1_U137 mul_16s_16s_32_4_1_U135 mul_16s_16s_32_4_1_U136</SubModules>
+    <Resources DSP="4" FF="171" LUT="415" LogicLUT="415"/>
+    <LocalResources FF="169" LUT="177" LogicLUT="177"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop15_fu_446/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop15.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="42" LogicLUT="42"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop15_fu_446/mac_muladd_16s_16s_32s_32_1_1_U138" BINDMODULE="fft_serial_mac_muladd_16s_16s_32s_32_1_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop15.v" ORIG_REF_NAME="fft_serial_mac_muladd_16s_16s_32s_32_1_1">
+    <Resources DSP="1" LUT="98" LogicLUT="98"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop15_fu_446/mac_mulsub_16s_16s_32s_32_1_1_U137" BINDMODULE="fft_serial_mac_mulsub_16s_16s_32s_32_1_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop15.v" ORIG_REF_NAME="fft_serial_mac_mulsub_16s_16s_32s_32_1_1">
+    <Resources DSP="1" LUT="83" LogicLUT="83"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop15_fu_446/mul_16s_16s_32_4_1_U135" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop15.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop15_fu_446/mul_16s_16s_32_4_1_U136" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop15.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1" LUT="15" LogicLUT="15"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop17_fu_468" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_bfly_loop17">
+    <SubModules count="5">flow_control_loop_pipe_sequential_init_U mac_muladd_16s_16s_32s_32_1_1_U154 mac_mulsub_16s_16s_32s_32_1_1_U153 mul_16s_16s_32_4_1_U151 mul_16s_16s_32_4_1_U152</SubModules>
+    <Resources DSP="4" FF="171" LUT="401" LogicLUT="401"/>
+    <LocalResources FF="169" LUT="195" LogicLUT="195"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop17_fu_468/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop17.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="73" LogicLUT="73"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop17_fu_468/mac_muladd_16s_16s_32s_32_1_1_U154" BINDMODULE="fft_serial_mac_muladd_16s_16s_32s_32_1_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop17.v" ORIG_REF_NAME="fft_serial_mac_muladd_16s_16s_32s_32_1_1">
+    <Resources DSP="1" LUT="69" LogicLUT="69"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop17_fu_468/mac_mulsub_16s_16s_32s_32_1_1_U153" BINDMODULE="fft_serial_mac_mulsub_16s_16s_32s_32_1_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop17.v" ORIG_REF_NAME="fft_serial_mac_mulsub_16s_16s_32s_32_1_1">
+    <Resources DSP="1" LUT="49" LogicLUT="49"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop17_fu_468/mul_16s_16s_32_4_1_U151" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop17.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop17_fu_468/mul_16s_16s_32_4_1_U152" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop17.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1" LUT="15" LogicLUT="15"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop1_fu_296" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_bfly_loop1">
+    <SubModules count="5">flow_control_loop_pipe_sequential_init_U mac_muladd_16s_16s_31s_32_4_1_U23 mac_mulsub_16s_16s_31s_32_4_1_U22 mul_16s_16s_32_4_1_U20 mul_16s_16s_32_4_1_U21</SubModules>
+    <Resources DSP="4" FF="182" LUT="362" LogicLUT="362"/>
+    <LocalResources FF="180" LUT="151" LogicLUT="151"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop1_fu_296/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop1.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="67" LogicLUT="67"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop1_fu_296/mac_muladd_16s_16s_31s_32_4_1_U23" BINDMODULE="fft_serial_mac_muladd_16s_16s_31s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop1.v" ORIG_REF_NAME="fft_serial_mac_muladd_16s_16s_31s_32_4_1">
+    <Resources DSP="1" LUT="75" LogicLUT="75"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop1_fu_296/mac_mulsub_16s_16s_31s_32_4_1_U22" BINDMODULE="fft_serial_mac_mulsub_16s_16s_31s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop1.v" ORIG_REF_NAME="fft_serial_mac_mulsub_16s_16s_31s_32_4_1">
+    <Resources DSP="1" LUT="35" LogicLUT="35"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop1_fu_296/mul_16s_16s_32_4_1_U20" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop1.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop1_fu_296/mul_16s_16s_32_4_1_U21" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop1.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1" LUT="34" LogicLUT="34"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_bfly_loop3">
+    <SubModules count="5">flow_control_loop_pipe_sequential_init_U mac_muladd_16s_16s_32s_32_1_1_U40 mac_mulsub_16s_16s_32s_32_1_1_U39 mul_16s_16s_32_4_1_U37 mul_16s_16s_32_4_1_U38</SubModules>
+    <Resources DSP="4" FF="172" LUT="397" LogicLUT="397"/>
+    <LocalResources FF="170" LUT="177" LogicLUT="177"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop3.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="29" LogicLUT="29"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mac_muladd_16s_16s_32s_32_1_1_U40" BINDMODULE="fft_serial_mac_muladd_16s_16s_32s_32_1_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop3.v" ORIG_REF_NAME="fft_serial_mac_muladd_16s_16s_32s_32_1_1">
+    <Resources DSP="1" LUT="96" LogicLUT="96"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mac_mulsub_16s_16s_32s_32_1_1_U39" BINDMODULE="fft_serial_mac_mulsub_16s_16s_32s_32_1_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop3.v" ORIG_REF_NAME="fft_serial_mac_mulsub_16s_16s_32s_32_1_1">
+    <Resources DSP="1" LUT="80" LogicLUT="80"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mul_16s_16s_32_4_1_U37" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop3.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mul_16s_16s_32_4_1_U38" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop3.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1" LUT="15" LogicLUT="15"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop5_fu_336" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_bfly_loop5">
+    <SubModules count="5">flow_control_loop_pipe_sequential_init_U mac_muladd_16s_16s_32s_32_1_1_U58 mac_mulsub_16s_16s_32s_32_1_1_U57 mul_16s_16s_32_4_1_U55 mul_16s_16s_32_4_1_U56</SubModules>
+    <Resources DSP="4" FF="171" LUT="396" LogicLUT="396"/>
+    <LocalResources FF="169" LUT="184" LogicLUT="184"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop5_fu_336/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop5.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="37" LogicLUT="37"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop5_fu_336/mac_muladd_16s_16s_32s_32_1_1_U58" BINDMODULE="fft_serial_mac_muladd_16s_16s_32s_32_1_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop5.v" ORIG_REF_NAME="fft_serial_mac_muladd_16s_16s_32s_32_1_1">
+    <Resources DSP="1" LUT="89" LogicLUT="89"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop5_fu_336/mac_mulsub_16s_16s_32s_32_1_1_U57" BINDMODULE="fft_serial_mac_mulsub_16s_16s_32s_32_1_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop5.v" ORIG_REF_NAME="fft_serial_mac_mulsub_16s_16s_32s_32_1_1">
+    <Resources DSP="1" LUT="71" LogicLUT="71"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop5_fu_336/mul_16s_16s_32_4_1_U55" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop5.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop5_fu_336/mul_16s_16s_32_4_1_U56" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop5.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1" LUT="15" LogicLUT="15"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_bfly_loop7">
+    <SubModules count="5">flow_control_loop_pipe_sequential_init_U mac_muladd_16s_16s_32s_32_1_1_U74 mac_mulsub_16s_16s_32s_32_1_1_U73 mul_16s_16s_32_4_1_U71 mul_16s_16s_32_4_1_U72</SubModules>
+    <Resources DSP="4" FF="171" LUT="347" LogicLUT="347"/>
+    <LocalResources FF="169" LUT="180" LogicLUT="180"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop7.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="37" LogicLUT="37"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_muladd_16s_16s_32s_32_1_1_U74" BINDMODULE="fft_serial_mac_muladd_16s_16s_32s_32_1_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop7.v" ORIG_REF_NAME="fft_serial_mac_muladd_16s_16s_32s_32_1_1">
+    <Resources DSP="1" LUT="66" LogicLUT="66"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_mulsub_16s_16s_32s_32_1_1_U73" BINDMODULE="fft_serial_mac_mulsub_16s_16s_32s_32_1_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop7.v" ORIG_REF_NAME="fft_serial_mac_mulsub_16s_16s_32s_32_1_1">
+    <Resources DSP="1" LUT="49" LogicLUT="49"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mul_16s_16s_32_4_1_U71" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop7.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mul_16s_16s_32_4_1_U72" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop7.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1" LUT="15" LogicLUT="15"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop9_fu_380" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_bfly_loop9">
+    <SubModules count="5">flow_control_loop_pipe_sequential_init_U mac_muladd_16s_16s_32s_32_1_1_U90 mac_mulsub_16s_16s_32s_32_1_1_U89 mul_16s_16s_32_4_1_U87 mul_16s_16s_32_4_1_U88</SubModules>
+    <Resources DSP="4" FF="171" LUT="374" LogicLUT="374"/>
+    <LocalResources FF="169" LUT="175" LogicLUT="175"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop9_fu_380/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop9.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="37" LogicLUT="37"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop9_fu_380/mac_muladd_16s_16s_32s_32_1_1_U90" BINDMODULE="fft_serial_mac_muladd_16s_16s_32s_32_1_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop9.v" ORIG_REF_NAME="fft_serial_mac_muladd_16s_16s_32s_32_1_1">
+    <Resources DSP="1" LUT="82" LogicLUT="82"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop9_fu_380/mac_mulsub_16s_16s_32s_32_1_1_U89" BINDMODULE="fft_serial_mac_mulsub_16s_16s_32s_32_1_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop9.v" ORIG_REF_NAME="fft_serial_mac_mulsub_16s_16s_32s_32_1_1">
+    <Resources DSP="1" LUT="65" LogicLUT="65"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop9_fu_380/mul_16s_16s_32_4_1_U87" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop9.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop9_fu_380/mul_16s_16s_32_4_1_U88" BINDMODULE="fft_serial_mul_16s_16s_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop9.v" ORIG_REF_NAME="fft_serial_mul_16s_16s_32_4_1">
+    <Resources DSP="1" LUT="15" LogicLUT="15"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop_fu_279" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_bfly_loop">
+    <SubModules count="2">flow_control_loop_pipe_sequential_init_U mul_16s_16ns_32_4_1_U9</SubModules>
+    <Resources DSP="2" FF="157" LUT="203" LogicLUT="185" SRL="18"/>
+    <LocalResources DSP="1" FF="155" LUT="154" LogicLUT="136" SRL="18"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop_fu_279/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="18" LogicLUT="18"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_bfly_loop_fu_279/mul_16s_16ns_32_4_1_U9" BINDMODULE="fft_serial_mul_16s_16ns_32_4_1" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_bfly_loop.v" ORIG_REF_NAME="fft_serial_mul_16s_16ns_32_4_1">
+    <Resources DSP="1" LUT="31" LogicLUT="31"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_load_loop_fu_263" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_load_loop">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="201" LUT="143" LogicLUT="132" SRL="11"/>
+    <LocalResources FF="199" LUT="108" LogicLUT="97" SRL="11"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_load_loop_fu_263/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_load_loop.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="53" LogicLUT="53"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop10_fu_393" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_scan_loop10">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="23" LUT="29" LogicLUT="29"/>
+    <LocalResources FF="21" LUT="11" LogicLUT="11"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop10_fu_393/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_scan_loop10.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="18" LogicLUT="18"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop12_fu_415" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_scan_loop12">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="23" LUT="48" LogicLUT="48"/>
+    <LocalResources FF="21" LUT="11" LogicLUT="11"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop12_fu_415/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_scan_loop12.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="37" LogicLUT="37"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop14_fu_437" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_scan_loop14">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="23" LUT="43" LogicLUT="43"/>
+    <LocalResources FF="21" LUT="10" LogicLUT="10"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop14_fu_437/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_scan_loop14.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="33" LogicLUT="33"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop16_fu_459" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_scan_loop16">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="23" LUT="32" LogicLUT="32"/>
+    <LocalResources FF="21" LUT="10" LogicLUT="10"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop16_fu_459/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_scan_loop16.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="22" LogicLUT="22"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop18_fu_481" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_scan_loop18">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="23" LUT="48" LogicLUT="48"/>
+    <LocalResources FF="21" LUT="10" LogicLUT="10"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop18_fu_481/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_scan_loop18.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="38" LogicLUT="38"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop2_fu_305" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_scan_loop2">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="23" LUT="40" LogicLUT="40"/>
+    <LocalResources FF="21" LUT="11" LogicLUT="11"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop2_fu_305/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_scan_loop2.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="29" LogicLUT="29"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop4_fu_327" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_scan_loop4">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="23" LUT="32" LogicLUT="32"/>
+    <LocalResources FF="21" LUT="11" LogicLUT="11"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop4_fu_327/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_scan_loop4.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="21" LogicLUT="21"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop6_fu_349" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_scan_loop6">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="23" LUT="39" LogicLUT="39"/>
+    <LocalResources FF="21" LUT="11" LogicLUT="11"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop6_fu_349/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_scan_loop6.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="28" LogicLUT="28"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop8_fu_371" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_scan_loop8">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="23" LUT="44" LogicLUT="44"/>
+    <LocalResources FF="21" LUT="10" LogicLUT="10"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop8_fu_371/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_scan_loop8.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="34" LogicLUT="34"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop_fu_287" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_scan_loop">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="23" LUT="61" LogicLUT="61"/>
+    <LocalResources FF="21" LUT="11" LogicLUT="11"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_scan_loop_fu_287/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_scan_loop.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="50" LogicLUT="50"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_store_loop_fu_490" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_fft_serial_Pipeline_store_loop">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="185" LUT="172" LogicLUT="172"/>
+    <LocalResources FF="183" LUT="104" LogicLUT="104"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_fft_serial_Pipeline_store_loop_fu_490/flow_control_loop_pipe_sequential_init_U" BINDMODULE="fft_serial_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="fft_serial_fft_serial_Pipeline_store_loop.v" ORIG_REF_NAME="fft_serial_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="86" LogicLUT="86"/>
+  </RtlModule>
+  <RtlModule CELL="inst/im_1_U" BINDMODULE="fft_serial_re_RAM_AUTO_1R1W" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_re_RAM_AUTO_1R1W">
+    <Resources BRAM="1" LUT="353" LogicLUT="353" RAMB18="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/im_U" BINDMODULE="fft_serial_re_RAM_AUTO_1R1W" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_re_RAM_AUTO_1R1W">
+    <Resources BRAM="1" LUT="73" LogicLUT="73" RAMB18="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/re_1_U" BINDMODULE="fft_serial_re_RAM_AUTO_1R1W" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_re_RAM_AUTO_1R1W">
+    <Resources BRAM="1" LUT="501" LogicLUT="501" RAMB18="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/re_U" BINDMODULE="fft_serial_re_RAM_AUTO_1R1W" DEPTH="1" FILE_NAME="fft_serial.v" ORIG_REF_NAME="fft_serial_re_RAM_AUTO_1R1W">
+    <Resources BRAM="1" LUT="21" LogicLUT="21" RAMB18="1"/>
+  </RtlModule>
+</RtlModules>
+<TimingPaths>
+  <TPATH DATAPATH_DELAY="7.380" DATAPATH_LOGIC_DELAY="4.868" DATAPATH_NET_DELAY="2.512" ENDPOINT_PIN="bd_0_i/hls_inst/inst/im_1_U/ram_reg/DIADI[15]" LOGIC_LEVELS="8" MAX_FANOUT="3" SLACK="2.331" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_muladd_16s_16s_32s_32_1_1_U74/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/p/CLK">
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_muladd_16s_16s_32s_32_1_1_U74/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/p" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="377"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_muladd_16s_16s_32s_32_1_1_U74/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_640" PRIMITIVE_TYPE="LUT.others.LUT2" LINE_NUMBER="862"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_muladd_16s_16s_32s_32_1_1_U74/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_533" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="862"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_muladd_16s_16s_32s_32_1_1_U74/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_491" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="862"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_muladd_16s_16s_32s_32_1_1_U74/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_305" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="862"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_muladd_16s_16s_32s_32_1_1_U74/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_465" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="862"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop5_fu_336/mac_muladd_16s_16s_32s_32_1_1_U58/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_280__0" PRIMITIVE_TYPE="LUT.others.LUT5" LINE_NUMBER="1949"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mac_muladd_16s_16s_32s_32_1_1_U40/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_104__1" PRIMITIVE_TYPE="LUT.others.LUT6" LINE_NUMBER="1949"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop13_fu_424/mac_muladd_16s_16s_32s_32_1_1_U122/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_21" PRIMITIVE_TYPE="LUT.others.LUT6" LINE_NUMBER="1949"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/im_1_U/ram_reg" PRIMITIVE_TYPE="BMEM.bram.RAMB18E1" LINE_NUMBER="38"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="7.380" DATAPATH_LOGIC_DELAY="4.868" DATAPATH_NET_DELAY="2.512" ENDPOINT_PIN="bd_0_i/hls_inst/inst/im_U/ram_reg/DIADI[15]" LOGIC_LEVELS="8" MAX_FANOUT="3" SLACK="2.331" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_muladd_16s_16s_32s_32_1_1_U74/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/p/CLK">
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_muladd_16s_16s_32s_32_1_1_U74/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/p" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="377"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_muladd_16s_16s_32s_32_1_1_U74/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_640" PRIMITIVE_TYPE="LUT.others.LUT2" LINE_NUMBER="862"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_muladd_16s_16s_32s_32_1_1_U74/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_533" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="862"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_muladd_16s_16s_32s_32_1_1_U74/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_491" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="862"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_muladd_16s_16s_32s_32_1_1_U74/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_305" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="862"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_muladd_16s_16s_32s_32_1_1_U74/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_465" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="862"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop5_fu_336/mac_muladd_16s_16s_32s_32_1_1_U58/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_280__0" PRIMITIVE_TYPE="LUT.others.LUT5" LINE_NUMBER="1949"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mac_muladd_16s_16s_32s_32_1_1_U40/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_104__1" PRIMITIVE_TYPE="LUT.others.LUT6" LINE_NUMBER="1949"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop13_fu_424/mac_muladd_16s_16s_32s_32_1_1_U122/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_21" PRIMITIVE_TYPE="LUT.others.LUT6" LINE_NUMBER="1949"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/im_U/ram_reg" PRIMITIVE_TYPE="BMEM.bram.RAMB18E1" LINE_NUMBER="38"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="7.380" DATAPATH_LOGIC_DELAY="4.868" DATAPATH_NET_DELAY="2.512" ENDPOINT_PIN="bd_0_i/hls_inst/inst/re_1_U/ram_reg/DIADI[15]" LOGIC_LEVELS="8" MAX_FANOUT="3" SLACK="2.331" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_mulsub_16s_16s_32s_32_1_1_U73/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/p/CLK">
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_mulsub_16s_16s_32s_32_1_1_U73/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/p" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="362"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_mulsub_16s_16s_32s_32_1_1_U73/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/ram_reg_i_783" PRIMITIVE_TYPE="LUT.others.LUT2" LINE_NUMBER="874"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_mulsub_16s_16s_32s_32_1_1_U73/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/ram_reg_i_662" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="874"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_mulsub_16s_16s_32s_32_1_1_U73/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/ram_reg_i_652" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="874"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_mulsub_16s_16s_32s_32_1_1_U73/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/ram_reg_i_630" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="874"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_mulsub_16s_16s_32s_32_1_1_U73/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/ram_reg_i_608" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="874"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop5_fu_336/mac_mulsub_16s_16s_32s_32_1_1_U57/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/ram_reg_i_381" PRIMITIVE_TYPE="LUT.others.LUT5" LINE_NUMBER="1949"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mac_mulsub_16s_16s_32s_32_1_1_U39/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/ram_reg_i_137__0" PRIMITIVE_TYPE="LUT.others.LUT6" LINE_NUMBER="1949"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop13_fu_424/mac_mulsub_16s_16s_32s_32_1_1_U121/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/ram_reg_i_21__0" PRIMITIVE_TYPE="LUT.others.LUT6" LINE_NUMBER="1949"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/re_1_U/ram_reg" PRIMITIVE_TYPE="BMEM.bram.RAMB18E1" LINE_NUMBER="38"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="7.380" DATAPATH_LOGIC_DELAY="4.868" DATAPATH_NET_DELAY="2.512" ENDPOINT_PIN="bd_0_i/hls_inst/inst/re_U/ram_reg/DIADI[15]" LOGIC_LEVELS="8" MAX_FANOUT="3" SLACK="2.331" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_mulsub_16s_16s_32s_32_1_1_U73/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/p/CLK">
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_mulsub_16s_16s_32s_32_1_1_U73/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/p" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="362"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_mulsub_16s_16s_32s_32_1_1_U73/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/ram_reg_i_783" PRIMITIVE_TYPE="LUT.others.LUT2" LINE_NUMBER="874"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_mulsub_16s_16s_32s_32_1_1_U73/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/ram_reg_i_662" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="874"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_mulsub_16s_16s_32s_32_1_1_U73/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/ram_reg_i_652" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="874"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_mulsub_16s_16s_32s_32_1_1_U73/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/ram_reg_i_630" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="874"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop7_fu_358/mac_mulsub_16s_16s_32s_32_1_1_U73/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/ram_reg_i_608" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="874"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop5_fu_336/mac_mulsub_16s_16s_32s_32_1_1_U57/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/ram_reg_i_381" PRIMITIVE_TYPE="LUT.others.LUT5" LINE_NUMBER="1949"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mac_mulsub_16s_16s_32s_32_1_1_U39/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/ram_reg_i_137__0" PRIMITIVE_TYPE="LUT.others.LUT6" LINE_NUMBER="1949"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop13_fu_424/mac_mulsub_16s_16s_32s_32_1_1_U121/fft_serial_mac_mulsub_16s_16s_32s_32_1_1_DSP48_2_U/ram_reg_i_21__0" PRIMITIVE_TYPE="LUT.others.LUT6" LINE_NUMBER="1949"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/re_U/ram_reg" PRIMITIVE_TYPE="BMEM.bram.RAMB18E1" LINE_NUMBER="38"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="7.366" DATAPATH_LOGIC_DELAY="5.108" DATAPATH_NET_DELAY="2.258" ENDPOINT_PIN="bd_0_i/hls_inst/inst/im_1_U/ram_reg/DIPBDIP[0]" LOGIC_LEVELS="9" MAX_FANOUT="3" SLACK="2.345" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mac_muladd_16s_16s_32s_32_1_1_U40/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/p/CLK">
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mac_muladd_16s_16s_32s_32_1_1_U40/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/p" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="372"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mac_muladd_16s_16s_32s_32_1_1_U40/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_716__0" PRIMITIVE_TYPE="LUT.others.LUT2" LINE_NUMBER="1693"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mac_muladd_16s_16s_32s_32_1_1_U40/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_589" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="857"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mac_muladd_16s_16s_32s_32_1_1_U40/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_588" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="857"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mac_muladd_16s_16s_32s_32_1_1_U40/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_554" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="857"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mac_muladd_16s_16s_32s_32_1_1_U40/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_537" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="857"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mac_muladd_16s_16s_32s_32_1_1_U40/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_610" PRIMITIVE_TYPE="CARRY.others.CARRY4" LINE_NUMBER="857"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop3_fu_314/mac_muladd_16s_16s_32s_32_1_1_U40/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_417__0" PRIMITIVE_TYPE="LUT.others.LUT6" LINE_NUMBER="1949"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop9_fu_380/mac_muladd_16s_16s_32s_32_1_1_U90/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_203__0" PRIMITIVE_TYPE="MUXFX.others.MUXF7" LINE_NUMBER="1949"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_fft_serial_Pipeline_bfly_loop15_fu_446/mac_muladd_16s_16s_32s_32_1_1_U138/fft_serial_mac_muladd_16s_16s_32s_32_1_1_DSP48_3_U/ram_reg_i_37__1" PRIMITIVE_TYPE="LUT.others.LUT6" LINE_NUMBER="1949"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/im_1_U/ram_reg" PRIMITIVE_TYPE="BMEM.bram.RAMB18E1" LINE_NUMBER="38"/>
+  </TPATH>
+</TimingPaths>
+<VivadoReportFiles>
+  <ReportFile TYPE="design_analysis" PATH="verilog/report/fft_serial_design_analysis_synth.rpt"/>
+  <ReportFile TYPE="failfast" PATH="verilog/report/fft_serial_failfast_synth.rpt"/>
+  <ReportFile TYPE="timing" PATH="verilog/report/fft_serial_timing_synth.rpt"/>
+  <ReportFile TYPE="timing_paths" PATH="verilog/report/fft_serial_timing_paths_synth.rpt"/>
+  <ReportFile TYPE="utilization" PATH="verilog/report/fft_serial_utilization_synth.rpt"/>
+  <ReportFile TYPE="utilization_hierarchical" PATH="verilog/report/fft_serial_utilization_hierarchical_synth.rpt"/>
+</VivadoReportFiles>
+</profile>

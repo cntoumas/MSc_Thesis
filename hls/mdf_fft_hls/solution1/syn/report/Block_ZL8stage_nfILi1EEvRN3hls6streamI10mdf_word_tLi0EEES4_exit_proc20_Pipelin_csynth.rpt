@@ -1,0 +1,155 @@
+
+
+================================================================
+== Vitis HLS Report for 'Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_Pipelin'
+================================================================
+* Date:           Tue Jun 30 20:58:03 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        mdf_fft_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a200t-fbg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.168 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      258|      258|  2.580 us|  2.580 us|  258|  258|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------+---------+---------+----------+-----------+-----------+------+----------+
+        |              |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name  |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- write_loop  |      256|      256|         2|          1|          1|   256|       yes|
+        +--------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+--------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |   LUT  | URAM|
++-----------------+---------+-----+--------+--------+-----+
+|DSP              |        -|    -|       -|       -|    -|
+|Expression       |        -|    -|       0|     147|    -|
+|FIFO             |        -|    -|       -|       -|    -|
+|Instance         |        -|    -|       -|       -|    -|
+|Memory           |        -|    -|       -|       -|    -|
+|Multiplexer      |        -|    -|       -|      45|    -|
+|Register         |        -|    -|      44|       -|    -|
++-----------------+---------+-----+--------+--------+-----+
+|Total            |        0|    0|      44|     192|    0|
++-----------------+---------+-----+--------+--------+-----+
+|Available        |      730|  740|  269200|  134600|    0|
++-----------------+---------+-----+--------+--------+-----+
+|Utilization (%)  |        0|    0|      ~0|      ~0|    0|
++-----------------+---------+-----+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |add_ln262_fu_129_p2        |         +|   0|  0|  39|          32|           1|
+    |i_8_fu_102_p2              |         +|   0|  0|  16|           9|           1|
+    |ap_block_pp0_stage0_11001  |       and|   0|  0|   2|           1|           1|
+    |icmp_ln258_fu_96_p2        |      icmp|   0|  0|  17|           9|          10|
+    |icmp_ln263_fu_135_p2       |      icmp|   0|  0|  39|          32|           9|
+    |select_ln263_fu_141_p3     |    select|   0|  0|  32|           1|           1|
+    |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |Total                      |          |   0|  0| 147|          85|          25|
+    +---------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_done_int              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_7     |   9|          2|    9|         18|
+    |i_fu_46                  |   9|          2|    9|         18|
+    |s9_blk_n                 |   9|          2|    1|          2|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  45|         10|   21|         42|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                |   1|   0|    1|          0|
+    |ap_done_reg              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
+    |i_fu_46                  |   9|   0|    9|          0|
+    |wr_cnt                   |  32|   0|   32|          0|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    |  44|   0|   44|          0|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------------------------------------------------------+-----+-----+------------+----------------------------------------------------------------------------------+--------------+
+|                                RTL Ports                                | Dir | Bits|  Protocol  |                                   Source Object                                  |    C Type    |
++-------------------------------------------------------------------------+-----+-----+------------+----------------------------------------------------------------------------------+--------------+
+|ap_clk                                                                   |   in|    1|  ap_ctrl_hs|  Block__ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_.exit_proc20_Pipelin|  return value|
+|ap_rst                                                                   |   in|    1|  ap_ctrl_hs|  Block__ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_.exit_proc20_Pipelin|  return value|
+|ap_start                                                                 |   in|    1|  ap_ctrl_hs|  Block__ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_.exit_proc20_Pipelin|  return value|
+|ap_done                                                                  |  out|    1|  ap_ctrl_hs|  Block__ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_.exit_proc20_Pipelin|  return value|
+|ap_idle                                                                  |  out|    1|  ap_ctrl_hs|  Block__ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_.exit_proc20_Pipelin|  return value|
+|ap_ready                                                                 |  out|    1|  ap_ctrl_hs|  Block__ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_.exit_proc20_Pipelin|  return value|
+|s9_dout                                                                  |   in|  129|     ap_fifo|                                                                                s9|       pointer|
+|s9_num_data_valid                                                        |   in|   10|     ap_fifo|                                                                                s9|       pointer|
+|s9_fifo_cap                                                              |   in|   10|     ap_fifo|                                                                                s9|       pointer|
+|s9_empty_n                                                               |   in|    1|     ap_fifo|                                                                                s9|       pointer|
+|s9_read                                                                  |  out|    1|     ap_fifo|                                                                                s9|       pointer|
+|bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_1_address0  |  out|    8|   ap_memory|                    bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_1|         array|
+|bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_1_ce0       |  out|    1|   ap_memory|                    bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_1|         array|
+|bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_1_we0       |  out|    1|   ap_memory|                    bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_1|         array|
+|bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_1_d0        |  out|  128|   ap_memory|                    bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_1|         array|
+|bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_address0    |  out|    8|   ap_memory|                      bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank|         array|
+|bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_ce0         |  out|    1|   ap_memory|                      bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank|         array|
+|bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_we0         |  out|    1|   ap_memory|                      bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank|         array|
+|bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_d0          |  out|  128|   ap_memory|                      bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank|         array|
+|empty                                                                    |   in|    1|     ap_none|                                                                             empty|        scalar|
++-------------------------------------------------------------------------+-----+-----+------------+----------------------------------------------------------------------------------+--------------+
+

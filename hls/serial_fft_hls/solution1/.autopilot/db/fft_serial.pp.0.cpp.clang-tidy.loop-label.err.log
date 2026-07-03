@@ -1,0 +1,3 @@
+4 errors generated.
+Error while processing C:\Users\ntoum\Desktop\thesis_repo\hls\serial_fft_hls\solution1\.autopilot\db\fft_serial.pp.0.cpp.
+clang-tidy applied 6 of 6 suggested fixes.

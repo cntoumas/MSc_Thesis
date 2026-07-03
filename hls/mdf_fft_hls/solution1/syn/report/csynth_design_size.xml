@@ -1,0 +1,133 @@
+<design_size title="Design Size Report">
+    <item name="Total Instructions per Compilation Phase">
+        <table>
+            <keys size="4">Phase, Step, Instructions, Description</keys>
+            <column name="Compile/Link">, 33026, After all functions are compiled and linked into a single design</column>
+            <column name="">, , </column>
+            <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
+            <column name="">(1) unroll,  8509, user unroll pragmas are applied</column>
+            <column name="">(2) simplification,  5460, simplification of applied user unroll pragmas</column>
+            <column name="">(3) inline,  5426, user inline pragmas are applied</column>
+            <column name="">(4) simplification,  5267, simplification of applied user inline pragmas</column>
+            <column name="">, , </column>
+            <column name="Array/Struct">, , After user array partition and struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(1) array partition,  5510, user array partition pragmas are applied</column>
+            <column name="">(2) simplification,  5340, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
+            <column name="">(3) aggregate/disaggregate ,  5364, user struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(4) array reshape,  5650, apply array reshape pragmas</column>
+            <column name="">(5) access patterns,  5712, array access pattern optmizations</column>
+            <column name="">, , </column>
+            <column name="Performance">, , After transformations are applied to meet performance pragma targets</column>
+            <column name="">(1) loop simplification,  5716, loop and instruction simplification</column>
+            <column name="">(2) parallelization,  5712, loops are unrolled or pipelined to meet performance targets</column>
+            <column name="">(3) array partition,  5670, arrays are partitioned to meet performance targets</column>
+            <column name="">(4) simplification,  5670, simplification of design after performance transformations</column>
+            <column name="">, , </column>
+            <column name="HW Transforms">, , After hardware transfomations</column>
+            <column name="">(1) lowering,  5617, initial conversion to HW specific instructions</column>
+            <column name="">(2) optimizations,  5624, high level synthesis optimizations</column>
+        </table>
+    </item>
+    <item name="Instructions per Function for each Compilation Phase">
+        <hiertable>
+            <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
+            <rows>
+                <row id="0" col0="fft_mdf" col1="fft_mdf.cpp:328" col2="33026" col3="5267" col4="5712" col5="5670" col6="5624">
+                    <row id="4" col0="axis_to_word" col1="fft_mdf.cpp:299" col2="120" col3="55" col4="57" col5="41" col6="34"/>
+                    <row id="16" col0="stage_fb&lt;0, 128&gt;" col1="fft_mdf.cpp:86" col2="3378" col3="" col4="" col5="" col6="">
+                        <row id="15" col0="unpack" col1="fft_mdf.cpp:28" col2="135" col3="" col4="" col5="" col6=""/>
+                        <row id="6" col0="mdf_twiddle_get" col1="twiddle_rom.h:45" col2="53" col3="" col4="" col5="" col6="">
+                            <row id="14" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        </row>
+                        <row id="5" col0="cmult" col1="fft_mdf.cpp:60" col2="1049" col3="" col4="" col5="" col6=""/>
+                        <row id="10" col0="rte_shr1" col1="fft_mdf.cpp:51" col2="1012" col2_disp="1,012 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="19" col0="pack" col1="fft_mdf.cpp:37" col2="163" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="8" col0="stage_fb&lt;1, 64&gt;" col1="fft_mdf.cpp:86" col2="3378" col3="" col4="" col5="" col6="">
+                        <row id="15" col0="unpack" col1="fft_mdf.cpp:28" col2="135" col3="" col4="" col5="" col6=""/>
+                        <row id="6" col0="mdf_twiddle_get" col1="twiddle_rom.h:45" col2="53" col3="" col4="" col5="" col6="">
+                            <row id="14" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        </row>
+                        <row id="5" col0="cmult" col1="fft_mdf.cpp:60" col2="1049" col3="" col4="" col5="" col6=""/>
+                        <row id="10" col0="rte_shr1" col1="fft_mdf.cpp:51" col2="1012" col2_disp="1,012 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="19" col0="pack" col1="fft_mdf.cpp:37" col2="163" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="9" col0="stage_fb&lt;2, 32&gt;" col1="fft_mdf.cpp:86" col2="3378" col3="" col4="" col5="" col6="">
+                        <row id="15" col0="unpack" col1="fft_mdf.cpp:28" col2="135" col3="" col4="" col5="" col6=""/>
+                        <row id="6" col0="mdf_twiddle_get" col1="twiddle_rom.h:45" col2="53" col3="" col4="" col5="" col6="">
+                            <row id="14" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        </row>
+                        <row id="5" col0="cmult" col1="fft_mdf.cpp:60" col2="1049" col3="" col4="" col5="" col6=""/>
+                        <row id="10" col0="rte_shr1" col1="fft_mdf.cpp:51" col2="1012" col2_disp="1,012 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="19" col0="pack" col1="fft_mdf.cpp:37" col2="163" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="12" col0="stage_fb&lt;3, 16&gt;" col1="fft_mdf.cpp:86" col2="3378" col3="" col4="" col5="" col6="">
+                        <row id="15" col0="unpack" col1="fft_mdf.cpp:28" col2="135" col3="" col4="" col5="" col6=""/>
+                        <row id="6" col0="mdf_twiddle_get" col1="twiddle_rom.h:45" col2="53" col3="" col4="" col5="" col6="">
+                            <row id="14" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        </row>
+                        <row id="5" col0="cmult" col1="fft_mdf.cpp:60" col2="1049" col3="" col4="" col5="" col6=""/>
+                        <row id="10" col0="rte_shr1" col1="fft_mdf.cpp:51" col2="1012" col2_disp="1,012 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="19" col0="pack" col1="fft_mdf.cpp:37" col2="163" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="17" col0="stage_fb&lt;4, 8&gt;" col1="fft_mdf.cpp:86" col2="3378" col3="" col4="" col5="" col6="">
+                        <row id="15" col0="unpack" col1="fft_mdf.cpp:28" col2="135" col3="" col4="" col5="" col6=""/>
+                        <row id="6" col0="mdf_twiddle_get" col1="twiddle_rom.h:45" col2="53" col3="" col4="" col5="" col6="">
+                            <row id="14" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        </row>
+                        <row id="5" col0="cmult" col1="fft_mdf.cpp:60" col2="1049" col3="" col4="" col5="" col6=""/>
+                        <row id="10" col0="rte_shr1" col1="fft_mdf.cpp:51" col2="1012" col2_disp="1,012 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="19" col0="pack" col1="fft_mdf.cpp:37" col2="163" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="13" col0="stage_fb&lt;5, 4&gt;" col1="fft_mdf.cpp:86" col2="3378" col3="" col4="" col5="" col6="">
+                        <row id="15" col0="unpack" col1="fft_mdf.cpp:28" col2="135" col3="" col4="" col5="" col6=""/>
+                        <row id="6" col0="mdf_twiddle_get" col1="twiddle_rom.h:45" col2="53" col3="" col4="" col5="" col6="">
+                            <row id="14" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        </row>
+                        <row id="5" col0="cmult" col1="fft_mdf.cpp:60" col2="1049" col3="" col4="" col5="" col6=""/>
+                        <row id="10" col0="rte_shr1" col1="fft_mdf.cpp:51" col2="1012" col2_disp="1,012 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="19" col0="pack" col1="fft_mdf.cpp:37" col2="163" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="18" col0="stage_fb&lt;6, 2&gt;" col1="fft_mdf.cpp:86" col2="3378" col3="" col4="" col5="" col6="">
+                        <row id="15" col0="unpack" col1="fft_mdf.cpp:28" col2="135" col3="" col4="" col5="" col6=""/>
+                        <row id="6" col0="mdf_twiddle_get" col1="twiddle_rom.h:45" col2="53" col3="" col4="" col5="" col6="">
+                            <row id="14" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        </row>
+                        <row id="5" col0="cmult" col1="fft_mdf.cpp:60" col2="1049" col3="" col4="" col5="" col6=""/>
+                        <row id="10" col0="rte_shr1" col1="fft_mdf.cpp:51" col2="1012" col2_disp="1,012 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="19" col0="pack" col1="fft_mdf.cpp:37" col2="163" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="2" col0="stage_fb&lt;7, 1&gt;" col1="fft_mdf.cpp:86" col2="3378" col3="" col4="" col5="" col6="">
+                        <row id="15" col0="unpack" col1="fft_mdf.cpp:28" col2="135" col3="" col4="" col5="" col6=""/>
+                        <row id="6" col0="mdf_twiddle_get" col1="twiddle_rom.h:45" col2="53" col3="" col4="" col5="" col6="">
+                            <row id="14" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        </row>
+                        <row id="5" col0="cmult" col1="fft_mdf.cpp:60" col2="1049" col3="" col4="" col5="" col6=""/>
+                        <row id="10" col0="rte_shr1" col1="fft_mdf.cpp:51" col2="1012" col2_disp="1,012 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="19" col0="pack" col1="fft_mdf.cpp:37" col2="163" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="7" col0="stage_nf&lt;0&gt;" col1="fft_mdf.cpp:164" col2="2553" col3="" col4="" col5="" col6="">
+                        <row id="15" col0="unpack" col1="fft_mdf.cpp:28" col2="135" col3="" col4="" col5="" col6=""/>
+                        <row id="10" col0="rte_shr1" col1="fft_mdf.cpp:51" col2="506" col2_disp="  506 (2 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="19" col0="pack" col1="fft_mdf.cpp:37" col2="163" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="1" col0="stage_nf&lt;1&gt;" col1="fft_mdf.cpp:164" col2="2400" col3="" col4="" col5="" col6="">
+                        <row id="15" col0="unpack" col1="fft_mdf.cpp:28" col2="135" col3="" col4="" col5="" col6=""/>
+                        <row id="10" col0="rte_shr1" col1="fft_mdf.cpp:51" col2="506" col2_disp="  506 (2 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="19" col0="pack" col1="fft_mdf.cpp:37" col2="163" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="11" col0="bit_reverse_buf" col1="fft_mdf.cpp:244" col2="596" col3="" col4="" col5="" col6=""/>
+                    <row id="3" col0="word_to_axis" col1="fft_mdf.cpp:311" col2="188" col3="30" col4="80" col5="54" col6="39"/>
+                </row>
+            </rows>
+            <notes/>
+        </hiertable>
+    </item>
+    <item name="Design Size Message Settings">
+        <table>
+            <keys size="3">Message Setting, Value, Description</keys>
+            <column name="config_compile -design_size_maximum_warning">100000, Show a warning when total design instructions exceeds this value</column>
+        </table>
+    </item>
+</design_size>
+

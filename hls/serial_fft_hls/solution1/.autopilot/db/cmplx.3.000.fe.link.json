@@ -1,0 +1,235 @@
+{
+  "0": {
+    "basicblocks": 13,
+    "calls": "1 6 15 14 15 7 15 11 15 5 15 8 15 4 15 10 15 9 15 16 15",
+    "file": "fft_serial.cpp",
+    "fileloc": 199,
+    "instructions": 185,
+    "loads": {
+      "L": 21,
+      "T": 2
+    },
+    "name": "fft_serial",
+    "stores": {
+      "L": 2,
+      "T": 3
+    },
+    "total_instructions": 66105
+  },
+  "1": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "fft_serial.cpp",
+    "fileloc": 92,
+    "instructions": 16,
+    "name": "bit_rev10",
+    "total_instructions": 16
+  },
+  "10": {
+    "basicblocks": 13,
+    "calls": "3 3 3 3 13 12 12 2",
+    "file": "fft_serial.cpp",
+    "fileloc": 119,
+    "instructions": 364,
+    "loads": {
+      "L": 15
+    },
+    "name": "fft_stage_bfp<7>",
+    "stores": {
+      "L": 12
+    },
+    "total_instructions": 6574
+  },
+  "11": {
+    "basicblocks": 13,
+    "calls": "3 3 3 3 13 12 12 2",
+    "file": "fft_serial.cpp",
+    "fileloc": 119,
+    "instructions": 364,
+    "loads": {
+      "L": 15
+    },
+    "name": "fft_stage_bfp<3>",
+    "stores": {
+      "L": 12
+    },
+    "total_instructions": 6574
+  },
+  "12": {
+    "basicblocks": 4,
+    "calls": "",
+    "file": "fft_serial.cpp",
+    "fileloc": 64,
+    "instructions": 25,
+    "loads": {
+      "L": 1
+    },
+    "name": "bfp_magnitude",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 117
+  },
+  "13": {
+    "basicblocks": 9,
+    "calls": "",
+    "file": "twiddle_rom.h",
+    "fileloc": 19,
+    "instructions": 48,
+    "loads": {
+      "G": 2
+    },
+    "name": "twiddle_get",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 48
+  },
+  "14": {
+    "basicblocks": 13,
+    "calls": "3 3 3 3 13 12 12 2",
+    "file": "fft_serial.cpp",
+    "fileloc": 119,
+    "instructions": 364,
+    "loads": {
+      "L": 15
+    },
+    "name": "fft_stage_bfp<1>",
+    "stores": {
+      "L": 12
+    },
+    "total_instructions": 6574
+  },
+  "15": {
+    "basicblocks": 11,
+    "calls": "",
+    "file": "fft_serial.cpp",
+    "fileloc": 43,
+    "instructions": 12,
+    "name": "bfp_exp_delta",
+    "total_instructions": 12
+  },
+  "16": {
+    "basicblocks": 13,
+    "calls": "3 3 3 3 13 12 12 2",
+    "file": "fft_serial.cpp",
+    "fileloc": 119,
+    "instructions": 364,
+    "loads": {
+      "L": 15
+    },
+    "name": "fft_stage_bfp<9>",
+    "stores": {
+      "L": 12
+    },
+    "total_instructions": 6574
+  },
+  "2": {
+    "basicblocks": 18,
+    "calls": "",
+    "file": "fft_serial.cpp",
+    "fileloc": 75,
+    "instructions": 51,
+    "name": "bfp_clz8",
+    "total_instructions": 203
+  },
+  "3": {
+    "basicblocks": 11,
+    "calls": "",
+    "file": "fft_serial.cpp",
+    "fileloc": 19,
+    "instructions": 107,
+    "name": "bfp_shift_16",
+    "total_instructions": 978
+  },
+  "4": {
+    "basicblocks": 13,
+    "calls": "3 3 3 3 13 12 12 2",
+    "file": "fft_serial.cpp",
+    "fileloc": 119,
+    "instructions": 364,
+    "loads": {
+      "L": 15
+    },
+    "name": "fft_stage_bfp<6>",
+    "stores": {
+      "L": 12
+    },
+    "total_instructions": 6574
+  },
+  "5": {
+    "basicblocks": 13,
+    "calls": "3 3 3 3 13 12 12 2",
+    "file": "fft_serial.cpp",
+    "fileloc": 119,
+    "instructions": 364,
+    "loads": {
+      "L": 15
+    },
+    "name": "fft_stage_bfp<4>",
+    "stores": {
+      "L": 12
+    },
+    "total_instructions": 6574
+  },
+  "6": {
+    "basicblocks": 13,
+    "calls": "3 3 3 3 13 12 12 2",
+    "file": "fft_serial.cpp",
+    "fileloc": 119,
+    "instructions": 364,
+    "loads": {
+      "L": 15
+    },
+    "name": "fft_stage_bfp<0>",
+    "stores": {
+      "L": 12
+    },
+    "total_instructions": 6574
+  },
+  "7": {
+    "basicblocks": 13,
+    "calls": "3 3 3 3 13 12 12 2",
+    "file": "fft_serial.cpp",
+    "fileloc": 119,
+    "instructions": 364,
+    "loads": {
+      "L": 15
+    },
+    "name": "fft_stage_bfp<2>",
+    "stores": {
+      "L": 12
+    },
+    "total_instructions": 6574
+  },
+  "8": {
+    "basicblocks": 13,
+    "calls": "3 3 3 3 13 12 12 2",
+    "file": "fft_serial.cpp",
+    "fileloc": 119,
+    "instructions": 364,
+    "loads": {
+      "L": 15
+    },
+    "name": "fft_stage_bfp<5>",
+    "stores": {
+      "L": 12
+    },
+    "total_instructions": 6574
+  },
+  "9": {
+    "basicblocks": 13,
+    "calls": "3 3 3 3 13 12 12 2",
+    "file": "fft_serial.cpp",
+    "fileloc": 119,
+    "instructions": 364,
+    "loads": {
+      "L": 15
+    },
+    "name": "fft_stage_bfp<8>",
+    "stores": {
+      "L": 12
+    },
+    "total_instructions": 6574
+  }
+}

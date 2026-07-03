@@ -1,0 +1,165 @@
+ECHO is off.
+ECHO is off.
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+  **** SW Build 4023990 on Oct 11 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source C:/Xilinx/Vitis_HLS/2023.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'ntoum' on host 'chntoumas' (Windows NT_amd64 version 6.2) on Tue Jun 30 21:25:05 +0300 2026
+INFO: [HLS 200-10] In directory 'C:/Users/ntoum/Desktop/thesis_repo/hls'
+INFO: [HLS 200-2053] The vitis_hls executable is being deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script 'xcheck.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset serial_xcheck 
+INFO: [HLS 200-10] Creating and opening project 'C:/Users/ntoum/Desktop/thesis_repo/hls/serial_xcheck'.
+INFO: [HLS 200-1510] Running: set_top fft_serial 
+INFO: [HLS 200-1510] Running: add_files serial_fft/fft_serial.cpp -cflags -I. -I./serial_fft 
+INFO: [HLS 200-10] Adding design file 'serial_fft/fft_serial.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb serial_fft/fft_serial_xcheck.cpp -cflags -I. -I./serial_fft 
+INFO: [HLS 200-10] Adding test bench file 'serial_fft/fft_serial_xcheck.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 
+INFO: [HLS 200-10] Creating and opening solution 'C:/Users/ntoum/Desktop/thesis_repo/hls/serial_xcheck/solution1'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xc7a200tfbg676-2 
+INFO: [HLS 200-1611] Setting target device to 'xc7a200t-fbg676-2'
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../serial_fft/fft_serial_xcheck.cpp in debug mode
+   Compiling ../../../../serial_fft/fft_serial.cpp in debug mode
+   Generating csim.exe
+In file included from C:/Xilinx/Vitis_HLS/2023.2/include/floating_point_v7_1_bitacc_cmodel.h:150:0,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_fpo.h:140,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/hls_half_fpo.h:19,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_half.h:26,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_private.h:52,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h:666,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/ap_int.h:10,
+                 from ../../../../serial_fft/fft_serial.h:2,
+                 from ../../../../serial_fft/fft_serial_xcheck.cpp:5:
+C:/Xilinx/Vitis_HLS/2023.2/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from C:/Xilinx/Vitis_HLS/2023.2/include/hls_fpo.h:140:0,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/hls_half_fpo.h:19,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_half.h:26,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_private.h:52,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h:666,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/ap_int.h:10,
+                 from ../../../../serial_fft/fft_serial.h:2,
+                 from ../../../../serial_fft/fft_serial_xcheck.cpp:5:
+C:/Xilinx/Vitis_HLS/2023.2/include/floating_point_v7_1_bitacc_cmodel.h:142:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+In file included from C:/Xilinx/Vitis_HLS/2023.2/include/floating_point_v7_1_bitacc_cmodel.h:150:0,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_fpo.h:140,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/hls_half_fpo.h:19,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_half.h:26,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_private.h:52,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h:666,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/ap_int.h:10,
+                 from ../../../../serial_fft/fft_serial.h:2,
+                 from ../../../../serial_fft/fft_serial.cpp:1:
+C:/Xilinx/Vitis_HLS/2023.2/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from C:/Xilinx/Vitis_HLS/2023.2/include/hls_fpo.h:140:0,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/hls_half_fpo.h:19,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_half.h:26,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_private.h:52,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h:666,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/ap_int.h:10,
+                 from ../../../../serial_fft/fft_serial.h:2,
+                 from ../../../../serial_fft/fft_serial.cpp:1:
+C:/Xilinx/Vitis_HLS/2023.2/include/floating_point_v7_1_bitacc_cmodel.h:142:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+xcheck_serial: wrote 5 tests
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.299 seconds; current allocated memory: 0.938 MB.
+INFO: [HLS 200-1510] Running: close_project 
+INFO: [HLS 200-1510] Running: open_project -reset mdf_xcheck 
+INFO: [HLS 200-10] Creating and opening project 'C:/Users/ntoum/Desktop/thesis_repo/hls/mdf_xcheck'.
+INFO: [HLS 200-1510] Running: set_top fft_mdf 
+INFO: [HLS 200-1510] Running: add_files mdf_fft/fft_mdf.cpp -cflags -I. -I./mdf_fft 
+INFO: [HLS 200-10] Adding design file 'mdf_fft/fft_mdf.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb mdf_fft/fft_mdf_xcheck.cpp -cflags -I. -I./mdf_fft 
+INFO: [HLS 200-10] Adding test bench file 'mdf_fft/fft_mdf_xcheck.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 
+INFO: [HLS 200-10] Creating and opening solution 'C:/Users/ntoum/Desktop/thesis_repo/hls/mdf_xcheck/solution1'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xc7a200tfbg676-2 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../mdf_fft/fft_mdf_xcheck.cpp in debug mode
+   Compiling ../../../../mdf_fft/fft_mdf.cpp in debug mode
+   Generating csim.exe
+In file included from C:/Xilinx/Vitis_HLS/2023.2/include/floating_point_v7_1_bitacc_cmodel.h:150:0,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_fpo.h:140,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/hls_half_fpo.h:19,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_half.h:26,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_private.h:52,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h:666,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/ap_int.h:10,
+                 from ../../../../mdf_fft/fft_mdf.h:2,
+                 from ../../../../mdf_fft/fft_mdf_xcheck.cpp:5:
+C:/Xilinx/Vitis_HLS/2023.2/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from C:/Xilinx/Vitis_HLS/2023.2/include/hls_fpo.h:140:0,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/hls_half_fpo.h:19,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_half.h:26,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_private.h:52,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h:666,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/ap_int.h:10,
+                 from ../../../../mdf_fft/fft_mdf.h:2,
+                 from ../../../../mdf_fft/fft_mdf_xcheck.cpp:5:
+C:/Xilinx/Vitis_HLS/2023.2/include/floating_point_v7_1_bitacc_cmodel.h:142:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+In file included from C:/Xilinx/Vitis_HLS/2023.2/include/floating_point_v7_1_bitacc_cmodel.h:150:0,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_fpo.h:140,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/hls_half_fpo.h:19,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_half.h:26,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_private.h:52,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h:666,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/ap_int.h:10,
+                 from ../../../../mdf_fft/fft_mdf.h:2,
+                 from ../../../../mdf_fft/fft_mdf.cpp:1:
+C:/Xilinx/Vitis_HLS/2023.2/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from C:/Xilinx/Vitis_HLS/2023.2/include/hls_fpo.h:140:0,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/hls_half_fpo.h:19,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/hls_half.h:26,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_private.h:52,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_common.h:666,
+                 from C:/Xilinx/Vitis_HLS/2023.2/include/ap_int.h:10,
+                 from ../../../../mdf_fft/fft_mdf.h:2,
+                 from ../../../../mdf_fft/fft_mdf.cpp:1:
+C:/Xilinx/Vitis_HLS/2023.2/include/floating_point_v7_1_bitacc_cmodel.h:142:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+xcheck_mdf: wrote 5 tests
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 256
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 6.47 seconds; current allocated memory: 0.098 MB.
+INFO: [HLS 200-1510] Running: close_project 
+
+=== xcheck done ===
+[2Kvitis_hls> [11C
