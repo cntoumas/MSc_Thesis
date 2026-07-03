@@ -1,0 +1,110 @@
+<design_size title="Design Size Report">
+    <item name="Total Instructions per Compilation Phase">
+        <table>
+            <keys size="4">Phase, Step, Instructions, Description</keys>
+            <column name="Compile/Link">, 66105, After all functions are compiled and linked into a single design</column>
+            <column name="">, , </column>
+            <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
+            <column name="">(1) unroll,  4379, user unroll pragmas are applied</column>
+            <column name="">(2) simplification,  3865, simplification of applied user unroll pragmas</column>
+            <column name="">(3) inline,  3852, user inline pragmas are applied</column>
+            <column name="">(4) simplification,  3852, simplification of applied user inline pragmas</column>
+            <column name="">, , </column>
+            <column name="Array/Struct">, , After user array partition and struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(1) array partition,  4688, user array partition pragmas are applied</column>
+            <column name="">(2) simplification,  4218, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
+            <column name="">(3) aggregate/disaggregate ,  4218, user struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(4) array reshape,  4216, apply array reshape pragmas</column>
+            <column name="">(5) access patterns,  4232, array access pattern optmizations</column>
+            <column name="">, , </column>
+            <column name="Performance">, , After transformations are applied to meet performance pragma targets</column>
+            <column name="">(1) loop simplification,  4218, loop and instruction simplification</column>
+            <column name="">(2) parallelization,  4218, loops are unrolled or pipelined to meet performance targets</column>
+            <column name="">(3) array partition,  4218, arrays are partitioned to meet performance targets</column>
+            <column name="">(4) simplification,  4218, simplification of design after performance transformations</column>
+            <column name="">, , </column>
+            <column name="HW Transforms">, , After hardware transfomations</column>
+            <column name="">(1) lowering,  4228, initial conversion to HW specific instructions</column>
+            <column name="">(2) optimizations,  4313, high level synthesis optimizations</column>
+        </table>
+    </item>
+    <item name="Instructions per Function for each Compilation Phase">
+        <hiertable>
+            <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
+            <rows>
+                <row id="0" col0="fft_serial" col1="fft_serial.cpp:199" col2="66105" col3="3852" col4="4232" col5="4218" col6="4313">
+                    <row id="1" col0="bit_rev10" col1="fft_serial.cpp:92" col2="16" col3="" col4="" col5="" col6=""/>
+                    <row id="13" col0="fft_stage_bfp&lt;0&gt;" col1="fft_serial.cpp:119" col2="6574" col3="" col4="" col5="" col6="">
+                        <row id="10" col0="bfp_shift_16" col1="fft_serial.cpp:19" col2="3912" col2_disp="3,912 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="5" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        <row id="4" col0="bfp_magnitude" col1="fft_serial.cpp:64" col2="234" col2_disp="  234 (2 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="9" col0="bfp_clz8" col1="fft_serial.cpp:75" col2="203" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="7" col0="bfp_exp_delta" col1="fft_serial.cpp:43" col2="120" col2_disp="  120 (10 calls)" col3="" col4="" col5="" col6=""/>
+                    <row id="6" col0="fft_stage_bfp&lt;1&gt;" col1="fft_serial.cpp:119" col2="6574" col3="" col4="" col5="" col6="">
+                        <row id="10" col0="bfp_shift_16" col1="fft_serial.cpp:19" col2="3912" col2_disp="3,912 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="5" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        <row id="4" col0="bfp_magnitude" col1="fft_serial.cpp:64" col2="234" col2_disp="  234 (2 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="9" col0="bfp_clz8" col1="fft_serial.cpp:75" col2="203" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="14" col0="fft_stage_bfp&lt;2&gt;" col1="fft_serial.cpp:119" col2="6574" col3="" col4="" col5="" col6="">
+                        <row id="10" col0="bfp_shift_16" col1="fft_serial.cpp:19" col2="3912" col2_disp="3,912 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="5" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        <row id="4" col0="bfp_magnitude" col1="fft_serial.cpp:64" col2="234" col2_disp="  234 (2 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="9" col0="bfp_clz8" col1="fft_serial.cpp:75" col2="203" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="3" col0="fft_stage_bfp&lt;3&gt;" col1="fft_serial.cpp:119" col2="6574" col3="" col4="" col5="" col6="">
+                        <row id="10" col0="bfp_shift_16" col1="fft_serial.cpp:19" col2="3912" col2_disp="3,912 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="5" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        <row id="4" col0="bfp_magnitude" col1="fft_serial.cpp:64" col2="234" col2_disp="  234 (2 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="9" col0="bfp_clz8" col1="fft_serial.cpp:75" col2="203" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="12" col0="fft_stage_bfp&lt;4&gt;" col1="fft_serial.cpp:119" col2="6574" col3="" col4="" col5="" col6="">
+                        <row id="10" col0="bfp_shift_16" col1="fft_serial.cpp:19" col2="3912" col2_disp="3,912 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="5" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        <row id="4" col0="bfp_magnitude" col1="fft_serial.cpp:64" col2="234" col2_disp="  234 (2 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="9" col0="bfp_clz8" col1="fft_serial.cpp:75" col2="203" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="15" col0="fft_stage_bfp&lt;5&gt;" col1="fft_serial.cpp:119" col2="6574" col3="" col4="" col5="" col6="">
+                        <row id="10" col0="bfp_shift_16" col1="fft_serial.cpp:19" col2="3912" col2_disp="3,912 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="5" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        <row id="4" col0="bfp_magnitude" col1="fft_serial.cpp:64" col2="234" col2_disp="  234 (2 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="9" col0="bfp_clz8" col1="fft_serial.cpp:75" col2="203" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="11" col0="fft_stage_bfp&lt;6&gt;" col1="fft_serial.cpp:119" col2="6574" col3="" col4="" col5="" col6="">
+                        <row id="10" col0="bfp_shift_16" col1="fft_serial.cpp:19" col2="3912" col2_disp="3,912 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="5" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        <row id="4" col0="bfp_magnitude" col1="fft_serial.cpp:64" col2="234" col2_disp="  234 (2 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="9" col0="bfp_clz8" col1="fft_serial.cpp:75" col2="203" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="2" col0="fft_stage_bfp&lt;7&gt;" col1="fft_serial.cpp:119" col2="6574" col3="" col4="" col5="" col6="">
+                        <row id="10" col0="bfp_shift_16" col1="fft_serial.cpp:19" col2="3912" col2_disp="3,912 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="5" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        <row id="4" col0="bfp_magnitude" col1="fft_serial.cpp:64" col2="234" col2_disp="  234 (2 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="9" col0="bfp_clz8" col1="fft_serial.cpp:75" col2="203" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="16" col0="fft_stage_bfp&lt;8&gt;" col1="fft_serial.cpp:119" col2="6574" col3="" col4="" col5="" col6="">
+                        <row id="10" col0="bfp_shift_16" col1="fft_serial.cpp:19" col2="3912" col2_disp="3,912 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="5" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        <row id="4" col0="bfp_magnitude" col1="fft_serial.cpp:64" col2="234" col2_disp="  234 (2 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="9" col0="bfp_clz8" col1="fft_serial.cpp:75" col2="203" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="8" col0="fft_stage_bfp&lt;9&gt;" col1="fft_serial.cpp:119" col2="6574" col3="" col4="" col5="" col6="">
+                        <row id="10" col0="bfp_shift_16" col1="fft_serial.cpp:19" col2="3912" col2_disp="3,912 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="5" col0="twiddle_get" col1="twiddle_rom.h:19" col2="48" col3="" col4="" col5="" col6=""/>
+                        <row id="4" col0="bfp_magnitude" col1="fft_serial.cpp:64" col2="234" col2_disp="  234 (2 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="9" col0="bfp_clz8" col1="fft_serial.cpp:75" col2="203" col3="" col4="" col5="" col6=""/>
+                    </row>
+                </row>
+            </rows>
+            <notes/>
+        </hiertable>
+    </item>
+    <item name="Design Size Message Settings">
+        <table>
+            <keys size="3">Message Setting, Value, Description</keys>
+            <column name="config_compile -design_size_maximum_warning">100000, Show a warning when total design instructions exceeds this value</column>
+        </table>
+    </item>
+</design_size>
+

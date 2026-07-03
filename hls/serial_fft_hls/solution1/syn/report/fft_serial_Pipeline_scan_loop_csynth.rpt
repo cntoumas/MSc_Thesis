@@ -1,0 +1,160 @@
+
+
+================================================================
+== Vitis HLS Report for 'fft_serial_Pipeline_scan_loop'
+================================================================
+* Date:           Tue Jun 30 20:48:43 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        serial_fft_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a200t-fbg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.916 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     1026|     1026|  10.260 us|  10.260 us|  1026|  1026|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |             |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- scan_loop  |     1024|     1024|         2|          1|          1|  1024|       yes|
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+--------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |   LUT  | URAM|
++-----------------+---------+-----+--------+--------+-----+
+|DSP              |        -|    -|       -|       -|    -|
+|Expression       |        -|    -|       0|     121|    -|
+|FIFO             |        -|    -|       -|       -|    -|
+|Instance         |        -|    -|       -|       -|    -|
+|Memory           |        -|    -|       -|       -|    -|
+|Multiplexer      |        -|    -|       -|      45|    -|
+|Register         |        -|    -|      23|       -|    -|
++-----------------+---------+-----+--------+--------+-----+
+|Total            |        0|    0|      23|     166|    0|
++-----------------+---------+-----+--------+--------+-----+
+|Available        |      730|  740|  269200|  134600|    0|
++-----------------+---------+-----+--------+--------+-----+
+|Utilization (%)  |        0|    0|      ~0|      ~0|    0|
++-----------------+---------+-----+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------+----------+----+---+----+------------+------------+
+    |      Variable Name      | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------+----------+----+---+----+------------+------------+
+    |add_ln188_fu_140_p2      |         +|   0|  0|  18|          11|           1|
+    |icmp_ln188_fu_134_p2     |      icmp|   0|  0|  19|          11|          12|
+    |or_ln190_fu_254_p2       |        or|   0|  0|   8|           8|           8|
+    |or_mask_9_fu_260_p2      |        or|   0|  0|   8|           8|           8|
+    |select_ln67_1_fu_246_p3  |    select|   0|  0|   8|           1|           8|
+    |select_ln67_fu_207_p3    |    select|   0|  0|   8|           1|           8|
+    |v_4_fu_176_p3            |    select|   0|  0|  17|           1|          17|
+    |v_5_fu_215_p3            |    select|   0|  0|  17|           1|          17|
+    |ap_enable_pp0            |       xor|   0|  0|   2|           1|           2|
+    |xor_ln67_1_fu_240_p2     |       xor|   0|  0|   8|           8|           2|
+    |xor_ln67_fu_201_p2       |       xor|   0|  0|   8|           8|           2|
+    +-------------------------+----------+----+---+----+------------+------------+
+    |Total                    |          |   0|  0| 121|          59|          85|
+    +-------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_done_int              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_7     |   9|          2|   11|         22|
+    |i_fu_58                  |   9|          2|   11|         22|
+    |or_mask_fu_54            |   9|          2|    8|         16|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  45|         10|   32|         64|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                |   1|   0|    1|          0|
+    |ap_done_reg              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
+    |i_fu_58                  |  11|   0|   11|          0|
+    |or_mask_fu_54            |   8|   0|    8|          0|
+    |trunc_ln188_reg_293      |   1|   0|    1|          0|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    |  23|   0|   23|          0|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------+-----+-----+------------+-------------------------------+--------------+
+|      RTL Ports     | Dir | Bits|  Protocol  |         Source Object         |    C Type    |
++--------------------+-----+-----+------------+-------------------------------+--------------+
+|ap_clk              |   in|    1|  ap_ctrl_hs|  fft_serial_Pipeline_scan_loop|  return value|
+|ap_rst              |   in|    1|  ap_ctrl_hs|  fft_serial_Pipeline_scan_loop|  return value|
+|ap_start            |   in|    1|  ap_ctrl_hs|  fft_serial_Pipeline_scan_loop|  return value|
+|ap_done             |  out|    1|  ap_ctrl_hs|  fft_serial_Pipeline_scan_loop|  return value|
+|ap_idle             |  out|    1|  ap_ctrl_hs|  fft_serial_Pipeline_scan_loop|  return value|
+|ap_ready            |  out|    1|  ap_ctrl_hs|  fft_serial_Pipeline_scan_loop|  return value|
+|re_address0         |  out|    9|   ap_memory|                             re|         array|
+|re_ce0              |  out|    1|   ap_memory|                             re|         array|
+|re_q0               |   in|   17|   ap_memory|                             re|         array|
+|re_1_address0       |  out|    9|   ap_memory|                           re_1|         array|
+|re_1_ce0            |  out|    1|   ap_memory|                           re_1|         array|
+|re_1_q0             |   in|   17|   ap_memory|                           re_1|         array|
+|im_address0         |  out|    9|   ap_memory|                             im|         array|
+|im_ce0              |  out|    1|   ap_memory|                             im|         array|
+|im_q0               |   in|   17|   ap_memory|                             im|         array|
+|im_1_address0       |  out|    9|   ap_memory|                           im_1|         array|
+|im_1_ce0            |  out|    1|   ap_memory|                           im_1|         array|
+|im_1_q0             |   in|   17|   ap_memory|                           im_1|         array|
+|or_mask_out         |  out|    8|      ap_vld|                    or_mask_out|       pointer|
+|or_mask_out_ap_vld  |  out|    1|      ap_vld|                    or_mask_out|       pointer|
++--------------------+-----+-----+------------+-------------------------------+--------------+
+

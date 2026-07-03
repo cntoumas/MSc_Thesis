@@ -35,6 +35,15 @@ Two architectures are compared head-to-head:
 
 ---
 
+## Additional Chapter Materials
+
+The repository now includes two dedicated chapter folders for the thesis work:
+
+- [hls](hls/) — HLS-versus-RTL comparison sources, documentation, and supporting scripts for the comparison chapter.
+- [parametric_study](parametric_study/) — parametric sweep and synthesis-area study scripts, plus the associated README.
+
+These folders collect the chapter-specific artifacts in one place and keep the main project layout focused on the RTL implementations and their verification flow.
+
 ## Thesis Context
 
 The FFT is a cornerstone algorithm in digital signal processing — used in communications, radar, audio, and scientific computing. Implementing it efficiently in hardware requires careful architectural decisions that fundamentally shape the silicon cost and real-time performance of the final system.
@@ -89,13 +98,15 @@ MSc_Thesis/
 │   ├── env/ seq/ tests/ tb/ scripts/ docs/
 │   └── README.md     — Thorough standalone UVM verification guide
 │
-├── common/           — Shared DSP metrics (single source of truth for the figures of merit)
-│   ├── dsp_metrics.py  — SQNR / SFDR / THD / SINAD / ENOB / per-bin phase error
-│   ├── dsp_plots.py    — shared per-architecture metric figure renderer
-│   └── util_plots.py   — shared FPGA utilization CSV/PNG renderer
+├── hls/              — HLS-versus-RTL comparison chapter sources and documentation
+│   ├── HLS_vs_RTL_comparison.md
+│   ├── compare_hls_rtl.py
+│   └── mdf_fft/ serial_fft/ — HLS source files and testbenches
 │
-├── cosim/
-│   └── cosim_compare.py — invokes both sims, recomputes identical metrics, emits comparison
+├── parametric_study/ — Parametric sweep, synthesis-area, and script automation assets
+│   ├── README.md
+│   ├── parallel_sweep.py / serial_sweep.py
+│   └── synth_area.py / precision_plot.py
 │
 └── README.md         — This file
 ```
@@ -150,7 +161,7 @@ See the **[UVM/README.md](UVM/README.md)** for the full standalone guide (layout
 
 ## DSP Figures of Merit
 
-To substantiate the **numerical-precision** comparison beyond SQNR, both architectures are characterised with the standard DSP figures of merit — **SFDR, THD, SINAD, ENOB, and per-bin phase error** — computed by a single shared module, [`common/dsp_metrics.py`](common/dsp_metrics.py), so the Serial and Parallel numbers come from *identical* math. Single-tone metrics use the coherent, no-window convention (the Sine test sits exactly on bin 50).
+To substantiate the **numerical-precision** comparison beyond SQNR, both architectures are characterised with the standard DSP figures of merit — **SFDR, THD, SINAD, ENOB, and per-bin phase error** — using the shared analysis workflow documented in the thesis source materials and chapter-specific scripts. Single-tone metrics use the coherent, no-window convention (the Sine test sits exactly on bin 50).
 
 | Metric | Meaning | Scope |
 |---|---|---|
@@ -162,16 +173,14 @@ To substantiate the **numerical-precision** comparison beyond SQNR, both archite
 
 **Sine-tone head-to-head:** Serial ENOB ≈ **11.95 bits** / SFDR **76.1 dBc**; the Parallel single-tone metrics saturate the 120 dB log-floor (its coherent, fixed-BFP read-back has no representable spurs — read as noise-floor-limited, *not* a bug). The robust comparison numbers are SQNR (73.5 vs 72.4 dB) and detrended phase (≈0°). On the broadband **Chirp** the ranking flips: Serial holds **65.9 dB / 0.03°** vs Parallel **35.0 dB / 0.71°** — the clearest evidence that adaptive BFP beats a fixed block exponent on spread-spectrum inputs. Full per-metric tables and the saturation caveat are documented in each architecture's README.
 
-## Cross-Architecture Co-Simulation
+## Additional Chapter Artifacts
 
-[`cosim/cosim_compare.py`](cosim/cosim_compare.py) runs at the repo root and **invokes both simulators itself**, then recomputes the identical `common/dsp_metrics.py` functions on each architecture's reconstructed spectrum — guaranteeing the comparison uses one math path. It emits a side-by-side DSP + utilization comparison.
+The repository now carries the chapter-specific materials for the new study sections in dedicated folders:
 
-```bash
-python cosim/cosim_compare.py             # re-run both sims + both reports, then compare
-python cosim/cosim_compare.py --skip-run  # rebuild the comparison from cached artifacts
-```
+- [hls](hls/) hosts the HLS-versus-RTL comparison chapter, including the comparison notes and the related source files.
+- [parametric_study](parametric_study/) contains the scripts and documentation for the parametric sweep and synthesis-area analysis.
 
-Outputs land under `results/comparison/` (regenerable, not version-controlled). The utilization comparison labels each design's target device and uses **absolute counts** as the primary axis, because the open-source area numbers come from different parts (Serial → Artix-7, Parallel → iCE40 sanity flow); for the authoritative cross-device figures use the Vivado post-route numbers in [Key Results](#key-results).
+These assets are kept alongside the main RTL project so the thesis chapters remain easy to navigate and reuse.
 
 ---
 

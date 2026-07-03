@@ -1,0 +1,145 @@
+
+
+================================================================
+== Vitis HLS Report for 'axis_to_word'
+================================================================
+* Date:           Tue Jun 30 20:57:50 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        mdf_fft_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a200t-fbg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.382 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      258|      258|  2.580 us|  2.580 us|  258|  258|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_301_1  |      256|      256|         2|          1|          1|   256|  yes(flp)|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 1
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.38>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [mdf_fft/fft_mdf.cpp:301]   --->   Operation 5 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %s_in_V_data_V, i16 %s_in_V_keep_V, i16 %s_in_V_strb_V, i1 %s_in_V_user_V, i1 %s_in_V_last_V, i1 %s_in_V_id_V, i1 %s_in_V_dest_V, void @empty_4"   --->   Operation 6 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i129 %w_in, void @empty_10, i32 0, i32 0, void @empty_9, i32 0, i32 0, void @empty_9, void @empty_9, void @empty_9, i32 0, i32 0, i32 0, i32 0, void @empty_9, void @empty_9, i32 4294967295, i32 0"   --->   Operation 7 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %s_in_V_dest_V, i1 %s_in_V_id_V, i1 %s_in_V_last_V, i1 %s_in_V_user_V, i16 %s_in_V_strb_V, i16 %s_in_V_keep_V, i128 %s_in_V_data_V, void @empty_11, i32 1, i32 1, void @empty_7, i32 0, i32 0, void @empty_9, void @empty_9, void @empty_9, i32 0, i32 0, i32 0, i32 0, void @empty_9, void @empty_9, i32 4294967295, i32 0"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (1.32ns)   --->   "%store_ln301 = store i9 0, i9 %i" [mdf_fft/fft_mdf.cpp:301]   --->   Operation 9 'store' 'store_ln301' <Predicate = true> <Delay = 1.32>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%br_ln301 = br void %for.inc" [mdf_fft/fft_mdf.cpp:301]   --->   Operation 10 'br' 'br_ln301' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%i_3 = load i9 %i" [mdf_fft/fft_mdf.cpp:301]   --->   Operation 11 'load' 'i_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (1.73ns)   --->   "%icmp_ln301 = icmp_eq  i9 %i_3, i9 256" [mdf_fft/fft_mdf.cpp:301]   --->   Operation 12 'icmp' 'icmp_ln301' <Predicate = true> <Delay = 1.73> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (1.73ns)   --->   "%i_4 = add i9 %i_3, i9 1" [mdf_fft/fft_mdf.cpp:301]   --->   Operation 13 'add' 'i_4' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%br_ln301 = br i1 %icmp_ln301, void %for.inc.split, void %for.end" [mdf_fft/fft_mdf.cpp:301]   --->   Operation 14 'br' 'br_ln301' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (1.00ns)   --->   "%empty = read i164 @_ssdm_op_Read.axis.volatile.i128P0A.i16P0A.i16P0A.i1P0A.i1P0A.i1P0A.i1P0A, i128 %s_in_V_data_V, i16 %s_in_V_keep_V, i16 %s_in_V_strb_V, i1 %s_in_V_user_V, i1 %s_in_V_last_V, i1 %s_in_V_id_V, i1 %s_in_V_dest_V" [mdf_fft/fft_mdf.cpp:303]   --->   Operation 15 'read' 'empty' <Predicate = (!icmp_ln301)> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%x_data = extractvalue i164 %empty" [mdf_fft/fft_mdf.cpp:303]   --->   Operation 16 'extractvalue' 'x_data' <Predicate = (!icmp_ln301)> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%x_last = extractvalue i164 %empty" [mdf_fft/fft_mdf.cpp:303]   --->   Operation 17 'extractvalue' 'x_last' <Predicate = (!icmp_ln301)> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (1.32ns)   --->   "%store_ln301 = store i9 %i_4, i9 %i" [mdf_fft/fft_mdf.cpp:301]   --->   Operation 18 'store' 'store_ln301' <Predicate = (!icmp_ln301)> <Delay = 1.32>
+
+State 2 <SV = 1> <Delay = 3.39>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%specpipeline_ln302 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_9" [mdf_fft/fft_mdf.cpp:302]   --->   Operation 19 'specpipeline' 'specpipeline_ln302' <Predicate = (!icmp_ln301)> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%speclooptripcount_ln301 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 256, i64 256, i64 256" [mdf_fft/fft_mdf.cpp:301]   --->   Operation 20 'speclooptripcount' 'speclooptripcount_ln301' <Predicate = (!icmp_ln301)> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%specloopname_ln301 = specloopname void @_ssdm_op_SpecLoopName, void @empty_8" [mdf_fft/fft_mdf.cpp:301]   --->   Operation 21 'specloopname' 'specloopname_ln301' <Predicate = (!icmp_ln301)> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%tmp_s = bitconcatenate i129 @_ssdm_op_BitConcatenate.i129.i1.i128, i1 %x_last, i128 %x_data" [mdf_fft/fft_mdf.cpp:307]   --->   Operation 22 'bitconcatenate' 'tmp_s' <Predicate = (!icmp_ln301)> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (3.39ns)   --->   "%write_ln307 = write void @_ssdm_op_Write.ap_fifo.volatile.i129P0A, i129 %w_in, i129 %tmp_s" [mdf_fft/fft_mdf.cpp:307]   --->   Operation 23 'write' 'write_ln307' <Predicate = (!icmp_ln301)> <Delay = 3.39> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 3.39> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 129> <Depth = 260> <FIFO>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%br_ln301 = br void %for.inc" [mdf_fft/fft_mdf.cpp:301]   --->   Operation 24 'br' 'br_ln301' <Predicate = (!icmp_ln301)> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%ret_ln309 = ret" [mdf_fft/fft_mdf.cpp:309]   --->   Operation 25 'ret' 'ret_ln309' <Predicate = (icmp_ln301)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 4.382ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln301', mdf_fft/fft_mdf.cpp:301) of constant 0 on local variable 'i', mdf_fft/fft_mdf.cpp:301 [13]  (1.324 ns)
+	'load' operation 9 bit ('i', mdf_fft/fft_mdf.cpp:301) on local variable 'i', mdf_fft/fft_mdf.cpp:301 [16]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln301', mdf_fft/fft_mdf.cpp:301) [17]  (1.734 ns)
+	'store' operation 0 bit ('store_ln301', mdf_fft/fft_mdf.cpp:301) of variable 'i', mdf_fft/fft_mdf.cpp:301 on local variable 'i', mdf_fft/fft_mdf.cpp:301 [29]  (1.324 ns)
+
+ <State 2>: 3.396ns
+The critical path consists of the following:
+	fifo write operation ('write_ln307', mdf_fft/fft_mdf.cpp:307) on port 'w_in' (mdf_fft/fft_mdf.cpp:307) [28]  (3.396 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

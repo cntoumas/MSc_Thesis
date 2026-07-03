@@ -1,0 +1,59 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'fft_mdf'" level="0">
+<item name = "Date">Tue Jun 30 20:57:55 2026
+</item>
+<item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
+<item name = "Project">mdf_fft_hls</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">artix7</item>
+<item name = "Target device">xc7a200t-fbg676-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 6.886 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">573, 573, 5.730 us, 5.730 us, 263, 263, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_axis_to_word_fu_328">axis_to_word, 258, 258, 2.580 us, 2.580 us, 258, 258, no</column>
+<column name="grp_Loop_VITIS_LOOP_95_1_proc10_fu_347">Loop_VITIS_LOOP_95_1_proc10, 262, 262, 2.620 us, 2.620 us, 262, 262, no</column>
+<column name="grp_Loop_VITIS_LOOP_95_1_proc111_fu_373">Loop_VITIS_LOOP_95_1_proc111, 262, 262, 2.620 us, 2.620 us, 262, 262, no</column>
+<column name="grp_Loop_VITIS_LOOP_95_1_proc212_fu_399">Loop_VITIS_LOOP_95_1_proc212, 262, 262, 2.620 us, 2.620 us, 262, 262, no</column>
+<column name="grp_Loop_VITIS_LOOP_95_1_proc313_fu_425">Loop_VITIS_LOOP_95_1_proc313, 262, 262, 2.620 us, 2.620 us, 262, 262, no</column>
+<column name="grp_Loop_VITIS_LOOP_95_1_proc414_fu_451">Loop_VITIS_LOOP_95_1_proc414, 262, 262, 2.620 us, 2.620 us, 262, 262, no</column>
+<column name="grp_Loop_VITIS_LOOP_95_1_proc515_fu_477">Loop_VITIS_LOOP_95_1_proc515, 262, 262, 2.620 us, 2.620 us, 262, 262, no</column>
+<column name="grp_Loop_VITIS_LOOP_95_1_proc616_fu_503">Loop_VITIS_LOOP_95_1_proc616, 262, 262, 2.620 us, 2.620 us, 262, 262, no</column>
+<column name="grp_Loop_VITIS_LOOP_95_1_proc717_fu_525">Loop_VITIS_LOOP_95_1_proc717, 261, 261, 2.610 us, 2.610 us, 261, 261, no</column>
+<column name="grp_Loop_VITIS_LOOP_168_1_proc18_fu_547">Loop_VITIS_LOOP_168_1_proc18, 259, 259, 2.590 us, 2.590 us, 259, 259, no</column>
+<column name="grp_Loop_VITIS_LOOP_168_1_proc819_fu_553">Loop_VITIS_LOOP_168_1_proc819, 259, 259, 2.590 us, 2.590 us, 259, 259, no</column>
+<column name="grp_Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_fu_559">Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20, 259, 259, 2.590 us, 2.590 us, 259, 259, no</column>
+<column name="grp_Loop_read_loop_proc_fu_572">Loop_read_loop_proc, 259, 259, 2.590 us, 2.590 us, 259, 259, no</column>
+<column name="grp_word_to_axis_fu_582">word_to_axis, 259, 259, 2.590 us, 2.590 us, 259, 259, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

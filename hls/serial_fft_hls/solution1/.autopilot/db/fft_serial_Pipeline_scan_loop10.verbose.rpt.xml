@@ -1,0 +1,143 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'fft_serial_Pipeline_scan_loop10'" level="0">
+<item name = "Date">Tue Jun 30 20:48:46 2026
+</item>
+<item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
+<item name = "Project">serial_fft_hls</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">artix7</item>
+<item name = "Target device">xc7a200t-fbg676-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 6.916 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">1026, 1026, 10.260 us, 10.260 us, 1026, 1026, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- scan_loop">1024, 1024, 2, 1, 1, 1024, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 121, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 45, -</column>
+<column name="Register">-, -, 23, -, -</column>
+<specialColumn name="Available">730, 740, 269200, 134600, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln188_fu_140_p2">+, 0, 0, 18, 11, 1</column>
+<column name="icmp_ln188_fu_134_p2">icmp, 0, 0, 19, 11, 12</column>
+<column name="or_ln190_fu_254_p2">or, 0, 0, 8, 8, 8</column>
+<column name="or_mask_8_fu_260_p2">or, 0, 0, 8, 8, 8</column>
+<column name="select_ln67_8_fu_246_p3">select, 0, 0, 8, 1, 8</column>
+<column name="select_ln67_fu_207_p3">select, 0, 0, 8, 1, 8</column>
+<column name="v_9_fu_215_p3">select, 0, 0, 17, 1, 17</column>
+<column name="v_fu_176_p3">select, 0, 0, 17, 1, 17</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+<column name="xor_ln67_8_fu_240_p2">xor, 0, 0, 8, 8, 2</column>
+<column name="xor_ln67_fu_201_p2">xor, 0, 0, 8, 8, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_done_int">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
+<column name="ap_sig_allocacmp_i">9, 2, 11, 22</column>
+<column name="i_5_fu_58">9, 2, 11, 22</column>
+<column name="or_mask_fu_54">9, 2, 8, 16</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">1, 0, 1, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="i_5_fu_58">11, 0, 11, 0</column>
+<column name="or_mask_fu_54">8, 0, 8, 0</column>
+<column name="trunc_ln188_reg_293">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, fft_serial_Pipeline_scan_loop10, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, fft_serial_Pipeline_scan_loop10, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, fft_serial_Pipeline_scan_loop10, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, fft_serial_Pipeline_scan_loop10, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, fft_serial_Pipeline_scan_loop10, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, fft_serial_Pipeline_scan_loop10, return value</column>
+<column name="re_address0">out, 9, ap_memory, re, array</column>
+<column name="re_ce0">out, 1, ap_memory, re, array</column>
+<column name="re_q0">in, 17, ap_memory, re, array</column>
+<column name="re_1_address0">out, 9, ap_memory, re_1, array</column>
+<column name="re_1_ce0">out, 1, ap_memory, re_1, array</column>
+<column name="re_1_q0">in, 17, ap_memory, re_1, array</column>
+<column name="im_address0">out, 9, ap_memory, im, array</column>
+<column name="im_ce0">out, 1, ap_memory, im, array</column>
+<column name="im_q0">in, 17, ap_memory, im, array</column>
+<column name="im_1_address0">out, 9, ap_memory, im_1, array</column>
+<column name="im_1_ce0">out, 1, ap_memory, im_1, array</column>
+<column name="im_1_q0">in, 17, ap_memory, im_1, array</column>
+<column name="or_mask_10_out">out, 8, ap_vld, or_mask_10_out, pointer</column>
+<column name="or_mask_10_out_ap_vld">out, 1, ap_vld, or_mask_10_out, pointer</column>
+</table>
+</item>
+</section>
+</profile>

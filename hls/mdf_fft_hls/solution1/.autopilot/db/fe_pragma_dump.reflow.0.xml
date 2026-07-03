@@ -1,0 +1,216 @@
+<pragmas>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::RType<16, true>::minus operator-<17, true, 16, true>(ap_int_base<17, true> const&, ap_int_base<16, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="29" pragmaType="inline" parentfunction="unpack" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="31" pragmaType="unroll" parentfunction="unpack" factor="-1" skip_exit_check="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<17>::ap_int<18>(ap_int<18> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<1, false>::operator unsigned long long() const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<128, false>::ap_int_base<16, true>(ap_int_base<16, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<17>::ap_int(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::RType<17, true>::plus operator+<17, true, 17, true>(ap_int_base<17, true> const&, ap_int_base<17, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<16>::ap_int<18>(ap_int<18> const&)" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="523" pragmaType="inline" parentfunction="ssdm_int<128, false>::ssdm_int(unsigned __int128)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<1, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<16, true>::ap_int_base<18, true>(ap_int_base<18, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::operator[](int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<17>::ap_int<16>(ap_int<16> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::RType<16, true>::plus operator+<17, true, 16, true>(ap_int_base<17, true> const&, ap_int_base<16, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<1>::ap_uint(int)" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="52" pragmaType="inline" parentfunction="rte_shr1" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_range_ref<128, false>::ap_range_ref(ap_int_base<128, false>*, int, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<8, false>::ap_bit_ref(ap_int_base<8, false>*, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<128, true>::ap_int_base<128, false>(ap_int_base<128, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="39" pragmaType="inline" parentfunction="pack" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="41" pragmaType="unroll" parentfunction="pack" factor="-1" skip_exit_check="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="523" pragmaType="inline" parentfunction="ssdm_int<8, false>::ssdm_int(unsigned char)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<18, true>::RType<18, true>::arg1 operator>><18, true>(ap_int_base<18, true> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<17, true>::operator bool() const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<128, false>::ap_int_base<128, false>(ap_range_ref<128, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<8, false>::operator bool() const" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="515" pragmaType="inline" parentfunction="ssdm_int<128, true>::ssdm_int(__int128)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>::operator unsigned long long() const" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="523" pragmaType="inline" parentfunction="ssdm_int<16, false>::ssdm_int(unsigned short)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<8>::ap_uint(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>::operator[](int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="range" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="523" pragmaType="inline" parentfunction="_ZN8ssdm_intILi1ELb0EEC2EDq1_j" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::ap_int_base<18, true>(ap_int_base<18, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<1, false>::RType<17, true>::minus operator-<1, false, 17, true>(ap_int_base<1, false> const&, ap_int_base<17, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<18, true>::ap_int_base<16, true>(ap_int_base<16, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<33>::ap_int<50>(ap_int<50> const&)" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi33ELb1EEC2EDq33_i" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi50ELb1EEC2EDq50_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<49>::ap_int<49, true>(ap_int_base<49, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi18ELb1EEC2EDq18_i" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="62" pragmaType="inline" parentfunction="cmult" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<16, true>::ap_int_base<33, true>(ap_int_base<33, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<49, true>::ap_int_base<33, true>(ap_int_base<33, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::ap_int_base<16, true>(ap_int_base<16, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<18, true>::ap_int_base<17, true>(ap_int_base<17, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi17ELb1EEC2EDq17_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="range" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<16>::ap_int<128, false>(ap_range_ref<128, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::RType<($_0)16, true>::mult operator*<33, true>(ap_int_base<33, true> const&, short)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<16>::ap_int<33>(ap_int<33> const&)" off="0" region="0" recursive="0"/>
+<pragma file="./mdf_fft/../twiddle_rom.h" line="20" pragmaType="inline" parentfunction="twiddle_get" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<18, true>::ap_int_base<1, false>(ap_int_base<1, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<16, true>::ap_int_base(short)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::operator-() const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::RType<16, true>::mult operator*<33, true, 16, true>(ap_int_base<33, true> const&, ap_int_base<16, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<128>::ap_uint<128>(ap_int<128> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<33>::ap_int<16>(ap_int<16> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<50, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="515" pragmaType="inline" parentfunction="_ZN8ssdm_intILi49ELb1EEC2EDq49_i" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<17, true>::ap_bit_ref(ap_int_base<17, true>*, int)" off="0" region="0" recursive="0"/>
+<pragma file="./mdf_fft/../twiddle_rom.h" line="46" pragmaType="inline" parentfunction="mdf_twiddle_get" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::RType<33, true>::arg1 operator>><33, true>(ap_int_base<33, true> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<33, true>::ap_int_base<50, true>(ap_int_base<50, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<49, true>::RType<49, true>::minus operator-<49, true, 49, true>(ap_int_base<49, true> const&, ap_int_base<49, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<49, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<49, true>::RType<49, true>::plus operator+<49, true, 49, true>(ap_int_base<49, true> const&, ap_int_base<49, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\etc/ap_common.h" line="515" pragmaType="inline" parentfunction="ssdm_int<16, true>::ssdm_int(short)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<33>::ap_int<33, true>(ap_int_base<33, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<16, true>::ap_int_base<128, false>(ap_range_ref<128, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<50, true>::ap_int_base<49, true>(ap_int_base<49, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<50>::ap_int<50, true>(ap_int_base<50, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<49, true>::ap_int_base<16, true>(ap_int_base<16, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<18>::ap_int<18, true>(ap_int_base<18, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<17, true>::ap_int_base<16, true>(ap_int_base<16, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<18, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<128, false>::ap_int_base<128, true>(ap_int_base<128, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="88" pragmaType="inline" parentfunction="stage_fb" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="96" pragmaType="pipeline" parentfunction="stage_fb" off="0" ii="1" rewind="0" style=""/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="110" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="120" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="133" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="92" pragmaType="array_partition" parentfunction="stage_fb" dim="2" factor="0" mode="complete" dynamic="0" variable="_ZZL8stage_fbILi4ELi8EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="93" pragmaType="array_partition" parentfunction="stage_fb" dim="2" factor="0" mode="complete" dynamic="0" variable="_ZZL8stage_fbILi4ELi8EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="97" pragmaType="dependence" parentfunction="stage_fb" class="" direction="NODIR" type="inter" distance="0" variable="_ZZL8stage_fbILi4ELi8EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="98" pragmaType="dependence" parentfunction="stage_fb" class="" direction="NODIR" type="inter" distance="0" variable="_ZZL8stage_fbILi4ELi8EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="88" pragmaType="inline" parentfunction="stage_fb" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="96" pragmaType="pipeline" parentfunction="stage_fb" off="0" ii="1" rewind="0" style=""/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="110" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="120" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="133" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="92" pragmaType="array_partition" parentfunction="stage_fb" dim="2" factor="0" mode="complete" dynamic="0" variable="_ZZL8stage_fbILi6ELi2EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="93" pragmaType="array_partition" parentfunction="stage_fb" dim="2" factor="0" mode="complete" dynamic="0" variable="_ZZL8stage_fbILi6ELi2EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="97" pragmaType="dependence" parentfunction="stage_fb" class="" direction="NODIR" type="inter" distance="0" variable="_ZZL8stage_fbILi6ELi2EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="98" pragmaType="dependence" parentfunction="stage_fb" class="" direction="NODIR" type="inter" distance="0" variable="_ZZL8stage_fbILi6ELi2EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="88" pragmaType="inline" parentfunction="stage_fb" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="96" pragmaType="pipeline" parentfunction="stage_fb" off="0" ii="1" rewind="0" style=""/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="110" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="120" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="133" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="92" pragmaType="array_partition" parentfunction="stage_fb" dim="2" factor="0" mode="complete" dynamic="0" variable="_ZZL8stage_fbILi5ELi4EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="93" pragmaType="array_partition" parentfunction="stage_fb" dim="2" factor="0" mode="complete" dynamic="0" variable="_ZZL8stage_fbILi5ELi4EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="97" pragmaType="dependence" parentfunction="stage_fb" class="" direction="NODIR" type="inter" distance="0" variable="_ZZL8stage_fbILi5ELi4EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="98" pragmaType="dependence" parentfunction="stage_fb" class="" direction="NODIR" type="inter" distance="0" variable="_ZZL8stage_fbILi5ELi4EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<16>::ap_uint(int)" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="246" pragmaType="inline" parentfunction="bit_reverse_buf" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="272" pragmaType="pipeline" parentfunction="bit_reverse_buf" off="0" ii="1" rewind="0" style=""/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="278" pragmaType="unroll" parentfunction="bit_reverse_buf" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="259" pragmaType="pipeline" parentfunction="bit_reverse_buf" off="0" ii="1" rewind="0" style=""/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="252" pragmaType="array_partition" parentfunction="bit_reverse_buf" dim="1" factor="0" mode="complete" dynamic="0" variable="_ZZL15bit_reverse_bufRN3hls6streamI10mdf_word_tLi0EEES3_E4bank"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<128>::ap_int<128>(ap_uint<128> const&)" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="166" pragmaType="inline" parentfunction="stage_nf" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="169" pragmaType="pipeline" parentfunction="stage_nf" off="0" ii="1" rewind="0" style=""/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="224" pragmaType="unroll" parentfunction="stage_nf" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="314" pragmaType="pipeline" parentfunction="word_to_axis" off="0" ii="1" rewind="0" style=""/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="302" pragmaType="pipeline" parentfunction="axis_to_word" off="0" ii="1" rewind="0" style=""/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_keep_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_user_ptr" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="88" pragmaType="inline" parentfunction="stage_fb" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="96" pragmaType="pipeline" parentfunction="stage_fb" off="0" ii="1" rewind="0" style=""/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="110" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="120" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="133" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="92" pragmaType="array_partition" parentfunction="stage_fb" dim="2" factor="0" mode="complete" dynamic="0" variable="_ZZL8stage_fbILi0ELi128EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="93" pragmaType="array_partition" parentfunction="stage_fb" dim="2" factor="0" mode="complete" dynamic="0" variable="_ZZL8stage_fbILi0ELi128EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="97" pragmaType="dependence" parentfunction="stage_fb" class="" direction="NODIR" type="inter" distance="0" variable="_ZZL8stage_fbILi0ELi128EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="98" pragmaType="dependence" parentfunction="stage_fb" class="" direction="NODIR" type="inter" distance="0" variable="_ZZL8stage_fbILi0ELi128EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_id_ptr" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="88" pragmaType="inline" parentfunction="stage_fb" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="96" pragmaType="pipeline" parentfunction="stage_fb" off="0" ii="1" rewind="0" style=""/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="110" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="120" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="133" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="92" pragmaType="array_partition" parentfunction="stage_fb" dim="2" factor="0" mode="complete" dynamic="0" variable="_ZZL8stage_fbILi3ELi16EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="93" pragmaType="array_partition" parentfunction="stage_fb" dim="2" factor="0" mode="complete" dynamic="0" variable="_ZZL8stage_fbILi3ELi16EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="97" pragmaType="dependence" parentfunction="stage_fb" class="" direction="NODIR" type="inter" distance="0" variable="_ZZL8stage_fbILi3ELi16EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="98" pragmaType="dependence" parentfunction="stage_fb" class="" direction="NODIR" type="inter" distance="0" variable="_ZZL8stage_fbILi3ELi16EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="166" pragmaType="inline" parentfunction="stage_nf" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="169" pragmaType="pipeline" parentfunction="stage_nf" off="0" ii="1" rewind="0" style=""/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="224" pragmaType="unroll" parentfunction="stage_nf" factor="-1" skip_exit_check="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_data_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_strb_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<16, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="88" pragmaType="inline" parentfunction="stage_fb" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="96" pragmaType="pipeline" parentfunction="stage_fb" off="0" ii="1" rewind="0" style=""/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="110" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="120" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="133" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="92" pragmaType="array_partition" parentfunction="stage_fb" dim="2" factor="0" mode="complete" dynamic="0" variable="_ZZL8stage_fbILi2ELi32EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="93" pragmaType="array_partition" parentfunction="stage_fb" dim="2" factor="0" mode="complete" dynamic="0" variable="_ZZL8stage_fbILi2ELi32EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="97" pragmaType="dependence" parentfunction="stage_fb" class="" direction="NODIR" type="inter" distance="0" variable="_ZZL8stage_fbILi2ELi32EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="98" pragmaType="dependence" parentfunction="stage_fb" class="" direction="NODIR" type="inter" distance="0" variable="_ZZL8stage_fbILi2ELi32EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="88" pragmaType="inline" parentfunction="stage_fb" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="96" pragmaType="pipeline" parentfunction="stage_fb" off="0" ii="1" rewind="0" style=""/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="110" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="120" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="133" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="92" pragmaType="array_partition" parentfunction="stage_fb" dim="2" factor="0" mode="complete" dynamic="0" variable="_ZZL8stage_fbILi1ELi64EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="93" pragmaType="array_partition" parentfunction="stage_fb" dim="2" factor="0" mode="complete" dynamic="0" variable="_ZZL8stage_fbILi1ELi64EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="97" pragmaType="dependence" parentfunction="stage_fb" class="" direction="NODIR" type="inter" distance="0" variable="_ZZL8stage_fbILi1ELi64EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="98" pragmaType="dependence" parentfunction="stage_fb" class="" direction="NODIR" type="inter" distance="0" variable="_ZZL8stage_fbILi1ELi64EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_last_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_dest_ptr" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="336" pragmaType="dataflow" parentfunction="fft_mdf" disable_start_propagation="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="332" pragmaType="interface" parentfunction="fft_mdf" mode="axis" port="s_in" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="333" pragmaType="interface" parentfunction="fft_mdf" mode="axis" port="s_out" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="334" pragmaType="interface" parentfunction="fft_mdf" mode="ap_ctrl_none" port="return" name=""/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="342" pragmaType="stream" parentfunction="fft_mdf" depth="260" type="fifo" variable="w_in"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="343" pragmaType="stream" parentfunction="fft_mdf" depth="260" type="fifo" variable="w_out"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="344" pragmaType="stream" parentfunction="fft_mdf" depth="260" type="fifo" variable="s0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="345" pragmaType="stream" parentfunction="fft_mdf" depth="260" type="fifo" variable="s1"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="346" pragmaType="stream" parentfunction="fft_mdf" depth="260" type="fifo" variable="s2"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="347" pragmaType="stream" parentfunction="fft_mdf" depth="260" type="fifo" variable="s3"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="348" pragmaType="stream" parentfunction="fft_mdf" depth="260" type="fifo" variable="s4"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="349" pragmaType="stream" parentfunction="fft_mdf" depth="260" type="fifo" variable="s5"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="350" pragmaType="stream" parentfunction="fft_mdf" depth="260" type="fifo" variable="s6"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="351" pragmaType="stream" parentfunction="fft_mdf" depth="260" type="fifo" variable="s7"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="352" pragmaType="stream" parentfunction="fft_mdf" depth="260" type="fifo" variable="s8"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="353" pragmaType="stream" parentfunction="fft_mdf" depth="260" type="fifo" variable="s9"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="88" pragmaType="inline" parentfunction="stage_fb" off="0" region="0" recursive="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="96" pragmaType="pipeline" parentfunction="stage_fb" off="0" ii="1" rewind="0" style=""/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="110" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="120" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="133" pragmaType="unroll" parentfunction="stage_fb" factor="-1" skip_exit_check="0"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="92" pragmaType="array_partition" parentfunction="stage_fb" dim="2" factor="0" mode="complete" dynamic="0" variable="_ZZL8stage_fbILi7ELi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="93" pragmaType="array_partition" parentfunction="stage_fb" dim="2" factor="0" mode="complete" dynamic="0" variable="_ZZL8stage_fbILi7ELi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="97" pragmaType="dependence" parentfunction="stage_fb" class="" direction="NODIR" type="inter" distance="0" variable="_ZZL8stage_fbILi7ELi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_re"/>
+<pragma file="mdf_fft/fft_mdf.cpp" line="98" pragmaType="dependence" parentfunction="stage_fb" class="" direction="NODIR" type="inter" distance="0" variable="_ZZL8stage_fbILi7ELi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_E8delay_im"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<8, false>::operator=(unsigned long long)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="hls::stream<mdf_word_t, 0>::stream()" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_range_ref<128, false>& ap_range_ref<128, false>::operator=<128, false>(ap_int_base<128, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<8, false>::operator=(ap_bit_ref<8, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_range_ref<128, false>::operator=(ap_range_ref<128, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_range_ref<128, false>& ap_range_ref<128, false>::operator=<16, true>(ap_int_base<16, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+</pragmas>

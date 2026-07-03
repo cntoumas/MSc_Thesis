@@ -1,0 +1,8 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../serial_fft/fft_serial_xcheck.cpp in debug mode
+   Compiling ../../../../serial_fft/fft_serial.cpp in debug mode
+   Generating csim.exe
+xcheck_serial: wrote 5 tests
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

@@ -1,0 +1,48 @@
+{
+  "0": {
+    "basicblocks": 183,
+    "calls": "2 1",
+    "file": "fft_mdf.cpp",
+    "fileloc": 328,
+    "instructions": 5300,
+    "loads": {
+      "G": 114
+    },
+    "name": "fft_mdf",
+    "stores": {
+      "G": 132
+    },
+    "total_instructions": 5712
+  },
+  "1": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "fft_mdf.cpp",
+    "fileloc": 311,
+    "instructions": 48,
+    "loads": {
+      "G": 2,
+      "L": 2
+    },
+    "name": "word_to_axis",
+    "stores": {
+      "L": 9
+    },
+    "total_instructions": 80
+  },
+  "2": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "fft_mdf.cpp",
+    "fileloc": 299,
+    "instructions": 36,
+    "loads": {
+      "L": 4
+    },
+    "name": "axis_to_word",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 57
+  }
+}

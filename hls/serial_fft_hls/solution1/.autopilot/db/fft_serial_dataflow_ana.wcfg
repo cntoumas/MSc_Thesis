@@ -1,0 +1,946 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="fft_serial.wdb" id="1">
+         <top_modules>
+            <top_module name="apa_fft_serial_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0ns"></ZoomStartTime>
+      <ZoomEndTime time="2000ns"></ZoomEndTime>
+      <Cursor1Time time="0ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="257"></NameColumnWidth>
+      <ValueColumnWidth column_width="84"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="2" />
+   <wvobject type="group" fp_name="HLS Process Summary Group">
+      <obj_property name="label">HLS Process Summary</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial//AESL_inst_fft_serial_activity">
+         <obj_property name="label">AESL_inst_fft_serial_activity</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="UseFullPath">true</obj_property>
+         <obj_property name="ElementShortName">AESL_inst_fft_serial_activity</obj_property>
+         <obj_property name="ObjectShortName">AESL_inst_fft_serial_activity</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+         <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">turquoise</obj_property>
+         <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+         <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial//AESL_inst_fft_serial_activity.dataflowTxWaveData.Cycles</obj_property>
+         <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial//AESL_inst_fft_serial_activity.dataflowTxWaveData.OutStanding</obj_property>
+         <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial//AESL_inst_fft_serial_activity.dataflowTxTooltipData</obj_property>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_load_loop_fu_263/grp_fft_serial_Pipeline_load_loop_fu_263_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_load_loop_fu_263_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_load_loop_fu_263_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_load_loop_fu_263_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_load_loop_fu_263/grp_fft_serial_Pipeline_load_loop_fu_263_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_load_loop_fu_263/grp_fft_serial_Pipeline_load_loop_fu_263_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_load_loop_fu_263/grp_fft_serial_Pipeline_load_loop_fu_263_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop_fu_279/grp_fft_serial_Pipeline_bfly_loop_fu_279_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop_fu_279_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop_fu_279_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop_fu_279_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop_fu_279/grp_fft_serial_Pipeline_bfly_loop_fu_279_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop_fu_279/grp_fft_serial_Pipeline_bfly_loop_fu_279_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop_fu_279/grp_fft_serial_Pipeline_bfly_loop_fu_279_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop_fu_287/grp_fft_serial_Pipeline_scan_loop_fu_287_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_scan_loop_fu_287_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop_fu_287_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop_fu_287_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop_fu_287/grp_fft_serial_Pipeline_scan_loop_fu_287_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop_fu_287/grp_fft_serial_Pipeline_scan_loop_fu_287_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop_fu_287/grp_fft_serial_Pipeline_scan_loop_fu_287_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop1_fu_296/grp_fft_serial_Pipeline_bfly_loop1_fu_296_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop1_fu_296_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop1_fu_296_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop1_fu_296_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop1_fu_296/grp_fft_serial_Pipeline_bfly_loop1_fu_296_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop1_fu_296/grp_fft_serial_Pipeline_bfly_loop1_fu_296_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop1_fu_296/grp_fft_serial_Pipeline_bfly_loop1_fu_296_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop2_fu_305/grp_fft_serial_Pipeline_scan_loop2_fu_305_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_scan_loop2_fu_305_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop2_fu_305_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop2_fu_305_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop2_fu_305/grp_fft_serial_Pipeline_scan_loop2_fu_305_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop2_fu_305/grp_fft_serial_Pipeline_scan_loop2_fu_305_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop2_fu_305/grp_fft_serial_Pipeline_scan_loop2_fu_305_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop3_fu_314/grp_fft_serial_Pipeline_bfly_loop3_fu_314_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop3_fu_314_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop3_fu_314_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop3_fu_314_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop3_fu_314/grp_fft_serial_Pipeline_bfly_loop3_fu_314_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop3_fu_314/grp_fft_serial_Pipeline_bfly_loop3_fu_314_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop3_fu_314/grp_fft_serial_Pipeline_bfly_loop3_fu_314_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop4_fu_327/grp_fft_serial_Pipeline_scan_loop4_fu_327_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_scan_loop4_fu_327_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop4_fu_327_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop4_fu_327_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop4_fu_327/grp_fft_serial_Pipeline_scan_loop4_fu_327_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop4_fu_327/grp_fft_serial_Pipeline_scan_loop4_fu_327_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop4_fu_327/grp_fft_serial_Pipeline_scan_loop4_fu_327_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop5_fu_336/grp_fft_serial_Pipeline_bfly_loop5_fu_336_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop5_fu_336_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop5_fu_336_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop5_fu_336_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop5_fu_336/grp_fft_serial_Pipeline_bfly_loop5_fu_336_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop5_fu_336/grp_fft_serial_Pipeline_bfly_loop5_fu_336_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop5_fu_336/grp_fft_serial_Pipeline_bfly_loop5_fu_336_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop6_fu_349/grp_fft_serial_Pipeline_scan_loop6_fu_349_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_scan_loop6_fu_349_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop6_fu_349_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop6_fu_349_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop6_fu_349/grp_fft_serial_Pipeline_scan_loop6_fu_349_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop6_fu_349/grp_fft_serial_Pipeline_scan_loop6_fu_349_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop6_fu_349/grp_fft_serial_Pipeline_scan_loop6_fu_349_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop7_fu_358/grp_fft_serial_Pipeline_bfly_loop7_fu_358_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop7_fu_358_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop7_fu_358_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop7_fu_358_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop7_fu_358/grp_fft_serial_Pipeline_bfly_loop7_fu_358_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop7_fu_358/grp_fft_serial_Pipeline_bfly_loop7_fu_358_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop7_fu_358/grp_fft_serial_Pipeline_bfly_loop7_fu_358_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop8_fu_371/grp_fft_serial_Pipeline_scan_loop8_fu_371_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_scan_loop8_fu_371_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop8_fu_371_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop8_fu_371_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop8_fu_371/grp_fft_serial_Pipeline_scan_loop8_fu_371_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop8_fu_371/grp_fft_serial_Pipeline_scan_loop8_fu_371_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop8_fu_371/grp_fft_serial_Pipeline_scan_loop8_fu_371_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop9_fu_380/grp_fft_serial_Pipeline_bfly_loop9_fu_380_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop9_fu_380_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop9_fu_380_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop9_fu_380_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop9_fu_380/grp_fft_serial_Pipeline_bfly_loop9_fu_380_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop9_fu_380/grp_fft_serial_Pipeline_bfly_loop9_fu_380_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop9_fu_380/grp_fft_serial_Pipeline_bfly_loop9_fu_380_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop10_fu_393/grp_fft_serial_Pipeline_scan_loop10_fu_393_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_scan_loop10_fu_393_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop10_fu_393_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop10_fu_393_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop10_fu_393/grp_fft_serial_Pipeline_scan_loop10_fu_393_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop10_fu_393/grp_fft_serial_Pipeline_scan_loop10_fu_393_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop10_fu_393/grp_fft_serial_Pipeline_scan_loop10_fu_393_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop11_fu_402/grp_fft_serial_Pipeline_bfly_loop11_fu_402_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop11_fu_402_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop11_fu_402_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop11_fu_402_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop11_fu_402/grp_fft_serial_Pipeline_bfly_loop11_fu_402_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop11_fu_402/grp_fft_serial_Pipeline_bfly_loop11_fu_402_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop11_fu_402/grp_fft_serial_Pipeline_bfly_loop11_fu_402_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop12_fu_415/grp_fft_serial_Pipeline_scan_loop12_fu_415_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_scan_loop12_fu_415_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop12_fu_415_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop12_fu_415_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop12_fu_415/grp_fft_serial_Pipeline_scan_loop12_fu_415_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop12_fu_415/grp_fft_serial_Pipeline_scan_loop12_fu_415_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop12_fu_415/grp_fft_serial_Pipeline_scan_loop12_fu_415_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop13_fu_424/grp_fft_serial_Pipeline_bfly_loop13_fu_424_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop13_fu_424_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop13_fu_424_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop13_fu_424_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop13_fu_424/grp_fft_serial_Pipeline_bfly_loop13_fu_424_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop13_fu_424/grp_fft_serial_Pipeline_bfly_loop13_fu_424_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop13_fu_424/grp_fft_serial_Pipeline_bfly_loop13_fu_424_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop14_fu_437/grp_fft_serial_Pipeline_scan_loop14_fu_437_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_scan_loop14_fu_437_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop14_fu_437_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop14_fu_437_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop14_fu_437/grp_fft_serial_Pipeline_scan_loop14_fu_437_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop14_fu_437/grp_fft_serial_Pipeline_scan_loop14_fu_437_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop14_fu_437/grp_fft_serial_Pipeline_scan_loop14_fu_437_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop15_fu_446/grp_fft_serial_Pipeline_bfly_loop15_fu_446_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop15_fu_446_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop15_fu_446_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop15_fu_446_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop15_fu_446/grp_fft_serial_Pipeline_bfly_loop15_fu_446_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop15_fu_446/grp_fft_serial_Pipeline_bfly_loop15_fu_446_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop15_fu_446/grp_fft_serial_Pipeline_bfly_loop15_fu_446_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop16_fu_459/grp_fft_serial_Pipeline_scan_loop16_fu_459_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_scan_loop16_fu_459_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop16_fu_459_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop16_fu_459_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop16_fu_459/grp_fft_serial_Pipeline_scan_loop16_fu_459_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop16_fu_459/grp_fft_serial_Pipeline_scan_loop16_fu_459_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop16_fu_459/grp_fft_serial_Pipeline_scan_loop16_fu_459_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop17_fu_468/grp_fft_serial_Pipeline_bfly_loop17_fu_468_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop17_fu_468_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop17_fu_468_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop17_fu_468_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop17_fu_468/grp_fft_serial_Pipeline_bfly_loop17_fu_468_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop17_fu_468/grp_fft_serial_Pipeline_bfly_loop17_fu_468_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop17_fu_468/grp_fft_serial_Pipeline_bfly_loop17_fu_468_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop18_fu_481/grp_fft_serial_Pipeline_scan_loop18_fu_481_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_scan_loop18_fu_481_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop18_fu_481_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop18_fu_481_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop18_fu_481/grp_fft_serial_Pipeline_scan_loop18_fu_481_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop18_fu_481/grp_fft_serial_Pipeline_scan_loop18_fu_481_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop18_fu_481/grp_fft_serial_Pipeline_scan_loop18_fu_481_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_store_loop_fu_490/grp_fft_serial_Pipeline_store_loop_fu_490_activity">
+            <obj_property name="label">grp_fft_serial_Pipeline_store_loop_fu_490_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_serial_Pipeline_store_loop_fu_490_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_store_loop_fu_490_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_store_loop_fu_490/grp_fft_serial_Pipeline_store_loop_fu_490_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_store_loop_fu_490/grp_fft_serial_Pipeline_store_loop_fu_490_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_store_loop_fu_490/grp_fft_serial_Pipeline_store_loop_fu_490_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial//AESL_inst_fft_serial_activity">
+      <obj_property name="ElementShortName">AESL_inst_fft_serial_activity</obj_property>
+      <obj_property name="ObjectShortName">AESL_inst_fft_serial_activity</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="AESL_inst_fft_serial_group">
+      <obj_property name="label">AESL_inst_fft_serial</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_load_loop_fu_263/grp_fft_serial_Pipeline_load_loop_fu_263_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_load_loop_fu_263_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_load_loop_fu_263_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop_fu_279/grp_fft_serial_Pipeline_bfly_loop_fu_279_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop_fu_279_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop_fu_279_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop_fu_287/grp_fft_serial_Pipeline_scan_loop_fu_287_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop_fu_287_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop_fu_287_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop1_fu_296/grp_fft_serial_Pipeline_bfly_loop1_fu_296_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop1_fu_296_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop1_fu_296_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop2_fu_305/grp_fft_serial_Pipeline_scan_loop2_fu_305_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop2_fu_305_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop2_fu_305_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop3_fu_314/grp_fft_serial_Pipeline_bfly_loop3_fu_314_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop3_fu_314_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop3_fu_314_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop4_fu_327/grp_fft_serial_Pipeline_scan_loop4_fu_327_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop4_fu_327_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop4_fu_327_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop5_fu_336/grp_fft_serial_Pipeline_bfly_loop5_fu_336_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop5_fu_336_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop5_fu_336_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop6_fu_349/grp_fft_serial_Pipeline_scan_loop6_fu_349_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop6_fu_349_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop6_fu_349_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop7_fu_358/grp_fft_serial_Pipeline_bfly_loop7_fu_358_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop7_fu_358_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop7_fu_358_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop8_fu_371/grp_fft_serial_Pipeline_scan_loop8_fu_371_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop8_fu_371_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop8_fu_371_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop9_fu_380/grp_fft_serial_Pipeline_bfly_loop9_fu_380_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop9_fu_380_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop9_fu_380_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop10_fu_393/grp_fft_serial_Pipeline_scan_loop10_fu_393_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop10_fu_393_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop10_fu_393_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop11_fu_402/grp_fft_serial_Pipeline_bfly_loop11_fu_402_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop11_fu_402_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop11_fu_402_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop12_fu_415/grp_fft_serial_Pipeline_scan_loop12_fu_415_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop12_fu_415_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop12_fu_415_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop13_fu_424/grp_fft_serial_Pipeline_bfly_loop13_fu_424_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop13_fu_424_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop13_fu_424_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop14_fu_437/grp_fft_serial_Pipeline_scan_loop14_fu_437_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop14_fu_437_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop14_fu_437_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop15_fu_446/grp_fft_serial_Pipeline_bfly_loop15_fu_446_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop15_fu_446_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop15_fu_446_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop16_fu_459/grp_fft_serial_Pipeline_scan_loop16_fu_459_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop16_fu_459_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop16_fu_459_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop17_fu_468/grp_fft_serial_Pipeline_bfly_loop17_fu_468_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_bfly_loop17_fu_468_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_bfly_loop17_fu_468_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop18_fu_481/grp_fft_serial_Pipeline_scan_loop18_fu_481_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_scan_loop18_fu_481_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_scan_loop18_fu_481_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_store_loop_fu_490/grp_fft_serial_Pipeline_store_loop_fu_490_activity">
+         <obj_property name="ElementShortName">grp_fft_serial_Pipeline_store_loop_fu_490_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_serial_Pipeline_store_loop_fu_490_activity</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="AESL_inst_fft_serial_Handshake_group">
+         <obj_property name="label">Block-level handshake</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/ap_start">
+            <obj_property name="ElementShortName">ap_start</obj_property>
+            <obj_property name="ObjectShortName">ap_start</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/ap_ready">
+            <obj_property name="ElementShortName">ap_ready</obj_property>
+            <obj_property name="ObjectShortName">ap_ready</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/ap_done">
+            <obj_property name="ElementShortName">ap_done</obj_property>
+            <obj_property name="ObjectShortName">ap_done</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_load_loop_fu_263_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_load_loop_fu_263</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_load_loop_fu_263_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_load_loop_fu_263/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_load_loop_fu_263/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_load_loop_fu_263/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop_fu_279_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop_fu_279</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop_fu_279_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop_fu_279/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop_fu_279/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop_fu_279/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop_fu_287_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_scan_loop_fu_287</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop_fu_287_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop_fu_287/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop_fu_287/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop_fu_287/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop1_fu_296_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop1_fu_296</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop1_fu_296_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop1_fu_296/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop1_fu_296/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop1_fu_296/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop2_fu_305_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_scan_loop2_fu_305</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop2_fu_305_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop2_fu_305/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop2_fu_305/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop2_fu_305/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop3_fu_314_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop3_fu_314</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop3_fu_314_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop3_fu_314/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop3_fu_314/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop3_fu_314/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop4_fu_327_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_scan_loop4_fu_327</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop4_fu_327_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop4_fu_327/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop4_fu_327/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop4_fu_327/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop5_fu_336_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop5_fu_336</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop5_fu_336_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop5_fu_336/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop5_fu_336/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop5_fu_336/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop6_fu_349_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_scan_loop6_fu_349</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop6_fu_349_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop6_fu_349/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop6_fu_349/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop6_fu_349/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop7_fu_358_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop7_fu_358</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop7_fu_358_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop7_fu_358/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop7_fu_358/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop7_fu_358/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop8_fu_371_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_scan_loop8_fu_371</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop8_fu_371_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop8_fu_371/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop8_fu_371/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop8_fu_371/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop9_fu_380_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop9_fu_380</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop9_fu_380_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop9_fu_380/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop9_fu_380/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop9_fu_380/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop10_fu_393_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_scan_loop10_fu_393</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop10_fu_393_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop10_fu_393/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop10_fu_393/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop10_fu_393/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop11_fu_402_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop11_fu_402</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop11_fu_402_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop11_fu_402/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop11_fu_402/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop11_fu_402/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop12_fu_415_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_scan_loop12_fu_415</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop12_fu_415_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop12_fu_415/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop12_fu_415/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop12_fu_415/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop13_fu_424_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop13_fu_424</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop13_fu_424_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop13_fu_424/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop13_fu_424/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop13_fu_424/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop14_fu_437_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_scan_loop14_fu_437</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop14_fu_437_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop14_fu_437/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop14_fu_437/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop14_fu_437/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop15_fu_446_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop15_fu_446</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop15_fu_446_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop15_fu_446/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop15_fu_446/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop15_fu_446/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop16_fu_459_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_scan_loop16_fu_459</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop16_fu_459_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop16_fu_459/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop16_fu_459/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop16_fu_459/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop17_fu_468_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_bfly_loop17_fu_468</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_bfly_loop17_fu_468_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop17_fu_468/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop17_fu_468/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_bfly_loop17_fu_468/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop18_fu_481_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_scan_loop18_fu_481</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_scan_loop18_fu_481_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop18_fu_481/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop18_fu_481/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_scan_loop18_fu_481/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_serial_Pipeline_store_loop_fu_490_group">
+         <obj_property name="label">grp_fft_serial_Pipeline_store_loop_fu_490</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_fft_serial_Pipeline_store_loop_fu_490_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_store_loop_fu_490/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_store_loop_fu_490/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_fft_serial_top/AESL_inst_fft_serial/grp_fft_serial_Pipeline_store_loop_fu_490/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>

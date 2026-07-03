@@ -1,0 +1,394 @@
+================================================================
+== Vivado RTL Synthesis Results
+================================================================
++ General Information:
+    * Date:            Tue Jun 30 21:06:10 +0300 2026
+    * Version:         2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:         mdf_fft_hls
+    * Solution:        solution1 (Vivado IP Flow Target)
+    * Product family:  artix7
+    * Target device:   xc7a200t-fbg676-2
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * RTL Synthesis target clock:  10 ns
+    * C-Synthesis target clock:    10 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== RTL Synthesis Resource Summary
+================================================================
+LUT:              5863
+FF:               7336
+DSP:              114
+BRAM:             144
+URAM:             0
+SRL:              0
+
+
+================================================================
+== RTL Synthesis Timing Summary
+================================================================
+* Timing was met
++----------------+-------------+
+| Timing         | Period (ns) |
++----------------+-------------+
+| Target         | 10.000      |
+| Post-Synthesis | 5.666       |
++----------------+-------------+
+
+
+================================================================
+== RTL Synthesis Resources
+================================================================
++--------------------------------------------------------------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------+
+| Name                                                                                             | LUT  | FF   | DSP | BRAM | URAM | SRL | Pragma | Impl | Latency | Variable | Source |
++--------------------------------------------------------------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------+
+| inst                                                                                             | 5863 | 7336 | 114 | 144  |      |     |        |      |         |          |        |
+|   (inst)                                                                                         |      | 3    |     | 2    |      |     |        |      |         |          |        |
+|   Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_U0                      | 36   | 50   |     |      |      |     |        |      |         |          |        |
+|     (Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_U0)                  | 1    | 6    |     |      |      |     |        |      |         |          |        |
+|     grp_Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_Pipelin_fu_26     | 35   | 44   |     |      |      |     |        |      |         |          |        |
+|       (grp_Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_proc20_Pipelin_fu_26) | 16   | 42   |     |      |      |     |        |      |         |          |        |
+|       flow_control_loop_pipe_sequential_init_U                                                   | 19   | 2    |     |      |      |     |        |      |         |          |        |
+|   Loop_VITIS_LOOP_168_1_proc18_U0                                                                | 41   | 160  |     |      |      |     |        |      |         |          |        |
+|     (Loop_VITIS_LOOP_168_1_proc18_U0)                                                            | 26   | 159  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_U                                                                     | 15   | 1    |     |      |      |     |        |      |         |          |        |
+|   Loop_VITIS_LOOP_168_1_proc819_U0                                                               | 40   | 160  |     |      |      |     |        |      |         |          |        |
+|     (Loop_VITIS_LOOP_168_1_proc819_U0)                                                           | 25   | 159  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_U                                                                     | 15   | 1    |     |      |      |     |        |      |         |          |        |
+|   Loop_VITIS_LOOP_95_1_proc10_U0                                                                 | 584  | 736  | 16  | 12   |      |     |        |      |         |          |        |
+|     (Loop_VITIS_LOOP_95_1_proc10_U0)                                                             | 26   | 735  | 4   |      |      |     |        |      |         |          |        |
+|     TW_COS_LUT25_U                                                                               | 60   |      |     | 2    |      |     |        |      |         |          |        |
+|     TW_SIN_LUT30_U                                                                               | 72   |      |     | 2    |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_U                                                                     | 20   | 1    |     |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U24                                                            | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U26                                                            | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U28                                                            | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U30                                                            | 18   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U25                                                            | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U27                                                            | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U29                                                            | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U31                                                            | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_47_U                    | 34   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_48_U                    | 34   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_49_U                    | 38   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U                       | 34   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_44_U                    | 34   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_45_U                    | 34   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_46_U                    | 34   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_0_128_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U                       | 34   |      |     | 1    |      |     |        |      |         |          |        |
+|   Loop_VITIS_LOOP_95_1_proc111_U0                                                                | 581  | 733  | 16  | 12   |      |     |        |      |         |          |        |
+|     (Loop_VITIS_LOOP_95_1_proc111_U0)                                                            | 26   | 732  | 4   |      |      |     |        |      |         |          |        |
+|     TW_COS_LUT24_U                                                                               | 60   |      |     | 2    |      |     |        |      |         |          |        |
+|     TW_SIN_LUT29_U                                                                               | 70   |      |     | 2    |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_U                                                                     | 19   | 1    |     |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U48                                                            | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U50                                                            | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U52                                                            | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U54                                                            | 18   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U49                                                            | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U51                                                            | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U53                                                            | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U55                                                            | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_41_U                     | 34   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_42_U                     | 34   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_43_U                     | 38   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U                        | 34   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_38_U                     | 34   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_39_U                     | 34   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_40_U                     | 34   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_1_64_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U                        | 34   |      |     | 1    |      |     |        |      |         |          |        |
+|   Loop_VITIS_LOOP_95_1_proc212_U0                                                                | 563  | 698  | 16  | 12   |      |     |        |      |         |          |        |
+|     (Loop_VITIS_LOOP_95_1_proc212_U0)                                                            | 146  | 697  | 4   |      |      |     |        |      |         |          |        |
+|     TW_COS_LUT23_U                                                                               | 60   |      |     | 2    |      |     |        |      |         |          |        |
+|     TW_SIN_LUT28_U                                                                               | 68   |      |     | 2    |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_U                                                                     | 19   | 1    |     |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U67                                                            | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U69                                                            | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U71                                                            | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U73                                                            | 18   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U68                                                            | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U70                                                            | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U72                                                            | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U74                                                            | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_35_U                     | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_36_U                     | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_37_U                     | 21   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U                        | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_32_U                     | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_33_U                     | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_34_U                     | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_2_32_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U                        | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|   Loop_VITIS_LOOP_95_1_proc313_U0                                                                | 561  | 695  | 16  | 12   |      |     |        |      |         |          |        |
+|     (Loop_VITIS_LOOP_95_1_proc313_U0)                                                            | 146  | 694  | 4   |      |      |     |        |      |         |          |        |
+|     TW_COS_LUT22_U                                                                               | 60   |      |     | 2    |      |     |        |      |         |          |        |
+|     TW_SIN_LUT27_U                                                                               | 66   |      |     | 2    |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_U                                                                     | 19   | 1    |     |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U86                                                            | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U88                                                            | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U90                                                            | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U92                                                            | 18   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U87                                                            | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U89                                                            | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U91                                                            | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U93                                                            | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_29_U                     | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_30_U                     | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_31_U                     | 21   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U                        | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_26_U                     | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_27_U                     | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_28_U                     | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_3_16_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U                        | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|   Loop_VITIS_LOOP_95_1_proc414_U0                                                                | 558  | 692  | 16  | 12   |      |     |        |      |         |          |        |
+|     (Loop_VITIS_LOOP_95_1_proc414_U0)                                                            | 146  | 691  | 4   |      |      |     |        |      |         |          |        |
+|     TW_COS_LUT21_U                                                                               | 61   |      |     | 2    |      |     |        |      |         |          |        |
+|     TW_SIN_LUT26_U                                                                               | 63   |      |     | 2    |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_U                                                                     | 18   | 1    |     |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U105                                                           | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U107                                                           | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U109                                                           | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U111                                                           | 18   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U106                                                           | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U108                                                           | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U110                                                           | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U112                                                           | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_23_U                      | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_24_U                      | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_25_U                      | 21   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U                         | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_20_U                      | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_21_U                      | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_22_U                      | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_4_8_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U                         | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|   Loop_VITIS_LOOP_95_1_proc515_U0                                                                | 535  | 695  | 16  | 10   |      |     |        |      |         |          |        |
+|     (Loop_VITIS_LOOP_95_1_proc515_U0)                                                            | 151  | 694  | 4   |      |      |     |        |      |         |          |        |
+|     TW_COS_LUT_U                                                                                 | 30   |      |     | 1    |      |     |        |      |         |          |        |
+|     TW_SIN_LUT_U                                                                                 | 32   |      |     | 1    |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_U                                                                     | 18   | 1    |     |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U126                                                           | 31   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U128                                                           | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U130                                                           | 20   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U132                                                           | 18   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U127                                                           | 31   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U129                                                           | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U131                                                           | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U133                                                           | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_17_U                      | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_18_U                      | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_19_U                      | 21   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U                         | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_14_U                      | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_15_U                      | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_16_U                      | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_5_4_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U                         | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|   Loop_VITIS_LOOP_95_1_proc616_U0                                                                | 537  | 719  | 12  | 8    |      |     |        |      |         |          |        |
+|     (Loop_VITIS_LOOP_95_1_proc616_U0)                                                            | 142  | 718  | 4   |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_U                                                                     | 17   | 1    |     |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U147                                                           | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U149                                                           | 17   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U150                                                           | 18   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U151                                                           | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U148                                                           | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     mac_mulsub_16s_16s_31s_31_4_1_U152                                                           | 16   |      | 1   |      |      |     |        |      |         |          |        |
+|     void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_11_U                      | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_12_U                      | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_13_U                      | 21   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_U                         | 94   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_10_U                      | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_8_U                       | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_9_U                       | 17   |      |     | 1    |      |     |        |      |         |          |        |
+|     void_stage_fb_6_2_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_U                         | 92   |      |     | 1    |      |     |        |      |         |          |        |
+|   Loop_VITIS_LOOP_95_1_proc717_U0                                                                | 606  | 602  | 6   |      |      |     |        |      |         |          |        |
+|     (Loop_VITIS_LOOP_95_1_proc717_U0)                                                            | 388  | 601  |     |      |      |     |        |      |         |          |        |
+|     am_addmul_16s_16s_16s_31_4_1_U161                                                            | 82   |      | 1   |      |      |     |        |      |         |          |        |
+|     am_submul_16s_16s_16s_31_4_1_U162                                                            | 17   |      | 1   |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_U                                                                     | 19   | 1    |     |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_15ns_31s_31_4_1_U159                                                          | 16   |      | 2   |      |      |     |        |      |         |          |        |
+|     mac_muladd_16s_16s_31s_31_4_1_U160                                                           | 84   |      | 2   |      |      |     |        |      |         |          |        |
+|   Loop_read_loop_proc_U0                                                                         | 98   | 146  |     |      |      |     |        |      |         |          |        |
+|     (Loop_read_loop_proc_U0)                                                                     | 73   | 145  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_U                                                                     | 25   | 1    |     |      |      |     |        |      |         |          |        |
+|   axis_to_word_U0                                                                                | 96   | 408  |     |      |      |     |        |      |         |          |        |
+|     (axis_to_word_U0)                                                                            | 3    | 141  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_U                                                                     | 15   | 1    |     |      |      |     |        |      |         |          |        |
+|     regslice_both_s_in_V_data_V_U                                                                | 71   | 260  |     |      |      |     |        |      |         |          |        |
+|     regslice_both_s_in_V_last_V_U                                                                | 7    | 6    |     |      |      |     |        |      |         |          |        |
+|   bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_1_U                               | 5    | 6    |     | 8    |      |     |        |      |         |          |        |
+|   bit_reverse_buf_stream_mdf_word_t_0_stream_mdf_word_t_0_bank_U                                 | 9    | 6    |     | 8    |      |     |        |      |         |          |        |
+|   rd_bank_cast_loc_channel_U                                                                     | 10   | 7    |     |      |      |     |        |      |         |          |        |
+|   s0_U                                                                                           | 46   | 41   |     | 4    |      |     |        |      |         |          |        |
+|   s1_U                                                                                           | 46   | 41   |     | 4    |      |     |        |      |         |          |        |
+|   s2_U                                                                                           | 46   | 41   |     | 4    |      |     |        |      |         |          |        |
+|   s3_U                                                                                           | 46   | 41   |     | 4    |      |     |        |      |         |          |        |
+|   s4_U                                                                                           | 46   | 41   |     | 4    |      |     |        |      |         |          |        |
+|   s5_U                                                                                           | 46   | 41   |     | 4    |      |     |        |      |         |          |        |
+|   s6_U                                                                                           | 94   | 41   |     | 4    |      |     |        |      |         |          |        |
+|   s7_U                                                                                           | 172  | 41   |     | 4    |      |     |        |      |         |          |        |
+|   s8_U                                                                                           | 172  | 41   |     | 4    |      |     |        |      |         |          |        |
+|   s9_U                                                                                           | 47   | 41   |     | 4    |      |     |        |      |         |          |        |
+|   start_for_Block_ZL8stage_nfILi1EEvRN3hls6streamI10mdf_word_tLi0EEES4_exit_pro5jm_U             | 4    | 4    |     |      |      |     |        |      |         |          |        |
+|   start_for_Loop_VITIS_LOOP_168_1_proc18_U0_U                                                    | 5    | 4    |     |      |      |     |        |      |         |          |        |
+|   start_for_Loop_VITIS_LOOP_168_1_proc819_U0_U                                                   | 5    | 4    |     |      |      |     |        |      |         |          |        |
+|   start_for_Loop_VITIS_LOOP_95_1_proc10_U0_U                                                     | 7    | 4    |     |      |      |     |        |      |         |          |        |
+|   start_for_Loop_VITIS_LOOP_95_1_proc111_U0_U                                                    | 5    | 4    |     |      |      |     |        |      |         |          |        |
+|   start_for_Loop_VITIS_LOOP_95_1_proc212_U0_U                                                    | 5    | 4    |     |      |      |     |        |      |         |          |        |
+|   start_for_Loop_VITIS_LOOP_95_1_proc313_U0_U                                                    | 5    | 4    |     |      |      |     |        |      |         |          |        |
+|   start_for_Loop_VITIS_LOOP_95_1_proc414_U0_U                                                    | 5    | 4    |     |      |      |     |        |      |         |          |        |
+|   start_for_Loop_VITIS_LOOP_95_1_proc515_U0_U                                                    | 5    | 4    |     |      |      |     |        |      |         |          |        |
+|   start_for_Loop_VITIS_LOOP_95_1_proc616_U0_U                                                    | 5    | 4    |     |      |      |     |        |      |         |          |        |
+|   start_for_Loop_VITIS_LOOP_95_1_proc717_U0_U                                                    | 4    | 4    |     |      |      |     |        |      |         |          |        |
+|   start_for_word_to_axis_U0_U                                                                    | 4    | 4    |     |      |      |     |        |      |         |          |        |
+|   w_in_U                                                                                         | 46   | 41   |     | 4    |      |     |        |      |         |          |        |
+|   w_out_U                                                                                        | 47   | 41   |     | 4    |      |     |        |      |         |          |        |
+|   word_to_axis_U0                                                                                | 93   | 280  |     |      |      |     |        |      |         |          |        |
+|     (word_to_axis_U0)                                                                            |      | 13   |     |      |      |     |        |      |         |          |        |
++--------------------------------------------------------------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------+
+
+
+================================================================
+== RTL Synthesis Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 4.36%  | OK     |
+| FD                                                        | 50%       | 2.73%  | OK     |
+| LUTRAM+SRL                                                | 25%       | 0.00%  | OK     |
+| MUXF7                                                     | 15%       | 0.00%  | OK     |
+| DSP                                                       | 80%       | 15.41% | OK     |
+| RAMB/FIFO                                                 | 80%       | 19.73% | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 17.57% | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 2524      | 118    | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 2.14   | OK     |
+| Max Average Fanout for modules > 100k cells               | 4         | 0      | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.500ns)         | 0         | 0      | OK     |
+| Number of paths above max Net budgeting (0.350ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== RTL Synthesis Timing Paths
+================================================================
+* Timing was met
++-------+-------+---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path  | SLACK | STARTPOINT PIN                                          | ENDPOINT PIN                                                                                                                         | LOGIC LEVELS | MAX FANOUT | DATAPATH DELAY | DATAPATH LOGIC | DATAPATH NET |
+|       |       |                                                         |                                                                                                                                      |              |            |                |          DELAY |        DELAY |
++-------+-------+---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path1 | 4.334 | s6_U/U_fft_mdf_fifo_w129_d260_A_ram/mem_reg_1/CLKARDCLK | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/p_reg_reg/D[14]     |            7 |          3 |          5.278 |          2.896 |        2.382 |
+| Path2 | 4.334 | s6_U/U_fft_mdf_fifo_w129_d260_A_ram/mem_reg_1/CLKARDCLK | Loop_VITIS_LOOP_95_1_proc717_U0/am_submul_16s_16s_16s_31_4_1_U162/fft_mdf_am_submul_16s_16s_16s_31_4_1_DSP48_4_U/p_reg_reg/D[14]     |            7 |          3 |          5.278 |          2.896 |        2.382 |
+| Path3 | 4.350 | s6_U/U_fft_mdf_fifo_w129_d260_A_ram/mem_reg_1/CLKARDCLK | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/p_reg_reg/A[14]     |            7 |          3 |          5.278 |          2.896 |        2.382 |
+| Path4 | 4.350 | s6_U/U_fft_mdf_fifo_w129_d260_A_ram/mem_reg_1/CLKARDCLK | Loop_VITIS_LOOP_95_1_proc717_U0/am_submul_16s_16s_16s_31_4_1_U162/fft_mdf_am_submul_16s_16s_16s_31_4_1_DSP48_4_U/p_reg_reg/A[14]     |            7 |          3 |          5.278 |          2.896 |        2.382 |
+| Path5 | 4.350 | s6_U/U_fft_mdf_fifo_w129_d260_A_ram/mem_reg_0/CLKARDCLK | Loop_VITIS_LOOP_95_1_proc717_U0/mac_muladd_16s_15ns_31s_31_4_1_U159/fft_mdf_mac_muladd_16s_15ns_31s_31_4_1_DSP48_2_U/m_reg_reg/A[14] |            7 |          3 |          5.278 |          2.896 |        2.382 |
++-------+-------+---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+
+    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+    | Path1 Cells                                                                                                                                                                                         | Primitive Type      |
+    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+    | s6_U/U_fft_mdf_fifo_w129_d260_A_ram/mem_reg_1                                                                                                                                                       | BMEM.bram.RAMB36E1  |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_7_0[2]_i_7      | LUT.others.LUT2     |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_7_0_reg[2]_i_3  | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_7_0_reg[6]_i_3  | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_7_0_reg[10]_i_3 | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_7_0_reg[10]_i_2 | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_7_0_reg[14]_i_2 | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_7_0[14]_i_1     | LUT.others.LUT3     |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/p_reg_reg                                                                          | MULT.dsp.DSP48E1    |
+    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+
+    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+    | Path2 Cells                                                                                                                                                                                         | Primitive Type      |
+    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+    | s6_U/U_fft_mdf_fifo_w129_d260_A_ram/mem_reg_1                                                                                                                                                       | BMEM.bram.RAMB36E1  |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_4_0[2]_i_7      | LUT.others.LUT2     |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_4_0_reg[2]_i_3  | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_4_0_reg[6]_i_3  | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_4_0_reg[10]_i_3 | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_4_0_reg[10]_i_2 | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_4_0_reg[14]_i_2 | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_4_0[14]_i_1     | LUT.others.LUT3     |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_submul_16s_16s_16s_31_4_1_U162/fft_mdf_am_submul_16s_16s_16s_31_4_1_DSP48_4_U/p_reg_reg                                                                          | MULT.dsp.DSP48E1    |
+    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+
+    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+    | Path3 Cells                                                                                                                                                                                         | Primitive Type      |
+    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+    | s6_U/U_fft_mdf_fifo_w129_d260_A_ram/mem_reg_1                                                                                                                                                       | BMEM.bram.RAMB36E1  |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_4_0[2]_i_7      | LUT.others.LUT2     |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_4_0_reg[2]_i_3  | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_4_0_reg[6]_i_3  | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_4_0_reg[10]_i_3 | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_4_0_reg[10]_i_2 | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_4_0_reg[14]_i_2 | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_4_0[14]_i_1     | LUT.others.LUT3     |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/p_reg_reg                                                                          | MULT.dsp.DSP48E1    |
+    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+
+    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+    | Path4 Cells                                                                                                                                                                                         | Primitive Type      |
+    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+    | s6_U/U_fft_mdf_fifo_w129_d260_A_ram/mem_reg_1                                                                                                                                                       | BMEM.bram.RAMB36E1  |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_7_0[2]_i_7      | LUT.others.LUT2     |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_7_0_reg[2]_i_3  | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_7_0_reg[6]_i_3  | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_7_0_reg[10]_i_3 | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_7_0_reg[10]_i_2 | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_7_0_reg[14]_i_2 | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_addmul_16s_16s_16s_31_4_1_U161/fft_mdf_am_addmul_16s_16s_16s_31_4_1_DSP48_3_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_im_7_0[14]_i_1     | LUT.others.LUT3     |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/am_submul_16s_16s_16s_31_4_1_U162/fft_mdf_am_submul_16s_16s_16s_31_4_1_DSP48_4_U/p_reg_reg                                                                          | MULT.dsp.DSP48E1    |
+    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+    | Path5 Cells                                                                                                                                                                                           | Primitive Type      |
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+    | s6_U/U_fft_mdf_fifo_w129_d260_A_ram/mem_reg_0                                                                                                                                                         | BMEM.bram.RAMB36E1  |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/mac_muladd_16s_16s_31s_31_4_1_U160/fft_mdf_mac_muladd_16s_16s_31s_31_4_1_DSP48_0_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_2_0[2]_i_7      | LUT.others.LUT2     |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/mac_muladd_16s_16s_31s_31_4_1_U160/fft_mdf_mac_muladd_16s_16s_31s_31_4_1_DSP48_0_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_2_0_reg[2]_i_3  | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/mac_muladd_16s_16s_31s_31_4_1_U160/fft_mdf_mac_muladd_16s_16s_31s_31_4_1_DSP48_0_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_2_0_reg[6]_i_3  | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/mac_muladd_16s_16s_31s_31_4_1_U160/fft_mdf_mac_muladd_16s_16s_31s_31_4_1_DSP48_0_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_2_0_reg[10]_i_3 | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/mac_muladd_16s_16s_31s_31_4_1_U160/fft_mdf_mac_muladd_16s_16s_31s_31_4_1_DSP48_0_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_2_0_reg[10]_i_2 | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/mac_muladd_16s_16s_31s_31_4_1_U160/fft_mdf_mac_muladd_16s_16s_31s_31_4_1_DSP48_0_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_2_0_reg[14]_i_2 | CARRY.others.CARRY4 |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/mac_muladd_16s_16s_31s_31_4_1_U160/fft_mdf_mac_muladd_16s_16s_31s_31_4_1_DSP48_0_U/void_stage_fb_7_1_stream_mdf_word_t_0_stream_mdf_word_t_0_delay_re_2_0[14]_i_1     | LUT.others.LUT3     |
+    | Loop_VITIS_LOOP_95_1_proc717_U0/mac_muladd_16s_15ns_31s_31_4_1_U159/fft_mdf_mac_muladd_16s_15ns_31s_31_4_1_DSP48_2_U/m_reg_reg                                                                        | MULT.dsp.DSP48E1    |
+    +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
+
+
+================================================================
+== RTL Synthesis Vivado Reports
+================================================================
++--------------------------+----------------------------------------------------------------+
+| Report Type              | Report Location                                                |
++--------------------------+----------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/fft_mdf_design_analysis_synth.rpt          |
+| failfast                 | impl/verilog/report/fft_mdf_failfast_synth.rpt                 |
+| timing                   | impl/verilog/report/fft_mdf_timing_synth.rpt                   |
+| timing_paths             | impl/verilog/report/fft_mdf_timing_paths_synth.rpt             |
+| utilization              | impl/verilog/report/fft_mdf_utilization_synth.rpt              |
+| utilization_hierarchical | impl/verilog/report/fft_mdf_utilization_hierarchical_synth.rpt |
++--------------------------+----------------------------------------------------------------+
+
+
