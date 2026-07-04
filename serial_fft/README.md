@@ -1,5 +1,14 @@
 # Serial 1024-Point FFT Processor
 
+> Resource-minimal radix-2 DIT FFT — a single butterfly reused 5,120× per transform, with adaptive block floating point for consistent SQNR across signal types.
+
+![Device](https://img.shields.io/badge/Device-Artix--7%20xc7a200t-red.svg)
+![LUTs](https://img.shields.io/badge/LUTs-2%2C372%20(1.77%25)-blue.svg)
+![DSP48E1](https://img.shields.io/badge/DSP48E1-4-blue.svg)
+![BRAM](https://img.shields.io/badge/BRAM-11%20tiles-blue.svg)
+![Throughput](https://img.shields.io/badge/Throughput-19.6%20MS%2Fs-orange.svg)
+![Fmax](https://img.shields.io/badge/Fmax-~152%20MHz-brightgreen.svg)
+
 **Target:** Xilinx Artix-7 `xc7a200tfbg676-2` (Vivado P&R) · **N = 1024** · **16-bit Q1.15 fixed-point + Block Floating Point (BFP)**
 
 > Originally synthesised against the Lattice iCE40HX8K (open-source flow via Yosys + nextpnr-ice40). That target was abandoned because the iCE40 has no distributed RAM primitive — the 1024×17-bit ping-pong RAM bloated to >250k LUT4s and could not fit. The design migrated to Artix-7 (`xc7a200tfbg676-2`), where the ping-pong RAM maps cleanly into 11 BRAM tiles and the design uses **&lt;2 % of the device** with 3.42 ns positive timing slack at 100 MHz.

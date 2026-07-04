@@ -1,5 +1,14 @@
 # Parallel MDF Radix-2 DIF FFT Processor
 
+> High-throughput streaming Multi-path Delay Feedback FFT — four complex samples per clock; a commuted twiddle multiplier moves the multiply off the feedback loop to close 100 MHz.
+
+![Device](https://img.shields.io/badge/Device-Artix--7%20xc7a200t-red.svg)
+![LUTs](https://img.shields.io/badge/LUTs-10%2C101%20(7.55%25)-blue.svg)
+![DSP48E1](https://img.shields.io/badge/DSP48E1-160-blue.svg)
+![BRAM](https://img.shields.io/badge/BRAM-0%20(distributed)-blue.svg)
+![Throughput](https://img.shields.io/badge/Throughput-400%20MS%2Fs-orange.svg)
+![Fmax](https://img.shields.io/badge/Fmax-~112%20MHz-brightgreen.svg)
+
 **Target:** Xilinx Artix-7 `xc7a200tfbg676-2` (Vivado P&R) · **N = 1024** · **P = 4 parallel paths** · **16-bit Q1.15 + Block Floating Point**
 
 > Originally synthesised against the Lattice iCE40HX8K via the open-source flow (Yosys + nextpnr-ice40). The 32 complex multipliers and ~230 kbit of delay-line / twiddle / bit-reversal memory blew past the iCE40's 7,680 LCs and 128 kbits of BRAM. The design migrated to Artix-7 (`xc7a200tfbg676-2`), where the 32 complex multipliers map to **160 DSP48E1 slices** (4 per multiplier) and the delay lines map cleanly to distributed RAM. Vivado closes timing at 100 MHz with **+1.03 ns slack**.
