@@ -1,4 +1,4 @@
-# UVM Verification — Serial FFT & Parallel MDF FFT
+# UVM Verification — Serial FFT & parallel_mdf_fft
 
 UVM 1.2 verification environment that drives **both** thesis FFT DUTs through
 the same agent / scoreboard / coverage stack. One env, two `tb_top`s, five
@@ -208,7 +208,7 @@ Output: `regression_summary.png` + `coverage_summary.png` in the `UVM/` root.
 ## 10. References
 
 - Build-up history and debug notes: [docs/day1_walkthrough.md](docs/day1_walkthrough.md) → [docs/day5_walkthrough.md](docs/day5_walkthrough.md)
-- DUT RTL — [Serial FFT processor/rtl/fft_axi_top.v](../Serial%20FFT%20processor/rtl/fft_axi_top.v), [Parallel MDF FFT/rtl/fft_axi_top.v](../Parallel%20MDF%20FFT/rtl/fft_axi_top.v)
+- DUT RTL — [serial_fft/rtl/fft_axi_top.v](../serial_fft/rtl/fft_axi_top.v), [parallel_mdf_fft/rtl/fft_axi_top.v](../parallel_mdf_fft/rtl/fft_axi_top.v)
 - Original `thesis_report_xc7` numbers used to set the SQNR thresholds
 
 ---

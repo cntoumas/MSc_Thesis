@@ -39,12 +39,12 @@ ip_repo/
 **/hw_output.csv
 
 # ─── Duplicate mem files (kept only under rom/) ───────────────────────────────
-Parallel MDF FFT/twiddle_cos_eighth.mem
-Parallel MDF FFT/twiddle_sin_eighth.mem
+parallel_mdf_fft/twiddle_cos_eighth.mem
+parallel_mdf_fft/twiddle_sin_eighth.mem
 
 # ─── Serial FFT root-level mem duplicates (canonical copies in rom/) ─────────
-Serial FFT processor/cos.mem
-Serial FFT processor/sin.mem
+serial_fft/cos.mem
+serial_fft/sin.mem
 
 # ─── Generated DSP-metric / co-simulation outputs (regenerable) ───────────────
 results/
@@ -70,12 +70,27 @@ UVM/*.backup.*
 UVM/*.png
 # root-level ROM copies the Makefile stages at runtime
 UVM/*.mem
-# twiddle ROMs the Makefile copies from Parallel MDF FFT/rom
+# twiddle ROMs the Makefile copies from parallel_mdf_fft/rom
 UVM/parallel_rom/
 UVM/modelsim.ini
 
 # ─── LaTeX thesis + tooling (out of scope for the code repo) ──────────────────
+# The LaTeX sources stay local; only the compiled PDF is tracked under docs/.
 thesis/
 thesis_overleaf.zip
 graphify/
 graphify-out/
+
+# ─── HLS: keep C/C++ sources, drop the regenerable Vitis HLS projects ─────────
+hls/mdf_fft_hls/
+hls/serial_fft_hls/
+hls/mdf_xcheck/
+hls/serial_xcheck/
+hls/*.log
+
+# ─── Working documents & scratch (regenerable / not portfolio material) ───────
+*.docx
+*.zip
+kpi_summary/
+parametric_study/build/
+parametric_study/*.log

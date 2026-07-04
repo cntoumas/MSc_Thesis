@@ -2,7 +2,7 @@
 
 **Prerequisites:** [Day 1](day1_walkthrough.md), [Day 2](day2_walkthrough.md),
 [Day 3](day3_walkthrough.md).
-**Goal:** Bring the Parallel MDF FFT into the same UVM env that already
+**Goal:** Bring the parallel_mdf_fft into the same UVM env that already
 verifies Serial, run all 5 tests on both DUTs, and bind AXI4-Stream protocol
 assertions.
 **Result:** ✅ **10/10 PASS** across both DUTs.
@@ -265,10 +265,10 @@ compile:
 ```make
 parallel: refs
     @mkdir -p parallel_rom
-    @cp "../Parallel MDF FFT/rom"/*.hex parallel_rom/
-    @cp "../Parallel MDF FFT/rom"/*.mem parallel_rom/ 2>/dev/null || true
+    @cp "../parallel_mdf_fft/rom"/*.hex parallel_rom/
+    @cp "../parallel_mdf_fft/rom"/*.mem parallel_rom/ 2>/dev/null || true
     # twiddle_rom.v also $readmemh's two legacy .mem files at the project root
-    @cp "../Parallel MDF FFT"/twiddle_*.mem . 2>/dev/null || true
+    @cp "../parallel_mdf_fft"/twiddle_*.mem . 2>/dev/null || true
     ...
 ```
 

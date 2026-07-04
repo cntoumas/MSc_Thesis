@@ -52,9 +52,9 @@ TB_SERIAL_TOP := tb_top_serial
 TB_PARALL_TOP := tb_top_parallel
 
 # RTL roots (paths contain spaces — quote in rule body)
-RTL_SERIAL_DIR    := ../Serial FFT processor/rtl
-RTL_PARALLEL_DIR  := ../Parallel MDF FFT/rtl
-ROM_SERIAL_DIR    := ../Serial FFT processor/rom
+RTL_SERIAL_DIR    := ../serial_fft/rtl
+RTL_PARALLEL_DIR  := ../parallel_mdf_fft/rtl
+ROM_SERIAL_DIR    := ../serial_fft/rom
 
 # UVM env sources
 ENV_SRCS := env/axi_stream_if.sv env/fft_pkg.sv
@@ -102,13 +102,13 @@ serial: refs
 parallel: refs
 	@mkdir -p actuals
 	@mkdir -p parallel_rom
-	@cp "../Parallel MDF FFT/rom"/*.hex parallel_rom/
-	@cp "../Parallel MDF FFT/rom"/*.mem parallel_rom/ 2>/dev/null || true
+	@cp "../parallel_mdf_fft/rom"/*.hex parallel_rom/
+	@cp "../parallel_mdf_fft/rom"/*.mem parallel_rom/ 2>/dev/null || true
 	@# twiddle_rom.v in the Parallel design also $readmemh's the legacy
 	@# 1/8-cycle .mem files (twiddle_cos_eighth.mem / twiddle_sin_eighth.mem)
 	@# which live at the project root, not under rom/. Copy them to the
 	@# xsim cwd (= UVM/) since the $readmemh path is unqualified.
-	@cp "../Parallel MDF FFT"/twiddle_*.mem . 2>/dev/null || true
+	@cp "../parallel_mdf_fft"/twiddle_*.mem . 2>/dev/null || true
 	$(CMD) "$(XVLOG_RAW) -L uvm -f scripts/parallel.f"
 	$(CMD) "$(XELAB_RAW) -L uvm -L work -timescale 1ns/1ps --relax --debug typical work.$(TB_PARALL_TOP) -s $(TB_PARALL_TOP)_snap"
 	$(CMD) "$(XSIM_RAW) $(TB_PARALL_TOP)_snap -runall -testplusarg \"UVM_TESTNAME=$(UVM_TESTNAME)\" --cov_db_dir cov_db --cov_db_name parallel_$(COV_DB_NAME)"
@@ -130,9 +130,9 @@ bp-serial: refs
 bp-parallel: refs
 	@mkdir -p actuals
 	@mkdir -p parallel_rom
-	@cp "../Parallel MDF FFT/rom"/*.hex parallel_rom/
-	@cp "../Parallel MDF FFT/rom"/*.mem parallel_rom/ 2>/dev/null || true
-	@cp "../Parallel MDF FFT"/twiddle_*.mem . 2>/dev/null || true
+	@cp "../parallel_mdf_fft/rom"/*.hex parallel_rom/
+	@cp "../parallel_mdf_fft/rom"/*.mem parallel_rom/ 2>/dev/null || true
+	@cp "../parallel_mdf_fft"/twiddle_*.mem . 2>/dev/null || true
 	$(CMD) "$(XVLOG_RAW) -L uvm -f scripts/parallel.f"
 	$(CMD) "$(XELAB_RAW) -L uvm -L work -timescale 1ns/1ps --relax --debug typical work.$(TB_PARALL_TOP) -s $(TB_PARALL_TOP)_snap"
 	$(CMD) "$(XSIM_RAW) $(TB_PARALL_TOP)_snap -runall -testplusarg \"UVM_TESTNAME=$(UVM_TESTNAME)\" -testplusarg \"BP_LOW=$(BP_LOW)\" -testplusarg \"BP_HIGH=$(BP_HIGH)\""

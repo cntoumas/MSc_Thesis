@@ -2,7 +2,7 @@
 // fft_pkg.sv
 //------------------------------------------------------------------------------
 // Single UVM package containing all environment classes used by both DUTs
-// (Serial FFT processor, Parallel MDF FFT). Files are `included so the
+// (serial_fft, parallel_mdf_fft). Files are `included so the
 // compile order is fixed in one place; users only need to compile this one
 // file along with axi_stream_if.sv and uvm_pkg.
 //------------------------------------------------------------------------------

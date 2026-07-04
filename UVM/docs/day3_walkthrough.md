@@ -330,7 +330,7 @@ local function real compute_sqnr(
 endfunction
 ```
 
-This is the same least-squares fit we use in [thesis_report_xc7.py](../../Serial%20FFT%20processor/scripts/thesis_report_xc7.py): find the complex scalar α that minimises ‖actual − α·ref‖², then report SQNR as `10·log10(signal_power / residual_power)`. It absorbs:
+This is the same least-squares fit we use in [thesis_report_xc7.py](../../serial_fft/scripts/thesis_report_xc7.py): find the complex scalar α that minimises ‖actual − α·ref‖², then report SQNR as `10·log10(signal_power / residual_power)`. It absorbs:
 
 - **Magnitude scaling** from BFP rounding (when the hardware exponent is off by, say, 0.6 of a bit — α = 0.638·1.0).
 - **Sign convention difference** between the +j hardware twiddles and -j NumPy twiddles (try both `ref` and `conj(ref)`).

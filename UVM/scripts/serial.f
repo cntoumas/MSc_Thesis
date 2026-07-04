@@ -7,15 +7,15 @@
 -i seq
 -i tests
 
-"../Serial FFT processor/rtl/AGU.v"
-"../Serial FFT processor/rtl/BFP_scanner.v"
-"../Serial FFT processor/rtl/BFP_shifter.v"
-"../Serial FFT processor/rtl/RAM.v"
-"../Serial FFT processor/rtl/butterfly_unit.v"
-"../Serial FFT processor/rtl/complex_mult.v"
-"../Serial FFT processor/rtl/fft_top.v"
-"../Serial FFT processor/rtl/twiddle_rom.v"
-"../Serial FFT processor/rtl/fft_axi_top.v"
+"../serial_fft/rtl/AGU.v"
+"../serial_fft/rtl/BFP_scanner.v"
+"../serial_fft/rtl/BFP_shifter.v"
+"../serial_fft/rtl/RAM.v"
+"../serial_fft/rtl/butterfly_unit.v"
+"../serial_fft/rtl/complex_mult.v"
+"../serial_fft/rtl/fft_top.v"
+"../serial_fft/rtl/twiddle_rom.v"
+"../serial_fft/rtl/fft_axi_top.v"
 
 env/axi_stream_if.sv
 env/fft_pkg.sv
