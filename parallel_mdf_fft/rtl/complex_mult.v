@@ -1,38 +1,3 @@
-// =============================================================================
-// complex_mult.v — Karatsuba Complex Multiplier
-//
-// Computes:  p = a * w   (complex multiplication)
-//
-//   p_re = a_re*w_re - a_im*w_im
-//   p_im = a_re*w_im + a_im*w_re
-//
-// Uses 3 real multipliers (Karatsuba) instead of 4:
-//   k1 = a_re * w_re
-//   k2 = a_im * w_im
-//   k3 = (a_re + a_im) * (w_re + w_im)
-//   p_re = k1 - k2
-//   p_im = k3 - k1 - k2
-//
-// This saves one DSP48 slice per instance at the cost of two extra adders.
-// Convergent rounding (round-half-to-even) is applied before truncation.
-//
-// Pipeline options:
-//   PIPE_STGS=0  — fully combinational (lowest latency, long timing path)
-//   PIPE_STGS=1  — one output register  (~100 MHz if path before is short)
-//   PIPE_STGS=3  — 3-stage pipeline (recommended for 100 MHz):
-//                    Stage 1: pre-adders + input registers
-//                    Stage 2: 3 DSP multiplications
-//                    Stage 3: post-adders + rounding + output registers
-//
-//   NOTE: For PIPE_STGS > 0 the caller (fft_stage_fb) must align the
-//         delay-line write address and butterfly_phase gate by the same
-//         number of extra cycles.
-//
-// Parameters:
-//   DATA_W    — width of a (signal data), default 16
-//   TWIDDLE_W — width of w (twiddle), default 16
-//   PIPE_STGS — pipeline stages: 0, 1, or 3
-// =============================================================================
 `timescale 1ns/1ps
 
 module complex_mult #(
@@ -52,8 +17,6 @@ module complex_mult #(
     output wire signed [DATA_W-1:0]      p_im
 );
 
-    // -----------------------------------------------------------------
-    // Bit-width book-keeping
     //   a_sum = a_re + a_im  : DATA_W+1 bits (signed)
     //   w_sum = w_re + w_im  : TWIDDLE_W+1 bits (signed)
     //   k1, k2 (16×16)       : DATA_W + TWIDDLE_W bits = 32 bits
@@ -61,16 +24,12 @@ module complex_mult #(
     //   raw_re (k1-k2)       : DATA_W + TWIDDLE_W + 1 bits = 33 bits
     //   raw_im (k3-k1-k2)    : DATA_W + TWIDDLE_W + 3 bits = 35 bits
     //   After >> FRAC bits, take DATA_W-bit result.
-    // -----------------------------------------------------------------
     localparam FRAC    = TWIDDLE_W - 1;               // fractional bits to drop (15)
     localparam K12_W   = DATA_W + TWIDDLE_W;          // k1, k2 width (32)
     localparam K3_W    = DATA_W + TWIDDLE_W + 2;      // k3 width     (34)
     localparam RE_W    = K12_W + 1;                   // raw_re width  (33)
     localparam IM_W    = K3_W  + 1;                   // raw_im width  (35)
 
-    // -----------------------------------------------------------------
-    // Combinational Karatsuba core (used by all PIPE_STGS options)
-    // -----------------------------------------------------------------
 
     // Pre-additions (sign-extend to avoid overflow)
     wire signed [DATA_W:0]    a_sum_c = {a_re[DATA_W-1], a_re} + {a_im[DATA_W-1], a_im};
@@ -97,9 +56,6 @@ module complex_mult #(
     wire signed [DATA_W-1:0] comb_re = rnd_re_c[FRAC + DATA_W - 1 : FRAC];
     wire signed [DATA_W-1:0] comb_im = rnd_im_c[FRAC + DATA_W - 1 : FRAC];
 
-    // -----------------------------------------------------------------
-    // Pipeline selection
-    // -----------------------------------------------------------------
     generate
         if (PIPE_STGS == 0) begin : g_comb
             // Fully combinational — no registers

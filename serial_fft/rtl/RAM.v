@@ -1,13 +1,3 @@
-//! @brief True Dual-Port Ping-Pong Memory for FFT Data Storage.
-//! @details This module instantiates two identical True Dual-Port memory banks
-//! (Bank 0 and Bank 1) to support the "ping-pong" data flow of an in-place FFT.
-//! During any given stage, one bank is strictly read from, while the other is
-//! strictly written to. Port A handles the "A" arm of the butterfly,
-//! and Port B handles the "B" arm.
-//!
-//! The preload (LOAD-state) and readout (UNLOAD-state) accesses are folded
-//! into Port A's address mux to keep total port count at 2 per bank — required
-//! for clean BRAM (RAMB36E1) inference in Vivado.
 module RAM #(
     parameter N          = 1024,
     parameter LOG2_N     = 10,
@@ -48,22 +38,12 @@ module RAM #(
     output wire signed [DATA_WIDTH-1:0] readout_im
   );
 
-  // ==========================================
-  // Memory Arrays
-  // ==========================================
   (* ram_style = "block" *) reg signed [DATA_WIDTH-1:0] bank0_re [0:N-1];
   (* ram_style = "block" *) reg signed [DATA_WIDTH-1:0] bank0_im [0:N-1];
   (* ram_style = "block" *) reg signed [DATA_WIDTH-1:0] bank1_re [0:N-1];
   (* ram_style = "block" *) reg signed [DATA_WIDTH-1:0] bank1_im [0:N-1];
 
-  // ==========================================
-  // Per-bank write enables and Port A muxing
-  // ==========================================
-  // The FSM in fft_axi_top guarantees these signals are mutually exclusive:
-  //   * preload_en is high only during ST_LOAD (we, readout_en both low)
-  //   * we is high only during ST_COMPUTE (preload_en, readout_en both low)
-  //   * readout_en is high only during ST_UNLOAD (we, preload_en both low)
-  // So a single Port A address mux is safe.
+  // Port A mux is safe because preload/write/readout are mutually exclusive.
 
   wire we_0 = bank_sel_write ? we : 1'b0;
   wire we_1 = bank_sel_write ? 1'b0 : we;
@@ -127,9 +107,6 @@ module RAM #(
     dout1_b_im <= bank1_im[b1_b_addr];
   end
 
-  // ==========================================
-  // Output Routing
-  // ==========================================
   // FFT compute outputs: select bank based on bank_sel_read
   assign dout_a_re = bank_sel_read ? dout1_a_re : dout0_a_re;
   assign dout_a_im = bank_sel_read ? dout1_a_im : dout0_a_im;

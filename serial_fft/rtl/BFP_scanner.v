@@ -1,34 +1,24 @@
-//! @brief Block Floating Point (BFP) Stage Scanner with Early Termination.
-//! This module analyzes the output of the Butterfly Unit across an
-//! entire FFT stage to determine the optimal scaling factor.
-//! To save area and power, it employs an OR-reduction tree on only the upper
-//! 9 bits of the incoming data, utilizing one's complement to approximate
-//! the magnitude of negative values. It features an early-termination
-//! mechanism that power-gates the scanning logic once the maximum possible
-//! bit-growth is detected.
 module bfp_scanner #(
-
-    parameter INPUT_WIDTH = 17 //! Bit-width of the incoming data from the Butterfly Unit (typically 17)
+    parameter INPUT_WIDTH = 17
   )(
-    input wire clk, //! System clock
-    input wire rst, //! Active-high synchronous reset
-    input wire new_stage, //! High for one clock cycle at the start of a new FFT stage to reset the scanner state
-    input wire valid_in, //! High when the incoming data samples are valid. The scanner processes data only when this is high.
-    input wire signed [INPUT_WIDTH-1:0] a_prime_re, //! Real part of Butterfly output A'.
-    input wire signed [INPUT_WIDTH-1:0] a_prime_im, //! Imaginary part of Butterfly output A'.
-    input wire signed [INPUT_WIDTH-1:0] b_prime_re, //! Real part of Butterfly output B'.
-    input wire signed [INPUT_WIDTH-1:0] b_prime_im, //! Imaginary part of Butterfly output B'.
-    output reg [3:0] block_shift_amount, //! The calculated number of bits to shift the data right (0 to 8).
-    output reg early_stop //! High when the scanner has detected that the maximum bit-growth has been reached, allowing downstream logic to skip further scanning and directly apply the worst-case shift.
+    input wire clk,
+    input wire rst,
+    input wire new_stage,
+    input wire valid_in,
+    input wire signed [INPUT_WIDTH-1:0] a_prime_re,
+    input wire signed [INPUT_WIDTH-1:0] a_prime_im,
+    input wire signed [INPUT_WIDTH-1:0] b_prime_re,
+    input wire signed [INPUT_WIDTH-1:0] b_prime_im,
+    output reg [3:0] block_shift_amount,
+    output reg early_stop
   );
 
-
-  reg [7:0] running_or_mask; //! The accumulated bitwise OR of all magnitudes in the current stage.
-  wire [7:0] mag_a_re; //! The 8-bit approximated magnitude of a_prime_re.
-  wire [7:0] mag_a_im; //! The 8-bit approximated magnitude of a_prime_im.
-  wire [7:0] mag_b_re; //! The 8-bit approximated magnitude of b_prime_re.
-  wire [7:0] mag_b_im; //! The 8-bit approximated magnitude of b_prime_im.
-  wire [7:0] cycle_or_mask; //! The combined OR-mask for the current clock cycle, derived from the magnitudes of all 4 inputs.
+  reg [7:0] running_or_mask;
+  wire [7:0] mag_a_re;
+  wire [7:0] mag_a_im;
+  wire [7:0] mag_b_re;
+  wire [7:0] mag_b_im;
+  wire [7:0] cycle_or_mask;
 
   // We only examine the upper 9 bits: INPUT_WIDTH-1 is the sign bit.
   // INPUT_WIDTH-2 down to INPUT_WIDTH-9 are the top 8 magnitude bits.
@@ -49,10 +39,6 @@ module bfp_scanner #(
   // Combine all 4 magnitudes of this clock cycle into a single mask
   assign cycle_or_mask = mag_a_re | mag_a_im | mag_b_re | mag_b_im;
 
-  //! @brief Stage Mask Accumulator.
-  //! @details Accumulates the OR-mask of all samples in the stage.
-  //! If the highest bit becomes 1, early_stop is asserted and further
-  //! accumulation is halted to save switching power.
   always @(posedge clk)
   begin : MASK_ACCUMULATOR
     if (rst)
@@ -80,13 +66,8 @@ module bfp_scanner #(
     end
   end
 
-  //! Holds the combinational result of the Count Leading Zeros calculation.
   reg [3:0] final_clz;
 
-  //! @brief Priority Encoder for Count Leading Zeros (CLZ).
-  //! @details Examines the accumulated 8-bit mask at the end of the stage
-  //! to determine how many redundant sign bits exist. This dictates the
-  //! safe left-shift amount.
   always @(*)
   begin : CLZ_DECODER
     if      (running_or_mask[7])
@@ -110,9 +91,6 @@ module bfp_scanner #(
   end
 
 
-  //! @brief Output Register.
-  //! @details Latches the calculated shift amount. In a real system, this
-  //! is latched exactly at the end of the stage computation.
   always @(posedge clk)
   begin : OUTPUT_REGISTER
     if (rst)

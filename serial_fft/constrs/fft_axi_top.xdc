@@ -1,31 +1,10 @@
-# ==============================================================================
-# Serial 1024-pt BFP FFT — Timing Constraints
-# Target: Any Artix-7 device (timing-only, no physical pin assignments)
-#
-# I/O delay constraints are intentionally omitted: all AXI-Stream ports
-# connect to other on-chip IP blocks in a Vivado block design, so Vivado's
-# timing engine constrains those paths automatically via the clock definition.
-# Adding explicit input/output delays for on-chip ports creates artificial
-# budget reductions that cause false timing violations.
-# ==============================================================================
-
-# ------------------------------------------------------------------------------
-# Primary clock  —  100 MHz
-# Adjust the period here if your board's oscillator differs.
-# ------------------------------------------------------------------------------
 create_clock -period 10.000 -name sys_clk [get_ports clk]
 
-# ------------------------------------------------------------------------------
-# BFP stage-boundary multicycle path
 # new_stage_delay_pipe fires once per FFT stage (every 512 cycles).
-# Relax setup/hold slightly to ease router pressure on this slow-moving path.
-# ------------------------------------------------------------------------------
 set_multicycle_path -setup -from [get_cells {u_fft/new_stage_delay_pipe_reg[*]}] 2
 set_multicycle_path -hold -from [get_cells {u_fft/new_stage_delay_pipe_reg[*]}] 1
 
-# ------------------------------------------------------------------------------
 # Bitstream / configuration voltage  (safe defaults — edit if your board differs)
-# ------------------------------------------------------------------------------
 set_property CONFIG_VOLTAGE 3.3 [current_design]
 set_property CFGBVS VCCO [current_design]
 

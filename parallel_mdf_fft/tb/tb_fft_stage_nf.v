@@ -1,32 +1,3 @@
-// =============================================================================
-// tb_fft_stage_nf.v — Self-checking testbench for fft_stage_nf
-//
-// Tests both IDX=0 (stage 8, pairs 0-2 and 1-3) and IDX=1 (stage 9):
-//
-// IDX=0 tests:
-//  1. Identity: input (a,0,b,0) — paths 1 and 3 are zero.
-//     BF pair A: sum0=a+b, diff0=a-b  (×W_4^0=1)
-//     BF pair B: sum1=0+0=0, diff1=(0-0)×(-j)=0
-//     Expected outputs: path0=a+b, path1=0, path2=a-b, path3=0
-//
-//  2. j-rotation: input (0,0,0,1+0j) — only path 3 non-zero.
-//     BF pair B: a=path1=0, b=path3=(1+0j)
-//       sum1  = 0 + (1+0j) = 1+0j
-//       diff1 = 0 - (1+0j) = -1+0j → ×(-j) → re=+im=-0j=0, im=-re=+1
-//     Expected: path0=0, path1=1+0j, path2=0, path3=0+1j
-//
-//  3. Zero input → zero output.
-//
-// IDX=1 tests:
-//  4. Basic: input (a,b,0,0), pairs (0,1) and (2,3).
-//     BF pair A: sum=a+b, diff=a-b (×1)
-//     BF pair B: sum=0,   diff=0
-//     Expected: path0=a+b, path1=a-b, path2=0, path3=0
-//
-//  5. Zero input → zero output.
-//
-// (blk_exp is tested implicitly — it must be 0 for small inputs.)
-// =============================================================================
 `timescale 1ns/1ps
 
 module tb_fft_stage_nf;
@@ -53,9 +24,6 @@ module tb_fft_stage_nf;
 
     integer fail_count;
 
-    // -------------------------------------------------------------------------
-    // Helpers
-    // -------------------------------------------------------------------------
     function signed [DW-1:0] re_of;
         input [P*2*DW-1:0] bus;
         input integer pp;
@@ -112,13 +80,11 @@ module tb_fft_stage_nf;
         @(posedge clk); #1;
         rst = 0;
 
-        // ================================================================
         // IDX=0: Test 1 — BF pair A only (paths 0 and 2)
         //   a=100+0j (path0), b=60+0j (path2), paths 1,3 = 0
         //   sum0  = 160, diff0 = 40  (×W_4^0=1 → 40+0j)
         //   sum1  = 0,   diff1 = 0   (×(-j) → 0)
         //   dout: p0=160, p1=0, p2=40, p3=0
-        // ================================================================
         din0 = 0;
         din0[0*2*DW          +: DW] = 16'sd100;   // path0 re
         din0[2*2*DW          +: DW] = 16'sd60;    // path2 re
@@ -128,14 +94,12 @@ module tb_fft_stage_nf;
         check_path(dout0, 1, 16'sd0,   16'sd0,   1, "idx0_pair_B_zero_sum");
         check_path(dout0, 3, 16'sd0,   16'sd0,   1, "idx0_pair_B_zero_diff");
 
-        // ================================================================
         // IDX=0: Test 2 — j-rotation from path3 only
         //   path1=(0,0), path3=(1+0j)
         //   BF pair B: a=0, b=(1+0j)
         //     sum1  = 0+1 = 1+0j
         //     diff1 = 0-1 = -1+0j → ×(-j): re=+im=-0=0, im=-re=+1 → (0+1j)
         //   dout: p0=0, p1=(1+0j), p2=0, p3=(0+1j)
-        // ================================================================
         din0 = 0;
         din0[3*2*DW +: DW] = 16'sd1;     // path3 re = 1
         #1;
@@ -144,9 +108,7 @@ module tb_fft_stage_nf;
         check_path(dout0, 2, 16'sd0,  16'sd0, 1, "idx0_jrot_p2");
         check_path(dout0, 3, 16'sd0,  16'sd1, 1, "idx0_jrot_p3_diff_rotated");
 
-        // ================================================================
         // IDX=0: Test 3 — Zero input
-        // ================================================================
         din0 = 0;
         #1;
         check_path(dout0, 0, 16'sd0, 16'sd0, 0, "idx0_zero_p0");
@@ -154,12 +116,10 @@ module tb_fft_stage_nf;
         check_path(dout0, 2, 16'sd0, 16'sd0, 0, "idx0_zero_p2");
         check_path(dout0, 3, 16'sd0, 16'sd0, 0, "idx0_zero_p3");
 
-        // ================================================================
         // IDX=1: Test 4 — BF pairs (0,1) and (2,3)
         //   a=200+0j (path0), b=80+0j (path1)
         //   sum=280, diff=120 (×W_2^0=1)
         //   paths 2,3 = 0 → sum=0, diff=0
-        // ================================================================
         din1 = 0;
         din1[0*2*DW +: DW] = 16'sd200;
         din1[1*2*DW +: DW] = 16'sd80;
@@ -169,9 +129,7 @@ module tb_fft_stage_nf;
         check_path(dout1, 2, 16'sd0,   16'sd0, 1, "idx1_pair_B_zero");
         check_path(dout1, 3, 16'sd0,   16'sd0, 1, "idx1_pair_B_zero_d");
 
-        // ================================================================
         // IDX=1: Test 5 — Zero input
-        // ================================================================
         din1 = 0;
         #1;
         check_path(dout1, 0, 16'sd0, 16'sd0, 0, "idx1_zero_p0");
@@ -179,9 +137,6 @@ module tb_fft_stage_nf;
         check_path(dout1, 2, 16'sd0, 16'sd0, 0, "idx1_zero_p2");
         check_path(dout1, 3, 16'sd0, 16'sd0, 0, "idx1_zero_p3");
 
-        // ================================================================
-        // RESULT
-        // ================================================================
         if (fail_count == 0)
             $display("PASS: tb_fft_stage_nf — all tests passed");
         else

@@ -1,20 +1,3 @@
-//------------------------------------------------------------------------------
-// fft_coverage.sv
-//------------------------------------------------------------------------------
-// Functional coverage collector — subscribes to the M_AXIS monitor's analysis
-// port and samples four covergroups per scored block:
-//
-//   cg_signal    — which signal kind was driven (5 bins)
-//   cg_amplitude — which amplitude bucket
-//   cg_bfp_exp   — what BFP exponent the DUT reported (5 buckets)
-//   cg_peak      — which spectrum quadrant carried the peak  ×  signal kind cross
-//
-// The coverage is sampled ONCE per FFT block on the tlast beat. State is
-// reset on every tlast so each block's stats are independent.
-//
-// Hooked into fft_env in connect_phase via the standard analysis_imp
-// macro pattern (same as the scoreboard).
-//------------------------------------------------------------------------------
 `ifndef FFT_COVERAGE_SV
 `define FFT_COVERAGE_SV
 
@@ -43,9 +26,7 @@ class fft_coverage extends uvm_component;
     longint unsigned local_peak_mag2 = 0;
     int              local_peak_bin  = 0;
 
-    //--------------------------------------------------------------------------
     // Covergroup 1 — signal type. One bin per stimulus kind.
-    //--------------------------------------------------------------------------
     covergroup cg_signal_type;
         cp_signal: coverpoint cov_signal {
             bins impulse   = {SIG_IMPULSE};
@@ -56,10 +37,8 @@ class fft_coverage extends uvm_component;
         }
     endgroup
 
-    //--------------------------------------------------------------------------
     // Covergroup 2 — input amplitude buckets. Maps to the SQNR-vs-amplitude
     // sweep we'd run for thesis figures.
-    //--------------------------------------------------------------------------
     covergroup cg_amplitude;
         cp_amp: coverpoint cov_amplitude {
             bins very_low = {[1:1000]};
@@ -70,10 +49,8 @@ class fft_coverage extends uvm_component;
         }
     endgroup
 
-    //--------------------------------------------------------------------------
     // Covergroup 3 — BFP exponent observed. Parallel locks to 10; Serial
     // adapts (typically -3..+10 across the 5 tests).
-    //--------------------------------------------------------------------------
     covergroup cg_bfp_exp;
         cp_bfp: coverpoint cov_bfp_exp {
             bins neg_large = {[-16:-9]};
@@ -84,15 +61,7 @@ class fft_coverage extends uvm_component;
         }
     endgroup
 
-    //--------------------------------------------------------------------------
-    // Covergroup 4 — peak bin location, crossed with signal kind. Verifies
-    // the FFT places its peak in the expected quadrant for each test.
-    //
-    // ignore_bins documents the physically-unreachable cross combinations so
-    // the reported coverage % reflects only *reachable* bins. The peak bin
-    // is determined by the stimulus, not by DUT behaviour, so e.g. Impulse
-    // can never land outside bin 0-255 unless the FFT is broken.
-    //--------------------------------------------------------------------------
+    // Peak-bin coverage group.
     covergroup cg_peak_bin;
         cp_peak: coverpoint cov_peak_bin {
             bins low_quarter = {[0:255]};
@@ -129,9 +98,7 @@ class fft_coverage extends uvm_component;
         }
     endgroup
 
-    //--------------------------------------------------------------------------
     // Constructor — instantiate the covergroups
-    //--------------------------------------------------------------------------
     function new(string name = "fft_coverage", uvm_component parent = null);
         super.new(name, parent);
         m_axis_export = new("m_axis_export", this);
@@ -141,19 +108,15 @@ class fft_coverage extends uvm_component;
         cg_peak_bin    = new();
     endfunction
 
-    //--------------------------------------------------------------------------
     function void build_phase(uvm_phase phase);
         super.build_phase(phase);
         void'(uvm_config_db#(int unsigned)::get(this, "", "p_pack",    p_pack));
         void'(uvm_config_db#(sig_kind_e)::get(this, "", "active_test", active_test));
-        // Default amplitudes per test — overridden by config_db if set
+        // Default amplitude for coverage bins.
         cov_amplitude = 10000;
     endfunction
 
-    //--------------------------------------------------------------------------
     // Called by the analysis port — for every M_AXIS beat we accumulate the
-    // peak magnitude. On tlast we sample all covergroups.
-    //--------------------------------------------------------------------------
     function void write_cov_m_axis(axi_stream_seq_item t);
         int unsigned stride = FFT_N / p_pack;
         int          p, bin_idx;
@@ -210,7 +173,6 @@ class fft_coverage extends uvm_component;
         end
     endfunction
 
-    //--------------------------------------------------------------------------
     function void report_phase(uvm_phase phase);
         super.report_phase(phase);
         `uvm_info("COV",

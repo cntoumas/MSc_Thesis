@@ -1,13 +1,3 @@
-//! @brief AXI-Stream testbench for fft_axi_top — file-driven, full CSV output.
-//! @details Reads natural-order stimulus from stimulus_re.mem / stimulus_im.mem,
-//!          streams it into the FFT through S_AXIS, captures all N output
-//!          bins from M_AXIS, and writes hw_output.csv + hw_exponent.txt.
-//!          This avoids the bank0-only read limitation of fft_tb.v, since
-//!          fft_axi_top streams all bins sequentially via M_AXIS.
-//!
-//! Stimulus format: 17-bit hex per line, lower 16 bits = signed Q1.15 sample.
-//! Stimulus order : natural (sample 0, 1, ..., N-1). No bit-reversal in Python.
-
 `timescale 1ns/1ps
 module fft_axi_tb_xc7;
 

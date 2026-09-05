@@ -1,21 +1,3 @@
-#include "fft_serial.h"
-#include "../twiddle_rom.h"
-
-// ===========================================================================
-// BFP helpers — faithfully match bfp_scanner.v + bfp_shifter.v
-// ===========================================================================
-
-// ---------------------------------------------------------------------------
-// bfp_shift_16
-// Apply the BFP scaling to a 17-bit Q2.15 value, producing a 16-bit Q1.15.
-//
-// Matches bfp_shifter.v case statement exactly:
-//   clz=0  right shift 1 (overflow), convergent round-to-even, exponent +1
-//   clz=1  no shift: drop the redundant 17th sign bit, exponent unchanged
-//   clz=2  left shift 1, exponent -1
-//   clz=k  left shift (k-1), exponent -(k-1)    for k in [3..8]
-//   clz>8  clamped to left shift 7, exponent -7
-// ---------------------------------------------------------------------------
 static ap_int<16> bfp_shift_16(ap_int<17> v, int clz) {
 #pragma HLS INLINE
     switch (clz) {
@@ -35,11 +17,7 @@ static ap_int<16> bfp_shift_16(ap_int<17> v, int clz) {
     }
 }
 
-// ---------------------------------------------------------------------------
-// bfp_exp_delta
 // Return the exponent change caused by the BFP shift for a given CLZ.
-// Matches the case statement in fft_top.v BFP_TRACKER.
-// ---------------------------------------------------------------------------
 static int8_t bfp_exp_delta(int clz) {
 #pragma HLS INLINE
     switch (clz) {
@@ -55,23 +33,15 @@ static int8_t bfp_exp_delta(int clz) {
     }
 }
 
-// ---------------------------------------------------------------------------
-// bfp_magnitude
 // 8-bit approximated magnitude of a 17-bit signed value.
 // Uses bits [15:8] with 1's complement for negatives —
-// exact mirror of bfp_scanner.v mag_x assignments.
-// ---------------------------------------------------------------------------
 static ap_uint<8> bfp_magnitude(ap_int<17> v) {
 #pragma HLS INLINE
     ap_uint<8> top8 = (ap_uint<8>)v.range(15, 8);
     return v[16] ? (ap_uint<8>)~top8 : top8;
 }
 
-// ---------------------------------------------------------------------------
-// bfp_clz8
 // Priority-encoder CLZ over an 8-bit OR mask.
-// Matches bfp_scanner.v CLZ_DECODER block.
-// ---------------------------------------------------------------------------
 static int bfp_clz8(ap_uint<8> mask) {
 #pragma HLS INLINE
     if      (mask[7]) return 0;
@@ -85,9 +55,6 @@ static int bfp_clz8(ap_uint<8> mask) {
     else              return 8;
 }
 
-// ===========================================================================
-// Core helpers
-// ===========================================================================
 
 static int bit_rev10(int x) {
 #pragma HLS INLINE
@@ -100,7 +67,6 @@ static int bit_rev10(int x) {
     return r;
 }
 
-// ---------------------------------------------------------------------------
 // One DIT stage with compile-time STRIDE = 2^STAGE.
 //
 // All three RTL operations merged into one butterfly loop:
@@ -114,7 +80,6 @@ static int bit_rev10(int x) {
 // Data format:
 //   re[]/im[] buffer holds 17-bit values (Q2.15) between stages, exactly as
 //   the RTL stores DATA_WIDTH+1 = 17-bit values in the ping-pong RAM.
-// ---------------------------------------------------------------------------
 template<int STAGE>
 static void fft_stage_bfp(ap_int<17> re[], ap_int<17> im[],
                            int clz_in, int* clz_out) {
@@ -123,12 +88,9 @@ static void fft_stage_bfp(ap_int<17> re[], ap_int<17> im[],
     static const int STRIDE = 1 << STAGE;
     ap_uint<8> or_mask = 0;
 
-    // -----------------------------------------------------------------------
     // Butterfly pass — pure feed-forward datapath (no loop-carried reduction),
     // so the scheduler can pipeline BFP-shift → multiply → add deeply and hit
     // the target clock with a registered DSP multiply.  The BFP magnitude scan
-    // is done separately below to keep this path off the critical loop.
-    // -----------------------------------------------------------------------
     bfly_loop: for (int bfly = 0; bfly < FFT_N / 2; bfly++) {
 #pragma HLS PIPELINE II=1
 #pragma HLS DEPENDENCE variable=re inter false
@@ -180,11 +142,9 @@ static void fft_stage_bfp(ap_int<17> re[], ap_int<17> im[],
         re[b_idx] = b_re_out;  im[b_idx] = b_im_out;
     }
 
-    // -----------------------------------------------------------------------
     // BFP scan (bfp_scanner.v): OR-accumulate the 8-bit magnitudes of every
     // stage output.  Separated from the butterfly so the only loop-carried
     // dependency here is a short read → magnitude → OR path.
-    // -----------------------------------------------------------------------
     scan_loop: for (int i = 0; i < FFT_N; i++) {
 #pragma HLS PIPELINE II=1
         or_mask |= bfp_magnitude(re[i]) | bfp_magnitude(im[i]);
@@ -193,9 +153,6 @@ static void fft_stage_bfp(ap_int<17> re[], ap_int<17> im[],
     *clz_out = bfp_clz8(or_mask);
 }
 
-// ===========================================================================
-// Top-level function
-// ===========================================================================
 void fft_serial(
     int16_t  in_re [FFT_N],
     int16_t  in_im [FFT_N],

@@ -1,79 +1,28 @@
-//! @brief Address Generation Unit (AGU) for Pipelined FFT.
-//! @details This module acts as the master controller for the FFT hardware.
-//! It tracks the current macroscopic algorithm stage and generates the
-//! corresponding read and write addresses for the Ping-Pong RAM using the
-//! highly efficient "count-and-rotate" algorithm.
-//! It manages the structural pipeline delay, ensuring that write addresses
-//! and memory bank swapping are delayed by the exact latency of the
-//! computational Butterfly Unit to prevent data corruption.
 module AGU #(
-    //! Number of FFT points
     parameter N = 1024,
-
-    //! Number of bits for memory address.
     parameter LOG2_N = 10,
-
-    //! Latency of the external Ping-Pong RAM.
     parameter RAM_LATENCY = 1,
-
-    //! Latency of internal Twiddle ROM.
     parameter ROM_LATENCY = 3,
-
-    //! The pipeline latency of the Butterfly Unit + BFP Shifter
     parameter BFU_LATENCY = 6
   )(
-    //! System clock.
     input wire clk,
-
-    //! Synchronous active-high reset.
     input wire rst,
-
-    //! Enable signal to start/run the FFT processing.
     input wire enable,
-
-    //! Read address for RAM Port A.
     output wire [LOG2_N-1:0] rd_addr_a,
-
-    //! Read address for RAM Port B.
     output wire [LOG2_N-1:0] rd_addr_b,
-
-    //! Address for the Twiddle Factor ROM.
     output reg [LOG2_N-2:0] twiddle_addr,
-
-    //! Write address for RAM Port A (Delayed to match incoming computed data).
     output reg [LOG2_N-1:0] wr_addr_a,
-
-    //! Write address for RAM Port B (Delayed to match incoming computed data).
     output reg [LOG2_N-1:0] wr_addr_b,
-
-    //! Bank select flag. 0 = Read Bank 0 / Write Bank 1. 1 = Read Bank 1 / Write Bank 0.
     output wire bank_sel_read,
-
-    //! Bank select flag for writes (delayed to match write cycle).
     output reg bank_sel_write,
-
-    //! Write Enable flag for the RAM.
     output reg write_enable,
-
-    //! Pulses high for 1 cycle when a new macroscopic FFT stage begins.
     output reg new_stage,
-
-    //! Pulses high for 1 cycle when the entire FFT is completed and RAM writes are finished.
     output reg done
   );
 
-  //! Counter for the number of butterflies processed in the current stage (0 to N/2 - 1).
   reg [LOG2_N-2:0] bfy_count;
-
-  //! Counter for the current macroscopic FFT stage (0 to LOG2_N - 1).
   reg [$clog2(LOG2_N)-1:0] stage_idx;
-
-  //! Tracks if the AGU is currently actively generating reads.
-  //! Separated into two flags so the write-side pipeline drains correctly
-  //! after the last butterfly without propagating a stale reading=1.
-  reg reading;   //! High while read addresses are being generated.
-
-  //! Tracks the current state of ping-pong memory bank selection.
+  reg reading;
   reg bank_state;
 
   localparam ST_PROCESS = 1'b0;
@@ -88,8 +37,7 @@ module AGU #(
   wire [LOG2_N-1:0] base_a = {bfy_count, 1'b0};
   wire [LOG2_N-1:0] base_b = {bfy_count, 1'b1};
 
-  //! @brief Dynamic Left-Rotate Function.
-  //! @details Synthesizes into a barrel shifter to rotate the bits left by 'stage_idx'.
+  // Rotate by stage index.
   function [LOG2_N-1:0] rotate_left(input [LOG2_N-1:0] val, input [$clog2(LOG2_N)-1:0] shift);
     begin
       if (shift == 0)
@@ -107,9 +55,6 @@ module AGU #(
   reg [LOG2_N-1:0] rd_b_pipe [0 : DELAY_READ];
   reg              bsel_read_pipe [0 : DELAY_READ];
 
-  //! @brief Main AGU State Machine (Read Side).
-  //! @details Increments the butterfly counter and stage index, and calculates
-  //! the real-time read addresses for the memory and twiddle ROM.
   integer j;
   always @(posedge clk)
   begin : READ_ADDRESS_GENERATOR
@@ -199,22 +144,11 @@ module AGU #(
   assign rd_addr_b = rd_b_pipe[DELAY_READ];
   assign bank_sel_read = bsel_read_pipe[DELAY_READ];
 
-  //! Shift register to delay the Write Enable signal.
   reg [TOTAL_WRITE_DELAY-1:0] we_delay;
-
-  //! Shift array to delay Address A.
   reg [LOG2_N-1:0] write_addr_a_delay [0:TOTAL_WRITE_DELAY-1];
-
-  //! Shift array to delay Address B.
   reg [LOG2_N-1:0] write_addr_b_delay [0:TOTAL_WRITE_DELAY-1];
-
-  //! Shift register to delay the Bank Select signal.
   reg [TOTAL_WRITE_DELAY-1:0] bank_sel_delay;
 
-  //! @brief Latency Compensation Pipeline.
-  //! @details Delays the mathematically generated addresses by exactly TOTAL_WRITE_DELAY
-  //! clock cycles so that the write request arrives at the RAM on the exact same
-  //! cycle that the corresponding data emerges from the processing back-end.
   integer i;
   always @(posedge clk)
   begin : WRITE_LATENCY_PIPELINE

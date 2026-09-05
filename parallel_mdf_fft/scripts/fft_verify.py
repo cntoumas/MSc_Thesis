@@ -12,9 +12,6 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
-# ============================================================
-# CONFIGURATION
-# ============================================================
 SRC_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJ_DIR = os.path.dirname(SRC_DIR)
 REPO_ROOT = os.path.dirname(PROJ_DIR)
@@ -58,9 +55,7 @@ TEST_NAMES = {0: "Impulse", 1: "DC", 2: "Sine", 3: "MultiTone", 4: "Chirp"}
 SINE_TID = 2
 TONE_BIN = 50  # Sine sits exactly on bin 50 of 1024 → coherent, no window.
 
-# ============================================================
 # STEP 1: Compile Verilog
-# ============================================================
 def compile_verilog():
     print("=" * 60)
     print("STEP 1: Compiling Verilog with Icarus Verilog")
@@ -83,9 +78,7 @@ def compile_verilog():
     print("  [OK] Compilation successful")
     return True
 
-# ============================================================
 # STEP 2: Run Simulation
-# ============================================================
 def run_simulation():
     print("\n" + "=" * 60)
     print("STEP 2: Running Simulation")
@@ -118,9 +111,7 @@ def run_simulation():
             print(f"  SIM: {line}")
     return True, r.stdout, elapsed
 
-# ============================================================
 # STEP 3: Generate Reference (NumPy)
-# ============================================================
 def generate_reference():
     print("\n" + "=" * 60)
     print("STEP 3: Generating NumPy Reference")
@@ -169,9 +160,7 @@ def generate_reference():
               f"mag={mag[peak_bin]:.1f}, DC={mag[0]:.1f}")
     return refs
 
-# ============================================================
 # STEP 4: Parse Simulation Output
-# ============================================================
 def parse_outputs():
     print("\n" + "=" * 60)
     print("STEP 4: Parsing Simulation CSV Outputs")
@@ -252,9 +241,7 @@ def parse_outputs():
     
     return hw_data, params
 
-# ============================================================
 # STEP 5: Reconstruct HW FFT & Compute Metrics
-# ============================================================
 def reconstruct_hw_fft(hw_samples):
     """Reconstruct complex FFT bins from parallel output samples.
 
@@ -397,9 +384,7 @@ def compute_metrics(hw_data, refs):
     
     return results
 
-# ============================================================
 # STEP 6: Save Metrics to CSV
-# ============================================================
 def save_metrics_csv(results, params, sim_time):
     print("\n" + "=" * 60)
     print("STEP 6: Saving Metrics CSV")
@@ -472,9 +457,7 @@ def save_spectrum_npz(results):
     np.savez(npz_path, **arrays)
     print(f"  Saved: {npz_path}")
 
-# ============================================================
 # STEP 7a: Generate Signals PNG (magnitude / error / dB spectra)
-# ============================================================
 def generate_signals_png(results, params):
     print("\n" + "=" * 60)
     print("STEP 7a: Generating Signals PNG")
@@ -648,9 +631,7 @@ def generate_signals_png(results, params):
     print(f"  Saved: {out_path}")
 
 
-# ============================================================
 # STEP 7b: Generate DSP Metrics PNG (SQNR/SFDR/ENOB/THD + phase)
-# ============================================================
 def generate_dsp_metrics_png(results, params):
     print("\n" + "=" * 60)
     print("STEP 7b: Generating DSP Metrics PNG")
@@ -665,9 +646,6 @@ def generate_dsp_metrics_png(results, params):
                                      sine_name=TEST_NAMES[SINE_TID])
 
 
-# ============================================================
-# MAIN
-# ============================================================
 def main():
     print("\n" + "=" * 60)
     print("  1024-pt P=4 MDF RADIX-2 DIF FFT - FULL VERIFICATION")

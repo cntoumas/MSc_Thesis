@@ -1,114 +1,48 @@
-//! @brief Top-Level 16-bit Block Floating-Point FFT Processor.
-//! @details This module integrates all sub-components of the FFT architecture:
-//! the Address Generation Unit (AGU), Ping-Pong Dual-Port RAM, Twiddle Factor ROM,
-//! Block Floating Point (BFP) Shifter, Butterfly Unit (BFU), and BFP Scanner.
-//! It includes critical pipeline alignment registers to ensure that data fetched
-//! from memory, scaled by the shifter, and twiddle factors fetched from ROM all
-//! arrive at the computational Butterfly Unit on the exact same clock edge.
 module fft_top #(
-    //! Number of FFT points (Default: 1024).
     parameter N = 1024,
-
-    //! Bit width of the data path and twiddle factors (Default: 16-bit Q1.15).
     parameter DATA_WIDTH = 16,
-
-    //! Log base 2 of N, representing the number of address bits.
     parameter LOG2_N = 10
   )(
-    //! System clock.
     input wire clk,
-
-    //! Synchronous active-high reset.
     input wire rst,
-
-    //! Master enable signal to begin FFT processing.
     input wire start_fft,
-
-    //! The final global exponent after all stages are processed.
     output wire signed [7:0] final_exponent,
-
-    //! Pulses high for exactly 1 cycle when the FFT has completely finished all processing and memory dumps.
     output wire fft_done,
 
-    // ------------------------------------------------------------------
-    // Preload port — pass-through to RAM (active only before FFT starts).
-    // ------------------------------------------------------------------
-
-    //! Enable signal for the preload write port.
     input  wire                        preload_en,
-
-    //! Address for the preload write port.
     input  wire [LOG2_N-1:0]           preload_addr,
-
-    //! Real part of the preload data (17-bit: DATA_WIDTH+1).
     input  wire signed [DATA_WIDTH:0]  preload_re,
-
-    //! Imaginary part of the preload data (17-bit: DATA_WIDTH+1).
     input  wire signed [DATA_WIDTH:0]  preload_im,
 
-    // ------------------------------------------------------------------
-    // Readout port — pass-through from RAM (active only after fft_done).
-    // ------------------------------------------------------------------
-
-    //! Enable signal for the readout read port.
     input  wire                        readout_en,
-
-    //! Address for the readout read port.
     input  wire [LOG2_N-1:0]           readout_addr,
-
-    //! Selects the result bank: 0 = Bank 0, 1 = Bank 1.
     input  wire                        readout_bank_sel,
-
-    //! Real part of the readout data (17-bit: DATA_WIDTH+1, 1-cycle latency).
     output wire signed [DATA_WIDTH:0]  readout_re,
-
-    //! Imaginary part of the readout data (17-bit: DATA_WIDTH+1, 1-cycle latency).
     output wire signed [DATA_WIDTH:0]  readout_im
   );
 
-  // ==========================================
-  // Local Parameters
-  // ==========================================
-
-  //! After LOG2_N butterfly stages, the result ends up in Bank 0 if LOG2_N is even,
-  //! or Bank 1 if LOG2_N is odd (each stage swaps the active bank).
   localparam RESULT_BANK = LOG2_N[0];
 
-  // ==========================================
-  // Interconnect Signals
-  // ==========================================
 
-  // AGU Signals
   wire [LOG2_N-1:0] rd_addr_a, rd_addr_b;
   wire [LOG2_N-1:0] wr_addr_a, wr_addr_b;
   wire [LOG2_N-2:0] twiddle_addr;
   wire bank_sel_read, bank_sel_write, write_enable, new_stage;
 
-  // RAM Output Signals (17-bit to ingest precision BFU results preserving sign logic during growth)
   wire signed [DATA_WIDTH:0] ram_out_a_re, ram_out_a_im;
   wire signed [DATA_WIDTH:0] ram_out_b_re, ram_out_b_im;
 
-  // Twiddle ROM Output Signals
   wire signed [DATA_WIDTH-1:0] w_re, w_im;
 
-  // BFP Shifter Output Signals
   wire signed [DATA_WIDTH-1:0] shifted_a_re, shifted_a_im;
   wire signed [DATA_WIDTH-1:0] shifted_b_re, shifted_b_im;
 
-  // Butterfly Unit Output Signals (17-bit to accommodate bit growth)
   wire signed [DATA_WIDTH:0] bfu_out_a_re, bfu_out_a_im;
   wire signed [DATA_WIDTH:0] bfu_out_b_re, bfu_out_b_im;
 
-  // BFP Scanner Signals
   wire [3:0] block_shift_amount;
   wire early_stop;
 
-  // ==========================================
-  // Module Instantiations
-  // ==========================================
-
-  //! @brief Address Generation Unit (AGU).
-  //! @details The "brain". It automatically aligns RAM and ROM fetches.
   AGU #(
         .N(N),
         .LOG2_N(LOG2_N),
@@ -131,8 +65,6 @@ module fft_top #(
         .done(fft_done)
       );
 
-  //! @brief Twiddle Factor ROM.
-  //! @details 3-clock-cycle latency. Uses 1/8 cycle compression.
   twiddle_rom #(
                 .N(N),
                 .WIDTH(DATA_WIDTH)
@@ -143,8 +75,6 @@ module fft_top #(
                 .w_im(w_im)
               );
 
-  //! @brief Dual-Port Ping-Pong RAM.
-  //! @details 1-clock-cycle read latency. Widened to (DATA_WIDTH + 1) to securely preserve BFU bit growths safely across stages.
   RAM #(
         .N(N),
         .LOG2_N(LOG2_N),
@@ -180,20 +110,11 @@ module fft_top #(
         .readout_im      (readout_im)
       );
 
-  // ==========================================
-  // BFP Global Scaling Register
-  // ==========================================
   
   reg [3:0] latched_shift_amount;
   reg signed [7:0] current_exponent;
 
-  // The 'new_stage' flag is generated by the AGU during the drain state.
-  // We need TWO different delay taps from this signal:
-  //   1) BFP Tracker: Must latch the scanner result BEFORE the first new-stage data
-  //      reaches the shifter (at new_stage + 5). Tap [3] gives delay of 4 cycles.
-  //   2) Scanner Reset: Must reset AFTER all old-stage writes finish draining
-  //      through the pipeline (at new_stage + TOTAL_WRITE_DELAY = new_stage + 9).
-  //      Tap [8] gives delay of 9 cycles.
+  // Delay taps for stage-boundary timing.
   reg [8:0] new_stage_delay_pipe;
   always @(posedge clk)
   begin : NEW_STAGE_DELAY
@@ -227,8 +148,6 @@ module fft_top #(
     end
   end
 
-  //! @brief Block Floating Point Shifter.
-  //! @details 1-clock-cycle latency. Scales the data dynamically based on the previous stage lock block_clz.
   bfp_shifter #(
                 .INPUT_WIDTH(DATA_WIDTH + 1), // Takes 17-bit natively stored RAM values 
                 .OUTPUT_WIDTH(DATA_WIDTH)     // Reduces it precisely back down to 16 for logic handling 
@@ -248,13 +167,8 @@ module fft_top #(
                 .exp_out() // Explicitly float recursive accumulator out port
               );
 
-  // ==========================================
-  // Pipeline Alignment Registers
-  // ==========================================
 
-  // The AGU natively aligns the raw RAM outputs and Twiddle outputs to the same cycle.
-  // Because the RAM data takes 1 additional cycle to pass through the BFP Shifter,
-  // we must delay the Twiddle factors by 1 cycle so they hit the BFU perfectly together.
+  // Match RAM and twiddle timing into the butterfly stage.
   reg signed [DATA_WIDTH-1:0] w_re_aligned, w_im_aligned;
 
   always @(posedge clk)
@@ -263,12 +177,7 @@ module fft_top #(
     w_im_aligned <= w_im;
   end
 
-  // ==========================================
-  // The Datapath Computing Engine
-  // ==========================================
 
-  //! @brief Butterfly Arithmetic Unit.
-  //! @details 5-clock-cycle latency. Outputs 17-bit data.
   butterfly_unit #(
                    .DATA_WIDTH(DATA_WIDTH),
                    .TWIDDLE_WIDTH(DATA_WIDTH)
@@ -286,8 +195,6 @@ module fft_top #(
                    .b_prime_im(bfu_out_b_im)
                  );
 
-  //! @brief Block Floating Point Scanner.
-  //! @details Analyzes the 17-bit BFU output dynamically to find the optimal shift amount.
   bfp_scanner #(
                 .INPUT_WIDTH(DATA_WIDTH + 1) // 17 bits natively generated logic boundaries
               ) u_scanner (

@@ -1,12 +1,3 @@
-# =============================================================================
-# power_with_saif.tcl - Re-run report_power using the SAIF file produced
-#                      by generate_saif.tcl
-#
-# Usage (from Vivado TCL console, with synth_1 open):
-#   source scripts/power_with_saif.tcl
-# =============================================================================
-
-# Locate the SAIF file (Vivado writes it under the sim run directory)
 set proj_dir [get_property DIRECTORY [current_project]]
 set proj_name [get_property NAME [current_project]]
 set saif_path "${proj_dir}/${proj_name}.sim/sim_1/behav/xsim/fft_top.saif"

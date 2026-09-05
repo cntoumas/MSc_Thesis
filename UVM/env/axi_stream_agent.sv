@@ -1,17 +1,3 @@
-//------------------------------------------------------------------------------
-// axi_stream_agent.sv
-//------------------------------------------------------------------------------
-// Standard UVM agent that bundles a sequencer + driver + monitor for one
-// AXI4-Stream port. Two flavours via the standard UVM `is_active` knob:
-//
-//   UVM_ACTIVE  → instantiates sequencer + driver + monitor. Used for S_AXIS.
-//   UVM_PASSIVE → instantiates monitor only. Used for M_AXIS (we don't drive
-//                 the DUT's output, we only watch it).
-//
-// The sequencer's seq_item_port is connected to the driver's seq_item_port
-// during connect_phase — that's the standard handshake channel between
-// sequences and the driver.
-//------------------------------------------------------------------------------
 `ifndef AXI_STREAM_AGENT_SV
 `define AXI_STREAM_AGENT_SV
 
@@ -30,7 +16,6 @@ class axi_stream_agent extends uvm_agent;
         super.new(name, parent);
     endfunction
 
-    //--------------------------------------------------------------------------
     function void build_phase(uvm_phase phase);
         super.build_phase(phase);
         monitor = axi_stream_monitor::type_id::create("monitor", this);
@@ -40,7 +25,6 @@ class axi_stream_agent extends uvm_agent;
         end
     endfunction
 
-    //--------------------------------------------------------------------------
     function void connect_phase(uvm_phase phase);
         super.connect_phase(phase);
         if (get_is_active() == UVM_ACTIVE)

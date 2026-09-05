@@ -1,15 +1,3 @@
-#include <cstdio>
-#include <cmath>
-#include <cstdlib>
-#include "fft_serial.h"
-
-#ifndef M_PI
-#define M_PI 3.14159265358979323846
-#endif
-
-// ---------------------------------------------------------------------------
-// Reference DFT (O(N^2)) for golden-check at specific bins.
-// ---------------------------------------------------------------------------
 static void dft_bin(
     const double* xr, const double* xi, int N, int k,
     double* Xr, double* Xi

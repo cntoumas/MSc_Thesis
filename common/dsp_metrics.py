@@ -20,9 +20,6 @@ DB_CAP = 120.0
 _POWER_FLOOR = 1e-20
 
 
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
 def _power(X):
     return np.abs(np.asarray(X, dtype=complex)) ** 2
 
@@ -36,9 +33,6 @@ def fold(m, N):
     return min(m, N - m)
 
 
-# ---------------------------------------------------------------------------
-# SQNR
-# ---------------------------------------------------------------------------
 def compute_sqnr(ref, hw):
     """Signal-to-Quantization-Noise Ratio in dB (time- or freq-domain)."""
     ref = np.asarray(ref, dtype=complex)
@@ -58,9 +52,7 @@ def compute_sqnr(ref, hw):
     return 10.0 * np.log10(signal_power / noise_power)
 
 
-# ---------------------------------------------------------------------------
 # Single-tone band metrics (self-spectral: read from the DUT's own output)
-# ---------------------------------------------------------------------------
 def compute_sfdr(X, k0):
     """Spurious-Free Dynamic Range in dBc (self-spectral)."""
     X = np.asarray(X, dtype=complex)
@@ -117,9 +109,6 @@ def compute_enob(sinad_db):
     return (sinad_db - 1.76) / 6.02
 
 
-# ---------------------------------------------------------------------------
-# Reference-based single-tone metrics (robust to the BFP read-back floor)
-# ---------------------------------------------------------------------------
 # The self-spectral figures above read the noise floor out of the DUT's own
 # output spectrum. For the parallel core, the fixed block-exponent normalises
 # each block to its single large fundamental, so on a coherent tone every other
@@ -225,9 +214,7 @@ def compute_thd_ref(ref, hw, k0, n_harm=5):
     return 10.0 * np.log10(p_harm / p_fund)
 
 
-# ---------------------------------------------------------------------------
 # Phase error (scale-invariant — the cleanest cross-arch precision metric)
-# ---------------------------------------------------------------------------
 def _wrap(rad):
     return (rad + np.pi) % (2.0 * np.pi) - np.pi
 
@@ -278,9 +265,6 @@ def compute_phase_error(ref, hw, mag_thresh_rel=1e-3, detrend=True):
     }
 
 
-# ---------------------------------------------------------------------------
-# Convenience wrapper
-# ---------------------------------------------------------------------------
 def tone_metrics(ref, hw, k0, n_harm=5, single_tone=True):
     """All figures of merit for one test case (flat dict for CSV / plotting)."""
     sqnr = compute_sqnr(ref, hw)

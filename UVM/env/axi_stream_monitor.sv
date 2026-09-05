@@ -1,20 +1,3 @@
-//------------------------------------------------------------------------------
-// axi_stream_monitor.sv
-//------------------------------------------------------------------------------
-// Passive UVM monitor — snoops an AXI4-Stream interface and broadcasts every
-// captured beat to subscribers (scoreboard, coverage collector) via an
-// analysis port.
-//
-// Configurable for either side:
-//   - S_AXIS monitor (snoops the stimulus we drive — for coverage)
-//   - M_AXIS monitor (snoops the DUT response — for scoreboarding)
-//
-// Special handling for the Serial FFT's M_AXIS quirk: fft_axi_top holds
-// tdata stable for ~2 cycles per beat (BRAM read bubble), so every other
-// (tvalid && tready) handshake on M_AXIS is a duplicate of the previous
-// beat. The same `sample_phase` toggle from fft_axi_tb_xc7.v deduplicates.
-// Set `m_axis_dedup = 1` for the M_AXIS monitor; leave 0 for S_AXIS.
-//------------------------------------------------------------------------------
 `ifndef AXI_STREAM_MONITOR_SV
 `define AXI_STREAM_MONITOR_SV
 
@@ -33,13 +16,11 @@ class axi_stream_monitor extends uvm_monitor;
     // Analysis port — broadcasts captured items to any subscriber
     uvm_analysis_port #(axi_stream_seq_item) ap;
 
-    //--------------------------------------------------------------------------
     function new(string name = "axi_stream_monitor", uvm_component parent = null);
         super.new(name, parent);
         ap = new("ap", this);
     endfunction
 
-    //--------------------------------------------------------------------------
     function void build_phase(uvm_phase phase);
         super.build_phase(phase);
         if (!uvm_config_db#(virtual axi_stream_if.monitor)::get(this, "", "vif", vif))
@@ -52,7 +33,6 @@ class axi_stream_monitor extends uvm_monitor;
                   UVM_LOW)
     endfunction
 
-    //--------------------------------------------------------------------------
     task run_phase(uvm_phase phase);
         axi_stream_seq_item item;
         int  beat_idx     = 0;

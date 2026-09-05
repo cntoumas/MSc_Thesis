@@ -1,15 +1,3 @@
-//------------------------------------------------------------------------------
-// tb_top_parallel.sv
-//------------------------------------------------------------------------------
-// Top-level testbench module for the Parallel MDF FFT (P=4).
-//
-// Differences vs tb_top_serial:
-//   - DUT uses aclk/aresetn (active-LOW) instead of clk/rst
-//   - tdata is 128-bit (P=4 packed)
-//   - tuser is 4-bit (we pad to 8 in the interface)
-//   - HEX_DIR parameter points the DUT's twiddle ROMs at parallel_rom/
-//   - p_pack=4, is_parallel=1 config_db values
-//------------------------------------------------------------------------------
 `timescale 1ns/1ps
 
 module tb_top_parallel;
@@ -18,9 +6,7 @@ module tb_top_parallel;
     import fft_pkg::*;
     `include "uvm_macros.svh"
 
-    //--------------------------------------------------------------------------
     // Clock and reset (note: DUT uses ACTIVE-LOW reset)
-    //--------------------------------------------------------------------------
     logic clk = 1'b0;
     logic rst = 1'b1;             // active-high (interface convention)
     wire  aresetn = ~rst;         // active-low to the DUT
@@ -34,16 +20,11 @@ module tb_top_parallel;
         `uvm_info("TB", "reset released", UVM_LOW)
     end
 
-    //--------------------------------------------------------------------------
     // Interface instances — full 128-bit width is used here
-    //--------------------------------------------------------------------------
     axi_stream_if s_if (.clk(clk), .rst(rst));
     axi_stream_if m_if (.clk(clk), .rst(rst));
 
-    //--------------------------------------------------------------------------
     // DUT — Parallel MDF fft_axi_top. tuser is 4-bit on the DUT side; we
-    // zero-extend into the 8-bit interface field.
-    //--------------------------------------------------------------------------
     wire [3:0] dut_m_axis_tuser;
     assign m_if.tuser = {4'h0, dut_m_axis_tuser};
 
@@ -111,9 +92,6 @@ module tb_top_parallel;
         end
     end
 
-    //--------------------------------------------------------------------------
-    // UVM run
-    //--------------------------------------------------------------------------
     initial begin
         uvm_config_db#(virtual axi_stream_if.master)::set(
             null, "uvm_test_top.env.s_axis_agent.driver",  "vif", s_if);
@@ -122,8 +100,7 @@ module tb_top_parallel;
         uvm_config_db#(virtual axi_stream_if.monitor)::set(
             null, "uvm_test_top.env.m_axis_agent.monitor", "vif", m_if);
 
-        // DUT-specific config (Parallel → P=4, is_parallel=1, refs in refs/serial)
-        // The reference vectors are SHARED across both DUTs (same NumPy FFT).
+        // Parallel config.
         uvm_config_db#(int unsigned)::set(null, "uvm_test_top", "p_pack",      4);
         uvm_config_db#(bit)         ::set(null, "uvm_test_top", "is_parallel", 1'b1);
         uvm_config_db#(string)      ::set(null, "uvm_test_top", "refs_dir",    "refs/serial");
@@ -136,15 +113,12 @@ module tb_top_parallel;
         run_test();
     end
 
-    //--------------------------------------------------------------------------
     initial begin
         #5_000_000;
         `uvm_fatal("TB", "5 ms wall-clock timeout — sim hung")
     end
 
-    //--------------------------------------------------------------------------
     // AXI4-Stream protocol assertions on both ports.
-    //--------------------------------------------------------------------------
     axi_stream_sva #(.LABEL("S_AXIS_parallel")) sva_s (
         .clk(clk), .rst(rst),
         .tdata(s_if.tdata), .tvalid(s_if.tvalid),

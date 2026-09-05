@@ -1,14 +1,3 @@
-// =============================================================================
-// tb_complex_mult.v — Self-checking testbench for complex_mult
-//
-// Tests (all using PIPE_STGS=0, combinational):
-//  1. Identity:    a * (1+0j) = a
-//  2. Negate:      a * (-1+0j) = -a
-//  3. j rotation:  a * (0-1j) = (im_a + (-re_a)j) [multiply by -j]
-//  4. Known value: (3+4j)*(1-1j)/sqrt2 (approx, check within 2 LSB of rounding)
-//  5. Max value:   (32767+32767j) * (32767+0j) — check no catastrophic error
-//  6. Rounding:    verify convergent rounding eliminates DC bias
-// =============================================================================
 `timescale 1ns/1ps
 
 module tb_complex_mult;
@@ -58,57 +47,47 @@ module tb_complex_mult;
     initial begin
         fail_count = 0;
 
-        // ------------------------------------------------------------------
         // Test 1: multiply by 1+0j (identity)
         //   w = (32767, 0) in Q15 ≈ (1.0, 0.0)
         //   a = (100, 200)
         //   expected p ≈ (100, 200) within rounding
-        // ------------------------------------------------------------------
         a_re = 100; a_im = 200;
         w_re = 16'sh7FFF; w_im = 16'sh0;
         check_approx(100, 200, 1, "identity");
 
-        // ------------------------------------------------------------------
         // Test 2: multiply by -1+0j (negate)
         //   w = (-32768, 0) in Q15 = -1.0
         //   a = (100, 200)
         //   expected: (-100, -200) within 1 LSB (Q15 -1.0 = -32768)
-        // ------------------------------------------------------------------
         a_re = 100; a_im = 200;
         w_re = 16'sh8000; w_im = 16'sh0;
         // p_re = 100*(-32768) - 200*0 = -3276800 >> 15 = -100.00...
         // p_im = 100*0 + 200*(-32768) >> 15 = -200
         check_approx(-100, -200, 1, "negate");
 
-        // ------------------------------------------------------------------
         // Test 3: multiply by 0-1j  (rotate by -90°)
         //   w = (0, -32768) → w_re=0, w_im=-32768 ≈ -j
         //   a = (3 + 4j)
         //   (3+4j)*(0-1j) = 4 - 3j
-        // ------------------------------------------------------------------
         a_re = 3; a_im = 4;
         w_re = 16'sh0; w_im = 16'sh8000;  // w_im = -32768 = -1.0 in Q15
         // p_re = 3*0 - 4*(-32768) >> 15 = 131072 >> 15 = 4
         // p_im = 3*(-32768) + 4*0 >> 15 = -98304 >> 15 = -3
         check_approx(4, -3, 1, "rotate_minus_j");
 
-        // ------------------------------------------------------------------
         // Test 4: (1000 + 0j) * W_8^1 = (1000+0j)*(cos45° - j*sin45°)
         //   W_8^1 = (0.7071 - 0.7071j), stored as Q15:
         //     w_re = round(32767 * 0.70710678) = 23170
         //     w_im = round(-32767 * 0.70710678) = -23170
         //   expected: p_re ≈ 707, p_im ≈ -707
-        // ------------------------------------------------------------------
         a_re = 1000; a_im = 0;
         w_re = 16'sh5A82; w_im = 16'hA57E;   // 23170 and -23170 signed
         // 1000*23170 / 32768 ≈ 707.0
         check_approx(707, -707, 2, "W8_1_rotation");
 
-        // ------------------------------------------------------------------
         // Test 5: Rounding bias check
         //   Feed 1000 identical values through and measure mean error.
         //   For convergent rounding, mean error ≈ 0; for truncation, mean < 0.
-        // ------------------------------------------------------------------
         begin
             sum_err_re = 0;
             sum_err_im = 0;
@@ -131,9 +110,6 @@ module tb_complex_mult;
             end
         end
 
-        // ------------------------------------------------------------------
-        // RESULT
-        // ------------------------------------------------------------------
         if (fail_count == 0)
             $display("PASS: tb_complex_mult — all tests passed");
         else

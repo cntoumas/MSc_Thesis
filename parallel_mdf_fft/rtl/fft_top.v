@@ -1,6 +1,3 @@
-// =============================================================================
-// fft_top.v — Top-level 1024-point P=4 MDF Radix-2 DIF FFT
-// =============================================================================
 `timescale 1ns/1ps
 
 module fft_top #(
@@ -22,9 +19,6 @@ module fft_top #(
     output wire [3:0]                blk_exp
 );
 
-    // ---------------------------------------------------------------
-    // Stage interconnect buses
-    // ---------------------------------------------------------------
     wire [P*2*DATA_W-1:0] stage_out [0:9];
     wire [3:0]            stage_exp [0:9];
 
@@ -35,26 +29,7 @@ module fft_top #(
     end
     wire blk_rst_start = in_valid & ~in_valid_d;
 
-    // ---------------------------------------------------------------
-    // Pipelined Control Signals
-    //
-    // The commuted fft_stage_fb architecture moves complex_mult (PIPE_STGS=3)
-    // outside the feedback loop onto the dl_out read path.  This adds 3 cycles
-    // of output latency per FB stage.  Downstream stages see their inputs
-    // 3*k cycles later, where k is the number of upstream FB stages.
-    //
-    // Tap derivation (cumulative from in_valid):
-    //   Stage k input arrives at: sum(DEPTH[0..k-1]) + 4*k cycles
-    //     (DEPTH[i] = 128 >> i for i=0..7; 4 = 3 mult pipeline + 1 stage_out_r)
-    //   valid_pipe[N] fires N+1 cycles after in_valid, so tap = arrival - 1.
-    //
-    //   DEPTH sums:  s0=0, s1=128, s2=192, s3=224, s4=240, s5=248, s6=252,
-    //                s7=254, s8=255 (all 8 FB stages)
-    //   Arrivals:    132, 200, 236, 256, 268, 276, 282, 287, 287
-    //   Taps:        131, 199, 235, 255, 267, 275, 281, 286, 286
-    //
-    // valid_pipe width: 287 bits (indices 0..286).
-    // ---------------------------------------------------------------
+    // Stage timing taps for valid/rst alignment.
     reg [286:0] valid_pipe;
     reg [286:0] rst_pipe;
 
@@ -81,20 +56,7 @@ module fft_top #(
     assign vld_s[8] = valid_pipe[286];    assign rst_s[8] = rst_pipe[286];
     assign vld_s[9] = valid_pipe[286];    assign rst_s[9] = rst_pipe[286];
 
-    // ---------------------------------------------------------------
-    // Inter-stage pipeline registers (added for timing closure).
-    //
-    // The FB stages have a tight internal feedback loop
-    //   (butterfly -> block_scaler -> complex_mult -> delay_line),
-    // so inserting a register *inside* the stage breaks the algorithm.
-    // Instead, we register the data path BETWEEN stages: each FB stage's
-    // output is latched into stage_out_r[k] before being driven into
-    // stage k+1.  This breaks the long combinational chain that runs
-    // s0 -> s1 -> ... -> s7 and lets each stage close timing at 100 MHz.
-    //
-    // The valid/rst taps above already account for the +k cycle delay
-    // that this introduces (one extra cycle per FB stage).
-    // ---------------------------------------------------------------
+    // Register between stages to keep the feedback loops timing-safe.
     reg [P*2*DATA_W-1:0] stage_out_r [0:7];
 
     integer gi;
@@ -108,9 +70,7 @@ module fft_top #(
         end
     end
 
-    // ---------------------------------------------------------------
     // FFT Stages 0-7: Radix-2 Feedback (SDF/MDF)
-    // ---------------------------------------------------------------
     fft_stage_fb #(.DATA_W(DATA_W), .P(P), .N(N), .STAGE(0)) u_s0 (
         .clk(clk), .rst(rst), .en(en), .in_valid(vld_s[0]), .blk_rst(rst_s[0]),
         .din(din), .dout(stage_out[0]), .blk_exp(stage_exp[0])
@@ -151,9 +111,7 @@ module fft_top #(
         .din(stage_out_r[6]), .dout(stage_out[7]), .blk_exp(stage_exp[7])
     );
 
-    // ---------------------------------------------------------------
-    // FFT Stages 8-9: No-Feedback (combinational twiddles)
-    // ---------------------------------------------------------------
+    // Final no-feedback stages.
     fft_stage_nf #(.DATA_W(DATA_W), .P(P), .IDX(0)) u_s8 (
         .clk(clk), .rst(rst), .blk_rst(rst_s[8]),
         .din(stage_out_r[7]), .dout(stage_out[8]), .blk_exp(stage_exp[8])
@@ -166,9 +124,7 @@ module fft_top #(
 
     wire delayed_valid = vld_s[9];
 
-    // ---------------------------------------------------------------
     // Output Reordering (Bit-reversal for P=4 parallel)
-    // ---------------------------------------------------------------
     bit_reverse #(.DATA_W(DATA_W), .N(N), .P(P)) u_reorder (
         .clk       (clk),
         .rst       (rst),
@@ -178,10 +134,6 @@ module fft_top #(
         .dout      (dout)
     );
 
-    // ---------------------------------------------------------------
-    // Block Floating Point Exponent Reporting
-    // Total exponent is always 10 with fixed conservative scaling
-    // ---------------------------------------------------------------
     assign blk_exp = 4'd10;
 
 endmodule

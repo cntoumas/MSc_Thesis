@@ -1,15 +1,3 @@
-#include <cstdio>
-#include <cmath>
-#include <cstdlib>
-#include "fft_mdf.h"
-
-#ifndef M_PI
-#define M_PI 3.14159265358979323846
-#endif
-
-// ---------------------------------------------------------------------------
-// Reference DFT for golden-check at specific bins.
-// ---------------------------------------------------------------------------
 static void dft_bin(const double* xr, const double* xi, int N, int k,
                     double* Xr, double* Xi) {
     *Xr = 0; *Xi = 0;
@@ -20,9 +8,7 @@ static void dft_bin(const double* xr, const double* xi, int N, int k,
     }
 }
 
-// ---------------------------------------------------------------------------
 // Helper: push one block into the HLS stream, read one block of output.
-// ---------------------------------------------------------------------------
 static void run_block(
     const int16_t* in_re, const int16_t* in_im,
     int16_t* out_re,      int16_t* out_im

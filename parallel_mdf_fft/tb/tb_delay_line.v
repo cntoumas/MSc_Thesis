@@ -1,25 +1,13 @@
-// =============================================================================
-// tb_delay_line.v — Self-checking testbench for delay_line
-//
-// Tests:
-//  1. DEPTH=4:  ramp input, verify dout delayed by exactly 4 cycles
-//  2. DEPTH=1:  single-register behaviour
-//  3. Enable gating: en=0 freezes the delay line
-// =============================================================================
 `timescale 1ns/1ps
 
 module tb_delay_line;
 
-    // -------------------------------------------------------------------------
     // Parameters
-    // -------------------------------------------------------------------------
     localparam DATA_W = 16;
     localparam P      = 4;
     localparam CLK_P  = 10; // 100 MHz
 
-    // -------------------------------------------------------------------------
     // DUT helpers — we test two instances with different DEPTH
-    // -------------------------------------------------------------------------
 
     // ---- Test 1: DEPTH=4 ----
     localparam DEPTH4 = 4;
@@ -51,15 +39,9 @@ module tb_delay_line;
         .clk(clk), .en(en128), .din(din128), .dout(dout128)
     );
 
-    // -------------------------------------------------------------------------
-    // Clock
-    // -------------------------------------------------------------------------
     initial clk = 0;
     always #(CLK_P/2) clk = ~clk;
 
-    // -------------------------------------------------------------------------
-    // Test stimulus
-    // -------------------------------------------------------------------------
     integer fail_count;
     integer i, j;
     reg [P*2*DATA_W-1:0] expected_queue4 [0:DEPTH4-1]; // circular reference buffer
@@ -80,9 +62,7 @@ module tb_delay_line;
         for (i = 0; i < DEPTH4; i = i + 1)
             expected_queue4[i] = 0;
 
-        // =====================================================================
         // TEST 1: DEPTH=4 ramp — verify exact 4-cycle delay
-        // =====================================================================
         @(posedge clk); #1;
         en4 = 1;
 
@@ -110,9 +90,7 @@ module tb_delay_line;
         end
         en4 = 0;
 
-        // =====================================================================
         // TEST 2: DEPTH=1 — single register
-        // =====================================================================
         @(posedge clk); #1;
         en1 = 1;
         din1 = 128'hDEAD_BEEF_0000_0001_DEAD_BEEF_0000_0001;
@@ -130,9 +108,7 @@ module tb_delay_line;
         end
         en1 = 0;
 
-        // =====================================================================
         // TEST 3: en gating — line should freeze when en=0
-        // =====================================================================
         @(posedge clk); #1;
         en4  = 1;
         din4 = 128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;
@@ -147,9 +123,6 @@ module tb_delay_line;
             fail_count = fail_count + 1;
         end
 
-        // =====================================================================
-        // RESULT
-        // =====================================================================
         if (fail_count == 0)
             $display("PASS: tb_delay_line — all tests passed");
         else

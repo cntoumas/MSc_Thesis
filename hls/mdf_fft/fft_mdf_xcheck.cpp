@@ -1,10 +1,3 @@
-// Cross-check driver: run the HLS MDF FFT on the 5 RTL test vectors and dump
-// raw stream-order outputs so a Python script can de-interleave and compare
-// HLS vs RTL with the shared dsp_metrics library.  Not a pass/fail TB.
-#include <cstdio>
-#include "fft_mdf.h"
-#include "../cosim_inputs.h"
-
 static void run_block(const int16_t* in_re, int16_t* out_re, int16_t* out_im) {
     hls::stream<mdf_pkt_t> s_in("s_in"), s_out("s_out");
     for (int g = 0; g < MDF_WORDS; g++) {

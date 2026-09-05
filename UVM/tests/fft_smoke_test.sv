@@ -1,10 +1,3 @@
-//------------------------------------------------------------------------------
-// fft_smoke_test.sv
-//------------------------------------------------------------------------------
-// Single-test smoke — runs one impulse_seq end-to-end and reports the SQNR.
-// Expected: SQNR = 120.00 dB (impulse FFT is constant magnitude, so even
-// imperfect bin alignment gives perfect SQNR).
-//------------------------------------------------------------------------------
 `ifndef FFT_SMOKE_TEST_SV
 `define FFT_SMOKE_TEST_SV
 

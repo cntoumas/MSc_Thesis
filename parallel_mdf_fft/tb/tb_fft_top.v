@@ -1,20 +1,3 @@
-// =============================================================================
-// tb_fft_top.v — System-level self-checking testbench for fft_top
-//
-// Tests (N=1024, P=4, DATA_W=16):
-//
-//  1. Impulse response
-//     Input:  x[0] = A on path 0, x[n]=0 for n>0.
-//     Expected DFT: X[k] = A for all k.
-//     True value = dout_sample * 2^blk_exp.  We check bins 0..31.
-//
-//  2. DC input
-//     Input: x[n] = B for all n=0..1023 (all P paths, all WORDS clocks).
-//     Expected: X[0] large, X[k!=0] ~= 0.
-//     We check bins 1..15 are near zero.
-//
-// Verilog-2001 compatible (no SystemVerilog constructs).
-// =============================================================================
 `timescale 1ns/1ps
 
 module tb_fft_top;
@@ -59,9 +42,6 @@ module tb_fft_top;
         $dumpvars(1, u_dut.u_s4);
     end
 
-    // -----------------------------------------------------------------------
-    // CSV output for verification script
-    // -----------------------------------------------------------------------
     integer csv_params, csv_output;
     initial begin
         csv_params = $fopen("fft_params.csv", "w");
@@ -78,9 +58,6 @@ module tb_fft_top;
         $fwrite(csv_output, "test_id,sample_idx,out0_r,out0_i,out1_r,out1_i,out2_r,out2_i,out3_r,out3_i,bfp_exp,time_ns\n");
     end
 
-    // -----------------------------------------------------------------------
-    // Output capture (one full block)
-    // -----------------------------------------------------------------------
     reg signed [DW-1:0] out_re [0:N_FFT-1];
     reg signed [DW-1:0] out_im [0:N_FFT-1];
     integer out_idx;
@@ -136,9 +113,6 @@ module tb_fft_top;
         end
     end
 
-    // -----------------------------------------------------------------------
-    // Control variables (module scope)
-    // -----------------------------------------------------------------------
     integer fail_count;
     integer i, k;
     integer timeout_cnt, wait_cnt;
@@ -161,9 +135,6 @@ module tb_fft_top;
         fail_count = 0;
     end
 
-    // -----------------------------------------------------------------------
-    // Tasks
-    // -----------------------------------------------------------------------
     // Feed one block: first_word on clock 0, then zeros for WORDS-1 clocks
     task feed_impulse;
         input [P*2*DW-1:0] first_word;
@@ -224,9 +195,6 @@ module tb_fft_top;
         end
     endtask
 
-    // -----------------------------------------------------------------------
-    // Main test sequence
-    // -----------------------------------------------------------------------
     initial begin
         fail_count = 0;
         out_idx    = 0;
@@ -239,11 +207,9 @@ module tb_fft_top;
         rst = 0;
         $display("[TB] Reset released");
 
-        // ================================================================
         // TEST 1: Impulse response  x[0]=1000, x[n>0]=0
         //   Expected DFT: X[k] = 1000 for all k
         //   True value = out_sample * 2^blk_exp  ~= 1000
-        // ================================================================
         $display("TEST 1: Impulse (x[0]=1000)");
         current_test_id = 0;
         $display("[TB] Starting TEST 1");
@@ -286,10 +252,8 @@ module tb_fft_top;
                  blk_exp, exp_scale, $signed(out_re[0]),
                  $signed(out_re[0]) * exp_scale);
 
-        // ================================================================
         // TEST 2: DC input  x[n]=100 for all n
         //   Expected: X[0] large, X[k!=0] ~= 0
-        // ================================================================
         $display("TEST 2: DC input (x[n]=100)");
         current_test_id = 1;
 
@@ -330,9 +294,7 @@ module tb_fft_top;
         $display("  blk_exp = %0d  X[0].re = %0d (scaled = %0d)",
                  blk_exp, $signed(out_re[0]), $signed(out_re[0]) * exp_scale);
 
-        // ================================================================
         // TEST 3: Single-tone sine wave (block)
-        // ================================================================
         $display("TEST 3: Sine (single-tone)");
         current_test_id = 2;
 
@@ -374,10 +336,8 @@ module tb_fft_top;
         wait_captured;
         $display("  blk_exp = %0d  (sine block captured)", blk_exp);
 
-        // ================================================================
         // TEST 4: Multi-tone (3 simultaneous sines at bins 50, 200, 450)
         //   Each tone amplitude = 600 → sum amplitude ≤ 1800 (fits 16-bit)
-        // ================================================================
         $display("TEST 4: Multi-tone (bins 50, 200, 450)");
         current_test_id = 3;
 
@@ -414,11 +374,9 @@ module tb_fft_top;
         wait_captured;
         $display("  blk_exp = %0d  (multi-tone block captured)", blk_exp);
 
-        // ================================================================
         // TEST 5: Linear chirp (frequency sweep from bin 0 to bin 511)
         //   x[n] = A * sin(2π · (f0 + (f1-f0)·n/(2N)) · n / N)
         //   f0 = 0, f1 = 511, A = 2048
-        // ================================================================
         $display("TEST 5: Chirp (0 -> 511 Hz over N samples)");
         current_test_id = 4;
 
@@ -461,9 +419,6 @@ module tb_fft_top;
         wait_captured;
         $display("  blk_exp = %0d  (chirp block captured)", blk_exp);
 
-        // ================================================================
-        // RESULT
-        // ================================================================
         if (fail_count == 0)
             $display("PASS: tb_fft_top — all tests passed");
         else
