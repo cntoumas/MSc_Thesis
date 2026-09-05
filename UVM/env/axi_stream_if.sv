@@ -1,17 +1,3 @@
-//------------------------------------------------------------------------------
-// axi_stream_if.sv
-//------------------------------------------------------------------------------
-// AXI4-Stream interface used to drive S_AXIS and monitor M_AXIS of the FFT
-// DUT. One interface instance per AXI-Stream port pair.
-//
-// Day 3 NOTE: this interface was originally parameterised (DATA_WIDTH, P,
-// TUSER_W) but xsim 2023.2 has a known elaboration issue with parameterised
-// interface defaults (`<name>_default` resolution fails). To unblock Day 3 we
-// hard-code to the Serial DUT shape (P=1, 32-bit tdata, 8-bit tuser). Day 4
-// will add a sibling interface `axi_stream_if_p4` for the Parallel DUT.
-//
-// Layout of tdata: {re[15:0], im[15:0]} — one complex sample per beat.
-//------------------------------------------------------------------------------
 `ifndef AXI_STREAM_IF_SV
 `define AXI_STREAM_IF_SV
 
@@ -35,9 +21,6 @@ interface axi_stream_if(
     logic               tlast;
     logic [TUSER_W-1:0] tuser;
 
-    //--------------------------------------------------------------------------
-    // Modports
-    //--------------------------------------------------------------------------
     modport master (
         output tdata, tvalid, tlast, tuser,
         input  tready,
@@ -55,10 +38,8 @@ interface axi_stream_if(
         input  clk, rst
     );
 
-    //--------------------------------------------------------------------------
     // Clocking blocks (kept for future use; current driver/monitor read the
     // raw signals to keep xsim's elaboration simple)
-    //--------------------------------------------------------------------------
     clocking drv_cb @(posedge clk);
         default input #1step output #1ns;
         output tdata, tvalid, tlast;
@@ -70,7 +51,6 @@ interface axi_stream_if(
         input  tdata, tvalid, tlast, tuser, tready;
     endclocking
 
-    //--------------------------------------------------------------------------
     wire handshake = tvalid & tready;
 
 endinterface

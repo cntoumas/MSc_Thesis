@@ -1,18 +1,3 @@
-//------------------------------------------------------------------------------
-// fft_single_tests.sv
-//------------------------------------------------------------------------------
-// Five single-test classes — each runs ONE stimulus sequence end-to-end.
-// Used by the regression Makefile target which invokes xsim five separate
-// times (one per test) so each test gets a fresh DUT state. This sidesteps
-// a latent issue in fft_top.v where the AGU doesn't fully reset between
-// back-to-back FFTs (the original fft_axi_tb.v only ever drove one FFT,
-// so this never came up in the pre-UVM verification flow).
-//
-// The all-in-one fft_regression_test still exists for documentation, but
-// for a clean 5/5 PASS use:
-//
-//   make serial-regression   → loops these five tests via separate xsim runs
-//------------------------------------------------------------------------------
 `ifndef FFT_SINGLE_TESTS_SV
 `define FFT_SINGLE_TESTS_SV
 

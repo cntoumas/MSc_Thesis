@@ -1,8 +1,3 @@
-//------------------------------------------------------------------------------
-// fft_multitone_seq.sv — sum of 3 real sinusoids at distinct bins.
-// Each tone has amplitude `amp_per_tone = amplitude / num_tones` so the
-// summed waveform stays within range.
-//------------------------------------------------------------------------------
 `ifndef FFT_MULTITONE_SEQ_SV
 `define FFT_MULTITONE_SEQ_SV
 

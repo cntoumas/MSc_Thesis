@@ -1,7 +1,3 @@
-//------------------------------------------------------------------------------
-// fft_sine_seq.sv — drives x[n] = A*sin(2π·k·n/N) for a single tone bin k.
-// Expected FFT response: peaks at bins K and N-K (real input → mirror).
-//------------------------------------------------------------------------------
 `ifndef FFT_SINE_SEQ_SV
 `define FFT_SINE_SEQ_SV
 

@@ -29,9 +29,6 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
 
-# ---------------------------------------------------------------------------
-# Configuration
-# ---------------------------------------------------------------------------
 N          = 1024
 LOG2_N     = 10
 AMPLITUDE  = 10000      # Q1.15 safe amplitude (avoids BFP overflow)
@@ -46,9 +43,6 @@ HW_CSV      = os.path.join(PROJ_DIR, "hw_output.csv")
 HW_EXP      = os.path.join(PROJ_DIR, "hw_exponent.txt")
 OUT_PNG     = os.path.join(PROJ_DIR, "fft_all_cases.png")
 
-# ---------------------------------------------------------------------------
-# Signal generators
-# ---------------------------------------------------------------------------
 def signal_impulse():
     """Single DC impulse at n=0."""
     re = np.zeros(N, dtype=np.int32)
@@ -84,9 +78,6 @@ def signal_chirp(f_start=0, f_end=511):
     im = np.zeros(N, dtype=np.int32)
     return re, im, f"Linear Chirp  (bin {f_start}->{f_end})"
 
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
 def clamp17(v):
     """Clamp to 17-bit signed range."""
     return int(np.clip(v, -(1 << 16), (1 << 16) - 1))
@@ -191,16 +182,10 @@ def run_sim(re_data, im_data, label):
     print(f"  BFP exponent = {exponent}")
     return hw_re, hw_im, exponent
 
-# ---------------------------------------------------------------------------
-# Reference FFT (software) for overlay
-# ---------------------------------------------------------------------------
 def reference_fft(re_data, im_data):
     x   = re_data.astype(np.float64) + 1j * im_data.astype(np.float64)
     return np.fft.fft(x)
 
-# ---------------------------------------------------------------------------
-# Plotting
-# ---------------------------------------------------------------------------
 DARK_BG   = "#0d1117"
 GRID_CLR  = "#21262d"
 ACCENT    = "#58a6ff"
@@ -286,9 +271,6 @@ def plot_all(cases):
     print(f"\n[+] Saved plot -> {OUT_PNG}")
 
 
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
 def main():
     print("Serial FFT — 4-Case Hardware Simulation")
     print("=" * 60)

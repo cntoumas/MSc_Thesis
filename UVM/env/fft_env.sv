@@ -1,19 +1,3 @@
-//------------------------------------------------------------------------------
-// fft_env.sv
-//------------------------------------------------------------------------------
-// Top-level UVM environment for the FFT DUTs. Same env is reused for both
-// Serial (P=1) and Parallel (P=4) DUTs — the test class sets `p_pack` and
-// `is_parallel` via uvm_config_db before build_phase.
-//
-// Holds:
-//   - s_axis_agent  (ACTIVE)  — drives stimulus into the DUT's S_AXIS
-//   - m_axis_agent  (PASSIVE) — observes the DUT's M_AXIS output
-//   - ref_model              — loads NumPy reference vectors
-//   - scoreboard             — compares actual vs reference, computes SQNR
-//
-// Day 5 will add fft_coverage as a fourth child component subscribing to
-// both monitors' analysis ports.
-//------------------------------------------------------------------------------
 `ifndef FFT_ENV_SV
 `define FFT_ENV_SV
 
@@ -38,7 +22,6 @@ class fft_env extends uvm_env;
         super.new(name, parent);
     endfunction
 
-    //--------------------------------------------------------------------------
     function void build_phase(uvm_phase phase);
         super.build_phase(phase);
 
@@ -48,10 +31,7 @@ class fft_env extends uvm_env;
         void'(uvm_config_db#(string)      ::get(this, "", "refs_dir",      refs_dir));
         void'(uvm_config_db#(int unsigned)::get(this, "", "warmup_blocks", warmup_blocks));
 
-        // Propagate config down to children BEFORE they're built
-        // (uvm_config_db::set must happen before the child's build_phase runs;
-        //  child build_phases run during this build_phase's recursion, so
-        //  we set first then create.)
+        // Propagate DUT config before child creation.
 
         // S_AXIS agent — ACTIVE
         uvm_config_db#(uvm_active_passive_enum)::set(
@@ -65,17 +45,13 @@ class fft_env extends uvm_env;
             this, "m_axis_agent", "is_active", UVM_PASSIVE);
         uvm_config_db#(int unsigned)::set(this, "m_axis_agent.*", "p_pack",      p_pack);
         uvm_config_db#(string)      ::set(this, "m_axis_agent.monitor", "label", "M_AXIS");
-        // Serial DUT's M_AXIS holds tdata for 2 cycles per beat → dedup on
         uvm_config_db#(bit)         ::set(this, "m_axis_agent.monitor",
                                           "m_axis_dedup", !is_parallel);
 
         // Reference model — tell it where to find the .mem files
         uvm_config_db#(string)::set(this, "ref_model", "refs_dir", refs_dir);
 
-        // Scoreboard — tell it which DUT family for thresholds and packing.
-        // The DUT only emits ONE M_AXIS block per stimulus burst (even with
-        // a priming input block) so the scoreboard's warmup_blocks stays 0.
-        // The sequence handles the priming on the input side.
+        // Scoreboard config for DUT family and block packing.
         uvm_config_db#(bit)         ::set(this, "scoreboard", "is_parallel",   is_parallel);
         uvm_config_db#(int unsigned)::set(this, "scoreboard", "p_pack",        p_pack);
         uvm_config_db#(int unsigned)::set(this, "scoreboard", "warmup_blocks", 0);
@@ -91,12 +67,9 @@ class fft_env extends uvm_env;
         coverage     = fft_coverage    ::type_id::create("coverage",     this);
     endfunction
 
-    //--------------------------------------------------------------------------
     function void connect_phase(uvm_phase phase);
         super.connect_phase(phase);
-        // Wire the M_AXIS monitor's analysis port to BOTH the scoreboard
-        // and the coverage collector (one-to-many broadcast — the standard
-        // UVM analysis pattern).
+        // Broadcast M_AXIS beats to scoreboard and coverage.
         m_axis_agent.monitor.ap.connect(scoreboard.m_axis_export);
         m_axis_agent.monitor.ap.connect(coverage.m_axis_export);
 

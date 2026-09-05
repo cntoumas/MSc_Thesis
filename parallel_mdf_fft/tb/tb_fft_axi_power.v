@@ -1,26 +1,3 @@
-// =============================================================================
-// tb_fft_axi_power.v — Continuous multi-tone stimulus for power estimation
-//
-// Feeds 5 real sine tones at bins 17, 73, 157, 293, 401 (mixed amplitudes)
-// continuously for NUM_BLOCKS FFT frames with no gaps between frames.
-// Keeping s_axis_tvalid high maximises DSP and logic switching activity,
-// giving a realistic worst-case power estimate when paired with SAIF logging.
-//
-// Tones (real input, im=0):
-//   Bin  17 : amplitude 5000
-//   Bin  73 : amplitude 4000
-//   Bin 157 : amplitude 3500
-//   Bin 293 : amplitude 3000
-//   Bin 401 : amplitude 2500
-//   Peak sum ~18000, well within 16-bit signed range.
-//
-// Usage (Vivado Tcl — run inside post-impl timing sim):
-//   close_saif
-//   open_saif fft_power.saif
-//   log_saif [get_objects -r /tb_fft_axi_power/dut/*]
-//   run 5000000ns
-//   close_saif
-// =============================================================================
 `timescale 1ns/1ps
 
 module tb_fft_axi_power;
@@ -32,9 +9,6 @@ module tb_fft_axi_power;
     localparam integer CLK_P     = 10;         // 100 MHz
     localparam integer NUM_BLOCKS = 64;        // blocks to stream
 
-    // ---------------------------------------------------------------
-    // Pre-computed multi-tone LUT (generated once in initial block)
-    // ---------------------------------------------------------------
     reg signed [DATA_W-1:0] sine_lut [0:N-1];
 
     real two_pi;
@@ -54,9 +28,6 @@ module tb_fft_axi_power;
         end
     end
 
-    // ---------------------------------------------------------------
-    // Signals
-    // ---------------------------------------------------------------
     reg                     aclk;
     reg                     aresetn;
 
@@ -71,9 +42,6 @@ module tb_fft_axi_power;
     wire                    m_axis_tlast;
     wire [3:0]              m_axis_tuser;
 
-    // ---------------------------------------------------------------
-    // DUT
-    // ---------------------------------------------------------------
     fft_axi_top #(
         .DATA_W   (DATA_W),
         .TWIDDLE_W(DATA_W),
@@ -94,16 +62,11 @@ module tb_fft_axi_power;
         .m_axis_tuser  (m_axis_tuser)
     );
 
-    // ---------------------------------------------------------------
-    // Clock
-    // ---------------------------------------------------------------
     initial aclk = 1'b0;
     always #(CLK_P/2) aclk = ~aclk;
 
-    // ---------------------------------------------------------------
     // Task: stream one full block of multi-tone sine samples
     //   beat b carries samples b*P .. b*P+P-1 (real, im=0)
-    // ---------------------------------------------------------------
     task feed_sine_block;
         integer b;
         begin
@@ -126,9 +89,6 @@ module tb_fft_axi_power;
         end
     endtask
 
-    // ---------------------------------------------------------------
-    // Main stimulus
-    // ---------------------------------------------------------------
     integer blk;
 
     initial begin
@@ -161,9 +121,6 @@ module tb_fft_axi_power;
         $finish;
     end
 
-    // ---------------------------------------------------------------
-    // Watchdog
-    // ---------------------------------------------------------------
     initial begin
         #50000000;
         $display("[PWR-TB] TIMEOUT (watchdog)");

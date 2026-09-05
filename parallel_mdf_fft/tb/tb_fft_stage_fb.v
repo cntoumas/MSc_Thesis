@@ -1,26 +1,3 @@
-// =============================================================================
-// tb_fft_stage_fb.v — Self-checking testbench for fft_stage_fb
-//
-// Tests stage 0 (STAGE=0, DEPTH=128, P=4):
-//
-//  1. Impulse response: feed (1+0j,0,0,0) at t=0, zeros otherwise.
-//     After filling the stage (DEPTH=128 cycles), the output must
-//     contain the stage contribution.
-//     For an impulse on path 0 only: the butterfly computes
-//     sum = input + delay = 1 + 0 = 1 (for t<DEPTH),
-//     diff = input - delay = 1 - 0 = 1, then multiplied by W_N^0 = 1.
-//     So for the first DEPTH cycles dout[p=0] = 1+0j (after scale).
-//
-//  2. Constant input: apply the same value every clock to all P paths.
-//     Verify the stage is stable and blk_exp does not grow beyond log2(DEPTH).
-//
-//  3. Reset: assert rst, verify blk_exp returns to 0.
-//
-//  4. Clock enable gating: with en=0, outputs must not change.
-//
-// NOTE: Because DEPTH=128 the pipeline needs 128 cycles to fill.
-//       Full FFT correctness is verified in tb_fft_top.
-// =============================================================================
 `timescale 1ns/1ps
 
 module tb_fft_stage_fb;
@@ -100,7 +77,6 @@ module tb_fft_stage_fb;
         @(posedge clk); #1;
         rst = 0;
 
-        // ================================================================
         // TEST 1: Impulse on path 0
         //   Send 1+0j on path 0, zeros on paths 1-3, for exactly 1 cycle,
         //   then send all zeros.
@@ -108,7 +84,6 @@ module tb_fft_stage_fb;
         //   path 0 should be the twiddle-scaled version of that sample.
         //   At cycle 0 (before fill): output is from uninitialized delay
         //   line (= 0), so sum=1+0, diff=1+0, twiddle[0]=1+0j → dout[0]=1.
-        // ================================================================
         set_zero;
         set_path(0, 16'sd1, 16'sd0);
         @(posedge clk); #1;
@@ -127,11 +102,8 @@ module tb_fft_stage_fb;
             fail_count = fail_count + 1;
         end
 
-        // ================================================================
         // TEST 2: Constant small input — stage should be stable
         //   Apply 10+0j on all paths for 2*DEPTH cycles.
-        //   Check blk_exp stays bounded and dout values are reasonable.
-        // ================================================================
         set_zero;
         for (i = 0; i < P; i = i + 1)
             set_path(i, 16'sd10, 16'sd0);
@@ -150,9 +122,7 @@ module tb_fft_stage_fb;
             end
         end
 
-        // ================================================================
         // TEST 3: Reset clears blk_exp
-        // ================================================================
         rst = 1;
         @(posedge clk); #1;
         rst = 0;
@@ -162,13 +132,11 @@ module tb_fft_stage_fb;
             fail_count = fail_count + 1;
         end
 
-        // ================================================================
         // TEST 4: Clock enable gating
         //   Apply an input, capture dout, then freeze en=0 and verify
         //   dout does not change (for the combinational output from the
         //   multipliers, the input to the delay line is also frozen
         //   because tw_addr and dl_out don't advance).
-        // ================================================================
         en = 1; set_zero;
         set_path(0, 16'sd100, 16'sd50);
         @(posedge clk); #1;
@@ -192,9 +160,6 @@ module tb_fft_stage_fb;
         end
         en = 1;
 
-        // ================================================================
-        // RESULT
-        // ================================================================
         if (fail_count == 0)
             $display("PASS: tb_fft_stage_fb — all tests passed");
         else

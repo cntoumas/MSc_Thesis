@@ -1,24 +1,7 @@
-//! @brief Self-checking AXI-Stream testbench for fft_axi_top — SINE WAVE TEST.
-//! @details
-//! Stimulus: A real sine wave at frequency bin K_BIN over N samples:
-//!   x[n] = A_AMP * sin(2*PI*K_BIN*n/N), imag = 0
-//!
-//! Expected output (FFT of a real sinusoid):
-//!   * Peak magnitudes at bin K_BIN and bin N-K_BIN (mirror, complex conjugate)
-//!   * Near-zero magnitude at all other bins (noise floor from quantization/BFP)
-//!   * The sine has no DC component → bin 0 should be ~0
-//!
-//! For K_BIN=7, N=1024, A_AMP=0.25 (0x2000 in Q1.15):
-//!   * Peak hw magnitude ≈ N/2 * A = 512 * 0.25 = 128 in normalized units
-//!   * BFP will right-shift to keep values in 16-bit range; m_axis_tuser
-//!     reports the negative exponent (the scale factor).
-
 `timescale 1ns/1ps
 module fft_axi_tb;
 
-  // ==========================================
   // Parameters
-  // ==========================================
 
   parameter N          = 1024;
   parameter DATA_WIDTH = 16;
@@ -29,9 +12,7 @@ module fft_axi_tb;
   parameter real    A_AMP = 0.25;       // amplitude (fraction of full scale, ≤ ~0.5)
   parameter real    PI    = 3.14159265358979;
 
-  // ==========================================
   // DUT Ports
-  // ==========================================
 
   reg clk;
   reg rst;
@@ -49,9 +30,6 @@ module fft_axi_tb;
   reg                     m_axis_tready;
   wire [7:0]              m_axis_tuser;
 
-  // ==========================================
-  // DUT Instantiation
-  // ==========================================
 
   fft_axi_top #(
     .N(N),
@@ -71,16 +49,11 @@ module fft_axi_tb;
     .m_axis_tuser   (m_axis_tuser)
   );
 
-  // ==========================================
   // Clock Generation (10 ns period = 100 MHz)
-  // ==========================================
 
   initial clk = 1'b0;
   always #5 clk = ~clk;
 
-  // ==========================================
-  // Checker State
-  // ==========================================
 
   integer pass_count;
   integer fail_count;
@@ -100,9 +73,7 @@ module fft_axi_tb;
   real    sine_val;
   integer sine_int;
 
-  // ==========================================
   // Stimulus — send N samples via S_AXIS
-  // ==========================================
 
   integer i;
 
@@ -127,13 +98,10 @@ module fft_axi_tb;
     repeat (5) @(posedge clk);
     @(negedge clk);
 
-    // ----------------------------------------------------------------
     // Load phase: send N samples of a sine wave at bin K_BIN.
     //   x[n] = A_AMP * sin(2*PI*K_BIN*n/N)
     // Q1.15: hardware value = round(x[n] * 32768), clamped to [-32768, 32767]
     // Imaginary part is always 0 (real input signal).
-    // We insert a 1-cycle gap every 4 beats to exercise tready stalls.
-    // ----------------------------------------------------------------
     $display("[TB] Sine-wave test: K_BIN=%0d, A_AMP=%f, N=%0d", K_BIN, A_AMP, N);
     $display("[TB] Starting sample load (%0d samples)...", N);
 
@@ -175,11 +143,7 @@ module fft_axi_tb;
     $display("[TB] Load complete. Waiting for FFT computation and output...");
   end
 
-  // ==========================================
-  // m_axis_tready Controller
   // Sole driver of m_axis_tready (avoids multiple-driver warnings).
-  // Asserts backpressure for 8 cycles at the N/2 boundary.
-  // ==========================================
 
   always @(posedge clk) begin
     if (rst) begin
@@ -201,9 +165,7 @@ module fft_axi_tb;
     end
   end
 
-  // ==========================================
   // Output Checker — capture every beat, analyze on tlast
-  // ==========================================
 
   // Helpers used in the post-run analysis
   integer k;
@@ -283,9 +245,6 @@ module fft_axi_tb;
     end
   end
 
-  // ==========================================
-  // Simulation Timeout Guard
-  // ==========================================
 
   initial begin
     // Allow generous time: reset (10+5 cy) + load (~N*1.3 cy) + compute + unload

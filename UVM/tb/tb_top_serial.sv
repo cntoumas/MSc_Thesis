@@ -1,20 +1,3 @@
-//------------------------------------------------------------------------------
-// tb_top_serial.sv
-//------------------------------------------------------------------------------
-// Top-level testbench module for the Serial FFT processor (P=1).
-//
-// Responsibilities:
-//   - Generate clk (100 MHz) and rst
-//   - Instantiate the S_AXIS and M_AXIS interfaces (P=1)
-//   - Instantiate the DUT (Serial fft_axi_top)
-//   - Connect the DUT's pin-level ports to the interface signals
-//   - Place the virtual interfaces in the uvm_config_db so the UVM env
-//     can fetch them in build_phase
-//   - Call run_test()
-//
-// Run from the UVM/ directory so that cos.mem / sin.mem are findable by
-// the twiddle ROM's $readmemh calls (see Makefile rom-copy step).
-//------------------------------------------------------------------------------
 `timescale 1ns/1ps
 
 module tb_top_serial;
@@ -23,9 +6,6 @@ module tb_top_serial;
     import fft_pkg::*;
     `include "uvm_macros.svh"
 
-    //--------------------------------------------------------------------------
-    // Clock and reset
-    //--------------------------------------------------------------------------
     logic clk = 1'b0;
     logic rst = 1'b1;
 
@@ -38,20 +18,11 @@ module tb_top_serial;
         `uvm_info("TB", "reset released", UVM_LOW)
     end
 
-    //--------------------------------------------------------------------------
-    // Interface instances (P=1 for Serial — uses the interface's defaults)
-    // NOTE: we instantiate without explicit parameter overrides so xsim
-    // unifies the `virtual axi_stream_if` handle type in the UVM driver/monitor
-    // with the testbench's instance. Defaults match: DATA_WIDTH=16, P=1, TUSER_W=8.
-    //--------------------------------------------------------------------------
+    // Interface instances for the serial DUT.
     axi_stream_if s_if (.clk(clk), .rst(rst));
     axi_stream_if m_if (.clk(clk), .rst(rst));
 
-    //--------------------------------------------------------------------------
-    // DUT — Serial fft_axi_top. The interface tdata is 128-bit (to fit the
-    // Parallel DUT) so we slice to 32-bit when connecting to Serial. M_AXIS
-    // upper bits stay 0 from the interface init; only the low 32 carry data.
-    //--------------------------------------------------------------------------
+    // DUT connection for the serial path.
     wire [31:0] dut_m_axis_tdata;
     assign m_if.tdata = {96'h0, dut_m_axis_tdata};
 
@@ -73,9 +44,7 @@ module tb_top_serial;
         .m_axis_tuser   (m_if.tuser)
     );
 
-    // The M_AXIS monitor is PASSIVE — it does NOT drive tready. By default
-    // we hold tready high; pass +BP_LOW=N +BP_HIGH=M to pulse tready low
-    // for N cycles every M+N cycles (AXI4-Stream backpressure stress).
+    // Backpressure pattern for stress testing.
     int  bp_low_cycles  = 0;
     int  bp_high_cycles = 0;
     int  bp_counter     = 0;
@@ -115,9 +84,6 @@ module tb_top_serial;
         end
     end
 
-    //--------------------------------------------------------------------------
-    // UVM run
-    //--------------------------------------------------------------------------
     initial begin
         // Place virtual interfaces in the config_db BEFORE run_test fires
         uvm_config_db#(virtual axi_stream_if.master)::set(
@@ -141,17 +107,13 @@ module tb_top_serial;
         run_test();
     end
 
-    //--------------------------------------------------------------------------
     // Hard timeout — abort after 5 ms simulated to catch hangs
-    //--------------------------------------------------------------------------
     initial begin
         #5_000_000;
         `uvm_fatal("TB", "5 ms wall-clock timeout — sim hung")
     end
 
-    //--------------------------------------------------------------------------
     // AXI4-Stream protocol assertions on both ports.
-    //--------------------------------------------------------------------------
     axi_stream_sva #(.LABEL("S_AXIS_serial")) sva_s (
         .clk(clk), .rst(rst),
         .tdata(s_if.tdata), .tvalid(s_if.tvalid),

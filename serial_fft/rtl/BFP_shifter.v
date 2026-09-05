@@ -1,61 +1,23 @@
-//! @brief Block Floating Point Barrel Shifter and Exponent Tracker.
-//! @details This module applies dynamic scaling to the FFT data based on the
-//! Count Leading Zeros (CLZ) calculated by the BFP Scanner in the previous stage.
-//! It utilizes a multiplexer-based barrel shifter (inferred via a case statement)
-//! to align the 17-bit input data into a maximized 16-bit output word, ensuring
-//! maximum Signal-to-Quantization-Noise Ratio (SQNR) while preventing overflow.
-//! It simultaneously updates the global sideband exponent.
 module bfp_shifter #(
-    //! Bit-width of the incoming data from the RAM/previous stage (typically 17).
     parameter INPUT_WIDTH = 17,
-
-    //! Bit-width of the scaled output data (typically 16).
     parameter OUTPUT_WIDTH = 16
   )(
-    //! System clock.
     input wire clk,
-
-    //! Synchronous active-high reset.
     input wire rst,
-
-    //! Real part of the input data (A).
     input wire signed [INPUT_WIDTH-1:0] a_in_re,
-
-    //! Imaginary part of the input data (A).
     input wire signed [INPUT_WIDTH-1:0] a_in_im,
-
-    //! Real part of the input data (B).
     input wire signed [INPUT_WIDTH-1:0] b_in_re,
-
-    //! Imaginary part of the input data (B).
     input wire signed [INPUT_WIDTH-1:0] b_in_im,
-
-    //! The minimum CLZ calculated by the BFP scanner for this data block.
     input wire [3:0] block_clz,
-
-    //! The global exponent of the data prior to this scaling stage.
     input wire signed [7:0] exp_in,
-
-    //! Scaled 16-bit real output (A).
     output reg signed [OUTPUT_WIDTH-1:0] a_out_re,
-
-    //! Scaled 16-bit imaginary output (A).
     output reg signed [OUTPUT_WIDTH-1:0] a_out_im,
-
-    //! Scaled 16-bit real output (B).
     output reg signed [OUTPUT_WIDTH-1:0] b_out_re,
-
-    //! Scaled 16-bit imaginary output (B).
     output reg signed [OUTPUT_WIDTH-1:0] b_out_im,
-
-    //! The updated global exponent reflecting the shift applied in this stage.
     output reg signed [7:0] exp_out
   );
 
-  //! @brief Dynamic Barrel Shifter and Exponent Update.
-  //! @details Slices the data bus dynamically based on the CLZ value. By explicitly
-  //! slicing the buses rather than using arithmetic shift operators (<<<), synthesis
-  //! tools map this directly to a highly efficient, single-cycle multiplexer tree.
+  // Dynamic shift based on CLZ.
   always @(posedge clk)
   begin : STAGE_BARREL_SHIFTER
     if (rst)

@@ -39,9 +39,6 @@ from pathlib import Path
 
 import numpy as np
 
-# --------------------------------------------------------------------------
-# Paths
-# --------------------------------------------------------------------------
 THIS_DIR = Path(__file__).resolve().parent
 REPO_ROOT = THIS_DIR.parent
 SERIAL_DIR = REPO_ROOT / "Serial FFT processor"
@@ -54,9 +51,6 @@ BUILD_ROOT = THIS_DIR / "build" / "serial"
 sys.path.insert(0, str(COMMON_DIR))
 import dsp_metrics as dsp  # noqa: E402
 
-# --------------------------------------------------------------------------
-# Twiddle ROM generator (reuse the parametrized thesis generator)
-# --------------------------------------------------------------------------
 sys.path.insert(0, str(SERIAL_DIR / "scripts"))
 from twiddle_generator import generate_twiddle_roms  # noqa: E402
 
@@ -73,9 +67,6 @@ TEST_NAMES = {0: "Impulse", 1: "DC", 2: "Sine", 3: "MultiTone", 4: "Chirp"}
 SINE_TID = 2
 
 
-# --------------------------------------------------------------------------
-# Signal generation (scaled with N and DATA_WIDTH)
-# --------------------------------------------------------------------------
 def scaled_bins(N):
     """Return (tone_bin, multitone_bins) scaled from the 1024-pt baseline."""
     tone_bin = int(round(50 * N / 1024))
@@ -126,9 +117,7 @@ def write_stimulus(build_dir, sig_re, sig_im, data_width):
                 f.write(f"{int(v) & mask:0{hex_digits}X}\n")
 
 
-# --------------------------------------------------------------------------
 # Convention alignment + SQNR (mirrors fft_verify_serial.py)
-# --------------------------------------------------------------------------
 def align_convention(hw, ref):
     n = min(len(hw), len(ref))
     h, r = hw[:n], ref[:n]
@@ -162,9 +151,6 @@ def compute_sqnr(ref, hw):
     return 10 * np.log10(sig / noise)
 
 
-# --------------------------------------------------------------------------
-# Per-config simulation
-# --------------------------------------------------------------------------
 def compile_sim(build_dir, N, log2n, data_width, twiddle_width):
     rtl_files = sorted(str(p) for p in RTL_DIR.glob("*.v"))
     cmd = [
@@ -320,14 +306,12 @@ def save_config_npz(cfg_dir, results):
     np.savez(cfg_dir / "spectrum.npz", **arrays)
 
 
-# --------------------------------------------------------------------------
 # Sweep matrix — on-grid OFAT N-axis + full data×twiddle plane at N=1024.
 #
 # Grid values:  N ∈ {512,1024,2048,4096}, D ∈ {8,16,32,64}, T ∈ {8,16,32,64}.
 # The N axis is held at the (D=16,T=16) baseline; the D×T plane at N=1024
 # subsumes the data-width axis (T=16 column), the twiddle-width axis (D=16
 # row) and the baseline, giving 16 + 3 = 19 unique configs.
-# --------------------------------------------------------------------------
 N_VALUES = (512, 1024, 2048, 4096)
 D_VALUES = (8, 16, 32, 64)
 T_VALUES = (8, 16, 32, 64)

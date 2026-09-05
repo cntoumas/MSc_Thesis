@@ -1,10 +1,3 @@
-// Cross-check driver: run the HLS serial FFT on the 5 RTL test vectors and
-// dump raw outputs + blk_exp so a Python script can compare HLS vs RTL using
-// the shared dsp_metrics library.  Not a pass/fail TB.
-#include <cstdio>
-#include "fft_serial.h"
-#include "../cosim_inputs.h"
-
 int main() {
     static int16_t in_re[FFT_N], in_im[FFT_N];
     static int16_t out_re[FFT_N], out_im[FFT_N];

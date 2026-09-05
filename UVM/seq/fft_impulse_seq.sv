@@ -1,7 +1,3 @@
-//------------------------------------------------------------------------------
-// fft_impulse_seq.sv — drives a Kronecker delta x[0]=A, rest=0.
-// Expected FFT response: |X[k]| = A for all k.
-//------------------------------------------------------------------------------
 `ifndef FFT_IMPULSE_SEQ_SV
 `define FFT_IMPULSE_SEQ_SV
 

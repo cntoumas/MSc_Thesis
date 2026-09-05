@@ -1,15 +1,3 @@
-//------------------------------------------------------------------------------
-// fft_regression_vseq.sv
-//------------------------------------------------------------------------------
-// Virtual sequence that runs all 5 stimulus sequences back-to-back. A
-// "virtual" sequence does not produce sequence_items itself — it coordinates
-// other sequences across (potentially multiple) sequencers.
-//
-// For Day 2-3 we only have one sequencer (S_AXIS), so this is essentially a
-// linear playlist. Day 4+ can add inter-block delays or randomised ordering.
-//
-// The vseq is started by the test class via `seq.start(env.s_axis_agent.sequencer)`.
-//------------------------------------------------------------------------------
 `ifndef FFT_REGRESSION_VSEQ_SV
 `define FFT_REGRESSION_VSEQ_SV
 
@@ -20,11 +8,7 @@ class fft_regression_vseq extends uvm_sequence;
 
     int unsigned p_pack = 1;   // 1 for Serial, 4 for Parallel
 
-    // The test class sets this so the vseq can wait for the scoreboard
-    // to score each FFT block before kicking off the next sequence.
-    // Without this synchronisation, the next stimulus enters the DUT
-    // while the previous block is still streaming out — and the
-    // scoreboard mis-matches the actual output against the wrong reference.
+    // Scoreboard handle used to gate each regression block.
     static fft_scoreboard sb_handle = null;
 
     function new(string name = "fft_regression_vseq");

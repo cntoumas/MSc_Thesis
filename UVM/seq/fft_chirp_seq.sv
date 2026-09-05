@@ -1,9 +1,3 @@
-//------------------------------------------------------------------------------
-// fft_chirp_seq.sv — linear frequency sweep from f_start to f_end bins.
-//   x[n] = A * sin( 2π · (f_start + (f_end - f_start)·n / (2N)) · n / N )
-// Default sweeps 0 → N/2, producing energy spread across the lower half of
-// the spectrum.
-//------------------------------------------------------------------------------
 `ifndef FFT_CHIRP_SEQ_SV
 `define FFT_CHIRP_SEQ_SV
 

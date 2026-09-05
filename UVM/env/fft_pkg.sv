@@ -1,11 +1,3 @@
-//------------------------------------------------------------------------------
-// fft_pkg.sv
-//------------------------------------------------------------------------------
-// Single UVM package containing all environment classes used by both DUTs
-// (serial_fft, parallel_mdf_fft). Files are `included so the
-// compile order is fixed in one place; users only need to compile this one
-// file along with axi_stream_if.sv and uvm_pkg.
-//------------------------------------------------------------------------------
 `ifndef FFT_PKG_SV
 `define FFT_PKG_SV
 
@@ -15,9 +7,6 @@ package fft_pkg;
     import uvm_pkg::*;
     `include "uvm_macros.svh"
 
-    //--------------------------------------------------------------------------
-    // Compile-time configuration shared across the env
-    //--------------------------------------------------------------------------
     localparam int unsigned FFT_N           = 1024;
     localparam int unsigned FFT_DATA_WIDTH  = 16;
     localparam int unsigned FFT_TUSER_W     = 8;
@@ -55,9 +44,7 @@ package fft_pkg;
         endcase
     endfunction
 
-    //--------------------------------------------------------------------------
     // Component / class includes  (order matters: dependencies first)
-    //--------------------------------------------------------------------------
     `include "axi_stream_seq_item.sv"
     `include "axi_stream_driver.sv"
     `include "axi_stream_monitor.sv"

@@ -59,9 +59,7 @@ SUBMODULES = ["bit_reverse.v", "block_scaler.v", "butterfly_r2.v",
               "fft_stage_nf.v", "overflow_detect.v", "twiddle_rom.v"]
 
 
-# --------------------------------------------------------------------------
 # Reference signals (must match the generated TB stimulus)
-# --------------------------------------------------------------------------
 def make_references(N, data_w):
     amp = max(1, (1 << (data_w - 1)) // 16)
     mt_amp = max(1, int(round((1 << (data_w - 1)) * (600.0 / 32768.0))))
@@ -90,9 +88,7 @@ def make_references(N, data_w):
     return refs, dict(tone=tone, mt=mt, amp=amp)
 
 
-# --------------------------------------------------------------------------
 # Parse + reconstruct (mirrors Parallel fft_verify.py)
-# --------------------------------------------------------------------------
 def parse_outputs(csv_path, N):
     rows = {0: [], 1: [], 2: [], 3: [], 4: []}
     if not csv_path.exists():
@@ -142,9 +138,6 @@ def compute_sqnr(ref, hw):
     return 10 * np.log10(sig / noise)
 
 
-# --------------------------------------------------------------------------
-# Per-config run
-# --------------------------------------------------------------------------
 def run_config(N, data_w, twiddle_w, keep_build=False, timeout=1800):
     cfg = f"N{N}_D{data_w}_T{twiddle_w}" if P == 4 else f"N{N}_P{P}_D{data_w}_T{twiddle_w}"
     geo = cg.fft_geometry(N, P)

@@ -1,11 +1,3 @@
-//------------------------------------------------------------------------------
-// fft_regression_test.sv
-//------------------------------------------------------------------------------
-// Full regression — runs the virtual sequence fft_regression_vseq which
-// drives all 5 stimulus sequences (Impulse, DC, Sine, MultiTone, Chirp)
-// back-to-back. Expects 5/5 PASS, with thresholds per `sqnr_threshold()`
-// in fft_pkg.
-//------------------------------------------------------------------------------
 `ifndef FFT_REGRESSION_TEST_SV
 `define FFT_REGRESSION_TEST_SV
 

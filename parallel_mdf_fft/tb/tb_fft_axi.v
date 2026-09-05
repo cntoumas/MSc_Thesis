@@ -1,18 +1,3 @@
-// =============================================================================
-// tb_fft_axi.v - Self-checking testbench for fft_axi_top
-//
-// Drives an impulse on the slave AXI-Stream port (x[0]=2048 on path 0,
-// zeros elsewhere) and verifies the master AXI-Stream output magnitude is
-// ~2048 at every bin (after BFP reconstruction).
-//
-// Reference DFT of an impulse A*delta[0]:  X[k] = A  for all k.
-// Hardware emits 4 samples per beat, one per path, with stride N/P = 256.
-//   beat k, path p   ->  FFT bin (k + p * 256)
-//
-// One full FFT block is driven; pipeline latency through the FFT and
-// output bit-reverse buffer is ~2 * N/P cycles before the first output
-// beat appears.
-// =============================================================================
 `timescale 1ns/1ps
 
 module tb_fft_axi;
@@ -42,9 +27,6 @@ module tb_fft_axi;
     wire                    m_axis_tlast;
     wire [3:0]              m_axis_tuser;
 
-    // ---------------------------------------------------------------
-    // DUT
-    // ---------------------------------------------------------------
     fft_axi_top #(
         .DATA_W   (DATA_W),
         .TWIDDLE_W(DATA_W),
@@ -65,15 +47,9 @@ module tb_fft_axi;
         .m_axis_tuser  (m_axis_tuser)
     );
 
-    // ---------------------------------------------------------------
-    // Clock
-    // ---------------------------------------------------------------
     initial aclk = 1'b0;
     always #(CLK_P/2) aclk = ~aclk;
 
-    // ---------------------------------------------------------------
-    // CSV dump of all output beats (for offline inspection)
-    // ---------------------------------------------------------------
     integer csv_axi;
     initial begin
         csv_axi = $fopen("fft_axi_output.csv", "w");
@@ -81,10 +57,8 @@ module tb_fft_axi;
                 "beat,path0_re,path0_im,path1_re,path1_im,path2_re,path2_im,path3_re,path3_im,tuser,tlast\n");
     end
 
-    // ---------------------------------------------------------------
     // Output capture (one full block, captured into out_re/out_im)
     //   beat k, path p  ->  FFT bin (k + p * WORDS)
-    // ---------------------------------------------------------------
     reg signed [DATA_W-1:0] out_re [0:N-1];
     reg signed [DATA_W-1:0] out_im [0:N-1];
     integer  beat_idx;
@@ -129,9 +103,7 @@ module tb_fft_axi;
         end
     end
 
-    // ---------------------------------------------------------------
     // Stimulus task: feed one impulse block (impulse on path 0 word 0)
-    // ---------------------------------------------------------------
     reg [P*2*DATA_W-1:0] impulse_word;
     integer fail_count;
     integer k;
@@ -166,9 +138,6 @@ module tb_fft_axi;
         end
     endtask
 
-    // ---------------------------------------------------------------
-    // Main test
-    // ---------------------------------------------------------------
     initial begin
         // Init
         aresetn       = 1'b0;
@@ -205,9 +174,7 @@ module tb_fft_axi;
         // Let one more clock pass so the final beat's NB-assignments commit
         @(posedge aclk); #1;
 
-        // -----------------------------------------------------------
         // Self-check: impulse FFT should be flat at IMPULSE_AMP
-        // -----------------------------------------------------------
         exp_scale  = (1 << captured_tuser);
         expect_mag = IMPULSE_AMP;
         $display("[TB-AXI] Output block captured: BFP_exp = %0d  scale = %0d  expect |X[k]| ~ %0d",
@@ -244,9 +211,6 @@ module tb_fft_axi;
         $finish;
     end
 
-    // ---------------------------------------------------------------
-    // Timeout watchdog
-    // ---------------------------------------------------------------
     initial begin
         #10000000;
         $display("[TB-AXI] TIMEOUT (watchdog)");

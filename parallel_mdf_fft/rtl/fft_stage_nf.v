@@ -1,60 +1,3 @@
-// =============================================================================
-// fft_stage_nf.v — MDF No-Feedback Stage (stage 8 or 9 of 10)
-//
-// The last two stages of the P=4 MDF FFT compute an internal 4-point
-// radix-2 DIF FFT across the P=4 parallel paths.  These stages have no
-// delay-line feedback (the delay would be < 1 sample) and are implemented
-// as fixed combinational butterflies with trivial (±1, ±j) twiddle factors.
-//
-// ─────────────────────────────────────────────────────────────────────────
-// 4-point DIF FFT butterfly pattern:
-//
-//   Stage 8  (IDX=0, "wide butterfly"):
-//     Pair A:  a=path0, b=path2  →  sum0=p0+p2,  diff0=(p0-p2)·W_4^0=p0-p2
-//     Pair B:  a=path1, b=path3  →  sum1=p1+p3,  diff1=(p1-p3)·W_4^1
-//
-//     W_4^0 = 1    → multiply is a wire (no-op)
-//     W_4^1 = -j   → multiply by -j: re_out=+im_in, im_out=-re_in
-//
-//     Output order (natural): [sum0, sum1, diff0, diff1]
-//                              = [path0_out, path1_out, path2_out, path3_out]
-//
-//   Stage 9  (IDX=1, "narrow butterfly"):
-//     Pair A:  a=path0, b=path1  →  sum0=p0+p1,  diff0=(p0-p1)·W_2^0=p0-p1
-//     Pair B:  a=path2, b=path3  →  sum2=p2+p3,  diff2=(p2-p3)·W_2^0=p2-p3
-//
-//     W_2^0 = 1    → both multiplies are wires
-//
-//     Output order: [sum0, diff0, sum2, diff2]
-//                 = [path0_out, path1_out, path2_out, path3_out]
-//
-// ─────────────────────────────────────────────────────────────────────────
-// BFP: overflow_detect + block_scaler applied to butterfly outputs.
-//      The result feeds directly to the next stage (or bit_reverse/output).
-//
-// Because the twiddle factors are trivial, this module contains no
-// twiddle_rom and no complex_mult — saving 8 DSP slices.
-//
-// ─────────────────────────────────────────────────────────────────────────
-// Parameters:
-//   DATA_W — input/output data width (signed), default 16
-//   P      — parallelism, default 4 (module assumes P=4 exactly)
-//   IDX    — 0 → Stage 8 (wide: pairs 0-2 and 1-3)
-//            1 → Stage 9 (narrow: pairs 0-1 and 2-3)
-//
-// Ports:
-//   clk, rst — clock and synchronous reset (for block_scaler)
-//   din      — P complex inputs (packed, same format as fft_stage_fb)
-//   dout     — P complex outputs (DATA_W+1 bits per component to avoid
-//               loss before the parent truncates — see NOTE below)
-//   blk_exp  — BFP exponent accumulated by this stage
-//
-// NOTE on output width:
-//   The butterfly outputs are DATA_W+1 bits (1-bit growth).  For the
-//   no-feedback stages we pass the full DATA_W+1 result through BFP
-//   scaling back to DATA_W, just like the feedback stages.  The final
-//   output from fft_top carries DATA_W-bit samples.
-// =============================================================================
 `timescale 1ns/1ps
 
 module fft_stage_nf #(
@@ -73,9 +16,6 @@ module fft_stage_nf #(
 
     localparam SW = DATA_W + 1;      // butterfly output width
 
-    // ---------------------------------------------------------------
-    // Extract all 4 input paths
-    // ---------------------------------------------------------------
     wire signed [DATA_W-1:0] in_re [0:P-1];
     wire signed [DATA_W-1:0] in_im [0:P-1];
 
@@ -87,18 +27,14 @@ module fft_stage_nf #(
         end
     endgenerate
 
-    // ---------------------------------------------------------------
     // Butterfly outputs (before twiddle), DATA_W+1 wide
-    // ---------------------------------------------------------------
     wire signed [SW-1:0] sum_re [0:1];
     wire signed [SW-1:0] sum_im [0:1];
     wire signed [SW-1:0] diff_re[0:1];
     wire signed [SW-1:0] diff_im[0:1];
 
-    // ---------------------------------------------------------------
     // Stage 8 (IDX=0): pair (0,2) and (1,3)
     // Stage 9 (IDX=1): pair (0,1) and (2,3)
-    // ---------------------------------------------------------------
     generate
         if (IDX == 0) begin : g_stage8
             // Pair A: paths 0 and 2
@@ -133,7 +69,6 @@ module fft_stage_nf #(
         end
     endgenerate
 
-    // ---------------------------------------------------------------
     // Twiddle application (wire-only, no multiplier):
     //
     //   Stage 8 (IDX=0):
@@ -146,7 +81,6 @@ module fft_stage_nf #(
     // After twiddle, pack all 4 outputs into the BFP input bus.
     // Bus packing: [(p*4+c)*SW +: SW], c=0:sum_re, 1:sum_im, 2:diff_re, 3:diff_im
     // Paths: 0=sum_pair_A, 1=sum_pair_B, 2=diff_pair_A, 3=diff_pair_B
-    // ---------------------------------------------------------------
     wire [P*4*SW-1:0] bf_packed;
 
     generate
@@ -203,11 +137,9 @@ module fft_stage_nf #(
         end
     endgenerate
 
-    // ---------------------------------------------------------------
     // BFP: overflow detect + scale
     // Detect overflow across the 8 active output components
     // (only the first 2 slots per path are populated above)
-    // ---------------------------------------------------------------
     wire                  overflow;
     wire [P*4*DATA_W-1:0] scaled;
 
@@ -226,10 +158,8 @@ module fft_stage_nf #(
         .blk_exp  (blk_exp)
     );
 
-    // ---------------------------------------------------------------
     // Extract output paths from scaled bus (using slot c=0 for re, c=1 for im)
     // scaled packing: [(p*4+c)*DATA_W +: DATA_W]
-    // ---------------------------------------------------------------
     generate
         for (p = 0; p < P; p = p + 1) begin : g_pack_out
             assign dout[p*2*DATA_W          +: DATA_W] = scaled[(p*4+0)*DATA_W +: DATA_W];

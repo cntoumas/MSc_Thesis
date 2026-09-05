@@ -1,11 +1,6 @@
-#pragma once
-#include <ap_int.h>
-#include <stdint.h>
-
 static const int FFT_N      = 1024;
 static const int FFT_LOG2_N = 10;
 
-// ---------------------------------------------------------------------------
 // fft_serial — in-place, iterative, radix-2 DIT FFT with dynamic BFP
 //
 // I/O uses 16-bit Q1.15 samples (matching the RTL AXI-Stream ports).
@@ -22,7 +17,6 @@ static const int FFT_LOG2_N = 10;
 //   in_re / in_im   — AXI master read  (input samples, natural order)
 //   out_re / out_im — AXI master write (output bins, bit-reversed order)
 //   blk_exp         — AXI-Lite scalar  (cumulative BFP exponent, dynamic)
-// ---------------------------------------------------------------------------
 void fft_serial(
     int16_t  in_re [FFT_N],
     int16_t  in_im [FFT_N],

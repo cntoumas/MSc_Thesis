@@ -1,17 +1,3 @@
-//------------------------------------------------------------------------------
-// fft_scoreboard.sv
-//------------------------------------------------------------------------------
-// Subscribes to the M_AXIS monitor's analysis port. Buffers FFT_N actual
-// output beats per FFT block; on tlast, scores the block against the
-// reference vector and prints PASS/FAIL.
-//
-// SQNR computation matches the optimal-α fit used in the existing
-// thesis_report.py / thesis_report_xc7.py — i.e., we find the complex
-// scalar α that minimises ||actual − α·ref||² and report
-//      SQNR = 10·log10( |α·ref|² / |actual − α·ref|² ).
-// The hardware FFT uses the +j twiddle convention vs NumPy's -j, so we
-// try both ref and conj(ref) and report the better of the two.
-//------------------------------------------------------------------------------
 `ifndef FFT_SCOREBOARD_SV
 `define FFT_SCOREBOARD_SV
 
@@ -38,9 +24,7 @@ class fft_scoreboard extends uvm_component;
     // Samples packed per AXI-Stream beat. Serial = 1, Parallel = 4.
     int unsigned p_pack = 1;
 
-    // Number of warm-up blocks to ignore before scoring. For Parallel MDF
-    // the first emitted M_AXIS block is garbage from the bit_reverse buffer
-    // priming — see comment in fft_base_seq.sv. Serial = 0, Parallel = 1.
+    // Skip warm-up blocks before scoring starts.
     int unsigned warmup_blocks   = 0;
     int unsigned warmup_seen     = 0;
 
@@ -59,7 +43,6 @@ class fft_scoreboard extends uvm_component;
     bit    dump_actuals = 1'b1;
     string dut_tag      = "unknown";
 
-    //--------------------------------------------------------------------------
     function new(string name = "fft_scoreboard", uvm_component parent = null);
         super.new(name, parent);
         m_axis_export = new("m_axis_export", this);
@@ -82,9 +65,7 @@ class fft_scoreboard extends uvm_component;
                   UVM_LOW)
     endfunction
 
-    //--------------------------------------------------------------------------
     // Analysis port write — called by the monitor for every M_AXIS beat
-    //--------------------------------------------------------------------------
     function void write_m_axis(axi_stream_seq_item t);
         int unsigned      stride;
         int               bin_idx;
@@ -116,8 +97,7 @@ class fft_scoreboard extends uvm_component;
             end
         end
 
-        // Per-beat trace for key beats — helps figure out where the FFT
-        // is actually placing the sine peak in the M_AXIS stream.
+        // Trace a few key beats to confirm the peak placement.
         if (beats_captured == 0 || beats_captured == 50 || beats_captured == 63 ||
             beats_captured == 76 || beats_captured == 100)
             `uvm_info("SB",
@@ -128,13 +108,7 @@ class fft_scoreboard extends uvm_component;
         beats_captured = beats_captured + 1;
 
         if (t.tlast) begin
-            // The Parallel DUT requires 2 input blocks per emitted M_AXIS
-            // block (per the canonical tb_fft_axi.v stimulus pattern), but
-            // it only emits ONE M_AXIS tlast — the FIRST tlast IS the valid
-            // output. So we DON'T skip any M_AXIS blocks; we just need the
-            // sequence to drive an extra input block for priming.
-            // (warmup_blocks/warmup_seen kept for future flexibility but
-            //  are 0 in current usage.)
+            // Skip warm-up blocks before scoring begins.
             if (warmup_seen < warmup_blocks) begin
                 warmup_seen++;
                 `uvm_info("SB",
@@ -145,9 +119,7 @@ class fft_scoreboard extends uvm_component;
                 return;
             end
 
-            // Re-read active_test from config_db before scoring — this lets
-            // the regression vseq advance the test type between blocks by
-            // setting the config_db key from its body() task.
+            // Refresh the active test before each scored block.
             void'(uvm_config_db#(sig_kind_e)::get(this, "", "active_test", active_test));
 
             // tuser is captured on the last beat (stable across the burst)
@@ -157,11 +129,8 @@ class fft_scoreboard extends uvm_component;
         end
     endfunction
 
-    //--------------------------------------------------------------------------
-    // Allow the regression vseq (or any caller) to set the active test
     // explicitly between blocks. Both this method and the config_db lookup
     // above are honoured — the most recent wins.
-    //--------------------------------------------------------------------------
     function void set_active_test(sig_kind_e k);
         active_test = k;
         `uvm_info("SB",
@@ -170,10 +139,7 @@ class fft_scoreboard extends uvm_component;
                   UVM_MEDIUM)
     endfunction
 
-    //--------------------------------------------------------------------------
     // Score one FFT block — apply BFP scaling, compute SQNR vs reference,
-    // print result. Tries both ref and conj(ref) (twiddle sign convention).
-    //--------------------------------------------------------------------------
     local function void score_block(int bfp_exp);
         real scale = 2.0 ** bfp_exp;
         real act_scaled_re [FFT_N];
@@ -272,13 +238,11 @@ class fft_scoreboard extends uvm_component;
         end
     endfunction
 
-    //--------------------------------------------------------------------------
     // Optimal-α SQNR: find α that minimises ||act − α·ref||²
     //                 α = <act, ref> / <ref, ref>  (complex)
     //                 SQNR = 10·log10( |α·ref|² / |residual|² )
     //
     // `conj_ref` = 1 → use conjugate of reference (flip imag sign)
-    //--------------------------------------------------------------------------
     local function real compute_sqnr(
         const ref real a_re[FFT_N],
         const ref real a_im[FFT_N],
@@ -330,7 +294,6 @@ class fft_scoreboard extends uvm_component;
         return 10.0 * $log10(sig_pow / noise_pow);
     endfunction
 
-    //--------------------------------------------------------------------------
     function void report_phase(uvm_phase phase);
         super.report_phase(phase);
         `uvm_info("SB",

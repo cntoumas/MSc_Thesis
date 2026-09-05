@@ -1,19 +1,3 @@
-//------------------------------------------------------------------------------
-// fft_ref_model.sv
-//------------------------------------------------------------------------------
-// Reference model — loads NumPy-computed expected FFT outputs from .mem
-// files into RAM-backed arrays. The scoreboard queries it for the expected
-// value at any (test, bin) coordinate.
-//
-// File layout per test (in refs/serial/):
-//   <test>_re.mem      stimulus real part (we don't load this — sequence already drives it)
-//   <test>_im.mem      stimulus imag part
-//   <test>_ref_re.mem  expected FFT output, real part (32-bit signed hex)
-//   <test>_ref_im.mem  expected FFT output, imag part
-//
-// All 5 test references are loaded at start_of_simulation_phase so the
-// scoreboard never has to wait on file I/O during the run.
-//------------------------------------------------------------------------------
 `ifndef FFT_REF_MODEL_SV
 `define FFT_REF_MODEL_SV
 
@@ -39,9 +23,7 @@ class fft_ref_model extends uvm_component;
         `uvm_info("FFTREF", $sformatf("loading reference vectors from %s/", refs_dir), UVM_LOW)
     endfunction
 
-    //--------------------------------------------------------------------------
     // Load all 5 reference vectors once, before the run phase starts.
-    //--------------------------------------------------------------------------
     function void start_of_simulation_phase(uvm_phase phase);
         super.start_of_simulation_phase(phase);
         load_one(SIG_IMPULSE,   "impulse");
@@ -52,9 +34,7 @@ class fft_ref_model extends uvm_component;
         `uvm_info("FFTREF", "all 5 reference vectors loaded", UVM_LOW)
     endfunction
 
-    //--------------------------------------------------------------------------
     // Read one (re, im) pair into the indexed slots.
-    //--------------------------------------------------------------------------
     local function void load_one(sig_kind_e k, string base);
         // xsim has trouble with $readmemh into a slice of a 2D unpacked array
         // (treats `ref_re[k]` as scalar → "Too many words" warning). Load
@@ -78,9 +58,6 @@ class fft_ref_model extends uvm_component;
                   UVM_MEDIUM)
     endfunction
 
-    //--------------------------------------------------------------------------
-    // Lookup helpers for the scoreboard
-    //--------------------------------------------------------------------------
     function bit signed [31:0] get_re(sig_kind_e k, int bin);
         return ref_re[k][bin];
     endfunction

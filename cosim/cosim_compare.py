@@ -78,9 +78,7 @@ SERIAL_COLOR = BLUE
 PARALLEL_COLOR = ORANGE
 
 
-# ---------------------------------------------------------------------------
 # Step 1+2: run sub-simulations / reports
-# ---------------------------------------------------------------------------
 def _run(script, cwd, label):
     print(f"\n>>> {label}: {os.path.relpath(script, REPO_ROOT)}")
     r = subprocess.run([sys.executable, script], cwd=cwd)
@@ -101,9 +99,7 @@ def run_all():
     _run(PARALLEL_UTIL, PARALLEL_DIR, "Parallel utilization report")
 
 
-# ---------------------------------------------------------------------------
 # Step 3: load spectra + recompute identical metrics
-# ---------------------------------------------------------------------------
 def load_spectra(npz_path):
     if not os.path.exists(npz_path):
         print(f"  [WARN] missing {npz_path}")
@@ -139,9 +135,6 @@ def metrics_from_spectra(loaded):
     return out
 
 
-# ---------------------------------------------------------------------------
-# Utilization CSV reader (flat schema written by common/util_plots.py)
-# ---------------------------------------------------------------------------
 def load_utilization(csv_path):
     if not os.path.exists(csv_path):
         print(f"  [WARN] missing {csv_path}")
@@ -168,9 +161,7 @@ def _num(v):
         return v
 
 
-# ---------------------------------------------------------------------------
 # Step 4: comparison CSV + PNG
-# ---------------------------------------------------------------------------
 def write_comparison_csv(serial_m, parallel_m, serial_u, parallel_u, path):
     with open(path, "w", newline="") as f:
         w = csv.writer(f)
@@ -354,9 +345,6 @@ def make_comparison_png(serial_m, parallel_m, serial_u, parallel_u,
     print(f"  Saved: {path}")
 
 
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
 def main():
     ap = argparse.ArgumentParser(description="Serial vs Parallel MDF FFT co-simulation")
     ap.add_argument("--skip-run", action="store_true",
